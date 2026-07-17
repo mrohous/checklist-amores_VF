@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist COVI - Amores 219</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f0f4fa;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            padding: 35px 30px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+        }
+        h1 {
+            font-size: 28px;
+            color: #1a2b4a;
+            border-left: 6px solid #2a7de1;
+            padding-left: 18px;
+            margin-bottom: 6px;
+        }
+        .subhead {
+            color: #5e6f8d;
+            font-size: 15px;
+            padding-left: 24px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #e9edf4;
+            padding-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .autor {
+            font-size: 13px;
+            color: #5e6f8d;
+            padding-left: 24px;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .categoria {
+            background: #eef4fe;
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin: 28px 0 12px 0;
+            font-weight: 700;
+            font-size: 18px;
+            color: #1a3a7a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .categoria span {
+            background: #2a7de1;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 12px;
+            border-bottom: 1px solid #f0f3f9;
+        }
+        .item:last-child { border-bottom: none; }
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            border: 2px solid #b8c9e0;
+            border-radius: 6px;
+            background: white;
+            margin-top: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            user-select: none;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .checkbox:hover { background: #f0f4fa; }
+        .checkbox.checked {
+            background: #2a7de1;
+            border-color: #2a7de1;
+        }
+        .checkbox.checked::after { content: "✓"; }
+        .checkbox.urgente {
+            border-color: #d32f2f;
+            background: #fff0ee;
+        }
+        .checkbox.urgente.checked {
+            background: #d32f2f;
+            border-color: #d32f2f;
+        }
+        .checkbox.completado {
+            border-color: #2e7d32;
+            background: #e8f5e9;
+        }
+        .checkbox.completado.checked {
+            background: #2e7d32;
+            border-color: #2e7d32;
+        }
+        .detalle { flex: 1; }
+        .titulo {
+            font-weight: 600;
+            color: #1e2f4a;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .desc {
+            color: #5a6e8a;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 2px;
+            padding-right: 10px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 1px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #eef2f9;
+            color: #2b4d7a;
+            white-space: nowrap;
+        }
+        .badge.urgente { background: #ffe9e6; color: #b3402c; }
+        .badge.atencion { background: #fff2db; color: #a86f1f; }
+        .badge.hecho { background: #e8f5e9; color: #2e7d32; }
+        .badge.legal { background: #e8eaf6; color: #283593; }
+        .badge.finanzas { background: #e0f7fa; color: #00695c; }
+        .badge.pendiente { background: #f5f5f5; color: #616161; }
+        .badge.ahorro { background: #e8f5e9; color: #1b5e20; }
+        .badge.denuncia { background: #ffebee; color: #b71c1c; }
+        .badge.proteccion { background: #fff3e0; color: #e65100; }
+        .badge.admin { background: #e1bee7; color: #4a148c; }
+        .badge.fin { background: #c8e6c9; color: #1b5e20; }
+        .badge.mant { background: #ffe0b2; color: #e65100; }
+        .badge.oper { background: #bbdefb; color: #0d47a1; }
+        .badge.legal2 { background: #ffcdd2; color: #b71c1c; }
+        .badge.comun { background: #b2dfdb; color: #004d40; }
+        .footer {
+            margin-top: 30px;
+            padding-top: 16px;
+            border-top: 2px dashed #dce2ec;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 14px;
+            color: #5a6e8a;
+        }
+        .fecha {
+            background: #eef3fa;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #1f3d6b;
+        }
+        .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            flex-wrap: wrap;
+        }
+        .stats span {
+            background: #f0f4fa;
+            padding: 4px 14px;
+            border-radius: 30px;
+        }
+        .resumen-cotizacion {
+            background: #f8faff;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 8px 0 4px 0;
+            border: 1px solid #e9edf4;
+            font-size: 13px;
+        }
+        .resumen-cotizacion table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .resumen-cotizacion th {
+            background: #eef4fe;
+            text-align: left;
+            padding: 5px 10px;
+            border-bottom: 2px solid #dce4f0;
+        }
+        .resumen-cotizacion td {
+            padding: 4px 10px;
+            border-bottom: 1px solid #e9edf4;
+        }
+        .resumen-cotizacion .total {
+            font-weight: 700;
+            background: #eef4fe;
+        }
+        .btn-pdf {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 10px 26px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(42, 125, 225, 0.25);
+            transition: 0.15s;
+        }
+        .btn-pdf:hover {
+            background: #1a5fb0;
+            transform: scale(0.98);
+        }
+        /* Leyenda responsiva */
+        .leyenda {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            font-size: 13px;
+            color: #5a6e8a;
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1px solid #eef2f9;
+            align-items: center;
+        }
+        .leyenda-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .leyenda-cuadro {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            border: 2px solid #b8c9e0;
+            border-radius: 4px;
+            background: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+        }
+        .leyenda-cuadro.checked {
+            background: #2a7de1;
+            border-color: #2a7de1;
+        }
+        .leyenda-cuadro.checked::after { content: "✓"; }
+        .leyenda-cuadro.urgente {
+            border-color: #d32f2f;
+            background: #fff0ee;
+        }
+        .leyenda-cuadro.urgente.checked {
+            background: #d32f2f;
+            border-color: #d32f2f;
+        }
+        .leyenda .badge {
+            font-size: 11px;
+            padding: 1px 10px;
+        }
+        @media print {
+            body { background: white; padding: 8px; }
+            .container { box-shadow: none; border-radius: 0; padding: 16px; }
+            .btn-pdf { display: none; }
+            .item:hover { background: transparent; }
+            .checkbox:hover { background: white; }
+        }
+        @media (max-width: 700px) {
+            .container { padding: 16px; }
+            .item { padding: 8px 4px; gap: 10px; }
+            .titulo { font-size: 14px; }
+            .desc { font-size: 13px; }
+            .resumen-cotizacion { padding: 10px; }
+            .resumen-cotizacion table { font-size: 12px; }
+            .resumen-cotizacion td, .resumen-cotizacion th { padding: 3px 6px; }
+            .leyenda { gap: 6px 12px; font-size: 12px; }
+            .leyenda-item { gap: 4px; }
+            .leyenda .badge { font-size: 10px; padding: 1px 8px; }
+            .leyenda-cuadro { width: 16px; height: 16px; min-width: 16px; font-size: 11px; }
+            .stats span { font-size: 12px; padding: 3px 10px; }
+            .fecha { font-size: 12px; padding: 4px 12px; }
+            .btn-pdf { font-size: 13px; padding: 8px 18px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 12px; }
+            h1 { font-size: 20px; padding-left: 12px; }
+            .autor { font-size: 11px; padding-left: 12px; }
+            .categoria { font-size: 15px; padding: 10px 14px; }
+            .item { padding: 6px 2px; gap: 8px; }
+            .checkbox { width: 20px; height: 20px; min-width: 20px; font-size: 14px; }
+            .titulo { font-size: 13px; }
+            .desc { font-size: 12px; }
+            .badge { font-size: 10px; padding: 1px 8px; }
+            .leyenda { gap: 4px 8px; font-size: 11px; }
+            .leyenda .badge { font-size: 9px; padding: 1px 6px; }
+            .leyenda-cuadro { width: 14px; height: 14px; min-width: 14px; font-size: 10px; }
+            .stats span { font-size: 11px; padding: 2px 8px; }
+            .fecha { font-size: 11px; padding: 3px 10px; }
+            .btn-pdf { font-size: 12px; padding: 6px 14px; }
+            .resumen-cotizacion { padding: 8px; font-size: 12px; }
+            .resumen-cotizacion table { font-size: 11px; }
+            .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="checklist">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <h1>📋 Checklist COVI · Amores 219</h1>
+        <span style="background:#eef3fa; padding:4px 16px; border-radius:30px; font-size:14px; color:#1f3d6b; font-weight:600;">Al día: 17 de julio 2026</span>
+    </div>
+    <div class="autor">✍️ Elaborado por el vocal Miguel Romero Rohous (Mariana Romero, su representante legal)</div>
+    <div class="subhead">
+        <span>Pendientes y avances</span>
+    </div>
+
+    <!-- ========== 1. DOCUMENTACIÓN Y FORMALIDADES ========== -->
+    <div class="categoria"><span>1</span> Documentación y Formalidades Legales</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Registro PROSOC <span class="badge legal">Legal</span></div>
+            <div class="desc">Estamos en espera del registro de la administración ante la Procuraduría Social de la CDMX.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Libro de actas <span class="badge legal">Legal</span></div>
+            <div class="desc">Está en proceso de registro en PROSOC.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Firmas de contratos <span class="badge hecho">Completado</span></div>
+            <div class="desc">Contratos de Prestación de Servicios y de Prenda firmados por todos los miembros del Comité.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Constitución de la Asociación Civil (A.C.) <span class="badge admin">Administración</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">
+                <strong>Objetivo:</strong> Garantizar una administración profesional y transparente mediante la constitución legal de la A.C.
+                <div class="resumen-cotizacion">
+                    <strong>Estructura de gastos propuesta (mensual):</strong>
+                    <table>
+                        <tr><td>Administración (operación diaria, contratos, mantenimiento, supervisión)</td><td><strong>$18,500</strong></td></tr>
+                        <tr><td>Servicio profesional de contador (propietario, electo en Asamblea julio 2025) — contabilidad formal, declaraciones fiscales, cumplimiento SAT</td><td><strong>$3,500</strong></td></tr>
+                        <tr><td>Manejo de cuenta (actual) — <span style="text-decoration:line-through;">$2,500</span> <strong>⬅️ DESAPARECE</strong></td><td><strong>$0</strong></td></tr>
+                        <tr class="total"><td><strong>Total actual</strong></td><td><strong>$21,000</strong></td></tr>
+                        <tr class="total"><td><strong>Total con contador</strong></td><td><strong>$22,000</strong></td></tr>
+                        <tr><td colspan="2"><strong>Diferencia: +$1,000</strong></td></tr>
+                    </table>
+                    <strong>Beneficios:</strong>
+                    <ul style="margin-top:6px; padding-left:18px; list-style-type:disc;">
+                        <li>✅ Cuenta bancaria institucional a nombre de la A.C.</li>
+                        <li>✅ Contabilidad formal con contador profesional (propietario)</li>
+                        <li>✅ Transparencia total en el manejo de recursos</li>
+                        <li>✅ Protección del patrimonio común ante cualquier eventualidad</li>
+                    </ul>
+                </div>
+                <strong>Acción requerida:</strong> Gestionar la constitución legal de la A.C. y realizar los trámites correspondientes ante notaría y SAT.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 2. ELEVADORES ========== -->
+    <div class="categoria"><span>2</span> ⚠️ Elevadores (Suma Importancia)</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Reconexión de interfonos de elevadores <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Fabricio (Fase Dos) desconectó el sistema. Se acordó pagar el 50% restante y coordinar visita con el proveedor de elevadores (Ing. Benjamín Ayala) para reconectar. Pendiente de ejecución.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Reparación mayor de elevadores <span class="badge urgente">Urgente · Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">
+                <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. Requiere aprobación en Asamblea de Condóminos.
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Elevador</th><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
+                        <tr><td><strong>Elevador 1</strong></td><td>Insertos de cabina (4)<br>Baterías 12V</td><td>4<br>2</td><td>$7,200.00<br>$2,160.00</td></tr>
+                        <tr><td><strong>Elevador 2</strong></td><td>Insertos de cabina (4)<br>Baterías 12V<br>Fuente alimentación<br>Tarjeta SEM 35Q<br>Sistema de frenado</td><td>4<br>2<br>1<br>1<br>1</td><td>$7,200.00<br>$2,160.00<br>$3,600.00<br>$19,800.00<br>$54,900.00</td></tr>
+                        <tr><td><strong>Elevador 3</strong></td><td>Insertos de cabina (4)<br>Cable avión</td><td>4<br>1</td><td>$7,200.00<br>$1,980.00</td></tr>
+                        <tr class="total"><td colspan="3"><strong>GRAN TOTAL</strong></td><td><strong>$106,200.00</strong></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Cámaras de videovigilancia en elevadores <span class="badge atencion">Pendiente</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Pendiente de instalar cámaras de videovigilancia al interior de los elevadores para mejorar la seguridad de los usuarios.</div>
+        </div>
+    </div>
+
+    <!-- ========== 3. PORTONES Y ACCESOS ========== -->
+    <div class="categoria"><span>3</span> Portones y Accesos</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Portón de salida vehicular <span class="badge hecho">Realizado</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc"><strong>COMPLETADO</strong> (10 de julio). Quedó funcionando correctamente tras cambio de motorreductor. Dar seguimiento en próximas semanas.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Informe técnico de CAPTI <span class="badge atencion">Pendiente</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Se solicitó a CAPTI un informe detallado explicando por qué no detectaron la falla del motor desde el principio y si el agua estancada era visible en sus revisiones.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Cotización de sensores de seguridad para portón <span class="badge">A mediano plazo</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Cotizar e instalar sensores para evitar cierre automático con vehículo en paso. Requiere preparación para Asamblea.</div>
+        </div>
+    </div>
+
+    <!-- ========== 4. SELLADO, FILTRACIONES Y HUMEDAD ========== -->
+    <div class="categoria"><span>4</span> Sellado, Filtraciones y Humedad</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Sellado de ventanas y terrazas <span class="badge atencion">Clima dependiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Cotizaciones recibidas:</strong>
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Proveedor</th><th>Concepto</th><th>Total</th></tr>
+                        <tr><td>Arq. Manuel Ochoa</td><td>Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²)</td><td><strong>$39,900.00</strong></td></tr>
+                        <tr><td>Antonio Guerrero García</td><td>Reparación concreto terrazas (22 pza) + Sellado ventanas (18 pza) + Pintura vinílica (125 m²)</td><td><strong>$44,800.00</strong></td></tr>
+                        <tr><td>ProAltura</td><td>Sellado de cancelería por exterior con sellador base poliuretano</td><td><strong>$29,000.00</strong> (IVA incl.)</td></tr>
+                    </table>
+                </div>
+                Pendiente de definir fecha con proveedor. Se requieren al menos 2 días consecutivos sin lluvia para la aplicación del sellador.
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Filtraciones en muros <span class="badge urgente">Queja activa</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Cotización AHTRAM por $33,240.00</strong> para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura. Pendiente de aprobación y programación.
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Diagnóstico de bomba de achique #2 <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Revisión programada para verificar funcionamiento y garantizar redundancia del sistema de bombeo.</div>
+        </div>
+    </div>
+
+    <!-- ========== 5. LIMPIEZA, CRISTALES Y JARDINERÍA ========== -->
+    <div class="categoria"><span>5</span> Limpieza, Cristales y Jardinería</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Lavado de cristales y louvers <span class="badge">Listo para ejecutar</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">
+                <strong>Cotización ProAltura por $30,160.00</strong> (IVA incl.): Lavado de vidrios por exterior ($18,000) + Lavado de louveres en cubos ($8,000) + IVA. Incluye equipos de alpinismo, líneas de vida y EPP. Pendiente de programación.
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Limpieza de cisternas y tinacos <span class="badge hecho">Realizado</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc"><strong>COMPLETADO</strong> (22-23 de junio) por Grupo Alvari. Se cuenta con reporte fotográfico y VoBo del Comité.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Reubicación de árbol (Tabachín) <span class="badge hecho">Realizado</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se replantó el árbol en una jardinera vacía del roof para evitar que las raíces dañen estructuras.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Limpieza de respiraderos <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se contactó a Pro Altura para cotizar limpieza de respiraderos.</div>
+        </div>
+    </div>
+
+    <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
+    <div class="categoria"><span>6</span> Finanzas y Administración</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Recuperación de cartera vencida <span class="badge fin">Financiero</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">Se anunció para la semana del 13 de julio con cartas de cobranza y acercamiento a los deudores. No se ha reportado avance.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Pago a Fabricio (Fase Dos) - 50% <span class="badge fin">Financiero</span></div>
+            <div class="desc">Se acordó pagar el 50% restante una vez que se resuelva la reconexión de interfonos.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Censo condominal <span class="badge atencion">Pendiente</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">Administración iba a realizar un censo condominal para actualizar el registro de propietarios y residentes. Pendiente de ejecución.</div>
+        </div>
+    </div>
+
+    <!-- ========== 7. EFICIENCIA ENERGÉTICA ========== -->
+    <div class="categoria"><span>7</span> ⚡ Eficiencia Energética</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Factor de potencia y banco de capacitores <span class="badge ahorro">Ahorro</span> <span class="badge fin">Financiero</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Problema detectado:</strong> El condominio paga una penalización mensual de <strong>$1,228.57</strong> por bajo factor de potencia (76.54%). La tarifa es GDBT con demanda contratada de 37 kW.
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Concepto</th><th>Monto</th></tr>
+                        <tr><td>Cargo actual por bajo factor de potencia</td><td>$1,228.57/mes</td></tr>
+                        <tr><td>Ahorro anual proyectado</td><td><strong>$17,100+</strong></td></tr>
+                        <tr><td>Inversión estimada (banco de capacitores + instalación)</td><td>$23,500 - $35,000</td></tr>
+                        <tr><td>Tiempo de recuperación (ROI)</td><td><strong>≈ 1.4 años</strong></td></tr>
+                        <tr><td>Ahorro acumulado en 5 años</td><td><strong>+$60,000</strong></td></tr>
+                    </table>
+                </div>
+                <strong>Acción requerida:</strong> Contactar a un ingeniero eléctrico especializado para realizar estudio de medición de potencia reactiva (kVAR), dimensionar y cotizar banco de capacitores automático de 25 kVAR para carga de 37 kW. Presentar propuesta en Asamblea para aprobación de inversión.
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Análisis y cotización de paneles solares <span class="badge fin">Financiero</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Petición antigua del condominio:</strong> Evaluar la viabilidad de instalar paneles solares para reducir el consumo de energía eléctrica de áreas comunes.
+                <div style="margin-top:6px;">
+                    <strong>Acción requerida:</strong>
+                    <ul style="padding-left:18px; list-style-type:disc;">
+                        <li>➡️ Una vez que se tenga información del <strong>cargo por factor de potencia</strong>, analizar el potencial ahorro energético.</li>
+                        <li>➡️ Solicitar cotizaciones a al menos 3 proveedores especializados.</li>
+                        <li>➡️ Evaluar el retorno de inversión (ROI) y presentar propuesta en Asamblea.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 8. REGLAMENTO Y NORMAS ========== -->
+    <div class="categoria"><span>8</span> Reglamento y Normas de Convivencia</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Actualización de normas de convivencia <span class="badge urgente">Urgente</span> <span class="badge admin">Administración</span> <span class="badge legal2">Legal</span></div>
+            <div class="desc">Es necesario plasmarlo en libro de actas registrado. El reglamento actual no permite sancionar eficazmente. Se debe crear una propuesta de actualización viable legalmente y dejarla asentada en el libro de actas ante PROSOC.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Revisión y VoBo jurídico de normas de convivencia (con multas y sanciones) <span class="badge legal2">Legal</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">
+                <strong>Indispensable:</strong> Una vez que se tenga la propuesta de normas de convivencia, debe ser revisada y validada por el área jurídica (abogado) para garantizar que las multas y sanciones sean legales, proporcionales y aplicables conforme a la ley.
+                <ul style="padding-left:18px; list-style-type:disc; margin-top:4px;">
+                    <li>➡️ Revisión de legalidad de las sanciones propuestas.</li>
+                    <li>➡️ Verificar que no contravengan el Reglamento Interno ni la Ley de Propiedad en Condominio.</li>
+                    <li>➡️ Obtener VoBo del abogado antes de someter a Asamblea.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Regularización de cargadores eléctricos <span class="badge atencion">Pendiente</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">Actualmente hay instalación de cargadores eléctricos sin regularizar. Se debe formalizar su uso mediante Asamblea de Condóminos y establecer reglas claras para su instalación y operación en áreas comunes.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Normas para bicicletas <span class="badge">Pendiente</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">El uso de bicicletas en áreas comunes debe regularse formalmente mediante Asamblea de Condóminos.</div>
+        </div>
+    </div>
+
+    <!-- ========== 9. PROTECCIÓN CIVIL ========== -->
+    <div class="categoria"><span>9</span> 🛡️ Protección Civil</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Programa Interno de Protección Civil <span class="badge proteccion">Protección Civil</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">El condominio carece de un Programa Interno de Protección Civil actualizado y registrado ante las autoridades. Es obligatorio contar con él para establecer protocolos de actuación ante emergencias (sismos, incendios, fugas de gas, etc.). Se debe elaborar y registrar ante la Coordinación de Protección Civil de la Alcaldía.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Seguro contra daños para el condominio <span class="badge proteccion">Protección Civil</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">El condominio no cuenta con una póliza de seguro contra daños que cubra la estructura del edificio, áreas comunes y responsabilidad civil. Es fundamental contar con un seguro que proteja al condominio ante siniestros como incendios, inundaciones, sismos o daños a terceros.</div>
+        </div>
+    </div>
+
+    <!-- ========== 10. SEGURIDAD ========== -->
+    <div class="categoria"><span>10</span> Seguridad</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Documentación de empresa de seguridad <span class="badge legal">Legal</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Como Comité de Vigilancia no hemos recibido la documentación de la empresa de seguridad: permiso vigente ante SSP, fianza, póliza de responsabilidad civil, contrato actualizado, REPSE y documentación administrativa básica.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Rotación de personal de seguridad <span class="badge atencion">En seguimiento</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Alta rotación de elementos. Pendiente de estabilización.</div>
+        </div>
+    </div>
+
+    <!-- ========== 11. OBRAS Y MANTENIMIENTO MAYOR ========== -->
+    <div class="categoria"><span>11</span> Obras y Mantenimiento Mayor</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Reparación de barandal del roof <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se constató la deficiente calidad. Definir qué hacer al respecto.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Propuesta de impermeabilización <span class="badge">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se identificó desgaste en la impermeabilización de la azotea. Se elaborará una propuesta económica para mantenimiento preventivo/correctivo.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Sistema de alarma sísmica <span class="badge hecho">Reparado</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc"><strong>REPARADO</strong> por Fabricio. El sistema ya funciona correctamente.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Cambio de piso de roof y filtración en departamento 414 <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se debe hacer recotización con nuevos proveedores.</div>
+        </div>
+    </div>
+
+    <!-- ========== 12. CUARTO DE BASURA ========== -->
+    <div class="categoria"><span>12</span> ♻️ Cuarto de Basura</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Corrección de señalización y colores en cuarto de basura <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Problema detectado:</strong> Los colores de las paredes no coinciden con la normativa de separación de residuos.
+                <ul style="padding-left:18px; list-style-type:disc; margin-top:6px;">
+                    <li>🔴 Pared <strong>anaranjada</strong> dice "RECICLABLES" pero debería ser <strong>NO RECICLABLES</strong> (residuos sanitarios).</li>
+                    <li>⬜ Pared <strong>gris</strong> dice "INORGÁNICOS" pero debería ser <strong>RECICLABLES</strong>.</li>
+                </ul>
+                <div style="margin-top:8px;">
+                    <strong>Solución propuesta:</strong>
+                    <ul style="padding-left:18px; list-style-type:disc;">
+                        <li>✅ <strong>Comprar botes anaranjados</strong> para residuos sanitarios (no reciclables).</li>
+                        <li>✅ <strong>Corregir la señalética:</strong> en la pared gris poner "INORGÁNICO RECICLABLE" y en la pared anaranjada poner "NO RECICLABLES".</li>
+                        <li>✅ <strong>Repintar</strong> las paredes o colocar placas con los textos correctos.</li>
+                        <li>✅ <strong>Adquirir los botes</strong> que correspondan a cada tipo de residuo (ejemplo de MLM-3335793682).</li>
+                    </ul>
+                </div>
+                <div style="margin-top:6px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
+                    📌 <strong>Enlace de referencia:</strong> <a href="https://articulo.mercadolibre.com.mx/MLM-3335793682" target="_blank" style="color:#2a7de1;">Botes para residuos sanitarios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 13. DENUNCIAS PROSOC ========== -->
+    <div class="categoria"><span>13</span> ⚖️ Denuncias PROSOC contra Administración Marco Berea</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Denuncia por $28,500 (pagos en efectivo sin depósito bancario) <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">Un condómino presenta cuotas pagadas por adelantado hasta julio de 2026 por $28,500, sin registro de ingreso a la cuenta bancaria del condominio. El anterior administrador, C. Marco Berea, entregó recibos y carta de no adeudo. Se debe interponer denuncia ante PROSOC por posible irregularidad en el manejo de recursos.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Denuncia por $2,500 (desvío de recursos) <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">Recursos depositados a la cuenta del condominio por una residente por filtración entre departamentos fueron transferidos a la cuenta personal del C. Marco Berea, simulando un reembolso a la residente afectada. La residente confirmó que NO recibió el reembolso. Se debe denunciar ante PROSOC.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Falsedad documental en entrega-recepción <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span></div>
+            <div class="desc">El C. Marco Berea entregó un documento que presentó como copia certificada del Régimen de Propiedad en Condominio, pero tras revisión minuciosa se constató que NO correspondía a copias certificadas. Se debe interponer recurso de revisión y actuar legalmente.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox urgente"></div>
+        <div class="detalle">
+            <div class="titulo">Caso de los lentes (departamento 402) <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span></div>
+            <div class="desc">Reclamación de $14,000 por lentes extraviados. Canalizado al área jurídica. La empresa de seguridad no acepta responsabilidad total. Se debe dar seguimiento legal.</div>
+        </div>
+    </div>
+
+    <!-- ========== 14. VARIOS ========== -->
+    <div class="categoria"><span>14</span> Varios</div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Usuario "Comité de Vigilancia" <span class="badge">Pendiente</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">Pendiente de que Francisco, presidente del Comité, se incorpore al Usuario.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Depuración de chats de WhatsApp <span class="badge admin">Administración</span> <span class="badge comun">Comunicación</span></div>
+            <div class="desc">
+                <strong>Objetivo:</strong> Constatar y estar completamente seguros de que quienes están en los chats sean inquilinos, residentes, propietarios y/o representantes, según corresponda en cada chat.
+                <ul style="padding-left:18px; list-style-type:disc; margin-top:4px;">
+                    <li>📱 <strong>Chat de vecinos (general):</strong> Verificar que todos los participantes sean residentes (propietarios, inquilinos o representantes).</li>
+                    <li>📱 <strong>Chat de propietarios:</strong> Confirmar que solo estén propietarios, cónyuges o representantes legales con poder.</li>
+                    <li>📋 <strong>Acción:</strong> Cruzar datos con el censo condominal y solicitar a los administradores que remuevan a quienes no acrediten su condición.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Colocación de decibelímetro en salón de usos múltiples <span class="badge">Pendiente</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Falta colocar el decibelímetro donado por Mariana RoHo en el salón de usos múltiples.</div>
+        </div>
+    </div>
+
+    <!-- LEYENDA RESPONSIVA -->
+    <div class="leyenda">
+        <div class="leyenda-item">
+            <span class="leyenda-cuadro"></span>
+            <span>Pendiente</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="leyenda-cuadro checked"></span>
+            <span>Completado</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="leyenda-cuadro urgente"></span>
+            <span>Urgente</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge admin">Administración</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge fin">Financiero</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge mant">Mantenimiento</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge oper">Operativo</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge legal2">Legal</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge comun">Comunicación</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <span class="fecha">📅 17 de julio 2026</span>
+        <div class="stats">
+            <span id="pendientes-count">⏳ Pendientes: 0</span>
+            <span id="completados-count">✅ Completados: 0</span>
+        </div>
+        <button class="btn-pdf" onclick="guardarPDF()">📄 Guardar como PDF</button>
+    </div>
+</div>
+
+<script>
+    function toggleCheck(item) {
+        const checkbox = item.querySelector('.checkbox');
+        checkbox.classList.toggle('checked');
+        actualizarContadores();
+    }
+
+    function actualizarContadores() {
+        const items = document.querySelectorAll('.item');
+        let completados = 0;
+        items.forEach(item => {
+            const chk = item.querySelector('.checkbox');
+            if (chk.classList.contains('checked')) completados++;
+        });
+        document.getElementById('pendientes-count').textContent = `⏳ Pendientes: ${items.length - completados}`;
+        document.getElementById('completados-count').textContent = `✅ Completados: ${completados}`;
+    }
+
+    function guardarPDF() {
+        window.print();
+    }
+
+    actualizarContadores();
+</script>
+</body>
+</html>
