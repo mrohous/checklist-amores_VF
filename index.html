@@ -23,12 +23,38 @@
             padding: 35px 30px;
             box-shadow: 0 12px 40px rgba(0,0,0,0.07);
         }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
         h1 {
             font-size: 28px;
             color: #1a2b4a;
             border-left: 6px solid #2a7de1;
             padding-left: 18px;
-            margin-bottom: 6px;
+            margin: 0;
+        }
+        .fecha-top {
+            background: #eef3fa;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #1f3d6b;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .autor {
+            font-size: 14px;
+            color: #5e6f8d;
+            padding-left: 24px;
+            margin-top: 0px;
+            margin-bottom: 12px;
+            font-style: italic;
+            line-height: 1.4;
         }
         .subhead {
             color: #5e6f8d;
@@ -40,14 +66,6 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-        }
-        .autor {
-            font-size: 13px;
-            color: #5e6f8d;
-            padding-left: 24px;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            font-style: italic;
         }
         .categoria {
             background: #eef4fe;
@@ -306,11 +324,14 @@
             .stats span { font-size: 12px; padding: 3px 10px; }
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
+            .autor { font-size: 13px; padding-left: 12px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
             h1 { font-size: 20px; padding-left: 12px; }
-            .autor { font-size: 11px; padding-left: 12px; }
+            .header { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .fecha-top { font-size: 12px; padding: 2px 12px; }
+            .autor { font-size: 12px; padding-left: 12px; margin-bottom: 8px; }
             .categoria { font-size: 15px; padding: 10px 14px; }
             .item { padding: 6px 2px; gap: 8px; }
             .checkbox { width: 20px; height: 20px; min-width: 20px; font-size: 14px; }
@@ -331,9 +352,9 @@
 </head>
 <body>
 <div class="container" id="checklist">
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <div class="header">
         <h1>📋 Checklist COVI · Amores 219</h1>
-        <span style="background:#eef3fa; padding:4px 16px; border-radius:30px; font-size:14px; color:#1f3d6b; font-weight:600;">Al día: 17 de julio 2026</span>
+        <span class="fecha-top">Al día: 17 de julio 2026</span>
     </div>
     <div class="autor">✍️ Elaborado por el vocal Miguel Romero Rohous (Mariana Romero, su representante legal)</div>
     <div class="subhead">
