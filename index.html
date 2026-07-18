@@ -60,13 +60,46 @@
             color: #5e6f8d;
             font-size: 15px;
             padding-left: 24px;
-            margin-bottom: 28px;
+            margin-bottom: 16px;
             border-bottom: 1px solid #e9edf4;
             padding-bottom: 14px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
+        /* ========== ÍNDICE ========== */
+        .indice {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            background: #f8faff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #e9edf4;
+            font-size: 13px;
+        }
+        .indice a {
+            color: #1a3a7a;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: background 0.1s;
+            white-space: nowrap;
+        }
+        .indice a:hover {
+            background: #eef4fe;
+            text-decoration: underline;
+        }
+        .indice .sep {
+            color: #c0c8d8;
+        }
+        @media (max-width: 600px) {
+            .indice { font-size: 12px; padding: 8px 12px; gap: 4px 8px; }
+            .indice a { white-space: normal; }
+        }
+        /* ========== FIN ÍNDICE ========== */
         .categoria {
             background: #eef4fe;
             border-radius: 12px;
@@ -77,9 +110,16 @@
             color: #1a3a7a;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            scroll-margin-top: 20px;
+        }
+        .categoria .cat-left {
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
-        .categoria span {
+        .categoria .cat-left span {
             background: #2a7de1;
             color: white;
             border-radius: 50%;
@@ -89,6 +129,24 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
+        }
+        .categoria .btn-indice {
+            background: #eef3fa;
+            color: #1a3a7a;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #dce4f0;
+            transition: 0.15s;
+            white-space: nowrap;
+        }
+        .categoria .btn-indice:hover {
+            background: #dce4f0;
+        }
+        @media (max-width: 600px) {
+            .categoria .btn-indice { font-size: 11px; padding: 3px 10px; }
         }
         .item {
             display: flex;
@@ -180,6 +238,22 @@
         .badge.oper { background: #bbdefb; color: #0d47a1; }
         .badge.legal2 { background: #ffcdd2; color: #b71c1c; }
         .badge.comun { background: #b2dfdb; color: #004d40; }
+        .btn-top {
+            display: inline-block;
+            background: #eef3fa;
+            color: #1a3a7a;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: 1px solid #dce4f0;
+            margin-top: 12px;
+        }
+        .btn-top:hover {
+            background: #dce4f0;
+        }
         .footer {
             margin-top: 30px;
             padding-top: 16px;
@@ -302,10 +376,17 @@
             font-size: 11px;
             padding: 1px 10px;
         }
+        .footer-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
         @media print {
             body { background: white; padding: 8px; }
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
             .btn-pdf { display: none; }
+            .btn-top { display: none; }
+            .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
         }
@@ -356,13 +437,35 @@
         <h1>📋 Checklist COVI · Amores 219</h1>
         <span class="fecha-top">Al día: 17 de julio 2026</span>
     </div>
-    <div class="autor">✍️ Elaborado por el vocal Miguel Romero Rohous (Mariana Romero, su representante legal)</div>
+    <div class="autor">✍️ Elaborado por vocal Miguel Romero Rohous/Mariana Romero (representante legal)</div>
     <div class="subhead">
         <span>Pendientes y avances</span>
     </div>
 
+    <!-- ========== ÍNDICE ========== -->
+    <div class="indice">
+        <a href="#sec1">1. Documentación</a><span class="sep">·</span>
+        <a href="#sec2">2. Elevadores</a><span class="sep">·</span>
+        <a href="#sec3">3. Portones</a><span class="sep">·</span>
+        <a href="#sec4">4. Filtraciones y humedad</a><span class="sep">·</span>
+        <a href="#sec5">5. Limpieza</a><span class="sep">·</span>
+        <a href="#sec6">6. Finanzas y Adm.</a><span class="sep">·</span>
+        <a href="#sec7">7. Energética</a><span class="sep">·</span>
+        <a href="#sec8">8. Reglamento</a><span class="sep">·</span>
+        <a href="#sec9">9. Protección Civil</a><span class="sep">·</span>
+        <a href="#sec10">10. Seguridad</a><span class="sep">·</span>
+        <a href="#sec11">11. Obras</a><span class="sep">·</span>
+        <a href="#sec12">12. Basura</a><span class="sep">·</span>
+        <a href="#sec13">13. Denuncias</a><span class="sep">·</span>
+        <a href="#sec14">14. Otros</a>
+    </div>
+    <!-- ========== FIN ÍNDICE ========== -->
+
     <!-- ========== 1. DOCUMENTACIÓN Y FORMALIDADES ========== -->
-    <div class="categoria"><span>1</span> Documentación y Formalidades Legales</div>
+    <div class="categoria" id="sec1">
+        <div class="cat-left"><span>1</span> Documentación y Formalidades Legales</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -419,7 +522,10 @@
     </div>
 
     <!-- ========== 2. ELEVADORES ========== -->
-    <div class="categoria"><span>2</span> ⚠️ Elevadores (Suma Importancia)</div>
+    <div class="categoria" id="sec2">
+        <div class="cat-left"><span>2</span> ⚠️ Elevadores (Suma Importancia)</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
@@ -457,7 +563,10 @@
     </div>
 
     <!-- ========== 3. PORTONES Y ACCESOS ========== -->
-    <div class="categoria"><span>3</span> Portones y Accesos</div>
+    <div class="categoria" id="sec3">
+        <div class="cat-left"><span>3</span> Portones y Accesos</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox completado checked"></div>
@@ -484,7 +593,10 @@
     </div>
 
     <!-- ========== 4. SELLADO, FILTRACIONES Y HUMEDAD ========== -->
-    <div class="categoria"><span>4</span> Sellado, Filtraciones y Humedad</div>
+    <div class="categoria" id="sec4">
+        <div class="cat-left"><span>4</span> Filtraciones y humedad</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -524,7 +636,10 @@
     </div>
 
     <!-- ========== 5. LIMPIEZA, CRISTALES Y JARDINERÍA ========== -->
-    <div class="categoria"><span>5</span> Limpieza, Cristales y Jardinería</div>
+    <div class="categoria" id="sec5">
+        <div class="cat-left"><span>5</span> Limpieza, Cristales y Jardinería</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -553,7 +668,10 @@
     </div>
 
     <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
-    <div class="categoria"><span>6</span> Finanzas y Administración</div>
+    <div class="categoria" id="sec6">
+        <div class="cat-left"><span>6</span> Finanzas y Adm.</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -580,7 +698,10 @@
     </div>
 
     <!-- ========== 7. EFICIENCIA ENERGÉTICA ========== -->
-    <div class="categoria"><span>7</span> ⚡ Eficiencia Energética</div>
+    <div class="categoria" id="sec7">
+        <div class="cat-left"><span>7</span> ⚡ Eficiencia Energética</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -622,7 +743,10 @@
     </div>
 
     <!-- ========== 8. REGLAMENTO Y NORMAS ========== -->
-    <div class="categoria"><span>8</span> Reglamento y Normas de Convivencia</div>
+    <div class="categoria" id="sec8">
+        <div class="cat-left"><span>8</span> Reglamento y Normas de Convivencia</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
@@ -664,7 +788,10 @@
     </div>
 
     <!-- ========== 9. PROTECCIÓN CIVIL ========== -->
-    <div class="categoria"><span>9</span> 🛡️ Protección Civil</div>
+    <div class="categoria" id="sec9">
+        <div class="cat-left"><span>9</span> 🛡️ Protección Civil</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
@@ -683,7 +810,10 @@
     </div>
 
     <!-- ========== 10. SEGURIDAD ========== -->
-    <div class="categoria"><span>10</span> Seguridad</div>
+    <div class="categoria" id="sec10">
+        <div class="cat-left"><span>10</span> Seguridad</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -702,7 +832,10 @@
     </div>
 
     <!-- ========== 11. OBRAS Y MANTENIMIENTO MAYOR ========== -->
-    <div class="categoria"><span>11</span> Obras y Mantenimiento Mayor</div>
+    <div class="categoria" id="sec11">
+        <div class="cat-left"><span>11</span> Obras y Mantenimiento Mayor</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -737,7 +870,10 @@
     </div>
 
     <!-- ========== 12. CUARTO DE BASURA ========== -->
-    <div class="categoria"><span>12</span> ♻️ Cuarto de Basura</div>
+    <div class="categoria" id="sec12">
+        <div class="cat-left"><span>12</span> ♻️ Cuarto de Basura</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -765,7 +901,10 @@
     </div>
 
     <!-- ========== 13. DENUNCIAS PROSOC ========== -->
-    <div class="categoria"><span>13</span> ⚖️ Denuncias PROSOC contra Administración Marco Berea</div>
+    <div class="categoria" id="sec13">
+        <div class="cat-left"><span>13</span> ⚖️ Denuncias PROSOC contra Administración Marco Berea</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
@@ -800,7 +939,10 @@
     </div>
 
     <!-- ========== 14. OTROS ========== -->
-    <div class="categoria"><span>14</span> Otros</div>
+    <div class="categoria" id="sec14">
+        <div class="cat-left"><span>14</span> Otros</div>
+        <a href="#checklist" class="btn-indice">↑ Índice</a>
+    </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -879,6 +1021,11 @@
             <div class="titulo">Colocación de decibelímetro en salón de usos múltiples <span class="badge">Pendiente</span></div>
             <div class="desc">Falta colocar el decibelímetro donado en el salón de usos múltiples. Y corregir por la NOM correcta del cartel que debe ser Norma Ambiental <strong>NADF-005-AMBT-2013</strong>.</div>
         </div>
+    </div>
+
+    <!-- Botón regresar al inicio -->
+    <div class="footer-center">
+        <a href="#checklist" class="btn-top">⬆ Regresar al inicio</a>
     </div>
 
     <!-- LEYENDA -->
