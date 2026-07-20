@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checklist COVI - Amores 219</title>
+    <!-- ====== FAVICON ====== -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="manifest" href="assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ====== FIN FAVICON ====== -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -67,37 +86,39 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
+        /* ========== ÍNDICE CON BOTONES ========== */
         .indice {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px 12px;
-            background: #f8faff;
-            padding: 12px 16px;
-            border-radius: 12px;
+            gap: 8px;
             margin-bottom: 20px;
-            border: 1px solid #e9edf4;
-            font-size: 13px;
         }
         .indice a {
+            display: inline-block;
+            background: #eef4fe;
             color: #1a3a7a;
             text-decoration: none;
-            font-weight: 500;
-            padding: 2px 6px;
-            border-radius: 4px;
-            transition: background 0.1s;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            border: 1px solid #dce4f0;
+            transition: all 0.15s ease;
             white-space: nowrap;
         }
         .indice a:hover {
-            background: #eef4fe;
-            text-decoration: underline;
+            background: #2a7de1;
+            color: white;
+            border-color: #2a7de1;
+            transform: scale(1.02);
         }
-        .indice .sep {
-            color: #c0c8d8;
+        .indice a:active {
+            transform: scale(0.95);
         }
         @media (max-width: 600px) {
-            .indice { font-size: 12px; padding: 8px 12px; gap: 4px 8px; }
-            .indice a { white-space: normal; }
+            .indice a { font-size: 12px; padding: 4px 10px; white-space: normal; }
         }
+        /* ========== FIN ÍNDICE ========== */
         .categoria {
             background: #eef4fe;
             border-radius: 12px;
@@ -440,22 +461,22 @@
         <span>Pendientes y avances</span>
     </div>
 
-    <!-- ========== ÍNDICE ========== -->
+    <!-- ========== ÍNDICE CON BOTONES ========== -->
     <div class="indice">
-        <a href="#sec1">1. Documentación</a><span class="sep">·</span>
-        <a href="#sec2">2. Elevadores</a><span class="sep">·</span>
-        <a href="#sec3">3. Portones</a><span class="sep">·</span>
-        <a href="#sec4">4. Filtraciones y humedad</a><span class="sep">·</span>
-        <a href="#sec5">5. Limpieza</a><span class="sep">·</span>
-        <a href="#sec6">6. Finanzas y Adm.</a><span class="sep">·</span>
-        <a href="#sec7">7. Energética</a><span class="sep">·</span>
-        <a href="#sec8">8. Normas</a><span class="sep">·</span>
-        <a href="#sec9">9. Protección Civil</a><span class="sep">·</span>
-        <a href="#sec10">10. Seguridad</a><span class="sep">·</span>
-        <a href="#sec11">11. Obras</a><span class="sep">·</span>
-        <a href="#sec12">12. Basura</a><span class="sep">·</span>
-        <a href="#sec13">13. Denuncias</a><span class="sep">·</span>
-        <a href="#sec14">14. Otros</a><span class="sep">·</span>
+        <a href="#sec1">1. Documentación</a>
+        <a href="#sec2">2. Elevadores</a>
+        <a href="#sec3">3. Portones</a>
+        <a href="#sec4">4. Filtraciones y humedad</a>
+        <a href="#sec5">5. Limpieza</a>
+        <a href="#sec6">6. Finanzas y Adm.</a>
+        <a href="#sec7">7. Energética</a>
+        <a href="#sec8">8. Normas</a>
+        <a href="#sec9">9. Protección Civil</a>
+        <a href="#sec10">10. Seguridad</a>
+        <a href="#sec11">11. Obras</a>
+        <a href="#sec12">12. Basura</a>
+        <a href="#sec13">13. Denuncias</a>
+        <a href="#sec14">14. Otros</a>
         <a href="#sec15">15. Nuevos a considerar</a>
     </div>
     <!-- ========== FIN ÍNDICE ========== -->
@@ -892,14 +913,12 @@
                         <li>✅ <strong>Corregir la señalética:</strong> en la pared gris poner "INORGÁNICO RECICLABLE" y en la pared anaranjada poner "NO RECICLABLES".</li>
                     </ul>
                 </div>
-
-                <!-- ====== IMAGEN DE REFERENCIA ====== -->
+                <!-- IMAGEN DE REFERENCIA -->
                 <div style="margin-top:10px; background:#f8faff; padding:12px; border-radius:8px; border:1px solid #e9edf4;">
-                    <img src="img/Cuartobasura.jpg" alt="Señalización correcta para separación de residuos" style="max-width:100%; border-radius:6px; display:block;">
+                    <img src="img/cuarto_basura.jpg" alt="Señalización correcta para separación de residuos" style="max-width:100%; border-radius:6px; display:block;">
                     <p style="font-size:12px; color:#5a6e8a; margin-top:4px;">Ejemplo de señalética correcta según NADF-024-AMBT-2013</p>
                 </div>
-                <!-- ====== FIN IMAGEN ====== -->
-
+                <!-- FIN IMAGEN -->
                 <div style="margin-top:6px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
                     📌 <strong>Enlace de referencia:</strong> <a href="https://articulo.mercadolibre.com.mx/MLM-3235507624?attributes=COLOR_SECONDARY_COLOR:TmFyYW5qYQ==&matt_tool=17030900&ua=qvdL-M-LHa_Vvio2CvLOr40B-k6STZ8AigBNKTuqs_P4XVw#origin=share&sid=share&action=copy" target="_blank" style="color:#2a7de1;">Viniles para forrar botes</a>
                 </div>
@@ -963,7 +982,7 @@
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Entrega de llaves <span class="badge atencion">Pendiente</span> <span class="badge comun">Comité de Vigilancia</span></div>
-            <div class="desc">Un exmiembro del Comité de Vigilancia mencionó que tiene copias de todas las llaves del condominio. Se le debe solicitar formalmente que las entregue al actual Presidente del Comité, y verificar si entre ellas se encuentra la llave de las puertas de acceso principal.</div>
+            <div class="desc">Una exmiembro del Comité de Vigilancia mencionó que tiene copias de todas las llaves del condominio. Se le debe solicitar formalmente que las entregue al actual Presidente del Comité, y verificar si entre ellas se encuentra la llave de las puertas de acceso principal.</div>
         </div>
     </div>
 
