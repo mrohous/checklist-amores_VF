@@ -273,6 +273,24 @@
         .btn-top:hover {
             background: #dce4f0;
         }
+        .btn-descarga {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .btn-descarga:hover {
+            background: #1a5fb0;
+            transform: scale(0.98);
+        }
         .footer {
             margin-top: 30px;
             padding-top: 16px;
@@ -405,6 +423,7 @@
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
             .btn-pdf { display: none; }
             .btn-top { display: none; }
+            .btn-descarga { display: none; }
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
@@ -424,6 +443,7 @@
             .stats span { font-size: 12px; padding: 3px 10px; }
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
+            .btn-descarga { font-size: 12px; padding: 4px 14px; }
             .autor { font-size: 13px; padding-left: 12px; }
         }
         @media (max-width: 480px) {
@@ -444,6 +464,7 @@
             .stats span { font-size: 11px; padding: 2px 8px; }
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
+            .btn-descarga { font-size: 11px; padding: 4px 12px; }
             .resumen-cotizacion { padding: 8px; font-size: 12px; }
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
@@ -926,6 +947,19 @@
         </div>
     </div>
 
+    <!-- NUEVO ÍTEM: Cartel de separación de residuos -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Agregar cartel sobre separación de residuos <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                Agregar cartel sobre la correcta forma de la separación de residuos en la pared blanca del espacio y compartir la información para dar a conocer y reiterar a los residentes.
+                <br><br>
+                <button class="btn-descarga" onclick="descargarPDF()">📥 Descargar cartel (PDF)</button>
+            </div>
+        </div>
+    </div>
+
     <!-- ========== 13. DENUNCIAS PROSOC ========== -->
     <div class="categoria" id="sec13">
         <div class="cat-left"><span>13</span> ⚖️ Denuncias PROSOC contra Administración Marco Berea</div>
@@ -982,7 +1016,7 @@
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Entrega de llaves <span class="badge atencion">Pendiente</span> <span class="badge comun">Comité de Vigilancia</span></div>
-            <div class="desc">Una exmiembro del Comité de Vigilancia mencionó que tiene copias de todas las llaves del condominio. Se le debe solicitar formalmente que las entregue al actual Presidente del Comité, y verificar si entre ellas se encuentra la llave de las puertas de acceso principal.</div>
+            <div class="desc">Un exmiembro del Comité de Vigilancia mencionó que tiene copias de todas las llaves del condominio. Se le debe solicitar formalmente que las entregue al actual Presidente del Comité, y verificar si entre ellas se encuentra la llave de las puertas de acceso principal.</div>
         </div>
     </div>
 
@@ -1059,7 +1093,7 @@
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Actualizar sistema de interphones <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">El día viernes 17 de julio, después de que un residente hiciera una llamada inapropiada al nuevo vigilante, se descubrió que el sistema actual NO REGISTRA DE QUÉ DEPARTAMENTO LLAMA CUANDO RECIBEN LLAMADA EN CASETA. Es necesario actualizar el sistema para que identifique el origen de las llamadas.</div>
+            <div class="desc">El día viernes 17 de julio, después de que un residente hiciera una llamada inapropiada al nuevo vigilante, se constató que el sistema actual NO REGISTRA DE QUÉ DEPARTAMENTO LLAMA CUANDO RECIBEN LLAMADA EN CASETA. Es necesario actualizar el sistema para que identifique el origen de las llamadas.</div>
         </div>
     </div>
 
@@ -1135,7 +1169,15 @@
         window.print();
     }
 
-    actualizarContadores();
+    function descargarPDF() {
+        // Crear un enlace temporal para descargar la imagen
+        const link = document.createElement('a');
+        link.href = 'img/separacióndebasura.jpg';
+        link.download = 'separacion_de_basura.jpg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 </script>
 </body>
 </html>
