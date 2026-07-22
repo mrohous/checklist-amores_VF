@@ -86,7 +86,6 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        /* ========== ÍNDICE CON BOTONES ========== */
         .indice {
             display: flex;
             flex-wrap: wrap;
@@ -118,7 +117,6 @@
         @media (max-width: 600px) {
             .indice a { font-size: 12px; padding: 4px 10px; white-space: normal; }
         }
-        /* ========== FIN ÍNDICE ========== */
         .categoria {
             background: #eef4fe;
             border-radius: 12px;
@@ -844,6 +842,7 @@
         <a href="#checklist" class="btn-indice">↑ Índice</a>
     </div>
 
+    <!-- Ítem existente: Programa Interno de Protección Civil -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
@@ -852,11 +851,34 @@
         </div>
     </div>
 
+    <!-- Ítem existente: Seguro contra daños -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
             <div class="titulo">Seguro contra daños para el condominio <span class="badge proteccion">Protección Civil</span> <span class="badge fin">Financiero</span></div>
             <div class="desc">El condominio no cuenta con una póliza de seguro contra daños que cubra la estructura del edificio, áreas comunes y responsabilidad civil. Es fundamental contar con un seguro que proteja al condominio ante siniestros como incendios, inundaciones, sismos o daños a terceros.</div>
+        </div>
+    </div>
+
+    <!-- NUEVO ÍTEM: Insumos de Protección Civil -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Adquirir insumos básicos de Protección Civil <span class="badge proteccion">Protección Civil</span> <span class="badge admin">Administración</span></div>
+            <div class="desc">
+                <strong>Insumos necesarios:</strong>
+                <ul style="padding-left:18px; list-style-type:disc; margin-top:4px;">
+                    <li>Cintas para acordonar (delinear áreas de riesgo o siniestro).</li>
+                    <li>Botiquín de primeros auxilios con lo básico: gasas, vendas, alcohol, agua oxigenada, tijeras, guantes de látex.</li>
+                    <li>Señalética básica de protección civil: velocidad máxima para área de estacionamiento.</li>
+                </ul>
+                <div style="margin-top:8px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
+                    📌 <strong>Enlace de referencia (cintas para acordonar):</strong> <a href="https://www.mercadolibre.com.mx/up/MLMU3397964149?matt_tool=17030900&pdp_filters=item_id:MLM4032603594&ua=WPNyxv_8mR3VkKYFFPvt8Tlkfrpa7q7P8q31LBAu14h4G3A#origin=share&sid=share&wid=MLM4032603594&action=copy" target="_blank" style="color:#2a7de1;">Cintas para acordonar</a>
+                </div>
+                <div style="margin-top:6px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
+                    📌 <strong>Enlace de referencia (señal de velocidad máxima):</strong> <a href="https://articulo.mercadolibre.com.mx/MLM-3796565598?matt_tool=17030900&ua=KIklrWTmAmivlKF0n_uRAWgA70Md5WH6s8FxJ83pDxdUJbY#origin=share&sid=share&action=copy" target="_blank" style="color:#2a7de1;">Señal de velocidad máxima</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -900,7 +922,16 @@
         <div class="checkbox completado checked"></div>
         <div class="detalle">
             <div class="titulo">✅ Sistema de alarma sísmica <span class="badge hecho">Reparado</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc"><strong>REPARADO</strong> por Fabricio. El sistema ya funciona correctamente.</div>
+            <div class="desc"><strong>REPARADO</strong> por Fabricio. El sistema ya funciona correctamente al día 17 de julio.</div>
+        </div>
+    </div>
+
+    <!-- Nuevo punto CONCLUIDO -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Mantenimiento preventivo a sistema de seguridad <span class="badge hecho">Concluido</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Mantenimiento preventivo a sistema de seguridad, peinado de cables, correcta ubicación de los sistemas de la caseta (aunque falta reconección de interphones) y respaldo de información.</div>
         </div>
     </div>
 
@@ -994,7 +1025,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
-            <div class="titulo">Caso de los lentes (departamento 402) <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span></div>
+            <div class="titulo">Caso de los lentes <span class="badge denuncia">Denuncia</span> <span class="badge legal2">Legal</span></div>
             <div class="desc">Reclamación de $14,000 por lentes extraviados. Canalizado al área jurídica. La empresa de seguridad no acepta responsabilidad total. Se debe dar seguimiento legal.</div>
         </div>
     </div>
@@ -1094,7 +1125,7 @@
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Actualizar sistema de interphones <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">El día viernes 17 de julio, después de que un residente hiciera una llamada inapropiada al nuevo vigilante, se descubrió que el sistema actual NO REGISTRA DE QUÉ DEPARTAMENTO LLAMA CUANDO RECIBEN LLAMADA EN CASETA. Es necesario actualizar el sistema para que identifique el origen de las llamadas.</div>
+            <div class="desc">El día viernes 17 de julio, después de que un residente hiciera una llamada inapropiada al nuevo vigilante, se descubrió que el sistema actual NO PERMITE IDENTIFICAR DE QUÉ DEPARTAMENTO SE ORIGINA LA LLAMADA CUANDO RECIBEN UN LLAMADO EN CASETA. Es necesario actualizar el sistema para que identifique el origen de las llamadas.</div>
         </div>
     </div>
 
