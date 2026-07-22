@@ -255,6 +255,7 @@
         .badge.oper { background: #bbdefb; color: #0d47a1; }
         .badge.legal2 { background: #ffcdd2; color: #b71c1c; }
         .badge.comun { background: #b2dfdb; color: #004d40; }
+        .badge.asamblea { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; font-weight: 700; }
         .btn-top {
             display: inline-block;
             background: #eef3fa;
@@ -301,6 +302,24 @@
         }
         .sugerencia strong {
             color: #1a2b4a;
+        }
+        .nota-legal {
+            background: #fffde7;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 16px 0 4px 0;
+            border: 1px solid #ffecb3;
+            font-size: 14px;
+            color: #5a4a1a;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .nota-legal strong {
+            color: #1a2b4a;
+        }
+        .nota-legal .pin {
+            font-size: 18px;
+            margin-right: 6px;
         }
         .footer {
             margin-top: 30px;
@@ -457,6 +476,7 @@
             .btn-descarga { font-size: 12px; padding: 4px 14px; }
             .autor { font-size: 13px; padding-left: 12px; }
             .sugerencia { font-size: 13px; padding: 12px 14px; }
+            .nota-legal { font-size: 13px; padding: 12px 14px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -481,6 +501,7 @@
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
             .sugerencia { font-size: 12px; padding: 10px 12px; }
+            .nota-legal { font-size: 12px; padding: 10px 12px; }
         }
     </style>
 </head>
@@ -585,6 +606,24 @@
         </div>
     </div>
 
+    <!-- NUEVO ÍTEM 1: Fondo de Reserva -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Definir el monto y porcentaje del Fondo de Reserva <span class="badge asamblea">Asamblea</span></div>
+            <div class="desc">Definir el monto y porcentaje del Fondo de Reserva en Asamblea General (con fundamento en el Art. 55, Fracc. II de la LPCDF).</div>
+        </div>
+    </div>
+
+    <!-- NUEVO ÍTEM 2: Facultad del COVI para gastos urgentes -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Facultad del COVI para gastos urgentes <span class="badge asamblea">Asamblea</span></div>
+            <div class="desc">Establecer en Asamblea que el Comité de Vigilancia puede aprobar gastos urgentes hasta $20,000 sin necesidad de Asamblea.</div>
+        </div>
+    </div>
+
     <!-- ========== 2. ELEVADORES ========== -->
     <div class="categoria" id="sec2">
         <div class="cat-left"><span>2</span> ⚠️ Elevadores (Suma Importancia)</div>
@@ -602,7 +641,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
-            <div class="titulo">Reparación mayor de elevadores <span class="badge urgente">Urgente · Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
+            <div class="titulo">Reparación mayor de elevadores <span class="badge urgente">Urgente · Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. Requiere aprobación en Asamblea de Condóminos.
                 <div class="resumen-cotizacion">
@@ -665,7 +704,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Sellado de ventanas y terrazas <span class="badge atencion">Clima dependiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="titulo">Sellado de ventanas y terrazas <span class="badge atencion">Clima dependiente</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotizaciones recibidas:</strong>
                 <div class="resumen-cotizacion">
@@ -684,7 +723,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
-            <div class="titulo">Filtraciones en muros <span class="badge urgente">Queja activa</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span></div>
+            <div class="titulo">Filtraciones en muros <span class="badge urgente">Queja activa</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotización AHTRAM por $33,240.00</strong> para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura. Pendiente de aprobación y programación.
             </div>
@@ -697,6 +736,11 @@
             <div class="titulo">Diagnóstico de bomba de achique #2 <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">Revisión programada para verificar funcionamiento y garantizar redundancia del sistema de bombeo.</div>
         </div>
+    </div>
+
+    <!-- ====== NOTA LEGAL SECCIÓN 4 ====== -->
+    <div class="nota-legal">
+        <span class="pin">📌</span> <strong>Nota:</strong> Para aprobar gastos mayores es necesaria la convocatoria a Asamblea General de Condóminos, por considerarse un gasto extraordinario y de reparación mayor que no forma parte de los gastos corrientes de administración. (Art. 55, Fracc. III de la LPCDF).
     </div>
 
     <!-- ========== 5. LIMPIEZA, CRISTALES Y JARDINERÍA ========== -->
@@ -963,6 +1007,11 @@
         </div>
     </div>
 
+    <!-- ====== NOTA LEGAL SECCIÓN 11 ====== -->
+    <div class="nota-legal">
+        <span class="pin">📌</span> <strong>Nota:</strong> Para aprobar gastos mayores es necesaria la convocatoria a Asamblea General de Condóminos, por considerarse un gasto extraordinario y de reparación mayor que no forma parte de los gastos corrientes de administración. (Art. 55, Fracc. III de la LPCDF).
+    </div>
+
     <!-- ========== 12. CUARTO DE BASURA ========== -->
     <div class="categoria" id="sec12">
         <div class="cat-left"><span>12</span> ♻️ Cuarto de Basura</div>
@@ -1185,6 +1234,9 @@
         </div>
         <div class="leyenda-item">
             <span class="badge comun">Comunicación</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge asamblea">Asamblea</span>
         </div>
     </div>
 
