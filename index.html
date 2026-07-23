@@ -761,7 +761,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Lavado de cristales y louvers (respiraderos) <span class="badge">Listo para ejecutar</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="titulo">Lavado de cristales y louvers (respiraderos) <span class="badge">Listo para ejecutar</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotización ProAltura por $30,160.00</strong> (IVA incl.): Lavado de vidrios por exterior ($18,000) + Lavado de louveres en cubos ($8,000) + IVA ($4,160) = $30,160.00. Incluye equipos de alpinismo, líneas de vida y EPP. Pendiente de programación.
             </div>
@@ -1272,7 +1272,6 @@
         let completados = 0;
         items.forEach(item => {
             const chk = item.querySelector('.checkbox');
-            // Contamos como completado si tiene la clase "checked"
             if (chk.classList.contains('checked')) {
                 completados++;
             }
@@ -1286,7 +1285,6 @@
     }
 
     function descargarPDF() {
-        // Crear un enlace temporal para descargar la imagen
         const link = document.createElement('a');
         link.href = 'img/separacióndebasura.jpg';
         link.download = 'separacion_de_basura.jpg';
@@ -1295,7 +1293,6 @@
         document.body.removeChild(link);
     }
 
-    // Inicializar contadores al cargar la página
     document.addEventListener('DOMContentLoaded', function() {
         actualizarContadores();
     });
