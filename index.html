@@ -624,6 +624,15 @@
         </div>
     </div>
 
+    <!-- NUEVO ÍTEM 3: Formalizar caja chica -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Formalizar caja chica <span class="badge asamblea">Asamblea</span></div>
+            <div class="desc">Formalizar caja chica en Asamblea.</div>
+        </div>
+    </div>
+
     <!-- ========== 2. ELEVADORES ========== -->
     <div class="categoria" id="sec2">
         <div class="cat-left"><span>2</span> ⚠️ Elevadores (Suma Importancia)</div>
@@ -1245,7 +1254,7 @@
         <span class="fecha">📅 17 de julio 2026</span>
         <div class="stats">
             <span id="pendientes-count">⏳ Pendientes: 0</span>
-            <span id="completados-count">✅ Completados: 7</span>
+            <span id="completados-count">✅ Completados: 0</span>
         </div>
         <button class="btn-pdf" onclick="guardarPDF()">📄 Guardar como PDF</button>
     </div>
@@ -1263,7 +1272,10 @@
         let completados = 0;
         items.forEach(item => {
             const chk = item.querySelector('.checkbox');
-            if (chk.classList.contains('checked')) completados++;
+            // Contamos como completado si tiene la clase "checked"
+            if (chk.classList.contains('checked')) {
+                completados++;
+            }
         });
         document.getElementById('pendientes-count').textContent = `⏳ Pendientes: ${items.length - completados}`;
         document.getElementById('completados-count').textContent = `✅ Completados: ${completados}`;
@@ -1282,6 +1294,11 @@
         link.click();
         document.body.removeChild(link);
     }
+
+    // Inicializar contadores al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        actualizarContadores();
+    });
 </script>
 </body>
 </html>
