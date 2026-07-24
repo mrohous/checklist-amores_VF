@@ -256,6 +256,26 @@
         .badge.legal2 { background: #ffcdd2; color: #b71c1c; }
         .badge.comun { background: #b2dfdb; color: #004d40; }
         .badge.asamblea { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; font-weight: 700; }
+        .pregunta {
+            background: #f8faff;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 8px 0 4px 0;
+            border-left: 4px solid #2a7de1;
+            font-size: 14px;
+            color: #1a3a7a;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .pregunta strong {
+            color: #1a2b4a;
+        }
+        .pregunta .icono {
+            font-size: 18px;
+            margin-top: 2px;
+        }
         .btn-top {
             display: inline-block;
             background: #eef3fa;
@@ -477,6 +497,7 @@
             .autor { font-size: 13px; padding-left: 12px; }
             .sugerencia { font-size: 13px; padding: 12px 14px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
+            .pregunta { font-size: 13px; padding: 12px 14px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -502,6 +523,7 @@
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
             .sugerencia { font-size: 12px; padding: 10px 12px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
+            .pregunta { font-size: 12px; padding: 10px 12px; }
         }
     </style>
 </head>
@@ -784,6 +806,12 @@
         </div>
     </div>
 
+    <!-- PREGUNTA SOBRE EL ÁRBOL -->
+    <div class="pregunta">
+        <span class="icono">❓</span>
+        <div><strong>Pregunta a Administración:</strong> ¿Cuál es la situación del árbol? ¿Se adaptó a la reubicación?</div>
+    </div>
+
     <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
     <div class="categoria" id="sec6">
         <div class="cat-left"><span>6</span> Finanzas y Adm.</div>
@@ -967,6 +995,18 @@
             <div class="titulo">Rotación de personal de seguridad <span class="badge atencion">En seguimiento</span> <span class="badge oper">Operativo</span></div>
             <div class="desc">Alta rotación de elementos. Pendiente de estabilización.</div>
         </div>
+    </div>
+
+    <!-- PREGUNTA 1: IDENTIFICACIÓN DE EMPLEADOS -->
+    <div class="pregunta">
+        <span class="icono">❓</span>
+        <div><strong>Pregunta a Administración:</strong> Cuando ingresa un empleado contratado por un residente para un departamento en particular, ¿vigilancia le pide identificación y guarda un respaldo de su ingreso (como una foto en el celular o en el sistema de vigilancia)?</div>
+    </div>
+
+    <!-- PREGUNTA 2: LLAVE DE PASO DE GAS / AZOTEA -->
+    <div class="pregunta">
+        <span class="icono">❓</span>
+        <div><strong>Pregunta a Administración:</strong> En el chat de vigilancia vi que alguien cerró una llave de paso de gas de un depa y dijeron que la Administración anterior la mantenía cerrada, pero que por quejas de los vecinos se decidió dejarla abierta porque muchos suben a la azotea, sobre todo después de sismos. ¿Me pueden confirmar cuál es la instrucción actual para la puerta de la azotea?</div>
     </div>
 
     <!-- ========== 11. OBRAS Y MANTENIMIENTO MAYOR ========== -->
