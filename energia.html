@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banco de capacitores + Paneles Solares en el condominio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background: #f4f7fc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08);
+            padding: 2.5rem 2rem;
+        }
+
+        /* ENCABEZADO PRINCIPAL */
+        .header-principal {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid #d97706;
+        }
+
+        .header-principal h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0b2b4a;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-principal .subtitulo {
+            font-size: 1.2rem;
+            color: #2c3e66;
+            font-weight: 400;
+            border-left: 4px solid #d97706;
+            padding-left: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .header-principal .subtitulo strong {
+            color: #b91c1c;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #0f3b5e;
+            margin-top: 2.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e4a76;
+            margin: 1.8rem 0 0.6rem 0;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e66;
+            margin: 1.2rem 0 0.4rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .caja-alerta {
+            background: #fef2e8;
+            border-left: 6px solid #d97706;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .caja-peligro {
+            background: #fde8e8;
+            border-left: 6px solid #b91c1c;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .caja-exito {
+            background: #e6f5e9;
+            border-left: 6px solid #1f7a3b;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .caja-info {
+            background: #e8f0fe;
+            border-left: 6px solid #2563eb;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background: #1e3a5f;
+            color: white;
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid #dde3ed;
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+
+        .numerico {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        .highlight-rojo {
+            background: #ffe0e0;
+            font-weight: 700;
+            color: #b91c1c;
+        }
+
+        .highlight-verde {
+            background: #dff0d8;
+            font-weight: 700;
+            color: #1f6a3a;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f6;
+        }
+
+        .card .icono {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h4 {
+            margin-top: 0;
+        }
+
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-rojo {
+            background: #b91c1c;
+        }
+
+        .badge-verde {
+            background: #1f7a3b;
+        }
+
+        .badge-amarillo {
+            background: #d97706;
+        }
+
+        .recibo-sim {
+            background: #fafbfd;
+            border: 1px solid #d0d8e4;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .recibo-sim .rojo {
+            background: #fcc;
+            font-weight: 700;
+            color: #a00;
+        }
+
+        .recibo-sim .amarillo {
+            background: #fef08a;
+            font-weight: 600;
+        }
+
+        .footer-nota {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dde3ed;
+            font-size: 0.9rem;
+            color: #4b5a6f;
+            text-align: center;
+        }
+
+        .referencias {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .referencias h3 {
+            margin-top: 0;
+            color: #0f3b5e;
+        }
+
+        .referencias li {
+            font-size: 0.92rem;
+            margin-bottom: 0.6rem;
+            color: #334155;
+        }
+
+        .referencias a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .referencias a:hover {
+            text-decoration: underline;
+        }
+
+        .fuente-tabla {
+            font-size: 0.8rem;
+            color: #4b5a6f;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .header-principal h1 {
+                font-size: 1.8rem;
+            }
+            .header-principal .subtitulo {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 6px 6px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.5cm;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 1cm;
+            }
+            .card {
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ==================== ENCABEZADO CON NUEVO TÍTULO ==================== -->
+        <div class="header-principal">
+            <h1>Banco de capacitores + Paneles Solares en el condominio: ¡ahorremos hasta $44,000 al año!</h1>
+            <div class="subtitulo">
+                Factor de Potencia en el condominio: el cargo oculto que hemos pagado sin saber. <strong>¡Casi $15,000 al año por nada!</strong>
+            </div>
+        </div>
+
+        <!-- ==================== SECCIÓN 1: QUÉ ES EL FACTOR DE POTENCIA ==================== -->
+        <h2>🔍 ¿Qué es el factor de potencia y por qué importa?</h2>
+
+        <p>
+            El <strong>factor de potencia (FP)</strong> es un indicador de eficiencia eléctrica. Mide qué tan bien aprovechas la energía que pagas.
+            Se expresa como un número entre 0 y 1 (o en porcentaje).
+        </p>
+
+        <div class="grid-2">
+            <div class="card">
+                <span class="icono">✅</span>
+                <h4>Factor de potencia alto (≥ 0.90)</h4>
+                <p>La energía que pagas se convierte casi toda en trabajo útil. <strong>No hay penalización</strong>.</p>
+            </div>
+            <div class="card" style="border-color: #b91c1c;">
+                <span class="icono">⚠️</span>
+                <h4>Factor de potencia bajo (< 0.90)</h4>
+                <p>Una parte importante de la energía se "pierde" (calor, campos magnéticos). <strong>CFE penaliza</strong> esta ineficiencia.</p>
+            </div>
+        </div>
+
+        <div class="caja-info">
+            <strong>📌 Regla CFE:</strong> Para tarifas de gran demanda (GDBT, GDMTH), el factor de potencia mínimo permitido es <strong>0.90 (90%)</strong>.
+            Por debajo de ese umbral, se aplica un <strong>cargo adicional</strong> en el recibo.
+        </div>
+
+        <!-- ==================== SECCIÓN 2: CAUSAS EN CONDOMINIOS ==================== -->
+        <h2>🏢 ¿Por qué ocurre en condominios y no en departamentos?</h2>
+
+        <div class="grid-2">
+            <div class="card">
+                <span class="icono">🏢</span>
+                <h4>Áreas comunes</h4>
+                <ul>
+                    <li><strong>Elevadores</strong> (motores de inducción)</li>
+                    <li><strong>Bombas de agua</strong> y sistemas hidroneumáticos</li>
+                    <li>Motores de ventilación / extractores</li>
+                </ul>
+                <p>Estas cargas <strong>inductivas</strong> consumen potencia reactiva (kVAr), lo que baja el factor de potencia.</p>
+            </div>
+            <div class="card">
+                <span class="icono">🏠</span>
+                <h4>Departamento particular</h4>
+                <ul>
+                    <li>Luces LED, TV, refrigerador, microondas</li>
+                    <li>Electrónica de consumo</li>
+                    <li>Cargas mayormente <strong>resistentes</strong></li>
+                </ul>
+                <p>El factor de potencia suele ser > 0.95, por lo que <strong>no hay penalización</strong>.</p>
+            </div>
+        </div>
+
+        <div class="caja-alerta">
+            <strong>💡 Ejemplo real (condominio con 52 departamentos y 3 elevadores):</strong><br>
+            Factor de potencia medido: <strong>76.54%</strong> → penalización mensual de <strong>$1,228.57</strong>.
+        </div>
+
+        <!-- ==================== SECCIÓN 3: DÓNDE ESTÁ EN EL RECIBO ==================== -->
+        <h2>🔎 ¿Dónde está escondido en el recibo de CFE?</h2>
+
+        <p>
+            La penalización <strong>no dice "multa" ni viene en rojo</strong>. Está enterrada entre muchos conceptos.
+            Así se ve en un recibo real (tarifa GDBT):
+        </p>
+
+        <div class="recibo-sim">
+            ════════════════════════════════════════════════════════<br>
+            CFE COMISIÓN FEDERAL DE ELECTRICIDAD · Tarifa: GDBT<br>
+            Servicio: 971221110922 · Periodo: 18 MAR 26 – 17 ABR 26<br>
+            ════════════════════════════════════════════════════════<br>
+            <span class="amarillo">Factor de potencia → 76.54  (¡debajo del mínimo!)</span><br>
+            ────────────────────────────────────────────────────────<br>
+            <strong>DESGLOSE DE CARGOS:</strong><br>
+            Suministro ........................................ $540.49<br>
+            Distribución ...................................... $2,188.44<br>
+            Transmisión ....................................... $541.56<br>
+            <span class="rojo">➡️ <strong>Cargo Factor de Potencia</strong> .............. $1,228.57  ← PENALIZACIÓN</span><br>
+            CENACE ............................................. $22.85<br>
+            Energía ............................................ $5,469.73<br>
+            Capacidad .......................................... $2,806.47<br>
+            SCnMEM ............................................. $20.75<br>
+            ────────────────────────────────────────────────────────<br>
+            Subtotal: $12,818.86  ·  IVA 16%: $2,051.02<br>
+            <strong>TOTAL A PAGAR: $14,869.88</strong><br>
+            ════════════════════════════════════════════════════════
+        </div>
+
+        <div class="caja-peligro">
+            <strong>📌 ¿Por qué es fácil no verlo?</strong>
+            <ul>
+                <li>El nombre <em>"Cargo Factor de Potencia"</em> suena a un impuesto técnico normal.</li>
+                <li>Está mezclado con otros 10 conceptos (Suministro, Distribución, Transmisión…).</li>
+                <li>El valor numérico (76.54) aparece suelto, sin una etiqueta clara.</li>
+                <li>La mayoría solo revisa el <strong>TOTAL A PAGAR</strong>.</li>
+                <li>En recibos domésticos (Tarifa 01) <strong>no existe</strong> este cargo, así que nadie está entrenado para buscarlo.</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECCIÓN 4: SOLUCIÓN TÉCNICA ==================== -->
+        <h2>⚙️ Solución técnica: Banco de capacitores</h2>
+
+        <p>
+            La solución es instalar un <strong>banco de capacitores automático</strong> en el tablero principal de áreas comunes.
+            Este dispositivo compensa la potencia reactiva (kVAr) que consumen los motores, elevando el factor de potencia por encima de 0.90.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <span class="icono">💰</span>
+                <h4>Costo estimado</h4>
+                <p><strong>$25,000 – $35,000 MXN</strong> (una sola vez, incluye instalación).</p>
+            </div>
+            <div class="card" style="border-color: #1f7a3b;">
+                <span class="icono">📈</span>
+                <h4>Ahorro mensual</h4>
+                <p><strong>$1,228 MXN</strong> (elimina la penalización).</p>
+                <p><strong>Ahorro anual:</strong> $14,700+ MXN.</p>
+            </div>
+            <div class="card" style="border-color: #1f7a3b;">
+                <span class="icono">⏱️</span>
+                <h4>Retorno de inversión</h4>
+                <p><strong>Menos de 2 años</strong>.<br>Vida útil del equipo: 10+ años.</p>
+            </div>
+        </div>
+
+        <div class="caja-exito">
+            <strong>✅ Beneficios adicionales:</strong>
+            <ul>
+                <li>Mayor vida útil de motores (elevadores, bombas).</li>
+                <li>Menor calentamiento en cables y tableros.</li>
+                <li>Estabilidad de tensión en el sistema eléctrico.</li>
+                <li>Si se instalan paneles solares, el banco de capacitores evita que la penalización aumente.</li>
+            </ul>
+        </div>
+
+        <!-- ==================== SECCIÓN 5: IMPACTO ECONÓMICO ==================== -->
+        <h2>📊 Impacto económico: antes y después</h2>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Antes (FP 76.5%)</th>
+                        <th>Después (FP ≥ 95%)</th>
+                        <th>Ahorro mensual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cargo por bajo FP</strong></td>
+                        <td class="numerico highlight-rojo">$1,228.57</td>
+                        <td class="numerico highlight-verde">$0.00</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">$1,228.57</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subtotal (energía + otros)</strong></td>
+                        <td class="numerico">$12,818.86</td>
+                        <td class="numerico">≈ $11,590.00</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">≈ $1,228.86</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IVA 16%</strong></td>
+                        <td class="numerico">$2,051.02</td>
+                        <td class="numerico">≈ $1,854.40</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">≈ $196.62</td>
+                    </tr>
+                    <tr style="background:#f0f7fc; font-weight:700;">
+                        <td><strong>TOTAL MENSUAL</strong></td>
+                        <td class="numerico" style="color:#b91c1c;">$14,869.88</td>
+                        <td class="numerico" style="color:#1f7a3b;">≈ $13,444.40</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">≈ $1,425.48</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="caja-exito">
+            <strong>📈 AHORRO ANUAL PROYECTADO (solo por eliminar penalización):</strong> <span style="font-size:1.6rem; font-weight:800;">$17,100+</span> MXN
+        </div>
+
+        <!-- ==================== SECCIÓN 5.1: AHORRO COMBINADO CON PANELES SOLARES ==================== -->
+        <h2>☀️ Ahorro combinado: penalización + paneles solares</h2>
+
+        <p>
+            Si el condominio ya tiene o planea instalar paneles solares, el ahorro total es aún mayor.
+            La siguiente tabla desglosa cómo se calcula el ahorro combinado estimado de <strong>$30,000 – $44,000 anuales</strong>.
+        </p>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Fuente / Método de cálculo</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Penalización mensual actual</strong></td>
+                        <td>Recibo CFE real – renglón "Cargo Factor de Potencia"</td>
+                        <td class="numerico">$1,228.57</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penalización anual eliminada</strong></td>
+                        <td>$1,228.57 × 12 meses</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">$14,742.84</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consumo anual de áreas comunes</strong></td>
+                        <td>Recibo: 3,007 kWh en 30 días × 12 meses</td>
+                        <td class="numerico">≈ 36,000 kWh/año</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precio promedio de energía</strong></td>
+                        <td>Recibo: $5,469.73 / 3,007 kWh</td>
+                        <td class="numerico">$1.82 / kWh</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ahorro por paneles solares (40% del consumo)</strong></td>
+                        <td>36,000 × 0.40 × $1.82</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">≈ $26,208 / año</td>
+                    </tr>
+                    <tr style="background:#e6f5e9; font-weight:700;">
+                        <td><strong>AHORRO COMBINADO ANUAL</strong></td>
+                        <td>Penalización eliminada + ahorro por paneles</td>
+                        <td class="numerico" style="color:#1f7a3b; font-size:1.1rem;">
+                            ≈ $30,000 – $44,000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="fuente-tabla">
+                📌 El ahorro por paneles solares es una estimación conservadora. El valor real depende del tamaño del sistema, radiación solar en CDMX y precio de la energía.
+            </div>
+        </div>
+
+        <div class="caja-exito">
+            <strong>✅ Solución integral:</strong>
+            <p>La estrategia correcta es <strong>complementaria</strong>:</p>
+            <ol>
+                <li><strong>Banco de capacitores</strong> → elimina la multa de raíz (inversión recuperable en < 2 años).</li>
+                <li><strong>Paneles solares</strong> → reducen el consumo de energía activa (ahorro adicional en kWh).</li>
+            </ol>
+            <p><strong>Ahorro combinado estimado:</strong> más de <strong>$30,000 – $44,000 anuales</strong> (eliminación de penalización + reducción de consumo).</p>
+        </div>
+
+        <!-- ==================== SECCIÓN 6: PANELES SOLARES Y FACTOR DE POTENCIA ==================== -->
+        <h2>☀️ Paneles solares: ¿ayudan o empeoran el problema?</h2>
+
+        <div class="caja-peligro" style="border-left-color: #d97706;">
+            <span class="badge badge-amarillo" style="background:#d97706;">RESPUESTA DIRECTA</span>
+            <p style="margin-top:0.8rem; font-size:1.1rem;">
+                <strong>NO, los paneles solares por sí mismos NO corrigen el bajo factor de potencia.</strong>
+                Incluso, si se instalan sin compensación reactiva, <strong>pueden empeorar la penalización</strong>.
+            </p>
+            <p style="font-size:0.95rem; margin-top:0.5rem; background:#fef2e8; padding:0.5rem 1rem; border-radius:8px;">
+                📚 <strong>Base técnica:</strong> Este fenómeno está documentado en la literatura especializada. Un estudio de 2024 publicado en <em>IEEE Access</em> explica que los inversores fotovoltaicos que operan con factor de potencia unitario compensan la demanda de potencia activa, pero <strong>pueden disminuir el factor de potencia en el punto de interconexión con la red, lo que conduce a penalizaciones financieras</strong> impuestas por las empresas distribuidoras .
+            </p>
+        </div>
+
+        <h3>⚡ ¿Qué hace cada tecnología?</h3>
+
+        <div class="grid-2">
+            <div class="card">
+                <span class="icono">☀️</span>
+                <h4>Paneles solares (inversor)</h4>
+                <p>Generan <strong>potencia activa (kW)</strong> – energía útil para luces, elevadores, bombas. Reducen lo que compras a CFE.</p>
+                <p style="color:#b91c1c;"><strong>Pero NO generan potencia reactiva (kVAr)</strong>, que es lo que necesitan los motores.</p>
+            </div>
+            <div class="card">
+                <span class="icono">🔧</span>
+                <h4>Banco de capacitores</h4>
+                <p>Compensa la <strong>potencia reactiva (kVAr)</strong> que consumen los motores.</p>
+                <p style="color:#1f7a3b;"><strong>Corrige el factor de potencia</strong> y elimina la penalización de CFE.</p>
+            </div>
+        </div>
+
+        <h3>📉 El efecto invisible: ¿por qué los paneles pueden empeorar la penalización?</h3>
+
+        <p>
+            El factor de potencia es la relación entre la energía activa (kW) y la reactiva (kVAr) que tomas de CFE.
+            Cuando instalas paneles, <strong>reduces la energía activa que tomas de CFE</strong>, pero la energía reactiva que consumen los motores
+            <strong>sigue siendo la misma</strong> (o incluso aumenta ligeramente). Esto hace que la proporción empeore.
+        </p>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Escenario</th>
+                        <th>Energía activa (kW) desde CFE</th>
+                        <th>Energía reactiva (kVAr) desde CFE</th>
+                        <th>Factor de potencia</th>
+                        <th>Penalización mensual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sin paneles</strong></td>
+                        <td class="numerico">100% (referencia)</td>
+                        <td class="numerico">65 kVAr</td>
+                        <td class="numerico" style="color:#b91c1c;">0.84 (bajo)</td>
+                        <td class="numerico" style="color:#b91c1c;">$1,228</td>
+                    </tr>
+                    <tr style="background:#fef2e8;">
+                        <td><strong>Solo paneles (sin banco)</strong></td>
+                        <td class="numerico">⬇️ Se reduce</td>
+                        <td class="numerico">⬇️⚡ Sigue igual o aumenta %</td>
+                        <td class="numerico" style="color:#b91c1c; font-weight:700;">0.70 – 0.75 <br>(AÚN MÁS BAJO)</td>
+                        <td class="numerico" style="color:#b91c1c; font-weight:700;">⬆️ Puede subir a $1,600+</td>
+                    </tr>
+                    <tr style="background:#dff0d8;">
+                        <td><strong>Paneles + Banco de capacitores</strong></td>
+                        <td class="numerico">Reducida (ahorro)</td>
+                        <td class="numerico">Compensada</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">0.95 – 0.98 ✅</td>
+                        <td class="numerico" style="color:#1f7a3b; font-weight:700;">$0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ==================== SECCIÓN 7: MITOS Y REALIDADES ==================== -->
+        <h2>🧠 Mitos y realidades sobre el factor de potencia</h2>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr><th>Mito común</th><th>Realidad técnica</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>“Con paneles solares ya no importa el factor de potencia porque consumimos menos de CFE.”</td>
+                        <td><strong>Falso.</strong> La penalización se calcula sobre la energía que <strong>sigues tomando de CFE</strong>. Si solo pones paneles, la multa puede subir en proporción.</td>
+                    </tr>
+                    <tr>
+                        <td>“Los inversores solares modernos ya corrigen el factor de potencia automáticamente.”</td>
+                        <td><strong>Solo si se configuran expresamente</strong> y con controladores de energía reactiva. No es automático. Además, requieren capacidad sobrante.</td>
+                    </tr>
+                    <tr>
+                        <td>“El banco de capacitores es caro e innecesario si tenemos paneles.”</td>
+                        <td><strong>Falso.</strong> Es la solución más rentable para eliminar la multa. Inversión recuperable en menos de 2 años, independiente de los paneles.</td>
+                    </tr>
+                    <tr>
+                        <td>“El factor de potencia bajo solo afecta el recibo, no los equipos.”</td>
+                        <td><strong>Falso.</strong> Bajo factor de potencia sobrecalienta motores, reduce su vida útil y puede provocar fallas en tableros eléctricos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ==================== SECCIÓN 8: PREGUNTAS FRECUENTES ==================== -->
+        <h2>❓ Preguntas frecuentes</h2>
+
+        <div style="background:#f9fafb; border-radius:18px; padding:1.2rem 1.8rem; margin:1.5rem 0;">
+            <h4>1. ¿Estamos obligados a pagar este cargo?</h4>
+            <p>Sí, mientras el factor de potencia esté por debajo de 0.90. Pero <strong>se puede eliminar</strong> con la inversión técnica adecuada.</p>
+
+            <h4>2. ¿Afecta a los departamentos?</h4>
+            <p>No. La corrección se instala en el tablero general de <strong>áreas comunes</strong> (después del medidor de CFE). No interfiere con la calidad de energía hacia los departamentos.</p>
+
+            <h4>3. ¿Se necesita permiso de CFE?</h4>
+            <p>No se requiere autorización previa para el banco de capacitores, siempre que sea instalado por un electricista certificado. Se recomienda avisar a CFE para que actualicen su registro.</p>
+
+            <h4>4. ¿Cuánto dura el equipo y requiere mantenimiento?</h4>
+            <p>Duran más de 10 años; el mantenimiento es mínimo (revisión anual).</p>
+
+            <h4>5. ¿Qué pasa si no hacemos nada?</h4>
+            <p>Continuar pagando la penalización mes tras mes. En 5 años, el monto desperdiciado puede superar los <strong>$73,000</strong>.</p>
+
+            <h4>6. ¿Los paneles solares pueden generar la potencia reactiva que necesita el edificio?</h4>
+            <p>Algunos inversores solares avanzados pueden inyectar o absorber potencia reactiva, pero solo si no están generando al 100%. Para un condominio, la solución más confiable y económica es el <strong>banco de capacitores dedicado</strong>.</p>
+        </div>
+
+        <!-- ==================== SECCIÓN 9: CASO REAL ==================== -->
+        <h2>📋 Caso real: condominio con 52 departamentos y 3 elevadores</h2>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr><th>Dato</th><th>Valor</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Tarifa CFE</td><td><strong>GDBT</strong> (Gran Demanda Baja Tensión)</td></tr>
+                    <tr><td>Demanda contratada</td><td><strong>37 kW</strong></td></tr>
+                    <tr><td>Factor de potencia actual</td><td><strong>76.54%</strong> (mínimo exigido: 90%)</td></tr>
+                    <tr><td>Penalización mensual</td><td><strong>$1,228.57</strong></td></tr>
+                    <tr><td>Penalización anual</td><td><strong>$14,742.84</strong></td></tr>
+                    <tr><td>Total del recibo (periodo 30 días)</td><td><strong>$14,869.88</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="caja-exito">
+            <strong>💡 Conclusión del caso:</strong> Con una inversión de <strong>$25,000 – $30,000</strong> en un banco de capacitores, el condominio elimina la penalización de $1,228 mensuales y recupera la inversión en <strong>menos de 2 años</strong>.
+        </div>
+
+        <!-- ==================== REFERENCIAS ==================== -->
+        <div class="referencias">
+            <h3>📚 Referencias técnicas</h3>
+            <ol>
+                <li>
+                    Dullius, D. J., Borges, V. G., Vargas, R., Gusk, C., Tonkoski, R., Melo, J. D., & Kasmaei, M. P. (2024).
+                    <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
+                    IEEE Access, 12, 169102-169123.
+                    <a href="https://ieeexplore.ieee.org/document/10746468" target="_blank">https://ieeexplore.ieee.org/document/10746468</a>
+                    <br>
+                    <span style="font-size:0.85rem; color:#4b5a6f;">
+                        “While grid-following PV inverters offset active power demand, they can decrease the power factor at the point of interconnection with the grid, subsequently leading to financial penalties imposed by distribution utilities.”
+                    </span>
+                </li>
+                <li>
+                    Dullius, D. J., Borges, V. G., Vargas, R., Gusk, C., Tonkoski, R., Melo, J. D., & Kasmaei, M. P. (2024).
+                    <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
+                    IEEE Access, 12, 169102-169123.
+                    <a href="https://aaltodoc.aalto.fi/items/1c72dcae-f010-4f55-b79e-d638c5b40879/full" target="_blank">https://aaltodoc.aalto.fi/items/1c72dcae-f010-4f55-b79e-d638c5b40879/full</a>
+                    <br>
+                    <span style="font-size:0.85rem; color:#4b5a6f;">
+                        “When a PV system is introduced, and the PV inverter operates at the unity power factor, it results in no contribution to reactive power. However, the inverter does contribute to active power, thereby reducing the active power consumption from the grid. The meter, installed at the grid connection point, calculates the power factor based on the reduced active power value, while the reactive power remains unchanged. Consequently, this leads to a reduction in the power factor at the PCC.”
+                    </span>
+                </li>
+                <li>
+                    Dullius, D. J., et al. (2024).
+                    <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
+                    Directory of Open Access Journals (DOAJ).
+                    <a href="https://doaj.org/article/11df0a6020864d5b87025e13ba1693ad" target="_blank">https://doaj.org/article/11df0a6020864d5b87025e13ba1693ad</a>
+                </li>
+            </ol>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#4b5a6f;">
+                Estos estudios académicos confirman que la integración de sistemas fotovoltaicos puede degradar el factor de potencia en el punto de conexión a la red, lo que puede resultar en penalizaciones económicas por parte de las empresas distribuidoras.
+            </p>
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <div class="footer-nota">
+            <p>
+                Esta guía ha sido elaborada con información técnica de la Comisión Federal de Electricidad (CFE) y principios de ingeniería eléctrica.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
