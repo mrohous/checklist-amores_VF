@@ -105,6 +105,17 @@
             transition: all 0.15s ease;
             white-space: nowrap;
         }
+        /* Botones del índice con rojo tenue */
+        .indice a.rojo-tenue {
+            background: #fde8e8;
+            border-color: #f5c2c2;
+            color: #a13d3d;
+        }
+        .indice a.rojo-tenue:hover {
+            background: #d32f2f;
+            color: white;
+            border-color: #d32f2f;
+        }
         .indice a:hover {
             background: #2a7de1;
             color: white;
@@ -205,13 +216,14 @@
             background: #d32f2f;
             border-color: #d32f2f;
         }
+        /* Completado con rojo vivo */
         .checkbox.completado {
-            border-color: #2e7d32;
-            background: #e8f5e9;
+            border-color: #d32f2f;
+            background: #ffebee;
         }
         .checkbox.completado.checked {
-            background: #2e7d32;
-            border-color: #2e7d32;
+            background: #d32f2f;
+            border-color: #d32f2f;
         }
         .detalle { flex: 1; }
         .titulo {
@@ -242,7 +254,7 @@
         }
         .badge.urgente { background: #ffe9e6; color: #b3402c; }
         .badge.atencion { background: #fff2db; color: #a86f1f; }
-        .badge.hecho { background: #e8f5e9; color: #2e7d32; }
+        .badge.hecho { background: #ffcdd2; color: #b71c1c; }
         .badge.legal { background: #e8eaf6; color: #283593; }
         .badge.finanzas { background: #e0f7fa; color: #00695c; }
         .badge.pendiente { background: #f5f5f5; color: #616161; }
@@ -567,6 +579,14 @@
             background: #d32f2f;
             border-color: #d32f2f;
         }
+        .leyenda-cuadro.completado {
+            border-color: #d32f2f;
+            background: #ffebee;
+        }
+        .leyenda-cuadro.completado.checked {
+            background: #d32f2f;
+            border-color: #d32f2f;
+        }
         .leyenda .badge {
             font-size: 11px;
             padding: 1px 10px;
@@ -657,16 +677,16 @@
     <!-- ========== ÍNDICE CON BOTONES ========== -->
     <div class="indice">
         <a href="#sec1">1. Documentación</a>
-        <a href="#sec2">2. Elevadores</a>
+        <a href="#sec2" class="rojo-tenue">2. Elevadores</a>
         <a href="#sec3">3. Portones</a>
-        <a href="#sec4">4. Filtraciones y humedad</a>
+        <a href="#sec4" class="rojo-tenue">4. Filtraciones y humedad</a>
         <a href="#sec5">5. Limpieza</a>
         <a href="#sec6">6. Finanzas y Adm.</a>
         <a href="#sec7">7. Energética</a>
         <a href="#sec8">8. Normas</a>
         <a href="#sec9">9. Protección Civil</a>
         <a href="#sec10">10. Seguridad</a>
-        <a href="#sec11">11. Obras</a>
+        <a href="#sec11" class="rojo-tenue">11. Obras</a>
         <a href="#sec12">12. Basura</a>
         <a href="#sec13">13. Denuncias</a>
         <a href="#sec14">14. Otros</a>
@@ -753,11 +773,11 @@
         </div>
     </div>
 
-    <!-- NUEVO ÍTEM 2: Facultad del COVI para gastos urgentes -->
+    <!-- NUEVO ÍTEM 2: Facultad del COVI para gastos urgentes (texto actualizado) -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Facultad del COVI para gastos urgentes <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">Facultad del COVI para gastos urgentes, imprevistos u otros <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">Establecer en Asamblea que el Comité de Vigilancia puede aprobar gastos urgentes hasta $20,000 sin necesidad de Asamblea.</div>
         </div>
     </div>
@@ -1460,7 +1480,7 @@
             <span>Pendiente</span>
         </div>
         <div class="leyenda-item">
-            <span class="leyenda-cuadro checked"></span>
+            <span class="leyenda-cuadro completado checked"></span>
             <span>Completado</span>
         </div>
         <div class="leyenda-item">
