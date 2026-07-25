@@ -301,13 +301,24 @@
             color: #334155;
         }
 
+        /* 🔧 SOLUCIÓN PARA ENLACES LARGOS - RESPONSIVIDAD */
         .referencias a {
             color: #2563eb;
             text-decoration: none;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            display: inline-block;
+            max-width: 100%;
         }
 
         .referencias a:hover {
             text-decoration: underline;
+        }
+
+        /* 🔧 SOLUCIÓN ADICIONAL PARA TEXTOS LARGOS */
+        .referencias li {
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .fuente-tabla {
@@ -344,6 +355,12 @@
             th,
             td {
                 padding: 6px 6px;
+            }
+            .referencias li {
+                font-size: 0.8rem;
+            }
+            .referencias a {
+                font-size: 0.8rem;
             }
         }
 
@@ -634,7 +651,7 @@
                 Incluso, si se instalan sin compensación reactiva, <strong>pueden empeorar la penalización</strong>.
             </p>
             <p style="font-size:0.95rem; margin-top:0.5rem; background:#fef2e8; padding:0.5rem 1rem; border-radius:8px;">
-                📚 <strong>Base técnica:</strong> Este fenómeno está documentado en la literatura especializada. Un estudio de 2024 publicado en <em>IEEE Access</em> explica que los inversores fotovoltaicos que operan con factor de potencia unitario compensan la demanda de potencia activa, pero <strong>pueden disminuir el factor de potencia en el punto de interconexión con la red, lo que conduce a penalizaciones financieras</strong> impuestas por las empresas distribuidoras .
+                📚 <strong>Base técnica:</strong> Este fenómeno está documentado en la literatura especializada. Un estudio de 2024 publicado en <em>IEEE Access</em> explica que los inversores fotovoltaicos que operan con factor de potencia unitario compensan la demanda de potencia activa, pero <strong>pueden disminuir el factor de potencia en el punto de interconexión con la red, lo que conduce a penalizaciones financieras</strong> impuestas por las empresas distribuidoras.
             </p>
         </div>
 
@@ -783,6 +800,7 @@
                     Dullius, D. J., Borges, V. G., Vargas, R., Gusk, C., Tonkoski, R., Melo, J. D., & Kasmaei, M. P. (2024).
                     <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
                     IEEE Access, 12, 169102-169123.
+                    <br>
                     <a href="https://ieeexplore.ieee.org/document/10746468" target="_blank">https://ieeexplore.ieee.org/document/10746468</a>
                     <br>
                     <span style="font-size:0.85rem; color:#4b5a6f;">
@@ -793,6 +811,7 @@
                     Dullius, D. J., Borges, V. G., Vargas, R., Gusk, C., Tonkoski, R., Melo, J. D., & Kasmaei, M. P. (2024).
                     <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
                     IEEE Access, 12, 169102-169123.
+                    <br>
                     <a href="https://aaltodoc.aalto.fi/items/1c72dcae-f010-4f55-b79e-d638c5b40879/full" target="_blank">https://aaltodoc.aalto.fi/items/1c72dcae-f010-4f55-b79e-d638c5b40879/full</a>
                     <br>
                     <span style="font-size:0.85rem; color:#4b5a6f;">
@@ -803,6 +822,7 @@
                     Dullius, D. J., et al. (2024).
                     <em>Analysis of Financial Penalties for Low Power Factor in Distribution Systems With High Penetration of Photovoltaics</em>.
                     Directory of Open Access Journals (DOAJ).
+                    <br>
                     <a href="https://doaj.org/article/11df0a6020864d5b87025e13ba1693ad" target="_blank">https://doaj.org/article/11df0a6020864d5b87025e13ba1693ad</a>
                 </li>
             </ol>
