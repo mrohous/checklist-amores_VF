@@ -276,25 +276,7 @@
             display: inline-block;
             background: #2a7de1;
             color: white;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.15s;
-            border: none;
-            cursor: pointer;
-            margin-top: 6px;
-        }
-        .btn-descarga:hover {
-            background: #1a5fb0;
-            transform: scale(0.98);
-        }
-        .btn-descarga-pdf {
-            display: inline-block;
-            background: #2a7de1;
-            color: white;
-            padding: 4px 14px;
+            padding: 5px 16px;
             border-radius: 30px;
             font-size: 12px;
             font-weight: 600;
@@ -303,10 +285,148 @@
             border: none;
             cursor: pointer;
             margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
+        }
+        .btn-descarga:hover {
+            background: #1a5fb0;
+            transform: scale(0.97);
+        }
+        .btn-descarga .icono {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-descarga-pdf {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
         }
         .btn-descarga-pdf:hover {
             background: #1a5fb0;
-            transform: scale(0.98);
+            transform: scale(0.97);
+        }
+        .btn-descarga-pdf .icono {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-descarga-verde {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
+        }
+        .btn-descarga-verde:hover {
+            background: #1a5fb0;
+            transform: scale(0.97);
+        }
+        .btn-descarga-verde .icono {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-descarga-naranja {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
+        }
+        .btn-descarga-naranja:hover {
+            background: #1a5fb0;
+            transform: scale(0.97);
+        }
+        .btn-descarga-naranja .icono {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-descarga-morado {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
+        }
+        .btn-descarga-morado:hover {
+            background: #1a5fb0;
+            transform: scale(0.97);
+        }
+        .btn-descarga-morado .icono {
+            margin-right: 6px;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            stroke: white;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-descarga-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
         }
         .nota-legal {
             background: #fffde7;
@@ -460,6 +580,9 @@
             .btn-top { display: none; }
             .btn-descarga { display: none; }
             .btn-descarga-pdf { display: none; }
+            .btn-descarga-verde { display: none; }
+            .btn-descarga-naranja { display: none; }
+            .btn-descarga-morado { display: none; }
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
@@ -479,8 +602,11 @@
             .stats span { font-size: 12px; padding: 3px 10px; }
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
-            .btn-descarga { font-size: 12px; padding: 4px 14px; }
-            .btn-descarga-pdf { font-size: 11px; padding: 3px 10px; }
+            .btn-descarga { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-pdf { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-verde { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-naranja { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-morado { font-size: 11px; padding: 4px 12px; }
             .autor { font-size: 13px; padding-left: 12px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
         }
@@ -502,8 +628,11 @@
             .stats span { font-size: 11px; padding: 2px 8px; }
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
-            .btn-descarga { font-size: 11px; padding: 4px 12px; }
-            .btn-descarga-pdf { font-size: 10px; padding: 2px 8px; }
+            .btn-descarga { font-size: 10px; padding: 3px 10px; }
+            .btn-descarga-pdf { font-size: 10px; padding: 3px 10px; }
+            .btn-descarga-verde { font-size: 10px; padding: 3px 10px; }
+            .btn-descarga-naranja { font-size: 10px; padding: 3px 10px; }
+            .btn-descarga-morado { font-size: 10px; padding: 3px 10px; }
             .resumen-cotizacion { padding: 8px; font-size: 12px; }
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
@@ -515,7 +644,7 @@
 <div class="container" id="checklist">
     <div class="header">
         <h1>📋 Checklist COVI · Amores 219</h1>
-        <span class="fecha-top">Al día: 24 de julio 2026</span>
+        <span class="fecha-top">Al día: 25 de julio 2026</span>
     </div>
     <div class="autor">✍️ Elaborado por vocal Miguel Romero Rohous/Mariana Romero (representante legal)</div>
     <div class="subhead">
@@ -715,7 +844,14 @@
                         <tr><td colspan="2"><strong>Condiciones:</strong> 60% de anticipo, 10 días hábiles de programación, instalación en 1 día.</td></tr>
                     </table>
                 </div>
-                <button class="btn-descarga-pdf" onclick="descargarPDF('RR 26 299 Amores 219.pdf')">📥 Descargar cotización</button>
+                <button class="btn-descarga" onclick="descargarPDF('RR 26 299 Amores 219.pdf')">
+                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Descargar cotización
+                </button>
             </div>
         </div>
     </div>
@@ -746,8 +882,34 @@
                         <tr><th>Proveedor</th><th>Concepto</th><th>Total</th></tr>
                         <tr><td>Arq. Manuel Ochoa</td><td>Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²)</td><td><strong>$39,900.00</strong></td></tr>
                         <tr><td>Antonio Guerrero García</td><td>Reparación concreto terrazas (22 pza) + Sellado ventanas (18 pza) + Pintura vinílica (125 m²)</td><td><strong>$44,800.00</strong></td></tr>
-                        <tr><td>ProAltura</td><td>Sellado de cancelería por exterior con sellador base poliuretano</td><td><strong>$29,000.00</strong> (IVA incl.)</td></tr>
+                        <tr><td>José Luis Velázquez</td><td>Arreglo de terrazas (22 pza) + Sellado de ventanas (16 pza) + Pintura de descansos de escaleras (100 m²)</td><td><strong>$41,200.00</strong></td></tr>
                     </table>
+                </div>
+                <div class="btn-descarga-wrapper">
+                    <button class="btn-descarga-pdf" onclick="descargarPDF('Manuel_Ochoa.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Descargar cotización Manuel Ochoa
+                    </button>
+                    <button class="btn-descarga-verde" onclick="descargarPDF('Antonio_Guerrero.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Descargar cotización Antonio Guerrero
+                    </button>
+                    <button class="btn-descarga-naranja" onclick="descargarPDF('JoseLuis_Velazquez.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Descargar cotización José Luis Velázquez
+                    </button>
                 </div>
                 Pendiente de definir fecha con proveedor. Se requieren al menos 2 días consecutivos sin lluvia para la aplicación del sellador.
             </div>
@@ -760,6 +922,15 @@
             <div class="titulo">Filtraciones en muros <span class="badge urgente">Queja activa</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotización AHTRAM por $33,240.00</strong> para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura. Pendiente de aprobación y programación.
+                <br><br>
+                <button class="btn-descarga-morado" onclick="descargarPDF('ahtram.pdf')">
+                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Descargar cotización
+                </button>
             </div>
         </div>
     </div>
@@ -789,6 +960,15 @@
             <div class="titulo">Lavado de cristales y louvers (respiraderos) <span class="badge">Listo para ejecutar</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
                 <strong>Cotización ProAltura por $30,160.00</strong> (IVA incl.): Lavado de vidrios por exterior ($18,000) + Lavado de louveres en cubos ($8,000) + IVA ($4,160) = $30,160.00. Incluye equipos de alpinismo, líneas de vida y EPP. Pendiente de programación.
+                <br><br>
+                <button class="btn-descarga" onclick="descargarPDF('proaltura.pdf')">
+                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Descargar cotización
+                </button>
             </div>
         </div>
     </div>
@@ -819,7 +999,7 @@
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Recuperación de cartera vencida <span class="badge fin">Financiero</span> <span class="badge admin">Administración</span></div>
-            <div class="desc">Se anunció para la semana del 13 de julio con cartas de cobranza y acercamiento a los deudores. No se ha reportado avance.</div>
+            <div class="desc"><strong>Actualización después de reunión del 24/07/26; se hizo acercamiento a deudores y se anunció que se les ha dado restricción de servicios.</strong></div>
         </div>
     </div>
 
@@ -1013,7 +1193,14 @@
                         <tr class="total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>$29,800.00</strong></td></tr>
                     </table>
                 </div>
-                <button class="btn-descarga-pdf" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')">📥 Descargar cotización</button>
+                <button class="btn-descarga" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')">
+                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Descargar cotización
+                </button>
             </div>
         </div>
     </div>
@@ -1100,7 +1287,14 @@
             <div class="desc">
                 Agregar cartel sobre la correcta forma de la separación de residuos en la pared blanca del espacio y compartir la información para dar a conocer y reiterar a los residentes.
                 <br><br>
-                <button class="btn-descarga" onclick="descargarPDF()">📥 Descargar flyer digital</button>
+                <button class="btn-descarga" onclick="descargarFlyer()">
+                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Descargar flyer digital
+                </button>
             </div>
         </div>
     </div>
@@ -1221,10 +1415,10 @@
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Colocación de decibelímetro en salón de usos múltiples <span class="badge">Pendiente</span></div>
-            <div class="desc">Falta colocar el decibelímetro donado en el salón de usos múltiples. Y corregir por la NOM correcta del cartel que debe ser Norma Ambiental <strong>NADF-005-AMBT-2013</strong>.</div>
+            <div class="titulo">✅ Colocación de decibelímetro en salón de usos múltiples <span class="badge hecho">Realizado</span></div>
+            <div class="desc">Corregir por la NOM correcta del cartel que debe ser Norma Ambiental <strong>NADF-005-AMBT-2013</strong>.</div>
         </div>
     </div>
 
@@ -1286,7 +1480,7 @@
 
     <!-- FOOTER -->
     <div class="footer">
-        <span class="fecha">📅 24 de julio 2026</span>
+        <span class="fecha">📅 25 de julio 2026</span>
         <div class="stats">
             <span id="pendientes-count">⏳ Pendientes: 0</span>
             <span id="completados-count">✅ Completados: 0</span>
