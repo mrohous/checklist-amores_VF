@@ -105,7 +105,16 @@
             transition: all 0.15s ease;
             white-space: nowrap;
         }
-        /* Botón naranja tenue para mantenimiento preventivo */
+        .indice a.verde-tenue {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            color: #1e5e20;
+        }
+        .indice a.verde-tenue:hover {
+            background: #2e7d32;
+            color: white;
+            border-color: #2e7d32;
+        }
         .indice a.naranja-tenue {
             background: #fff3e0;
             border-color: #ffcc80;
@@ -479,6 +488,39 @@
             font-size: 18px;
             margin-right: 6px;
         }
+        .nota-energetica {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 16px 0 4px 0;
+            border: 1px solid #a5d6a7;
+            font-size: 14px;
+            color: #1e3a1f;
+            line-height: 1.5;
+        }
+        .nota-energetica .pin {
+            font-size: 18px;
+            margin-right: 6px;
+        }
+        .btn-rojo-externo {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(211, 47, 47, 0.3);
+            transition: 0.15s;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+        .btn-rojo-externo:hover {
+            background: #b71c1c;
+            transform: scale(0.98);
+        }
         .footer {
             margin-top: 30px;
             padding-top: 16px;
@@ -627,6 +669,7 @@
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
+            .btn-rojo-externo { display: none; }
         }
         @media (max-width: 700px) {
             .container { padding: 16px; }
@@ -650,7 +693,9 @@
             .btn-descarga-morado { font-size: 11px; padding: 4px 12px; }
             .autor { font-size: 13px; padding-left: 12px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
+            .nota-energetica { font-size: 13px; padding: 12px 14px; }
             .subtitulo-seccion { font-size: 13px; }
+            .btn-rojo-externo { font-size: 15px; padding: 10px 20px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -679,7 +724,9 @@
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
+            .nota-energetica { font-size: 12px; padding: 10px 12px; }
             .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
+            .btn-rojo-externo { font-size: 13px; padding: 8px 16px; }
         }
     </style>
 </head>
@@ -700,9 +747,9 @@
         <a href="#sec2" class="rojo-tenue">2. Elevadores</a>
         <a href="#sec3">3. Portones</a>
         <a href="#sec4" class="rojo-tenue">4. Filtraciones y humedad</a>
-        <a href="#sec5" class="naranja-tenue">5. Mantenimiento preventivo</a>
+        <a href="#sec5" class="naranja-tenue">5. Mant. preventivo</a>
         <a href="#sec6">6. Finanzas y Adm.</a>
-        <a href="#sec7">7. Energética</a>
+        <a href="#sec7" class="verde-tenue">7. Energía</a>
         <a href="#sec8">8. Normas</a>
         <a href="#sec9">9. Protección Civil</a>
         <a href="#sec10">10. Seguridad</a>
@@ -1124,6 +1171,16 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- NOTA ENERGÉTICA -->
+    <div class="nota-energetica">
+        <span class="pin">📌</span> <strong>Ojo:</strong> Antes de instalar paneles solares, es necesario resolver el bajo factor de potencia con un banco de capacitores. Los paneles no lo corrigen y, si se instalan solos, pueden aumentar la multa de CFE. El orden correcto es: primero el banco de capacitores (elimina la penalización) y después los paneles solares (reducen el consumo). Así logramos el máximo ahorro.
+    </div>
+
+    <!-- BOTÓN ROJO EXTERNO -->
+    <div style="text-align: center; margin: 12px 0 8px 0;">
+        <a href="energia.html" target="_blank" class="btn-rojo-externo">🔥 ¡Ahorremos hasta $44,000 al año!</a>
     </div>
 
     <!-- ========== 8. REGLAMENTO Y NORMAS DE CONVIVENCIA ========== -->
