@@ -105,16 +105,7 @@
             transition: all 0.15s ease;
             white-space: nowrap;
         }
-        .indice a.verde-tenue {
-            background: #e8f5e9;
-            border-color: #a5d6a7;
-            color: #1e5e20;
-        }
-        .indice a.verde-tenue:hover {
-            background: #2e7d32;
-            color: white;
-            border-color: #2e7d32;
-        }
+        /* Botón naranja tenue para mantenimiento preventivo */
         .indice a.naranja-tenue {
             background: #fff3e0;
             border-color: #ffcc80;
@@ -124,6 +115,17 @@
             background: #e65100;
             color: white;
             border-color: #e65100;
+        }
+        /* Botón verde tenue para Energía */
+        .indice a.verde-tenue {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            color: #1b5e20;
+        }
+        .indice a.verde-tenue:hover {
+            background: #2e7d32;
+            color: white;
+            border-color: #2e7d32;
         }
         .indice a.rojo-tenue {
             background: #fde8e8;
@@ -178,19 +180,21 @@
             font-size: 14px;
         }
         .categoria .btn-indice {
-            background: #eef3fa;
-            color: #1a3a7a;
+            background: #fde8e8;
+            color: #a13d3d;
             padding: 4px 14px;
             border-radius: 30px;
             font-size: 12px;
             font-weight: 600;
             text-decoration: none;
-            border: 1px solid #dce4f0;
+            border: 1px solid #f5c2c2;
             transition: 0.15s;
             white-space: nowrap;
         }
         .categoria .btn-indice:hover {
-            background: #dce4f0;
+            background: #d32f2f;
+            color: white;
+            border-color: #d32f2f;
         }
         @media (max-width: 600px) {
             .categoria .btn-indice { font-size: 11px; padding: 3px 10px; }
@@ -488,36 +492,23 @@
             font-size: 18px;
             margin-right: 6px;
         }
-        .nota-energetica {
-            background: #e8f5e9;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin: 16px 0 4px 0;
-            border: 1px solid #a5d6a7;
-            font-size: 14px;
-            color: #1e3a1f;
-            line-height: 1.5;
-        }
-        .nota-energetica .pin {
-            font-size: 18px;
-            margin-right: 6px;
-        }
-        .btn-rojo-externo {
+        /* Botón rojo para enlace a energia.html */
+        .btn-energia {
             display: inline-block;
             background: #d32f2f;
             color: white;
             padding: 12px 28px;
             border-radius: 40px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
+            text-decoration: none;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
             transition: 0.15s;
-            text-decoration: none;
-            margin-top: 12px;
+            margin-top: 10px;
         }
-        .btn-rojo-externo:hover {
+        .btn-energia:hover {
             background: #b71c1c;
             transform: scale(0.98);
         }
@@ -666,10 +657,10 @@
             .btn-descarga-verde { display: none; }
             .btn-descarga-naranja { display: none; }
             .btn-descarga-morado { display: none; }
+            .btn-energia { display: none; }
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
-            .btn-rojo-externo { display: none; }
         }
         @media (max-width: 700px) {
             .container { padding: 16px; }
@@ -686,6 +677,7 @@
             .stats span { font-size: 12px; padding: 3px 10px; }
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
+            .btn-energia { font-size: 14px; padding: 10px 20px; }
             .btn-descarga { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-pdf { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-verde { font-size: 11px; padding: 4px 12px; }
@@ -693,9 +685,7 @@
             .btn-descarga-morado { font-size: 11px; padding: 4px 12px; }
             .autor { font-size: 13px; padding-left: 12px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
-            .nota-energetica { font-size: 13px; padding: 12px 14px; }
             .subtitulo-seccion { font-size: 13px; }
-            .btn-rojo-externo { font-size: 15px; padding: 10px 20px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -715,6 +705,7 @@
             .stats span { font-size: 11px; padding: 2px 8px; }
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
+            .btn-energia { font-size: 12px; padding: 8px 16px; }
             .btn-descarga { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-pdf { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-verde { font-size: 10px; padding: 3px 10px; }
@@ -724,9 +715,7 @@
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
-            .nota-energetica { font-size: 12px; padding: 10px 12px; }
             .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
-            .btn-rojo-externo { font-size: 13px; padding: 8px 16px; }
         }
     </style>
 </head>
@@ -1173,14 +1162,11 @@
         </div>
     </div>
 
-    <!-- NOTA ENERGÉTICA -->
-    <div class="nota-energetica">
-        <span class="pin">📌</span> <strong>Ojo:</strong> Antes de instalar paneles solares, es necesario resolver el bajo factor de potencia con un banco de capacitores. Los paneles no lo corrigen y, si se instalan solos, pueden aumentar la multa de CFE. El orden correcto es: primero el banco de capacitores (elimina la penalización) y después los paneles solares (reducen el consumo). Así logramos el máximo ahorro.
-    </div>
-
-    <!-- BOTÓN ROJO EXTERNO -->
-    <div style="text-align: center; margin: 12px 0 8px 0;">
-        <a href="energia.html" target="_blank" class="btn-rojo-externo">🔥 ¡Ahorremos hasta $44,000 al año!</a>
+    <!-- NOTA ADICIONAL SOBRE ENERGÍA -->
+    <div class="nota-legal" style="background:#fff8e1; border-color:#ffcc02;">
+        <span class="pin">⚠️</span> <strong>Ojo:</strong> Antes de instalar paneles solares, es necesario resolver el bajo factor de potencia con un banco de capacitores. Los paneles no lo corrigen y, si se instalan solos, pueden aumentar la multa de CFE. El orden correcto es: primero el banco de capacitores (elimina la penalización) y después los paneles solares (reducen el consumo). Así logramos el máximo ahorro.
+        <br><br>
+        <a href="energia.html" target="_blank" class="btn-energia">💰 ¡Ahorremos hasta $44,000 al año!</a>
     </div>
 
     <!-- ========== 8. REGLAMENTO Y NORMAS DE CONVIVENCIA ========== -->
