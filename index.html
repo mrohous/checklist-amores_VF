@@ -105,7 +105,17 @@
             transition: all 0.15s ease;
             white-space: nowrap;
         }
-        /* Botones del índice con rojo tenue */
+        /* Botón naranja tenue para mantenimiento preventivo */
+        .indice a.naranja-tenue {
+            background: #fff3e0;
+            border-color: #ffcc80;
+            color: #bf5e00;
+        }
+        .indice a.naranja-tenue:hover {
+            background: #e65100;
+            color: white;
+            border-color: #e65100;
+        }
         .indice a.rojo-tenue {
             background: #fde8e8;
             border-color: #f5c2c2;
@@ -271,6 +281,14 @@
         .badge.residentes { background: #c5cae9; color: #1a237e; }
         .badge.covi { background: #b2dfdb; color: #004d40; }
         .badge.seguridadpc { background: #ffcc80; color: #bf360c; }
+        .subtitulo-seccion {
+            font-size: 15px;
+            font-weight: 400;
+            color: #5a6e8a;
+            margin-top: -8px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
         .btn-top {
             display: inline-block;
             background: #eef3fa;
@@ -632,6 +650,7 @@
             .btn-descarga-morado { font-size: 11px; padding: 4px 12px; }
             .autor { font-size: 13px; padding-left: 12px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
+            .subtitulo-seccion { font-size: 13px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -660,6 +679,7 @@
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
+            .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
         }
     </style>
 </head>
@@ -680,7 +700,7 @@
         <a href="#sec2" class="rojo-tenue">2. Elevadores</a>
         <a href="#sec3">3. Portones</a>
         <a href="#sec4" class="rojo-tenue">4. Filtraciones y humedad</a>
-        <a href="#sec5">5. Limpieza</a>
+        <a href="#sec5" class="naranja-tenue">5. Mantenimiento preventivo</a>
         <a href="#sec6">6. Finanzas y Adm.</a>
         <a href="#sec7">7. Energética</a>
         <a href="#sec8">8. Normas</a>
@@ -828,7 +848,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Curso para el buen manejo y seguridad en elevadores <span class="badge residentes">residentes</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge seguridadpc">Comité Seguridad y Protección Civil</span></div>
+            <div class="titulo">Curso para el buen manejo y seguridad en elevadores <span class="badge residentes">residentes</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge admin">Administración</span> <span class="badge seguridadpc">Comité Seguridad y Protección Civil</span></div>
             <div class="desc">Curso para el buen manejo y seguridad en elevadores impartido por Ing. Benjamín de ELEBETA para condóminos en general y comités del condominio.</div>
         </div>
     </div>
@@ -980,11 +1000,12 @@
         <span class="pin">📌</span> <strong>Nota:</strong> Para aprobar gastos mayores es necesaria la convocatoria a Asamblea General de Condóminos, por considerarse un gasto extraordinario y de reparación mayor que no forma parte de los gastos corrientes de administración. (Art. 55, Fracc. III de la LPCDF).
     </div>
 
-    <!-- ========== 5. LIMPIEZA, CRISTALES Y JARDINERÍA ========== -->
+    <!-- ========== 5. MANTENIMIENTO PREVENTIVO ========== -->
     <div class="categoria" id="sec5">
-        <div class="cat-left"><span>5</span> Limpieza, Cristales y Jardinería</div>
+        <div class="cat-left"><span>5</span> Mantenimiento preventivo</div>
         <a href="#checklist" class="btn-indice">↑ Índice</a>
     </div>
+    <div class="subtitulo-seccion">(Limpieza, Cristales y Jardinería)</div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
@@ -1018,6 +1039,15 @@
         <div class="detalle">
             <div class="titulo">✅ Reubicación de árbol (Tabachín) <span class="badge hecho">Realizado</span></div>
             <div class="desc">Se replantó el árbol en una jardinera vacía del roof para evitar que las raíces dañen estructuras.</div>
+        </div>
+    </div>
+
+    <!-- NUEVO ÍTEM: FUMIGACIÓN -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Contratación de servicio de fumigación para áreas comunes <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Realizar fumigación periódica en pasillos, sótanos, roof garden y áreas verdes para control de plagas. Solicitar cotizaciones a proveedores especializados y programar servicio con periodicidad definida.</div>
         </div>
     </div>
 
