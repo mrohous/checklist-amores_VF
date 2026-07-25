@@ -256,26 +256,6 @@
         .badge.legal2 { background: #ffcdd2; color: #b71c1c; }
         .badge.comun { background: #b2dfdb; color: #004d40; }
         .badge.asamblea { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; font-weight: 700; }
-        .pregunta {
-            background: #f8faff;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin: 8px 0 4px 0;
-            border-left: 4px solid #2a7de1;
-            font-size: 14px;
-            color: #1a3a7a;
-            line-height: 1.5;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .pregunta strong {
-            color: #1a2b4a;
-        }
-        .pregunta .icono {
-            font-size: 18px;
-            margin-top: 2px;
-        }
         .btn-top {
             display: inline-block;
             background: #eef3fa;
@@ -310,18 +290,23 @@
             background: #1a5fb0;
             transform: scale(0.98);
         }
-        .sugerencia {
-            background: #f8faff;
-            border-radius: 12px;
-            padding: 14px 18px;
-            margin: 20px 0 8px 0;
-            border: 1px solid #dce4f0;
-            font-size: 14px;
-            color: #1a3a7a;
-            line-height: 1.5;
+        .btn-descarga-pdf {
+            display: inline-block;
+            background: #2a7de1;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
         }
-        .sugerencia strong {
-            color: #1a2b4a;
+        .btn-descarga-pdf:hover {
+            background: #1a5fb0;
+            transform: scale(0.98);
         }
         .nota-legal {
             background: #fffde7;
@@ -474,6 +459,7 @@
             .btn-pdf { display: none; }
             .btn-top { display: none; }
             .btn-descarga { display: none; }
+            .btn-descarga-pdf { display: none; }
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
@@ -494,10 +480,9 @@
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
             .btn-descarga { font-size: 12px; padding: 4px 14px; }
+            .btn-descarga-pdf { font-size: 11px; padding: 3px 10px; }
             .autor { font-size: 13px; padding-left: 12px; }
-            .sugerencia { font-size: 13px; padding: 12px 14px; }
             .nota-legal { font-size: 13px; padding: 12px 14px; }
-            .pregunta { font-size: 13px; padding: 12px 14px; }
         }
         @media (max-width: 480px) {
             .container { padding: 12px; }
@@ -518,12 +503,11 @@
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
             .btn-descarga { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-pdf { font-size: 10px; padding: 2px 8px; }
             .resumen-cotizacion { padding: 8px; font-size: 12px; }
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
-            .sugerencia { font-size: 12px; padding: 10px 12px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
-            .pregunta { font-size: 12px; padding: 10px 12px; }
         }
     </style>
 </head>
@@ -531,7 +515,7 @@
 <div class="container" id="checklist">
     <div class="header">
         <h1>📋 Checklist COVI · Amores 219</h1>
-        <span class="fecha-top">Al día: 17 de julio 2026</span>
+        <span class="fecha-top">Al día: 24 de julio 2026</span>
     </div>
     <div class="autor">✍️ Elaborado por vocal Miguel Romero Rohous/Mariana Romero (representante legal)</div>
     <div class="subhead">
@@ -621,10 +605,10 @@
 
     <!-- Documentación de seguridad movida aquí -->
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Documentación de empresa de seguridad <span class="badge legal">Legal</span> <span class="badge admin">Administración</span> <span class="badge comun">Comité de Vigilancia</span></div>
-            <div class="desc">Como Comité de Vigilancia no hemos revisado la documentación de la empresa de seguridad: permiso vigente ante SSP, fianza, póliza de responsabilidad civil, contrato actualizado, REPSE y documentación administrativa básica.</div>
+            <div class="titulo">✅ Documentación de empresa de seguridad <span class="badge legal">Legal</span> <span class="badge admin">Administración</span> <span class="badge comun">Comité de Vigilancia</span></div>
+            <div class="desc">Como Comité de Vigilancia no hemos revisado la documentación de la empresa de seguridad: permiso vigente ante SSP, fianza, póliza de responsabilidad civil, contrato actualizado, REPSE y documentación administrativa básica. <br><br><strong>Actualización al día 24/07/26: se recibe documentación vía WhatsApp y se indica que se firmará nuevo contrato por servicios de conserjería.</strong></div>
         </div>
     </div>
 
@@ -711,18 +695,37 @@
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Informe técnico de CAPTI <span class="badge atencion">Pendiente</span> <span class="badge oper">Operativo</span></div>
-            <div class="desc">Se solicitó a CAPTI un informe detallado explicando por qué no detectaron la falla del motor desde el principio y si el agua estancada era visible en sus revisiones.</div>
+            <div class="titulo">✅ Informe técnico de CAPTI <span class="badge hecho">Realizado</span> <span class="badge oper">Operativo</span></div>
+            <div class="desc">Se solicitó a CAPTI un informe detallado explicando por qué no detectaron la falla del motor desde el principio y si el agua estancada era visible en sus revisiones. <br><br><strong>Actualización al día 24/07/26, se entregó reporte pero se define que no se le volverá a contratar.</strong></div>
         </div>
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Cotización de sensores de seguridad para portón <span class="badge hecho">Realizado</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
+            <div class="desc">
+                <strong>Cotización Grossmann por $16,000.00 (IVA incl.)</strong> para venta e instalación de 4 pares de fotoceldas para dos puertas automáticas abatibles de dos hojas cada una con equipos Roller a 24v.
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Concepto</th><th>Monto</th></tr>
+                        <tr><td>Venta e instalación de 4 pares de fotoceldas para dos puertas automáticas abatibles de dos hojas cada una con equipos Roller a 24v.</td><td><strong>$16,000.00</strong></td></tr>
+                        <tr><td colspan="2"><strong>Condiciones:</strong> 60% de anticipo, 10 días hábiles de programación, instalación en 1 día.</td></tr>
+                    </table>
+                </div>
+                <button class="btn-descarga-pdf" onclick="descargarPDF('RR 26 299 Amores 219.pdf')">📥 Descargar cotización</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuevo ítem: Aprobación en Asamblea -->
+    <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Cotización de sensores de seguridad para portón <span class="badge">A mediano plazo</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">Cotizar e instalar sensores para evitar cierre automático con vehículo en paso. Requiere preparación para Asamblea.</div>
+            <div class="titulo">Incluir en Asamblea General la aprobación de la propuesta Grossmann <span class="badge asamblea">Asamblea</span></div>
+            <div class="desc">Incluir en Asamblea General la aprobación de la propuesta de Grossmann para la instalación de fotoceldas en portones automáticos, por un monto de $16,000.00 (IVA incl.).</div>
         </div>
     </div>
 
@@ -783,7 +786,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Lavado de cristales y louvers (respiraderos) <span class="badge">Listo para ejecutar</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">Lavado de cristales y louvers (respiraderos) <span class="badge">Listo para ejecutar</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
                 <strong>Cotización ProAltura por $30,160.00</strong> (IVA incl.): Lavado de vidrios por exterior ($18,000) + Lavado de louveres en cubos ($8,000) + IVA ($4,160) = $30,160.00. Incluye equipos de alpinismo, líneas de vida y EPP. Pendiente de programación.
             </div>
@@ -804,12 +807,6 @@
             <div class="titulo">✅ Reubicación de árbol (Tabachín) <span class="badge hecho">Realizado</span></div>
             <div class="desc">Se replantó el árbol en una jardinera vacía del roof para evitar que las raíces dañen estructuras.</div>
         </div>
-    </div>
-
-    <!-- PREGUNTA SOBRE EL ÁRBOL -->
-    <div class="pregunta">
-        <span class="icono">❓</span>
-        <div><strong>Pregunta a Administración:</strong> ¿Cuál es la situación del árbol? ¿Se adaptó a la reubicación?</div>
     </div>
 
     <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
@@ -978,11 +975,6 @@
         </div>
     </div>
 
-    <!-- ====== SUGERENCIA ====== -->
-    <div class="sugerencia">
-        <strong>Sugerencia:</strong> Para fortalecer la coordinación en temas de protección civil, se sugiere integrar a los miembros del comité de Seguridad y Protección Civil en el chat "Control y Seguridad | CUSTODIOS | AMITY".
-    </div>
-
     <!-- ========== 10. SEGURIDAD ========== -->
     <div class="categoria" id="sec10">
         <div class="cat-left"><span>10</span> Seguridad</div>
@@ -997,29 +989,32 @@
         </div>
     </div>
 
-    <!-- PREGUNTA 1: IDENTIFICACIÓN DE EMPLEADOS -->
-    <div class="pregunta">
-        <span class="icono">❓</span>
-        <div><strong>Pregunta a Administración:</strong> Cuando ingresa un empleado contratado por un residente para un departamento en particular, ¿vigilancia le pide identificación y guarda un respaldo de su ingreso (como una foto en el celular o en el sistema de vigilancia)?</div>
-    </div>
-
-    <!-- PREGUNTA 2: LLAVE DE PASO DE GAS / AZOTEA -->
-    <div class="pregunta">
-        <span class="icono">❓</span>
-        <div><strong>Pregunta a Administración:</strong> En el chat de vigilancia vi que alguien cerró una llave de paso de gas de un depa y dijeron que la Administración anterior la mantenía cerrada, pero que por quejas de los vecinos se decidió dejarla abierta porque muchos suben a la azotea, sobre todo después de sismos. ¿Me pueden confirmar cuál es la instrucción actual para la puerta de la azotea?</div>
-    </div>
-
     <!-- ========== 11. OBRAS Y MANTENIMIENTO MAYOR ========== -->
     <div class="categoria" id="sec11">
         <div class="cat-left"><span>11</span> Obras y Mantenimiento Mayor</div>
         <a href="#checklist" class="btn-indice">↑ Índice</a>
     </div>
 
+    <!-- Cotización de Pintura y Herrería - Arq. Manuel Ochoa -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Reparación de barandal de escalinata de entrada a condominio <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">Se constató la deficiente calidad. Definir qué hacer al respecto.</div>
+            <div class="titulo">Pintura de herrería y estructuras metálicas <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Cotización Arq. Manuel Ochoa por $29,800.00</strong>
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
+                        <tr><td>Pintura de esmalte alquidálico en pérgola</td><td>Lote 2</td><td>$7,600.00</td></tr>
+                        <tr><td>Pintura de esmalte en macetones metálicos de roof garden</td><td>15 pza</td><td>$10,500.00</td></tr>
+                        <tr><td>Pintura de esmalte en vigas "I" de fachada</td><td>2 pza</td><td>$3,800.00</td></tr>
+                        <tr><td>Pintura de esmalte en jardineras metálicas exterior</td><td>Lote 1</td><td>$4,500.00</td></tr>
+                        <tr><td>Varillas de acero inoxidable 3/4" en barandal exterior</td><td>2 pza</td><td>$3,400.00</td></tr>
+                        <tr class="total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>$29,800.00</strong></td></tr>
+                    </table>
+                </div>
+                <button class="btn-descarga-pdf" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')">📥 Descargar cotización</button>
+            </div>
         </div>
     </div>
 
@@ -1291,7 +1286,7 @@
 
     <!-- FOOTER -->
     <div class="footer">
-        <span class="fecha">📅 17 de julio 2026</span>
+        <span class="fecha">📅 24 de julio 2026</span>
         <div class="stats">
             <span id="pendientes-count">⏳ Pendientes: 0</span>
             <span id="completados-count">✅ Completados: 0</span>
@@ -1324,7 +1319,16 @@
         window.print();
     }
 
-    function descargarPDF() {
+    function descargarPDF(nombreArchivo) {
+        const link = document.createElement('a');
+        link.href = 'assets/' + nombreArchivo;
+        link.download = nombreArchivo;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function descargarFlyer() {
         const link = document.createElement('a');
         link.href = 'img/separacióndebasura.jpg';
         link.download = 'separacion_de_basura.jpg';
