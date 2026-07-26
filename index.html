@@ -318,7 +318,15 @@
         .btn-top:hover {
             background: #dce4f0;
         }
-        .btn-descarga {
+        /* Estilos para botones de documentos */
+        .btn-doc-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .btn-ver {
             display: inline-block;
             background: #2a7de1;
             color: white;
@@ -330,14 +338,43 @@
             transition: 0.15s;
             border: none;
             cursor: pointer;
-            margin-top: 6px;
             box-shadow: 0 2px 8px rgba(42, 125, 225, 0.3);
         }
-        .btn-descarga:hover {
+        .btn-ver:hover {
             background: #1a5fb0;
             transform: scale(0.97);
         }
-        .btn-descarga .icono {
+        .btn-descarga-icono {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #eef3fa;
+            color: #1a3a7a;
+            padding: 5px 8px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.15s;
+            border: 1px solid #dce4f0;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+        }
+        .btn-descarga-icono:hover {
+            background: #dce4f0;
+            transform: scale(0.95);
+        }
+        .btn-descarga-icono .icono {
+            width: 16px;
+            height: 16px;
+            stroke: #1a3a7a;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .btn-ver .icono {
             margin-right: 6px;
             width: 14px;
             height: 14px;
@@ -492,6 +529,11 @@
             font-size: 18px;
             margin-right: 6px;
         }
+        .nota-legal .btn-energia-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+        }
         /* Botón rojo para enlace a energia.html */
         .btn-energia {
             display: inline-block;
@@ -506,7 +548,6 @@
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
             transition: 0.15s;
-            margin-top: 10px;
         }
         .btn-energia:hover {
             background: #b71c1c;
@@ -652,7 +693,8 @@
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
             .btn-pdf { display: none; }
             .btn-top { display: none; }
-            .btn-descarga { display: none; }
+            .btn-ver { display: none; }
+            .btn-descarga-icono { display: none; }
             .btn-descarga-pdf { display: none; }
             .btn-descarga-verde { display: none; }
             .btn-descarga-naranja { display: none; }
@@ -678,7 +720,8 @@
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
             .btn-energia { font-size: 14px; padding: 10px 20px; }
-            .btn-descarga { font-size: 11px; padding: 4px 12px; }
+            .btn-ver { font-size: 11px; padding: 4px 12px; }
+            .btn-descarga-icono { width: 28px; height: 28px; padding: 4px 6px; }
             .btn-descarga-pdf { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-verde { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-naranja { font-size: 11px; padding: 4px 12px; }
@@ -706,7 +749,8 @@
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
             .btn-energia { font-size: 12px; padding: 8px 16px; }
-            .btn-descarga { font-size: 10px; padding: 3px 10px; }
+            .btn-ver { font-size: 10px; padding: 3px 10px; }
+            .btn-descarga-icono { width: 26px; height: 26px; padding: 3px 5px; }
             .btn-descarga-pdf { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-verde { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-naranja { font-size: 10px; padding: 3px 10px; }
@@ -932,14 +976,22 @@
                         <tr><td colspan="2"><strong>Condiciones:</strong> 60% de anticipo, 10 días hábiles de programación, instalación en 1 día.</td></tr>
                     </table>
                 </div>
-                <button class="btn-descarga" onclick="descargarPDF('RR 26 299 Amores 219.pdf')">
-                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Descargar cotización
-                </button>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('RR 26 299 Amores 219.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('RR 26 299 Amores 219.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -973,30 +1025,52 @@
                         <tr><td>José Luis Velázquez</td><td>Arreglo de terrazas (22 pza) + Sellado de ventanas (16 pza) + Pintura de descansos de escaleras (100 m²)</td><td><strong>$41,200.00</strong></td></tr>
                     </table>
                 </div>
-                <div class="btn-descarga-wrapper">
-                    <button class="btn-descarga-pdf" onclick="descargarPDF('Manuel_Ochoa.pdf')">
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('Manuel_Ochoa.pdf')">
                         <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
                         </svg>
-                        Descargar cotización Manuel Ochoa
+                        Ver cotización Manuel Ochoa
                     </button>
-                    <button class="btn-descarga-verde" onclick="descargarPDF('Antonio_Guerrero.pdf')">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <button class="btn-descarga-icono" onclick="descargarPDF('Manuel_Ochoa.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                             <polyline points="7 10 12 15 17 10"/>
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
-                        Descargar cotización Antonio Guerrero
                     </button>
-                    <button class="btn-descarga-naranja" onclick="descargarPDF('JoseLuis_Velazquez.pdf')">
+                </div>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('Antonio_Guerrero.pdf')">
                         <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización Antonio Guerrero
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('Antonio_Guerrero.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                             <polyline points="7 10 12 15 17 10"/>
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
-                        Descargar cotización José Luis Velázquez
+                    </button>
+                </div>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('JoseLuis_Velazquez.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización José Luis Velázquez
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('JoseLuis_Velazquez.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
                     </button>
                 </div>
                 Pendiente de definir fecha con proveedor. Se requieren al menos 2 días consecutivos sin lluvia para la aplicación del sellador.
@@ -1011,14 +1085,22 @@
             <div class="desc">
                 <strong>Cotización AHTRAM por $33,240.00</strong> para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura. Pendiente de aprobación y programación.
                 <br><br>
-                <button class="btn-descarga-morado" onclick="descargarPDF('ahtram.pdf')">
-                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Descargar cotización
-                </button>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('ahtram.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('ahtram.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1050,14 +1132,22 @@
             <div class="desc">
                 <strong>Cotización ProAltura por $30,160.00</strong> (IVA incl.): Lavado de vidrios por exterior ($18,000) + Lavado de louveres en cubos ($8,000) + IVA ($4,160) = $30,160.00. Incluye equipos de alpinismo, líneas de vida y EPP. Pendiente de programación.
                 <br><br>
-                <button class="btn-descarga" onclick="descargarPDF('proaltura.pdf')">
-                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Descargar cotización
-                </button>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('proaltura.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('proaltura.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1165,8 +1255,9 @@
     <!-- NOTA ADICIONAL SOBRE ENERGÍA -->
     <div class="nota-legal" style="background:#fff8e1; border-color:#ffcc02;">
         <span class="pin">⚠️</span> <strong>Ojo:</strong> Antes de instalar paneles solares, es necesario resolver el bajo factor de potencia con un banco de capacitores. Los paneles no lo corrigen y, si se instalan solos, pueden aumentar la multa de CFE. El orden correcto es: primero el banco de capacitores (elimina la penalización) y después los paneles solares (reducen el consumo). Así logramos el máximo ahorro.
-        <br><br>
-        <a href="energia.html" target="_blank" class="btn-energia">💰 ¡Ahorremos hasta $44,000 al año!</a>
+        <div class="btn-energia-wrapper">
+            <a href="energia.html" target="_blank" class="btn-energia">💰 ¡Ahorremos hasta $44,000 al año!</a>
+        </div>
     </div>
 
     <!-- ========== 8. REGLAMENTO Y NORMAS DE CONVIVENCIA ========== -->
@@ -1298,14 +1389,22 @@
                         <tr class="total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>$29,800.00</strong></td></tr>
                     </table>
                 </div>
-                <button class="btn-descarga" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')">
-                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Descargar cotización
-                </button>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('PptoAmores219PinturaHerreria.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1392,14 +1491,22 @@
             <div class="desc">
                 Agregar cartel sobre la correcta forma de la separación de residuos en la pared blanca del espacio y compartir la información para dar a conocer y reiterar a los residentes.
                 <br><br>
-                <button class="btn-descarga" onclick="descargarFlyer()">
-                    <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Descargar flyer digital
-                </button>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verFlyer()">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver flyer
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarFlyer()" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1622,6 +1729,14 @@
 
     function guardarPDF() {
         window.print();
+    }
+
+    function verPDF(nombreArchivo) {
+        window.open('assets/' + nombreArchivo, '_blank');
+    }
+
+    function verFlyer() {
+        window.open('img/separacióndebasura.jpg', '_blank');
     }
 
     function descargarPDF(nombreArchivo) {
