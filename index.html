@@ -1177,6 +1177,62 @@
         </div>
     </div>
 
+    <!-- ÍTEM MOVIDO DE 11: Pintura de herrería -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Pintura de herrería y estructuras metálicas <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>Cotización Arq. Manuel Ochoa por $29,800.00</strong>
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
+                        <tr><td>Pintura de esmalte alquidálico en pérgola</td><td>Lote 2</td><td>$7,600.00</td></tr>
+                        <tr><td>Pintura de esmalte en macetones metálicos de roof garden</td><td>15 pza</td><td>$10,500.00</td></tr>
+                        <tr><td>Pintura de esmalte en vigas "I" de fachada</td><td>2 pza</td><td>$3,800.00</td></tr>
+                        <tr><td>Pintura de esmalte en jardineras metálicas exterior</td><td>Lote 1</td><td>$4,500.00</td></tr>
+                        <tr><td>Varillas de acero inoxidable 3/4" en barandal exterior</td><td>2 pza</td><td>$3,400.00</td></tr>
+                        <tr class="total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>$29,800.00</strong></td></tr>
+                    </table>
+                </div>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('PptoAmores219PinturaHerreria.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÍTEM MOVIDO DE 11: Sistema de alarma sísmica -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Sistema de alarma sísmica <span class="badge hecho">Reparado</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc"><strong>REPARADO</strong> por Fabricio. El sistema ya funciona correctamente al día 17 de julio.</div>
+        </div>
+    </div>
+
+    <!-- ÍTEM MOVIDO DE 11: Mantenimiento preventivo a sistema de seguridad -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Mantenimiento preventivo a sistema de seguridad <span class="badge hecho">Concluido</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Mantenimiento preventivo a sistema de seguridad, peinado de cables, correcta ubicación de los sistemas de la caseta (aunque falta reconección de interphones) y respaldo de información.</div>
+        </div>
+    </div>
+
     <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
     <div class="categoria" id="sec6">
         <div class="cat-left"><span>6</span> Finanzas y Adm.</div>
@@ -1371,66 +1427,11 @@
         <a href="#checklist" class="btn-indice">↑ Índice</a>
     </div>
 
-    <!-- Cotización de Pintura y Herrería - Arq. Manuel Ochoa -->
-    <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
-        <div class="detalle">
-            <div class="titulo">Pintura de herrería y estructuras metálicas <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">
-                <strong>Cotización Arq. Manuel Ochoa por $29,800.00</strong>
-                <div class="resumen-cotizacion">
-                    <table>
-                        <tr><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
-                        <tr><td>Pintura de esmalte alquidálico en pérgola</td><td>Lote 2</td><td>$7,600.00</td></tr>
-                        <tr><td>Pintura de esmalte en macetones metálicos de roof garden</td><td>15 pza</td><td>$10,500.00</td></tr>
-                        <tr><td>Pintura de esmalte en vigas "I" de fachada</td><td>2 pza</td><td>$3,800.00</td></tr>
-                        <tr><td>Pintura de esmalte en jardineras metálicas exterior</td><td>Lote 1</td><td>$4,500.00</td></tr>
-                        <tr><td>Varillas de acero inoxidable 3/4" en barandal exterior</td><td>2 pza</td><td>$3,400.00</td></tr>
-                        <tr class="total"><td colspan="2"><strong>TOTAL</strong></td><td><strong>$29,800.00</strong></td></tr>
-                    </table>
-                </div>
-                <div class="btn-doc-group">
-                    <button class="btn-ver" onclick="verPDF('PptoAmores219PinturaHerreria.pdf')">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Ver cotización
-                    </button>
-                    <button class="btn-descarga-icono" onclick="descargarPDF('PptoAmores219PinturaHerreria.pdf')" title="Descargar">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Propuesta de impermeabilización <span class="badge">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">Se identificó desgaste en la impermeabilización de la azotea. Se elaborará una propuesta económica para mantenimiento preventivo/correctivo.</div>
-        </div>
-    </div>
-
-    <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox completado checked"></div>
-        <div class="detalle">
-            <div class="titulo">✅ Sistema de alarma sísmica <span class="badge hecho">Reparado</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc"><strong>REPARADO</strong> por Fabricio. El sistema ya funciona correctamente al día 17 de julio.</div>
-        </div>
-    </div>
-
-    <!-- Nuevo punto CONCLUIDO -->
-    <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox completado checked"></div>
-        <div class="detalle">
-            <div class="titulo">✅ Mantenimiento preventivo a sistema de seguridad <span class="badge hecho">Concluido</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">Mantenimiento preventivo a sistema de seguridad, peinado de cables, correcta ubicación de los sistemas de la caseta (aunque falta reconección de interphones) y respaldo de información.</div>
         </div>
     </div>
 
