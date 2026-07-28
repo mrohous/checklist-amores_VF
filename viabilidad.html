@@ -26,7 +26,7 @@
     <!-- ====== FIN FAVICONES ====== -->
 
     <style>
-        /* ====== ESTILOS ====== */
+        /* ====== ESTILOS COMPLETOS ====== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -295,6 +295,7 @@
         .color-rosa { background: #e91e63; }
         .color-ambar { background: #ff8f00; }
         .color-magenta { background: #9c27b0; }
+        .color-turquesa { background: #00897b; }
 
         .badge-container {
             font-size: clamp(10px, 0.9vw, 12px);
@@ -318,6 +319,7 @@
         .badge-morado { background: #ede7f6; color: #4a148c; }
         .badge-cian { background: #e0f7fa; color: #00695c; }
         .badge-gris { background: #f5f5f5; color: #616161; }
+        .badge-amarillo { background: #fff8e1; color: #bf5e00; }
 
         .tabla-wrapper {
             overflow-x: auto;
@@ -424,6 +426,11 @@
             background: #e8f5e9;
             border-color: #a5d6a7;
             color: #1b5e20;
+        }
+        .nota-info {
+            background: #e3f2fd;
+            border-color: #90caf9;
+            color: #0d47a1;
         }
 
         .leyenda {
@@ -809,6 +816,10 @@
                     <div class="barra-etiqueta">Cámaras Elevadores</div>
                 </div>
                 <div class="barra-item">
+                    <div class="barra color-turquesa" style="height:14px;"><span class="barra-valor">Por definir</span></div>
+                    <div class="barra-etiqueta">Impermeabilización</div>
+                </div>
+                <div class="barra-item">
                     <div class="barra color-naranja" style="height:11px;"><span class="barra-valor">$16,000</span></div>
                     <div class="barra-etiqueta">Fotoceldas</div>
                 </div>
@@ -864,6 +875,13 @@
                             <td class="monto">$110,000 – $260,000</td>
                             <td><span class="badge badge-rojo">Alta</span></td>
                             <td><span class="badge badge-rojo">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impermeabilización de azotea</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">Por definir</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-gris">Sin cotización</span></td>
                         </tr>
                         <tr>
                             <td><strong>Sellado de ventanas y terrazas</strong></td>
@@ -936,7 +954,7 @@
         <!-- ====== TOTAL DE PROYECTOS ====== -->
         <div class="total-proyectos">
             <span>💰 <strong>Total de proyectos identificados (sin paneles solares):</strong></span>
-            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$964,900 – $1,202,400</strong></span>
+            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$964,900 – $1,202,400 + Impermeabilización (por definir)</strong></span>
         </div>
 
         <!-- ====== TABLA DE VIABILIDAD ====== -->
@@ -958,8 +976,8 @@
                             <td><strong>Roof Garden (piso + filtración)</strong></td>
                             <td class="monto">$450,000</td>
                             <td><span class="badge badge-rojo">Alta</span></td>
-                            <td><span class="badge badge-rojo">❌ No Viable</span></td>
-                            <td>Financiar con cuota extraordinaria + cobranza</td>
+                            <td><span class="badge badge-amarillo">🟡 Viable con cuota extraordinaria</span></td>
+                            <td>Considerar cuota extraordinaria para preservar liquidez</td>
                         </tr>
                         <tr>
                             <td><strong>Reparación Mayor de Elevadores</strong></td>
@@ -981,6 +999,13 @@
                             <td><span class="badge badge-rojo">Alta</span></td>
                             <td><span class="badge badge-verde">✅ Viable</span></td>
                             <td>Gestionar cotizaciones y contratar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impermeabilización de azotea</strong></td>
+                            <td class="monto">Por definir</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Obtener cotización y programar</td>
                         </tr>
                         <tr>
                             <td><strong>Filtraciones en muros (AHTRAM)</strong></td>
@@ -1022,6 +1047,19 @@
             </div>
         </div>
 
+        <!-- ====== NOTA EXPLICATIVA SOBRE ROOF GARDEN ====== -->
+        <div class="nota nota-info">
+            <span>📌</span> <strong>Nota sobre el Roof Garden:</strong><br>
+            El condominio <strong>SÍ podría pagar el Roof Garden ($450,000) con el saldo actual + la recuperación de cartera</strong>, y aún así quedaría con un saldo remanente de entre <strong>$22,657 y $260,157</strong>.<br><br>
+            Sin embargo, se recomienda considerar una <strong>cuota extraordinaria</strong> por las siguientes razones:
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>✅ Preservar liquidez para emergencias o gastos imprevistos</li>
+                <li>✅ Mantener un <strong>fondo de reserva mínimo de $200,000</strong> como colchón financiero</li>
+                <li>✅ <strong>No perder la capacidad de generar intereses</strong> sobre un saldo mayor en la cuenta bancaria</li>
+                <li>✅ Tener flexibilidad para otros proyectos que puedan surgir</li>
+            </ul>
+        </div>
+
         <!-- ====== CALENDARIO DE PROYECTOS ====== -->
         <div style="margin: 16px 0 4px 0;">
             <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:6px;">📅 Calendario de Proyectos (12 meses)</div>
@@ -1050,6 +1088,7 @@
                     <div class="actividad">🧹 Pintura herrería <span class="monto-act">$29,800</span></div>
                     <div class="actividad">📹 Cámaras elevadores <span class="monto-act">$19.5k-$42k</span></div>
                     <div class="actividad">🧹 Fotoceldas <span class="monto-act">$16,000</span></div>
+                    <div class="actividad">🏠 Impermeabilización azotea <span class="monto-act">Por definir</span></div>
                 </div>
             </div>
         </div>
@@ -1085,16 +1124,16 @@
                     </div>
                     <div class="fase-desc">
                         <strong>1.</strong> Cambio de Piso del Roof Garden (que además causa filtración en un departamento) — $450,000 · <strong>2.</strong> Seguro Condominal (incendio, sismo y RC, cobertura amplia, 52 departamentos) — <span class="badge badge-rojo">$110,000 – $260,000</span> · <span class="badge badge-rojo">Alta</span>. <br>
-                        <span class="badge badge-naranja">⚠️ Requiere cuota extraordinaria + cobranza</span> Se propone una cuota de $10,000 por departamento para cubrir la obra.
+                        <span class="badge badge-naranja">⚠️ Requiere cuota extraordinaria + cobranza</span>
                     </div>
                 </div>
                 <div class="fase morado">
                     <div class="fase-titulo">
                         <span>🧹 Fase 3 · Mantenimiento Programado y Seguridad (Mes 1-12)</span>
-                        <span class="fase-monto">Costo: $137,500 – $160,000</span>
+                        <span class="fase-monto">Costo: $137,500 – $160,000 + Impermeabilización (por definir)</span>
                     </div>
                     <div class="fase-desc">
-                        Sellado de ventanas (~$42,000) · Lavado de cristales ($30,160) · Pintura de herrería ($29,800) · Cámaras de videovigilancia para elevadores ($19,500 – $42,000) · Fotoceldas ($16,000). <br>
+                        Sellado de ventanas (~$42,000) · Lavado de cristales ($30,160) · Pintura de herrería ($29,800) · Cámaras de videovigilancia para elevadores ($19,500 – $42,000) · Fotoceldas ($16,000) · Impermeabilización de azotea (por definir). <br>
                         <span class="badge badge-azul">⏳ Se distribuye a lo largo del año según disponibilidad</span>
                     </div>
                 </div>
@@ -1143,14 +1182,14 @@
                             <td class="monto">$892,657 a $957,657</td>
                         </tr>
                         <tr>
-                            <td>- Fase 2 (Roof Garden + Seguro Condominal - con cuota extraordinaria)</td>
+                            <td>- Fase 2 (Roof Garden + Seguro Condominal)</td>
                             <td class="monto">-$560,000 a -$710,000</td>
                             <td class="monto">$182,657 a $397,657</td>
                         </tr>
                         <tr>
-                            <td>- Fase 3 (Mantenimiento programado + Cámaras elevadores)</td>
-                            <td class="monto">-$137,500 a -$160,000</td>
-                            <td class="monto">$22,657 a $260,157</td>
+                            <td>- Fase 3 (Mantenimiento programado + Cámaras elevadores + Impermeabilización)</td>
+                            <td class="monto">-$137,500 a -$160,000 + Impermeabilización</td>
+                            <td class="monto">$22,657 a $260,157 (sin impermeabilización)</td>
                         </tr>
                         <tr class="total">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
@@ -1174,6 +1213,7 @@
             <div class="leyenda-item"><span class="leyenda-color" style="background:#7b4cb0;"></span> Programado</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#00a8b5;"></span> Largo Plazo</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#8e9db3;"></span> Otros</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#00897b;"></span> Por definir</div>
         </div>
 
         <!-- ====== FOOTER ====== -->
