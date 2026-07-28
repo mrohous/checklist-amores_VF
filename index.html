@@ -127,6 +127,17 @@
             color: white;
             border-color: #2e7d32;
         }
+        /* Botón amarillo tenue para Viabilidad financiera */
+        .indice a.amarillo-tenue {
+            background: #fff9c4;
+            border-color: #ffd54f;
+            color: #b8860b;
+        }
+        .indice a.amarillo-tenue:hover {
+            background: #f9a825;
+            color: white;
+            border-color: #f9a825;
+        }
         .indice a.rojo-tenue {
             background: #fde8e8;
             border-color: #f5c2c2;
@@ -534,6 +545,17 @@
             justify-content: center;
             margin-top: 12px;
         }
+        .nota-legal .texto-intermedio {
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0 6px 0;
+            font-size: 14px;
+        }
+        .nota-legal .btn-viabilidad-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 6px;
+        }
         /* Botón rojo para enlace a energia.html */
         .btn-energia {
             display: inline-block;
@@ -548,10 +570,43 @@
             cursor: pointer;
             box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
             transition: 0.15s;
+            text-align: center;
         }
         .btn-energia:hover {
             background: #b71c1c;
             transform: scale(0.98);
+        }
+        .btn-energia .subtexto {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+        /* Botón de viabilidad financiera */
+        .btn-viabilidad {
+            display: inline-block;
+            background: #f9a825;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(249, 168, 37, 0.4);
+            transition: 0.15s;
+            text-align: center;
+        }
+        .btn-viabilidad:hover {
+            background: #f57f17;
+            transform: scale(0.98);
+        }
+        .btn-viabilidad .icono-mano {
+            display: inline-block;
+            font-size: 22px;
+            margin-right: 10px;
         }
         .footer {
             margin-top: 30px;
@@ -688,6 +743,13 @@
             justify-content: center;
             margin-top: 8px;
         }
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e9edf4;
+        }
         @media print {
             body { background: white; padding: 8px; }
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
@@ -700,6 +762,7 @@
             .btn-descarga-naranja { display: none; }
             .btn-descarga-morado { display: none; }
             .btn-energia { display: none; }
+            .btn-viabilidad { display: none; }
             .categoria .btn-indice { display: none; }
             .item:hover { background: transparent; }
             .checkbox:hover { background: white; }
@@ -720,6 +783,8 @@
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
             .btn-energia { font-size: 14px; padding: 10px 20px; }
+            .btn-viabilidad { font-size: 15px; padding: 12px 24px; }
+            .btn-viabilidad .icono-mano { font-size: 18px; }
             .btn-ver { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-icono { width: 28px; height: 28px; padding: 4px 6px; }
             .btn-descarga-pdf { font-size: 11px; padding: 4px 12px; }
@@ -749,6 +814,8 @@
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
             .btn-energia { font-size: 12px; padding: 8px 16px; }
+            .btn-viabilidad { font-size: 13px; padding: 10px 18px; }
+            .btn-viabilidad .icono-mano { font-size: 16px; }
             .btn-ver { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-icono { width: 26px; height: 26px; padding: 3px 5px; }
             .btn-descarga-pdf { font-size: 10px; padding: 3px 10px; }
@@ -791,6 +858,7 @@
         <a href="#sec13">13. Denuncias</a>
         <a href="#sec14">14. Otros</a>
         <a href="#sec15">15. Nuevos a considerar</a>
+        <a href="viabilidad.html" target="_blank" class="amarillo-tenue">Viabilidad financiera</a>
     </div>
     <!-- ========== FIN ÍNDICE ========== -->
 
@@ -1312,7 +1380,16 @@
     <div class="nota-legal" style="background:#fff8e1; border-color:#ffcc02;">
         <span class="pin">⚠️</span> <strong>Ojo:</strong> Antes de instalar paneles solares, es necesario resolver el bajo factor de potencia con un banco de capacitores. Los paneles no lo corrigen y, si se instalan solos, pueden aumentar la multa de CFE. El orden correcto es: primero el banco de capacitores (elimina la penalización) y después los paneles solares (reducen el consumo). Así logramos el máximo ahorro.
         <div class="btn-energia-wrapper">
-            <a href="energia.html" target="_blank" class="btn-energia">💰 ¡Ahorremos hasta $44,000 al año!</a>
+            <a href="energia.html" target="_blank" class="btn-energia">
+                💰 ¡Ahorremos hasta $44,000 al año!
+                <span class="subtexto">dá clic aquí</span>
+            </a>
+        </div>
+        <div class="texto-intermedio">pero para ello hay que hacer un análisis financiero, consulta el siguiente:</div>
+        <div class="btn-viabilidad-wrapper">
+            <a href="viabilidad.html" target="_blank" class="btn-viabilidad">
+                <span class="icono-mano">👆</span> Ver análisis de viabilidad financiera
+            </a>
         </div>
     </div>
 
@@ -1705,6 +1782,13 @@
             <span id="completados-count">✅ Completados: 0</span>
         </div>
         <button class="btn-pdf" onclick="guardarPDF()">📄 Guardar como PDF</button>
+    </div>
+
+    <!-- BOTÓN DE VIABILIDAD FINANCIERA AL FINAL DEL DOCUMENTO -->
+    <div class="footer-bottom">
+        <a href="viabilidad.html" target="_blank" class="btn-viabilidad">
+            <span class="icono-mano">👆</span> Ver análisis de viabilidad financiera
+        </a>
     </div>
 </div>
 
