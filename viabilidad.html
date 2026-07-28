@@ -80,6 +80,28 @@
             gap: 6px;
         }
 
+        /* ====== CONTEXTO ====== */
+        .contexto {
+            background: #f8faff;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin: 8px 0 18px 0;
+            border-left: 6px solid #1a6dd4;
+            border: 1px solid #e9edf4;
+            border-left-width: 6px;
+            font-size: clamp(14px, 1.2vw, 15px);
+            color: #2a405c;
+            line-height: 1.6;
+        }
+        .contexto strong {
+            color: #0b1e3a;
+        }
+        .contexto .objetivo {
+            margin-top: 6px;
+            font-weight: 600;
+            color: #0b1e3a;
+        }
+
         .grafica-container {
             background: #f9fbfe;
             border-radius: 16px;
@@ -479,6 +501,7 @@
             }
             h1 { font-size: 19px; padding-left: 10px; }
             .subtitulo { padding-left: 10px; flex-direction: column; gap: 2px; }
+            .contexto { padding: 12px 14px; font-size: 13px; }
             .grafica-container { padding: 28px 8px 6px 8px; }
             .grafica-titulo {
                 margin-bottom: 28px;
@@ -514,6 +537,7 @@
             .resumen-cards { grid-template-columns: 1fr 1fr; gap: 4px; }
             .card .valor { font-size: 13px; }
             .card .etiqueta { font-size: 9px; }
+            .contexto { padding: 10px 12px; font-size: 12px; }
             .grafica-container { padding: 20px 6px 4px 6px; }
             .grafica-titulo {
                 margin-bottom: 18px;
@@ -549,6 +573,15 @@
         <h1>📊 Análisis de Viabilidad Financiera</h1>
         <div class="subtitulo">
             <span><strong>Condominio Amores</strong> · Proyectos y prioridades 2026-2027</span>
+        </div>
+
+        <!-- ====== CONTEXTO ====== -->
+        <div class="contexto">
+            Este análisis responde a la necesidad de priorizar los múltiples proyectos urgentes y necesarios que enfrenta el condominio, considerando tanto su importancia técnica como su viabilidad financiera.
+            <br><br>
+            Se propone una estrategia de implementación por fases, combinando el uso del saldo de la cuenta con cuotas extraordinarias cuando sea necesario.
+            <br><br>
+            <span class="objetivo">🎯 El objetivo: avanzar en las obras indispensables sin comprometer la liquidez del condominio, garantizando un fondo de reserva mínimo de $200,000 y preservando la capacidad de generar intereses sobre el saldo de la cuenta.</span>
         </div>
 
         <!-- ====== GRÁFICA: COSTO DE PROYECTOS ====== -->
