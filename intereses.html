@@ -3,829 +3,1223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis Financiero</title>
+    <title>Análisis de Viabilidad Financiera - Amores</title>
 
-    <!-- ====== METADATOS OPEN GRAPH PARA WHATSAPP / FACEBOOK ====== -->
-    <meta property="og:title" content="Análisis Financiero" />
-    <meta property="og:description" content="Análisis financiero del condominio. Período: Enero 2024 – Junio 2026." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://https://mrohous.github.io/checklist-amores_VF/favi3/android-icon-192x192.png" />
-    <meta property="og:image" content="https://https://mrohous.github.io/checklist-amores_VF/favi3/android-icon-192x192.png" />
-    <!-- ====== FIN OPEN GRAPH ====== -->
-
-    <!-- ====== FAVICONES (carpeta favi3/) ====== -->
-    <link rel="apple-touch-icon" sizes="57x57" href="favi3/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favi3/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favi3/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favi3/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favi3/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favi3/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favi3/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favi3/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favi3/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favi3/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favi3/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favi3/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favi3/favicon-16x16.png">
-    <link rel="manifest" href="favi3/manifest.json">
-    <link rel="shortcut icon" href="favi3/favicon.ico" type="image/x-icon">
+    <!-- ====== FAVICONES (carpeta favi1/) ====== -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favi1/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favi1/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favi1/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favi1/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favi1/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favi1/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favi1/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favi1/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favi1/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favi1/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favi1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favi1/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favi1/favicon-16x16.png">
+    <link rel="manifest" href="favi1/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favi3/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="favi1/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- ====== FIN FAVICONES ====== -->
 
+    <!-- ====== OPEN GRAPH (para compartir en redes) ====== -->
+    <meta property="og:title" content="Análisis de Viabilidad Financiera - Amores">
+    <meta property="og:description" content="Análisis financiero y plan de acción para proyectos prioritarios del condominio Amores.">
+    <meta property="og:image" content="favi1/android-icon-192x192.png">
+    <meta property="og:image:width" content="192">
+    <meta property="og:image:height" content="192">
+    <meta property="og:type" content="website">
+    <!-- ====== FIN OPEN GRAPH ====== -->
+
     <style>
+        /* ====== ESTILOS COMPLETOS ====== */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #f2f4f8;
-            padding: 40px 20px;
+            background: #f5f7fc;
+            padding: 16px 10px;
             display: flex;
             justify-content: center;
         }
-
-        .document {
+        .reporte {
             max-width: 1100px;
             width: 100%;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            padding: 48px 56px;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #0b1a33;
-            letter-spacing: -0.3px;
-            margin-bottom: 6px;
-        }
-
-        .subhead {
-            font-size: 18px;
-            font-weight: 400;
-            color: #3d4e6b;
-            margin-bottom: 32px;
-            border-bottom: 2px solid #e6edf5;
-            padding-bottom: 20px;
-        }
-
-        .badge-periodo {
-            display: inline-block;
-            background: #eef3fa;
-            color: #1a3a6b;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 4px 16px;
-            border-radius: 30px;
-            margin-top: 4px;
-        }
-
-        /* Introducción */
-        .introduccion {
-            background: #f5f8fe;
-            border-radius: 16px;
-            padding: 24px 28px;
-            margin-bottom: 32px;
-            border: 2px solid #c8d8e8;
-        }
-        .introduccion h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0b1a33;
-            margin-bottom: 12px;
-        }
-        .introduccion .texto {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #1a2a47;
-        }
-        .introduccion .texto strong {
-            color: #0b1a33;
-        }
-        .introduccion .texto .resaltado {
-            color: #0a6b3f;
-            font-weight: 700;
-        }
-        .introduccion .texto .alerta {
-            color: #b13a3a;
-            font-weight: 600;
-        }
-
-        .table-wrap {
-            overflow-x: auto;
-            margin-bottom: 32px;
-            border-radius: 14px;
-            border: 1px solid #e2e9f2;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 15px;
             background: white;
+            border-radius: 24px;
+            padding: 28px 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
-
-        th {
-            background: #f7f9fc;
-            color: #1f2a44;
-            font-weight: 600;
-            text-align: left;
-            padding: 14px 18px;
-            border-bottom: 2px solid #dce4ed;
-        }
-
-        td {
-            padding: 12px 18px;
-            border-bottom: 1px solid #eaeef4;
-            color: #1f2a44;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        .total-row td {
-            background: #f7faff;
-            font-weight: 700;
-            border-top: 2px solid #cbd7e6;
-        }
-
-        .monto {
-            font-weight: 600;
-            text-align: right;
-            white-space: nowrap;
-        }
-
-        .monto.positivo {
-            color: #0a6b3f;
-        }
-
-        .monto.negativo {
-            color: #b13a3a;
-        }
-
-        .seccion {
-            margin-top: 40px;
-        }
-
-        .seccion h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0b1a33;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .seccion h2 .num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #0b1a33;
+        .fecha-esquina {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            background: #1a6dd4;
             color: white;
-            font-size: 14px;
-            font-weight: 700;
-            width: 28px;
-            height: 28px;
+            padding: 6px 16px;
             border-radius: 30px;
+            font-size: clamp(12px, 1.1vw, 14px);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(26, 109, 212, 0.3);
+        }
+        h1 {
+            font-size: clamp(22px, 3.5vw, 30px);
+            color: #0b1e3a;
+            border-left: 8px solid #1a6dd4;
+            padding-left: 16px;
+            margin-bottom: 4px;
+        }
+        .subtitulo {
+            color: #4a617f;
+            font-size: clamp(13px, 1.4vw, 15px);
+            padding-left: 24px;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #eef2f8;
+            padding-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
-        .comparacion-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .comparacion-item {
+        /* ====== CONTEXTO ====== */
+        .contexto {
             background: #f8faff;
-            padding: 14px 16px;
-            border-radius: 12px;
-            border: 1px solid #e3ebf5;
-        }
-
-        .comparacion-item .label {
-            font-size: 13px;
-            color: #4f6382;
-            font-weight: 500;
-        }
-
-        .comparacion-item .value {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0b1a33;
-            margin-top: 2px;
-        }
-
-        .comparacion-item .value.verde {
-            color: #0a6b3f;
-        }
-        .comparacion-item .value.rojo {
-            color: #b13a3a;
-        }
-
-        @media (max-width: 700px) {
-            .document {
-                padding: 24px 18px;
-            }
-            .comparacion-grid {
-                grid-template-columns: 1fr;
-            }
-            th, td {
-                padding: 10px 12px;
-                font-size: 14px;
-            }
-            h1 {
-                font-size: 22px;
-            }
-        }
-
-        .anual-note {
-            font-size: 14px;
-            color: #2d405c;
-            font-weight: 400;
-            margin-top: 4px;
-            padding-left: 4px;
-        }
-        .anual-note strong {
-            font-weight: 600;
-            color: #0b1a33;
-        }
-
-        /* Estilos para la sección de pérdida del seguro */
-        .perdida-box {
-            background: #fef6f0;
             border-radius: 16px;
-            padding: 24px 28px;
-            margin-top: 12px;
-            border: 2px solid #e8b8a0;
-        }
-        .perdida-box h3 {
-            color: #a13d2a;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .perdida-box .fecha {
-            background: #faeae3;
-            display: inline-block;
-            padding: 4px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            color: #7a2e1a;
-            margin-bottom: 16px;
-        }
-        .perdida-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 12px 0 4px 0;
-        }
-        .perdida-item {
-            background: #ffffffcc;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid #edd7cc;
-        }
-        .perdida-item .label {
-            font-size: 13px;
-            color: #5a4036;
-            font-weight: 500;
-        }
-        .perdida-item .value {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1f2a44;
-            margin-top: 2px;
-        }
-        .perdida-item .value.rojo {
-            color: #b13a3a;
-        }
-        .perdida-item .value.verde {
-            color: #0a6b3f;
-        }
-        @media (max-width: 700px) {
-            .perdida-grid {
-                grid-template-columns: 1fr;
-            }
-            .perdida-box {
-                padding: 18px 16px;
-            }
-        }
-
-        .escenario-perfecto {
-            background: #eaf5ea;
-            border-radius: 16px;
-            padding: 20px 24px;
-            margin-top: 16px;
-            border: 2px solid #7db87d;
-        }
-        .escenario-perfecto h4 {
-            color: #1a5a1a;
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .escenario-perfecto .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-        }
-        .escenario-perfecto .item {
-            background: #ffffffcc;
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid #b8d8b8;
-        }
-        .escenario-perfecto .item .label {
-            font-size: 13px;
-            color: #2d5a2d;
-            font-weight: 500;
-        }
-        .escenario-perfecto .item .value {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0a4a0a;
-            margin-top: 2px;
-        }
-        @media (max-width: 700px) {
-            .escenario-perfecto .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Tabla comparativa dentro del escenario perfecto - con scroll horizontal en móvil */
-        .tabla-comparativa {
-            margin-top: 16px;
-            border-radius: 10px;
-            overflow-x: auto;
-            border: 1px solid #b8d8b8;
-        }
-        .tabla-comparativa table {
-            font-size: 14px;
-            background: #ffffffcc;
-            width: 100%;
-            min-width: 480px;
-        }
-        .tabla-comparativa th {
-            background: #d4e8d4;
-            color: #1a4a1a;
-            font-weight: 600;
-            padding: 10px 14px;
-            text-align: left;
-            white-space: nowrap;
-        }
-        .tabla-comparativa td {
-            padding: 9px 14px;
-            border-bottom: 1px solid #dce8dc;
-            color: #1f2a44;
-            white-space: nowrap;
-        }
-        .tabla-comparativa .col-real {
-            color: #b13a3a;
-            font-weight: 600;
-        }
-        .tabla-comparativa .col-ideal {
-            color: #0a6b3f;
-            font-weight: 600;
-        }
-        .tabla-comparativa .col-diferencia {
-            color: #0a4a7a;
-            font-weight: 700;
-        }
-        .tabla-comparativa .total-row td {
-            background: #eaf5ea;
-            font-weight: 700;
-        }
-
-        .mensaje-ensenanza {
-            background: #f0f4fa;
-            border-radius: 16px;
-            padding: 18px 24px;
-            margin-top: 16px;
-            border-left: 6px solid #1a3a6b;
-            font-size: 15px;
-            color: #1f2a44;
+            padding: 16px 20px;
+            margin: 8px 0 18px 0;
+            border-left: 6px solid #1a6dd4;
+            border: 1px solid #e9edf4;
+            border-left-width: 6px;
+            font-size: clamp(14px, 1.2vw, 15px);
+            color: #2a405c;
             line-height: 1.6;
         }
-        .mensaje-ensenanza strong {
-            color: #0b1a33;
+        .contexto strong {
+            color: #0b1e3a;
+        }
+        .contexto .objetivo {
+            margin-top: 6px;
+            font-weight: 600;
+            color: #0b1e3a;
         }
 
-        /* Reflexión final */
-        .reflexion-final {
-            background: #f5f8fe;
+        .grafica-container {
+            background: #f9fbfe;
             border-radius: 16px;
-            padding: 24px 28px;
-            margin-top: 20px;
-            border: 2px solid #c8d8e8;
+            padding: 40px 12px 8px 12px;
+            margin: 12px 0 8px 0;
+            border: 1px solid #e9edf4;
+            width: 100%;
+            overflow: hidden;
         }
-        .reflexion-final h2 {
-            margin-top: 0;
-        }
-        .reflexion-final .texto {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #1a2a47;
-        }
-        .reflexion-final .texto strong {
-            color: #0b1a33;
-        }
-        .reflexion-final .texto .resaltado {
-            color: #0a6b3f;
-            font-weight: 700;
-        }
-        .reflexion-final .texto .alerta {
-            color: #b13a3a;
+        .grafica-titulo {
             font-weight: 600;
+            font-size: clamp(14px, 1.4vw, 16px);
+            color: #1a2b4a;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .grafica-barras {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            gap: 3px;
+            height: 160px;
+            padding: 16px 0 0 0;
+            width: 100%;
+        }
+        .barra-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 60px;
+            min-width: 28px;
+        }
+        .barra {
+            width: 100%;
+            max-width: 40px;
+            border-radius: 4px 4px 2px 2px;
+            min-height: 6px;
+            position: relative;
+        }
+        .barra .barra-valor {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(6px, 0.7vw, 8px);
+            font-weight: 700;
+            color: #0b1e3a;
+            white-space: nowrap;
+        }
+        .barra-etiqueta {
+            margin-top: 4px;
+            font-size: clamp(6px, 0.6vw, 8px);
+            font-weight: 500;
+            color: #3a5270;
+            text-align: center;
+            word-break: break-word;
+            line-height: 1.1;
+        }
+        .color-rojo { background: #c84a4a; }
+        .color-naranja { background: #d98c2e; }
+        .color-morado { background: #7b4cb0; }
+        .color-gris { background: #8e9db3; }
+        .color-azul { background: #1a6dd4; }
+        .color-verde { background: #1d9e5a; }
+        .color-cian { background: #00a8b5; }
+        .color-rosa { background: #e91e63; }
+        .color-ambar { background: #ff8f00; }
+        .color-magenta { background: #9c27b0; }
+        .color-turquesa { background: #00897b; }
+
+        .badge-container {
+            font-size: clamp(10px, 0.9vw, 12px);
+            color: #5a6e8a;
+            text-align: center;
+            margin-top: 16px;
+            padding: 2px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: clamp(9px, 0.85vw, 11px);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .badge-rojo { background: #ffebee; color: #b71c1c; }
+        .badge-verde { background: #e8f5e9; color: #1b5e20; }
+        .badge-naranja { background: #fff3e0; color: #bf5e00; }
+        .badge-azul { background: #e3ecfa; color: #0d47a1; }
+        .badge-morado { background: #ede7f6; color: #4a148c; }
+        .badge-cian { background: #e0f7fa; color: #00695c; }
+        .badge-gris { background: #f5f5f5; color: #616161; }
+        .badge-amarillo { background: #fff8e1; color: #bf5e00; }
+
+        .tabla-wrapper {
+            overflow-x: auto;
+            margin: 8px 0 4px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tabla {
+            width: 100%;
+            min-width: 580px;
+            border-collapse: collapse;
+            font-size: clamp(11px, 1.1vw, 13px);
+        }
+        .tabla th {
+            background: #eef4fe;
+            text-align: left;
+            padding: 7px 10px;
+            border-bottom: 2px solid #dce4f0;
+            font-weight: 600;
+            color: #1a2b4a;
+            white-space: nowrap;
+        }
+        .tabla td {
+            padding: 5px 10px;
+            border-bottom: 1px solid #e9edf4;
+            vertical-align: middle;
+        }
+        .tabla .total {
+            font-weight: 700;
+            background: #f0f6fe;
+        }
+        .tabla .monto {
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .plan-fases {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 12px 0 6px 0;
+        }
+        .fase {
+            background: #f8faff;
+            border-radius: 12px;
+            padding: 12px 16px;
+            border-left: 6px solid #1a6dd4;
+        }
+        .fase.rojo { border-left-color: #c84a4a; }
+        .fase.verde { border-left-color: #1d9e5a; }
+        .fase.naranja { border-left-color: #d98c2e; }
+        .fase.morado { border-left-color: #7b4cb0; }
+        .fase.cian { border-left-color: #00a8b5; }
+        .fase-titulo {
+            font-weight: 700;
+            font-size: clamp(14px, 1.4vw, 16px);
+            color: #0b1e3a;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .fase-desc {
+            font-size: clamp(12px, 1.1vw, 13.5px);
+            color: #3a5270;
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+        .fase-monto {
+            font-weight: 700;
+            color: #0b1e3a;
+            white-space: nowrap;
+        }
+
+        .total-proyectos {
+            background: #f0f6fe;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 10px 0 4px 0;
+            border: 2px solid #dce4f0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-weight: 600;
+            font-size: clamp(13px, 1.3vw, 15px);
+        }
+
+        .nota {
+            background: #fffde7;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin: 8px 0 4px 0;
+            border: 1px solid #ffecb3;
+            font-size: clamp(12px, 1.1vw, 13.5px);
+            color: #5a4a1a;
+            line-height: 1.5;
+        }
+        .nota-azul {
+            background: #eef4fe;
+            border-color: #b8d0ea;
+            color: #1a2b4a;
+        }
+        .nota-verde {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            color: #1b5e20;
+        }
+        .nota-info {
+            background: #e3f2fd;
+            border-color: #90caf9;
+            color: #0d47a1;
+        }
+        .nota-estrategia {
+            background: #f3e5f5;
+            border-color: #ce93d8;
+            color: #4a148c;
+        }
+
+        .leyenda {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: clamp(11px, 1vw, 12.5px);
+            color: #3a5270;
+            margin: 14px 0 4px 0;
+            padding-top: 10px;
+            border-top: 1px solid #e9edf4;
+        }
+        .leyenda-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .leyenda-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .btn-pdf {
+            display: inline-block;
+            background: #1a6dd4;
+            color: white;
+            padding: 9px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: clamp(12px, 1.1vw, 14px);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(26, 109, 212, 0.25);
+            transition: 0.15s;
+            margin-top: 8px;
+        }
+        .btn-pdf:hover {
+            background: #0f55b0;
+            transform: scale(0.97);
+        }
+
+        .btn-intereses {
+            display: inline-block;
+            background: #7b4cb0;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: clamp(13px, 1.2vw, 15px);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(123, 76, 176, 0.3);
+            transition: 0.15s;
+            margin-top: 8px;
+            text-decoration: none;
+        }
+        .btn-intereses:hover {
+            background: #5e35b1;
+            transform: scale(0.97);
+        }
+        .btn-intereses .flecha {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-left: 4px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 2px dashed #dce2ec;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: clamp(11px, 1vw, 12.5px);
+            color: #5a6e8a;
+            align-items: center;
+        }
+
+        .calendario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0 6px 0;
+        }
+        .calendario-mes {
+            background: #f8faff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            border: 1px solid #e6ecf5;
+        }
+        .calendario-mes .mes {
+            font-weight: 700;
+            color: #0b1e3a;
+            font-size: clamp(13px, 1.2vw, 15px);
+            border-bottom: 2px solid #dce4f0;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+        .calendario-mes .actividad {
+            font-size: clamp(11px, 1vw, 12.5px);
+            color: #3a5270;
+            padding: 2px 0;
+            border-bottom: 1px dashed #eef2f8;
+        }
+        .calendario-mes .actividad:last-child {
+            border-bottom: none;
+        }
+        .calendario-mes .monto-act {
+            font-weight: 600;
+            color: #0b1e3a;
+        }
+
+        /* ====== GRÁFICA CIRCULAR MOROSIDAD ====== */
+        .morosidad-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 12px 0 4px 0;
+            padding: 12px 16px;
+            background: #f8faff;
+            border-radius: 12px;
+            border: 1px solid #e9edf4;
+        }
+        .morosidad-container .chart-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .morosidad-container .chart-wrapper canvas {
+            max-width: 140px;
+            max-height: 140px;
+            width: 100%;
+            height: auto;
+        }
+        .morosidad-container .leyenda-morosidad {
+            font-size: clamp(12px, 1.1vw, 14px);
+            color: #3a5270;
+            line-height: 1.6;
+        }
+        .morosidad-container .leyenda-morosidad .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 2px 0;
+        }
+        .morosidad-container .leyenda-morosidad .color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .morosidad-container .leyenda-morosidad .porcentaje {
+            font-weight: 700;
+            color: #0b1e3a;
+        }
+        .morosidad-container .leyenda-morosidad .total-morosidad {
+            margin-top: 6px;
+            font-weight: 700;
+            color: #b33c3c;
+            font-size: clamp(14px, 1.3vw, 16px);
+        }
+
+        @media print {
+            body { background: white; padding: 4px; }
+            .reporte { box-shadow: none; border-radius: 0; padding: 14px; }
+            .btn-pdf { display: none; }
+            .btn-intereses { display: none; }
+            .grafica-barras { height: 140px; }
+            .tabla-wrapper { overflow-x: visible; }
+            .tabla { min-width: auto; }
+            .fecha-esquina { position: static; display: inline-block; margin-bottom: 10px; }
+        }
+
+        @media (max-width: 600px) {
+            .reporte { padding: 12px 8px; }
+            .fecha-esquina {
+                position: static;
+                display: inline-block;
+                margin-bottom: 8px;
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+            h1 { font-size: 19px; padding-left: 10px; }
+            .subtitulo { padding-left: 10px; flex-direction: column; gap: 2px; }
+            .contexto { padding: 12px 14px; font-size: 13px; }
+            .grafica-container { padding: 28px 8px 6px 8px; }
+            .grafica-titulo {
+                margin-bottom: 28px;
+                text-align: right;
+            }
+            .grafica-barras { height: 110px; gap: 2px; padding: 10px 0 0 0; }
+            .barra { max-width: 26px; }
+            .barra .barra-valor { font-size: 6px; top: -14px; }
+            .barra-etiqueta { font-size: 6px; }
+            .tabla { font-size: 10px; min-width: 420px; }
+            .tabla th, .tabla td { padding: 3px 6px; }
+            .fase { padding: 8px 10px; }
+            .fase-titulo { font-size: 13px; }
+            .fase-desc { font-size: 11px; }
+            .total-proyectos { font-size: 12px; padding: 8px 10px; flex-direction: column; align-items: center; }
+            .badge { font-size: 8px; padding: 1px 6px; }
+            .nota { font-size: 11px; padding: 8px 10px; }
+            .leyenda { font-size: 10px; gap: 4px 10px; }
+            .footer { font-size: 10px; flex-direction: column; align-items: center; }
+            .btn-pdf { font-size: 11px; padding: 6px 16px; }
+            .btn-intereses { font-size: 11px; padding: 8px 16px; text-align: center; }
+            .calendario-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .calendario-mes { padding: 6px 8px; }
+            .calendario-mes .mes { font-size: 12px; }
+            .calendario-mes .actividad { font-size: 10px; }
+            .morosidad-container { flex-direction: column; gap: 12px; padding: 10px; }
+            .morosidad-container .chart-wrapper canvas { max-width: 110px; max-height: 110px; }
+            .morosidad-container .leyenda-morosidad { font-size: 12px; text-align: center; }
+            .morosidad-container .leyenda-morosidad .item { justify-content: center; }
+        }
+
+        @media (max-width: 400px) {
+            .resumen-cards { grid-template-columns: 1fr 1fr; gap: 4px; }
+            .card .valor { font-size: 13px; }
+            .card .etiqueta { font-size: 9px; }
+            .contexto { padding: 10px 12px; font-size: 12px; }
+            .grafica-container { padding: 20px 6px 4px 6px; }
+            .grafica-titulo {
+                margin-bottom: 18px;
+                text-align: right;
+            }
+            .grafica-barras { height: 90px; gap: 1px; padding: 6px 0 0 0; }
+            .barra { max-width: 18px; border-radius: 2px; }
+            .barra .barra-valor { font-size: 5px; top: -12px; }
+            .barra-etiqueta { font-size: 5px; }
+            .tabla { font-size: 9px; min-width: 340px; }
+            .tabla th, .tabla td { padding: 2px 4px; }
+            .fase { padding: 6px 8px; border-left-width: 4px; }
+            .fase-titulo { font-size: 11px; }
+            .fase-desc { font-size: 10px; }
+            .total-proyectos { font-size: 11px; padding: 6px 8px; }
+            .badge { font-size: 7px; padding: 1px 5px; }
+            .nota { font-size: 10px; padding: 6px 8px; }
+            .leyenda { font-size: 9px; gap: 3px 8px; }
+            .calendario-grid { grid-template-columns: 1fr; }
+            .fecha-esquina { font-size: 10px; padding: 3px 10px; }
+            .btn-intereses { font-size: 10px; padding: 6px 12px; }
+            .morosidad-container .chart-wrapper canvas { max-width: 90px; max-height: 90px; }
+            .morosidad-container .leyenda-morosidad { font-size: 11px; }
         }
     </style>
 </head>
 <body>
-<div class="document">
+    <div class="reporte" id="reporte">
+        <!-- FECHA EN ESQUINA SUPERIOR DERECHA -->
+        <div class="fecha-esquina">📅 A JUNIO-2026</div>
 
-    <!-- TÍTULO -->
-    <h1>Análisis financiero</h1>
-    <div class="subhead">
-        <span class="badge-periodo">Enero 2024 – Junio 2026 (30 meses)</span>
-    </div>
-
-    <!-- INTRODUCCIÓN -->
-    <div class="introduccion">
-        <h2>Introducción</h2>
-        <div class="texto">
-            <p>
-                El condominio cerró el período con un saldo real de <strong>$1,061,097.02</strong>, resultado de un superávit promedio mensual de <strong>$15,593.41</strong> que se origina de tres fuentes: un excedente operativo de <strong>$7,087.00</strong> después de cubrir gastos fijos y variables; intereses bancarios por <strong>$6,006.41</strong> generados por el saldo acumulado; e ingresos por renta de salones y eventos por <strong>$2,500.00</strong>.
-            </p>
-            <p style="margin-top: 12px;">
-                Sin embargo, este saldo pudo haber sido significativamente mayor. Si no hubiera existido la cartera vencida de <span class="alerta">$328,723.00</span> y no se hubiera realizado el pago incorrecto del seguro por <span class="alerta">$222,448.16</span> (pagado en agosto de 2024 a una persona física sin facultades legales), el condominio habría alcanzado un saldo de <span class="resaltado">$1,612,268.18</span>, equivalente a <span class="resaltado">11.6 meses de gastos fijos cubiertos</span>, en lugar de los 7.6 meses actuales. La combinación de morosidad y una decisión de gasto no respaldada documentalmente representa una pérdida de aproximadamente <strong>4 meses de operación</strong> del edificio.
-            </p>
+        <!-- ENCABEZADO -->
+        <h1>📊 Análisis de Viabilidad Financiera</h1>
+        <div class="subtitulo">
+            <span><strong>Condominio Amores</strong> · Proyectos y prioridades 2026-2027</span>
         </div>
-    </div>
 
-    <!-- 1. SALDO -->
-    <div class="seccion">
-        <h2><span class="num">1</span> Resumen General del Saldo</h2>
-        <div class="table-wrap">
-            <table>
+        <!-- ====== CONTEXTO ====== -->
+        <div class="contexto">
+            Este análisis responde a la necesidad de priorizar los múltiples proyectos urgentes y necesarios que enfrenta el condominio, considerando tanto su importancia técnica como su viabilidad financiera.
+            <br><br>
+            Se propone una estrategia de implementación por fases, combinando el uso del saldo de la cuenta con cuotas extraordinarias cuando sea necesario.
+            <br><br>
+            <span class="objetivo">🎯 El objetivo: avanzar en las obras indispensables sin comprometer la liquidez del condominio, garantizando un fondo de reserva mínimo de $200,000 y preservando la capacidad de generar intereses sobre el saldo de la cuenta.</span>
+        </div>
+
+        <!-- ====== GRÁFICA: COSTO DE PROYECTOS ====== -->
+        <div class="grafica-container">
+            <div class="grafica-titulo">🏗️ Costo Estimado de Proyectos Prioritarios</div>
+            <div class="grafica-barras">
+                <div class="barra-item">
+                    <div class="barra color-rojo" style="height:150px;"><span class="barra-valor">$450,000</span></div>
+                    <div class="barra-etiqueta">Roof Garden</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-naranja" style="height:70px;"><span class="barra-valor">$106,200</span></div>
+                    <div class="barra-etiqueta">Elevadores</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-rosa" style="height:46px;"><span class="barra-valor">$73k-$138k</span></div>
+                    <div class="barra-etiqueta">Protección Civil</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-ambar" style="height:87px;"><span class="barra-valor">$110k-$260k</span></div>
+                    <div class="barra-etiqueta">Seguro</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-morado" style="height:28px;"><span class="barra-valor">$42,000</span></div>
+                    <div class="barra-etiqueta">Sellado</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-cian" style="height:22px;"><span class="barra-valor">$33,240</span></div>
+                    <div class="barra-etiqueta">AHTRAM</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-verde" style="height:20px;"><span class="barra-valor">$30,160</span></div>
+                    <div class="barra-etiqueta">Lavado</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-azul" style="height:20px;"><span class="barra-valor">$29,800</span></div>
+                    <div class="barra-etiqueta">Pintura</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-gris" style="height:20px;"><span class="barra-valor">$30,000</span></div>
+                    <div class="barra-etiqueta">Banco Capacitores</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-magenta" style="height:14px;"><span class="barra-valor">$19.5k-$42k</span></div>
+                    <div class="barra-etiqueta">👁️ Cámaras elevadores</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-turquesa" style="height:14px;"><span class="barra-valor">Por definir</span></div>
+                    <div class="barra-etiqueta">Impermeabilización</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-naranja" style="height:11px;"><span class="barra-valor">$16,000</span></div>
+                    <div class="barra-etiqueta">Fotoceldas</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-morado" style="height:17px;"><span class="barra-valor">$25,000</span></div>
+                    <div class="barra-etiqueta">A.C.</div>
+                </div>
+            </div>
+            <div class="badge-container">
+                <span class="badge badge-naranja">⚡ El Roof Garden representa el 60% del costo total de proyectos</span>
+            </div>
+        </div>
+
+        <!-- ====== TABLA DE PROYECTOS ====== -->
+        <div style="margin: 16px 0 4px 0;">
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📋 Detalle de Proyectos y Cotizaciones</div>
+            <div class="tabla-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Proyecto</th>
+                            <th>Proveedor</th>
+                            <th>Monto</th>
+                            <th>Prioridad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Roof Garden (piso + filtración)</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">$450,000</td>
+                            <td><span class="badge badge-rojo">Alta</span></td>
+                            <td><span class="badge badge-rojo">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reparación Mayor de Elevadores</strong></td>
+                            <td>ELEBETA</td>
+                            <td class="monto">$106,200</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento)</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">$73,000 – $138,000</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-rojo">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguro Condominal (incendio, sismo y RC, cobertura amplia, 52 departamentos)</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">$110,000 – $260,000</td>
+                            <td><span class="badge badge-rojo">Alta</span></td>
+                            <td><span class="badge badge-rojo">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impermeabilización de azotea</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">Por definir</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-gris">Sin cotización</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sellado de ventanas y terrazas</strong></td>
+                            <td>Manuel Ochoa / Antonio Guerrero / José Luis Velázquez</td>
+                            <td class="monto">~$42,000</td>
+                            <td><span class="badge badge-naranja">Media-Alta</span></td>
+                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Filtraciones en muros (canalización)</strong></td>
+                            <td>AHTRAM</td>
+                            <td class="monto">$33,240</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lavado de cristales y louvers</strong></td>
+                            <td>ProAltura</td>
+                            <td class="monto">$30,160</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pintura de herrería y estructuras metálicas</strong></td>
+                            <td>Arq. Manuel Ochoa</td>
+                            <td class="monto">$29,800</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banco de Capacitores (factor de potencia)</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">~$30,000</td>
+                            <td><span class="badge badge-naranja">Media-Alta</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cámaras de videovigilancia para elevadores (sistema base existente)</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">$19,500 – $42,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fotoceldas para portones automáticos</strong></td>
+                            <td>Grossmann</td>
+                            <td class="monto">$16,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-verde">Cotizado</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constitución de la A.C.</strong></td>
+                            <td>Notaría</td>
+                            <td class="monto">$25,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paneles Solares</strong></td>
+                            <td>Pendiente de cotización</td>
+                            <td class="monto">$250,000 - $400,000</td>
+                            <td><span class="badge badge-gris">Media</span></td>
+                            <td><span class="badge badge-gris">Postergado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ====== TOTAL DE PROYECTOS ====== -->
+        <div class="total-proyectos">
+            <span>💰 <strong>Total de proyectos identificados (sin paneles solares):</strong></span>
+            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$964,900 – $1,202,400 + Impermeabilización (por definir)</strong></span>
+        </div>
+
+        <!-- ====== TABLA DE VIABILIDAD ====== -->
+        <div style="margin: 14px 0 4px 0;">
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📌 Viabilidad de Proyectos Mayores</div>
+            <div class="tabla-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Proyecto</th>
+                            <th>Costo Estimado</th>
+                            <th>Prioridad</th>
+                            <th>Viabilidad Actual</th>
+                            <th>Recomendación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Roof Garden (piso + filtración)</strong></td>
+                            <td class="monto">$450,000</td>
+                            <td><span class="badge badge-rojo">Alta</span></td>
+                            <td><span class="badge badge-amarillo">🟡 Viable con financiamiento combinado</span></td>
+                            <td>Combinar saldo de cuenta + cuota extraordinaria</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reparación Mayor de Elevadores</strong></td>
+                            <td class="monto">$106,200</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Ejecutar de inmediato</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Protección Civil (PIPC, ROPC, dictámenes y equipamiento)</strong></td>
+                            <td class="monto">$73,000 – $138,000</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Ejecutar con prioridad</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguro Condominal (incendio, sismo y RC, cobertura amplia)</strong></td>
+                            <td class="monto">$110,000 – $260,000</td>
+                            <td><span class="badge badge-rojo">Alta</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Gestionar cotizaciones y contratar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impermeabilización de azotea</strong></td>
+                            <td class="monto">Por definir</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Obtener cotización y programar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Filtraciones en muros (AHTRAM)</strong></td>
+                            <td class="monto">$33,240</td>
+                            <td><span class="badge badge-rojo">Crítica</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Ejecutar con prioridad</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banco de Capacitores</strong></td>
+                            <td class="monto">~$30,000</td>
+                            <td><span class="badge badge-naranja">Media-Alta</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>ROI de 1.4 años · Ahorro anual $17,100</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cámaras de videovigilancia para elevadores</strong></td>
+                            <td class="monto">$19,500 – $42,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Programar en Fase 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Constitución A.C.</strong></td>
+                            <td class="monto">$25,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-verde">✅ Viable</span></td>
+                            <td>Base para administración transparente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paneles Solares</strong></td>
+                            <td class="monto">$250,000 - $400,000</td>
+                            <td><span class="badge badge-azul">Media</span></td>
+                            <td><span class="badge badge-rojo">❌ No Viable</span></td>
+                            <td>Postergar hasta resolver factor de potencia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ====== CALENDARIO DE PROYECTOS ====== -->
+        <div style="margin: 16px 0 4px 0;">
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:6px;">📅 Calendario de Proyectos (12 meses)</div>
+            <div class="calendario-grid">
+                <div class="calendario-mes">
+                    <div class="mes">Mes 1-2 (Ago-Sep)</div>
+                    <div class="actividad">🚨 Cobranza y estabilización</div>
+                    <div class="actividad">⚙️ Constitución A.C. <span class="monto-act">$25,000</span></div>
+                    <div class="actividad">⚙️ Reparación Elevadores <span class="monto-act">$106,200</span></div>
+                    <div class="actividad">🛡️ Protección Civil <span class="monto-act">$73k-$138k</span></div>
+                    <div class="actividad">💧 Filtraciones AHTRAM <span class="monto-act">$33,240</span></div>
+                </div>
+                <div class="calendario-mes">
+                    <div class="mes">Mes 3-4 (Oct-Nov)</div>
+                    <div class="actividad">⚡ Banco de Capacitores <span class="monto-act">~$30,000</span></div>
+                    <div class="actividad">🛡️ Seguro Condominal <span class="monto-act">$110k-$260k</span></div>
+                </div>
+                <div class="calendario-mes">
+                    <div class="mes">Mes 5-7 (Dic-Feb)</div>
+                    <div class="actividad">🏠 Roof Garden <span class="monto-act">$450,000</span></div>
+                </div>
+                <div class="calendario-mes">
+                    <div class="mes">Mes 1-12 (Ago25-Ago26)</div>
+                    <div class="actividad">🧹 Sellado ventanas <span class="monto-act">~$42,000</span></div>
+                    <div class="actividad">🧹 Lavado cristales <span class="monto-act">$30,160</span></div>
+                    <div class="actividad">🧹 Pintura herrería <span class="monto-act">$29,800</span></div>
+                    <div class="actividad">👁️ Cámaras elevadores <span class="monto-act">$19.5k-$42k</span></div>
+                    <div class="actividad">🧹 Fotoceldas <span class="monto-act">$16,000</span></div>
+                    <div class="actividad">🏠 Impermeabilización azotea <span class="monto-act">Por definir</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== PLAN DE ACCIÓN POR FASES ====== -->
+        <div style="margin: 14px 0 4px 0;">
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:6px;">📋 Plan de Acción Priorizado</div>
+            <div class="plan-fases">
+                <div class="fase rojo">
+                    <div class="fase-titulo">
+                        <span>🚨 Fase 0 · Cobranza y Estabilización</span>
+                        <span class="fase-monto">Meta: Recuperar $164,000</span>
+                    </div>
+                    <div class="fase-desc">
+                        Notificar formalmente a los 4 principales deudores (108, 201, 101, 309). Establecer plan de pagos y, de no haber respuesta, iniciar mediación en PROSOC. <br>
+                        <span class="badge badge-rojo">Urgente</span> Es el primer paso para financiar los proyectos.
+                    </div>
+                </div>
+                <div class="fase verde">
+                    <div class="fase-titulo">
+                        <span>⚙️ Fase 1 · Proyectos Críticos (Mes 1-4)</span>
+                        <span class="fase-monto">Costo: $267,440 – $332,440</span>
+                    </div>
+                    <div class="fase-desc">
+                        <strong>1.</strong> Reparación Mayor de Elevadores ($106,200) · <strong>2.</strong> Constitución de la A.C. ($25,000) · <strong>3.</strong> Banco de Capacitores (~$30,000) · <strong>4.</strong> Filtraciones en muros (AHTRAM $33,240) — <span class="badge badge-rojo">Crítico</span> · <strong>5.</strong> Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento) — <span class="badge badge-rojo">Crítico</span> · <span class="badge badge-rojo">$73,000 – $138,000</span>. <br>
+                        <span class="badge badge-verde">✅ Viable con saldo actual + cobranza</span>
+                    </div>
+                </div>
+                <div class="fase naranja">
+                    <div class="fase-titulo">
+                        <span>🏠 Fase 2 · Obra Mayor (Mes 5-7)</span>
+                        <span class="fase-monto">Costo: $450,000</span>
+                    </div>
+                    <div class="fase-desc">
+                        <strong>1.</strong> Cambio de Piso del Roof Garden (que además causa filtración en un departamento) — $450,000. <br>
+                        <span class="badge badge-naranja">⚠️ Requiere financiamiento combinado (saldo de cuenta + cuota extraordinaria)</span>
+                    </div>
+                </div>
+                <div class="fase morado">
+                    <div class="fase-titulo">
+                        <span>🧹 Fase 3 · Mantenimiento Programado y Seguridad (Mes 1-12)</span>
+                        <span class="fase-monto">Costo: $137,500 – $160,000</span>
+                    </div>
+                    <div class="fase-desc">
+                        Sellado de ventanas (~$42,000) · Lavado de cristales ($30,160) · Pintura de herrería ($29,800) · Cámaras de videovigilancia para elevadores ($19,500 – $42,000) · Fotoceldas ($16,000) · Impermeabilización de azotea (por definir). <br>
+                        <span class="badge badge-azul">⏳ Se distribuye a lo largo del año según disponibilidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== FLUJO DE EFECTIVO PROYECTADO ====== -->
+        <div style="margin: 12px 0 4px 0;">
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📈 Flujo de Efectivo Proyectado (12 meses, con cobranza exitosa)</div>
+            <div class="tabla-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Saldo Acumulado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Saldo Inicial (Julio 2026)</strong></td>
+                            <td></td>
+                            <td><strong>$1,061,097</strong></td>
+                        </tr>
+                        <tr>
+                            <td>+ Recuperación de cartera (50%)</td>
+                            <td class="monto">+$164,000</td>
+                            <td class="monto">$1,225,097</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Seguro)</td>
+                            <td class="monto">-$377,440 a -$592,440</td>
+                            <td class="monto">$632,657 a $847,657</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 2 (Roof Garden - con financiamiento combinado)</td>
+                            <td class="monto">-$450,000</td>
+                            <td class="monto">$182,657 a $397,657</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 3 (Mantenimiento programado + Cámaras vigilancia)</td>
+                            <td class="monto">-$137,500 a -$160,000</td>
+                            <td class="monto">$22,657 a $260,157</td>
+                        </tr>
+                        <tr class="total">
+                            <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
+                            <td><strong>$22,657 – $260,157</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="font-size:clamp(11px,1vw,12.5px); color:#4a617f; margin-top:3px;">
+                ⚠️ El saldo final proyectado es más ajustado. Se recomienda priorizar la cobranza, negociar mejores condiciones de pago con los proveedores o aplicar alguna estrategia de financiamiento como la sugerida para preservar liquidez. <br><br>
+                🏦 <strong>Adicionalmente, se debe considerar cubrir algunos gastos con cuotas extraordinarias, ya que se debe considerar un mínimo de $200,000 como fondo de reserva</strong> para garantizar la estabilidad financiera del condominio ante imprevistos.
+            </div>
+        </div>
+
+        <!-- ====== ESTRATEGIA DE FINANCIAMIENTO SUGERIDA ====== -->
+        <div class="nota nota-estrategia">
+            <span>💡</span> <strong>Estrategia de Financiamiento Sugerida</strong><br>
+            Para evitar un impacto financiero fuerte en los condóminos y al mismo tiempo preservar la liquidez del condominio, se propone una <strong>estrategia de financiamiento combinado y escalonado</strong>:
+
+            <br><br>
+            <table style="width:100%; border-collapse:collapse; font-size:clamp(11px,1vw,12.5px); margin-top:6px;">
                 <thead>
-                    <tr><th>Concepto</th><th class="monto">Valor</th></tr>
+                    <tr style="background:#e8eaf6; border-bottom:2px solid #c5cae9;">
+                        <th style="padding:6px 10px; text-align:left;">Proyecto</th>
+                        <th style="padding:6px 10px; text-align:left;">Monto</th>
+                        <th style="padding:6px 10px; text-align:left;">Propuesta de financiamiento</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Saldo inicial (31 de enero 2024)</td><td class="monto">$626,760.12</td></tr>
-                    <tr><td>Saldo final (30 de junio 2026)</td><td class="monto">$1,061,097.02</td></tr>
-                    <tr><td><strong>Incremento total del período</strong></td><td class="monto positivo"><strong>+$434,336.90</strong></td></tr>
-                    <tr><td>Morosidad total al 30 de junio 2026</td><td class="monto negativo">$328,723.00</td></tr>
-                    <tr class="total-row"><td><strong>Saldo potencial (sin morosidad)</strong></td><td class="monto positivo"><strong>$1,389,820.02</strong></td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- 2. INGRESOS -->
-    <div class="seccion">
-        <h2><span class="num">2</span> Origen de los Ingresos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Fuente</th><th class="monto">Promedio Mensual</th><th style="width:40%;">Nota</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cuotas de mantenimiento (netas)</td>
-                        <td class="monto">$164,074.82</td>
-                        <td style="font-size:14px; color:#2d405c;">Ingreso potencial <strong>menos</strong> morosidad, <strong>más</strong> depósitos en efectivo.</td>
+                    <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td style="padding:5px 10px;"><strong>Roof Garden</strong></td>
+                        <td style="padding:5px 10px;">$450,000</td>
+                        <td style="padding:5px 10px;">Saldo de cuenta + cuota extraordinaria</td>
                     </tr>
-                    <tr>
-                        <td>Intereses bancarios</td>
-                        <td class="monto">$6,006.41</td>
-                        <td style="font-size:14px; color:#2d405c;">Rendimiento generado por el saldo acumulado.</td>
+                    <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td style="padding:5px 10px;"><strong>Seguro Condominal</strong></td>
+                        <td style="padding:5px 10px;">$110k – $260k</td>
+                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
                     </tr>
-                    <tr>
-                        <td>Renta de salones / eventos</td>
-                        <td class="monto">$2,500.00</td>
-                        <td style="font-size:14px; color:#2d405c;">Ingresos por uso de áreas comunes.</td>
+                    <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td style="padding:5px 10px;"><strong>Filtraciones AHTRAM</strong></td>
+                        <td style="padding:5px 10px;">$33,240</td>
+                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
                     </tr>
-                    <tr class="total-row">
-                        <td><strong>Total de ingresos</strong></td>
-                        <td class="monto positivo"><strong>$172,581.23</strong></td>
-                        <td></td>
+                    <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td style="padding:5px 10px;"><strong>Sellado de ventanas</strong></td>
+                        <td style="padding:5px 10px;">~$42,000</td>
+                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e0e0e0;">
+                        <td style="padding:5px 10px;"><strong>Otros proyectos</strong></td>
+                        <td style="padding:5px 10px;">Varios</td>
+                        <td style="padding:5px 10px;">Se evalúa caso por caso</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
 
-    <!-- 3. GASTOS -->
-    <div class="seccion">
-        <h2><span class="num">3</span> Destino de los Gastos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual de los 30 meses)</span></h2>
-
-        <div style="margin-bottom:16px; font-weight:600; color:#0b1a33;">3.1 Gastos fijos operativos</div>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Concepto</th><th>Periodicidad</th><th class="monto">Monto Mensual</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Vigilancia</td><td>Quincenal</td><td class="monto">$62,000 – $66,960</td></tr>
-                    <tr><td>Limpieza</td><td>Quincenal</td><td class="monto">$25,000 – $28,250</td></tr>
-                    <tr><td>Administración</td><td>Quincenal</td><td class="monto">$18,500 – $19,000</td></tr>
-                    <tr><td>Electricidad (CFE)</td><td>Mensual</td><td class="monto">~$16,000</td></tr>
-                    <tr><td>Mantenimiento de elevadores</td><td>Mensual</td><td class="monto"><strong>$5,481</strong></td></tr>
-                    <tr><td>Jardinería</td><td>Mensual</td><td class="monto">$3,500</td></tr>
-                    <tr><td>Teléfono / Internet</td><td>Mensual</td><td class="monto"><strong>$400</strong></td></tr>
-                    <tr><td>Basura e insumos de limpieza</td><td>Mensual</td><td class="monto">~$4,500</td></tr>
-                    <tr><td>Mantenimiento de gimnasio</td><td>Mensual</td><td class="monto">$1,282.50</td></tr>
-                    <tr><td>Caja chica / gastos menores</td><td>Mensual</td><td class="monto">~$2,000</td></tr>
-                    <tr><td>Comisión bancaria</td><td>Mensual</td><td class="monto">$319</td></tr>
-                    <tr class="total-row">
-                        <td colspan="2"><strong>Total gasto fijo mensual promedio</strong></td>
-                        <td class="monto"><strong>~$139,400.00</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="anual-note">
-            <strong>Gasto fijo anual estimado:</strong> ~$1,672,800.00 MXN
-        </div>
-
-        <div style="margin:24px 0 16px 0; font-weight:600; color:#0b1a33;">3.2 Gastos variables <span style="font-weight:400; color:#3d4e6b;">(promedio mensual)</span></div>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Concepto</th><th class="monto">Promedio Mensual</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Reparaciones (bombas, portones, cámaras)</td><td class="monto">~$10,000</td></tr>
-                    <tr><td>Fumigación</td><td class="monto">~$1,000</td></tr>
-                    <tr><td>Mantenimiento de cisternas / tinacos</td><td class="monto">~$1,500</td></tr>
-                    <tr><td>Impermeabilizaciones</td><td class="monto">~$1,000</td></tr>
-                    <tr><td>Otros gastos variables</td><td class="monto">~$4,087.82</td></tr>
-                    <tr class="total-row">
-                        <td><strong>Total gastos variables</strong></td>
-                        <td class="monto"><strong>~$17,587.82</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="anual-note">
-            <strong>Gasto variable anual estimado:</strong> ~$211,053.84 MXN
-        </div>
-        <div class="anual-note" style="margin-top:8px; background:#f5f8fe; padding:10px 14px; border-radius:8px; border:1px solid #dce6f2;">
-            <strong>Gasto total anual estimado (fijos + variables):</strong> ~$1,883,853.84 MXN
-        </div>
-    </div>
-
-    <!-- 4. SUPERÁVIT -->
-    <div class="seccion">
-        <h2><span class="num">4</span> Cálculo del Superávit Real <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
-        <div class="table-wrap">
-            <table>
-                <tbody>
-                    <tr><td>Ingreso real por cuotas</td><td class="monto positivo">+$164,074.82</td></tr>
-                    <tr><td>Gasto fijo operativo</td><td class="monto negativo">–$139,400.00</td></tr>
-                    <tr><td><strong>Superávit de cuotas vs. gastos fijos</strong></td><td class="monto positivo"><strong>+$24,674.82</strong></td></tr>
-                    <tr><td>Gastos variables</td><td class="monto negativo">–$17,587.82</td></tr>
-                    <tr><td><strong>Superávit operativo neto</strong></td><td class="monto positivo"><strong>+$7,087.00</strong></td></tr>
-                    <tr><td>Intereses bancarios</td><td class="monto positivo">+$6,006.41</td></tr>
-                    <tr><td>Renta de salones / eventos</td><td class="monto positivo">+$2,500.00</td></tr>
-                    <tr class="total-row">
-                        <td><strong>SUPERÁVIT REAL PROMEDIO MENSUAL</strong></td>
-                        <td class="monto positivo"><strong>+$15,593.41</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div style="background:#f5f8fe; border-radius:14px; padding:18px 22px; margin-top:8px; border:1px solid #dce6f2;">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;">
-                <div><strong>Superávit mensual:</strong> $15,593.41</div>
-                <div><strong>x 30 meses:</strong> $467,802.30</div>
-                <div><strong>+ Saldo inicial:</strong> $626,760.12</div>
-                <div><strong>Saldo final estimado:</strong> $1,094,562.42</div>
-                <div><strong>Saldo real final:</strong> $1,061,097.02</div>
-                <div style="color:#4f6382;">Diferencia (ajustes contables, gastos variables puntuales superiores al promedio, etc.): $33,465.40</div>
-            </div>
-        </div>
-        <div style="background:#eaf3e8; border-radius:14px; padding:14px 22px; margin-top:12px; border:1px solid #b8d0b0;">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-weight:500;">
-                <span>🔍 <strong>Verificación del incremento real:</strong></span>
-                <span>Superávit mensual ajustado: <strong>$14,477.90</strong></span>
-                <span>x 30 meses: <strong>$434,336.90</strong></span>
-                <span style="color:#0a6b3f;">✅ Coincide exactamente con el incremento total del período</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. MOROSIDAD -->
-    <div class="seccion">
-        <h2><span class="num">5</span> El Impacto de la Morosidad</h2>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr><th>Concepto</th><th class="monto">Valor</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Morosidad total al 30 de junio 2026</td><td class="monto negativo">$328,723.00</td></tr>
-                    <tr><td>Promedio mensual de morosidad</td><td class="monto negativo">$10,957.43</td></tr>
-                    <tr><td>Ingreso potencial (todos pagan antes del día 10)</td><td class="monto">$170,532.25</td></tr>
-                    <tr><td>Ingreso real mensual actual</td><td class="monto">$164,074.82</td></tr>
-                    <tr class="total-row"><td><strong>Diferencia mensual por morosidad</strong></td><td class="monto negativo"><strong>$10,957.43</strong></td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- 6. ESCENARIO SIN MOROSIDAD -->
-    <div class="seccion">
-        <h2><span class="num">6</span> Escenario Sin Morosidad</h2>
-        <div style="font-size:15px; color:#1f2a44; margin-bottom:12px;">Si todos los departamentos pagaran puntualmente (antes del día 10):</div>
-        <div class="comparacion-grid">
-            <div class="comparacion-item">
-                <div class="label">Ingreso mensual por cuotas</div>
-                <div class="value" style="color:#b13a3a;">$164,074.82 <span style="font-size:14px; font-weight:400; color:#4f6382;">(con morosidad)</span></div>
-                <div class="value verde" style="margin-top:4px;">$170,532.25 <span style="font-size:14px; font-weight:400; color:#4f6382;">(sin morosidad)</span></div>
-            </div>
-            <div class="comparacion-item">
-                <div class="label">Superávit mensual estimado</div>
-                <div class="value" style="color:#b13a3a;">$15,593.41</div>
-                <div class="value verde" style="margin-top:4px;">~$22,000 – $24,000</div>
-            </div>
-            <div class="comparacion-item">
-                <div class="label">Saldo en banco</div>
-                <div class="value" style="color:#b13a3a;">$1,061,097.02</div>
-                <div class="value verde" style="margin-top:4px;">$1,389,820.02</div>
-            </div>
-            <div class="comparacion-item" style="grid-column: span 1;">
-                <div class="label">Meses de gastos fijos cubiertos</div>
-                <div class="value" style="color:#b13a3a;">7.6 meses</div>
-                <div class="value verde" style="margin-top:4px;">9.9 meses</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 7. CONCLUSIONES -->
-    <div class="seccion">
-        <h2><span class="num">7</span> Conclusiones Finales</h2>
-        <div style="background:#fafcff; border-radius:16px; padding:6px 4px;">
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">1</span>
-                    <span style="color: #1a2a47;">El condominio tiene un saldo real de <strong>$1,061,097.02</strong>, que ha crecido de manera constante durante los últimos 30 meses.</span>
-                </li>
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">2</span>
-                    <span style="color: #1a2a47;">El <strong>superávit promedio mensual es de $15,593.41</strong> y proviene de tres fuentes:
-                        <ul style="margin-top: 6px; padding-left: 20px; color: #2d405c; list-style: disc;">
-                            <li>Excedente operativo después de gastos fijos y variables (<strong>$7,087.00</strong>).</li>
-                            <li>Intereses bancarios generados por el saldo acumulado (<strong>$6,006.41</strong>).</li>
-                            <li>Ingresos por renta de salones y eventos (<strong>$2,500.00</strong>).</li>
-                        </ul>
-                    </span>
-                </li>
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">3</span>
-                    <span style="color: #1a2a47;"><strong>No hay déficit operativo.</strong> El condominio es financieramente sólido.</span>
-                </li>
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">4</span>
-                    <span style="color: #1a2a47;">El <strong>principal problema es la morosidad</strong>. Los departamentos morosos deben <strong>$328,723</strong>, lo que representa una pérdida mensual de <strong>$10,957.43</strong>.</span>
-                </li>
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">5</span>
-                    <span style="color: #1a2a47;"><strong>Si se cobra la cartera vencida:</strong>
-                        <ul style="margin-top: 6px; padding-left: 20px; color: #2d405c; list-style: disc;">
-                            <li>El saldo en banco ascendería a <strong>$1,389,820.02</strong>.</li>
-                            <li>El condominio tendría <strong>9.9 meses de gastos fijos cubiertos</strong> en lugar de 7.6.</li>
-                        </ul>
-                    </span>
-                </li>
-                <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 0 0 0;">
-                    <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">6</span>
-                    <span style="color: #1a2a47;"><strong>Recomendación:</strong> Enfocar todos los esfuerzos en la cobranza de los adeudos para dejar las finanzas en un estado excelente.</span>
-                </li>
+            <br>
+            <strong>Ventajas de esta estrategia:</strong>
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>✅ <strong>Menor impacto mensual</strong> — Los condóminos no reciben un "golpe" grande de una sola vez</li>
+                <li>✅ <strong>Preserva liquidez</strong> — El saldo de la cuenta no se descapitaliza por completo</li>
+                <li>✅ <strong>Sigue generando intereses</strong> — Al mantener un saldo mayor, los intereses se mantienen o aumentan</li>
+                <li>✅ <strong>Flexibilidad</strong> — Cada proyecto se financia de acuerdo a su urgencia y monto</li>
+                <li>✅ <strong>Equidad</strong> — Los gastos se distribuyen de manera más justa entre todos los condóminos</li>
             </ul>
         </div>
-    </div>
 
-    <!-- 8. PÉRDIDA POR EL SEGURO Y ESCENARIO PERFECTO -->
-    <div class="seccion">
-        <h2><span class="num">8</span> Pérdida por Pago Incorrecto del Seguro</h2>
-        <div class="perdida-box">
-            <h3>⚠️ Pérdida financiera por gasto no respaldado</h3>
-            <div class="fecha">📅 Fecha del pago: <strong>Agosto 2024</strong></div>
+        <!-- ====== NOTA SOBRE EL ROOF GARDEN ====== -->
+        <div class="nota nota-info">
+            <span>📌</span> <strong>Nota sobre el Roof Garden:</strong><br>
+            El condominio <strong>SÍ podría pagar el Roof Garden ($450,000) con el saldo actual + la recuperación de cartera</strong>, y aún así quedaría con un saldo remanente de entre <strong>$22,657 y $260,157</strong>.<br><br>
+            Sin embargo, se recomienda considerar una <strong>estrategia de financiamiento combinado</strong> para no descapitalizar la cuenta y seguir generando intereses. Esto implica:
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>✅ Una parte del costo se cubre con el <strong>saldo de la cuenta del condominio</strong></li>
+                <li>✅ Otra parte se cubre con <strong>cuotas extraordinarias</strong> distribuidas en el tiempo</li>
+            </ul>
+            <br>
+            <strong>Beneficios de esta estrategia:</strong>
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>✅ Preserva liquidez para emergencias o gastos imprevistos</li>
+                <li>✅ Se garantiza un <strong>fondo de reserva mínimo de $200,000</strong> como colchón financiero</li>
+                <li>✅ <strong>No se pierde la capacidad de generar intereses</strong> sobre un saldo mayor en la cuenta bancaria</li>
+                <li>✅ Se distribuye el impacto financiero entre los condóminos de manera más equitativa</li>
+                <li>✅ Permite tener flexibilidad para otros proyectos que puedan surgir</li>
+            </ul>
+        </div>
 
-            <div class="perdida-grid">
-                <div class="perdida-item">
-                    <div class="label">Monto perdido</div>
-                    <div class="value rojo"><strong>$222,448.16</strong></div>
+        <!-- ====== NOTAS ====== -->
+        <div class="nota">
+            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los 4 departamentos con mayor adeudo (108, 201, 101, 309) representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), se podrá financiar la Fase 1 sin descapitalizar el condominio.
+        </div>
+
+        <!-- ====== GRÁFICA CIRCULAR DE MOROSIDAD ====== -->
+        <div class="morosidad-container">
+            <div class="chart-wrapper">
+                <canvas id="morosidadChart" width="280" height="280"></canvas>
+            </div>
+            <div class="leyenda-morosidad">
+                <div class="item">
+                    <span class="color-box" style="background:#c84a4a;"></span>
+                    <span>Depto 108: <span class="porcentaje">41.2%</span></span>
                 </div>
-                <div class="perdida-item">
-                    <div class="label">Saldo actual en banco</div>
-                    <div class="value" style="color:#b13a3a;"><strong>$1,061,097.02</strong></div>
+                <div class="item">
+                    <span class="color-box" style="background:#d98c2e;"></span>
+                    <span>Depto 201: <span class="porcentaje">22.7%</span></span>
                 </div>
-                <div class="perdida-item">
-                    <div class="label">Saldo que debería tener (sin la pérdida)</div>
-                    <div class="value verde"><strong>$1,283,545.18</strong></div>
+                <div class="item">
+                    <span class="color-box" style="background:#7b4cb0;"></span>
+                    <span>Depto 101: <span class="porcentaje">16.9%</span></span>
                 </div>
-                <div class="perdida-item">
-                    <div class="label">Meses de gastos fijos cubiertos perdidos</div>
-                    <div class="value rojo"><strong>1.6 meses</strong></div>
-                    <div style="font-size:13px; color:#4f6382; margin-top:2px;">(7.6 en lugar de 9.2)</div>
+                <div class="item">
+                    <span class="color-box" style="background:#8e9db3;"></span>
+                    <span>Depto 309: <span class="porcentaje">16.2%</span></span>
+                </div>
+                <div class="item">
+                    <span class="color-box" style="background:#1a6dd4;"></span>
+                    <span>Otros (110, etc.): <span class="porcentaje">3.0%</span></span>
+                </div>
+                <div class="total-morosidad">
+                    💰 Total morosidad: $328,723
                 </div>
             </div>
+        </div>
 
-            <!-- ESCENARIO PERFECTO -->
-            <div class="escenario-perfecto">
-                <h4>✅ Escenario perfecto: sin morosidad y sin la pérdida del seguro</h4>
-                <p style="color: #2d5a2d; font-size: 14px; margin-bottom: 12px;">
-                    La morosidad y el gasto incorrecto del seguro le han costado al condominio <strong>$551,171.16</strong> que hoy no están en la cuenta.
-                </p>
+        <div class="nota nota-azul">
+            <span>💡</span> <strong>Dato importante:</strong> El banco de capacitores eliminaría la penalización mensual de <strong>$1,228.57</strong> por bajo factor de potencia. Con una inversión de ~$30,000, el ahorro anual sería de <strong>$17,100+</strong>, recuperando la inversión en aproximadamente 1.4 años.
+        </div>
 
-                <!-- TABLA COMPARATIVA CON SCROLL HORIZONTAL -->
-                <div class="tabla-comparativa">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Concepto</th>
-                                <th>Real</th>
-                                <th>Escenario Ideal</th>
-                                <th>Diferencia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Superávit total acumulado</strong></td>
-                                <td class="col-real">$434,336.90</td>
-                                <td class="col-ideal">$985,508.06</td>
-                                <td class="col-diferencia">+$551,171.16</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Superávit mensual</strong></td>
-                                <td class="col-real">$14,477.90</td>
-                                <td class="col-ideal">$32,850.27</td>
-                                <td class="col-diferencia">+$18,372.37</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Saldo en banco</strong></td>
-                                <td class="col-real">$1,061,097.02</td>
-                                <td class="col-ideal">$1,612,268.18</td>
-                                <td class="col-diferencia">+$551,171.16</td>
-                            </tr>
-                            <tr class="total-row">
-                                <td><strong>Meses de gastos fijos cubiertos</strong></td>
-                                <td class="col-real">7.6 meses</td>
-                                <td class="col-ideal">11.6 meses</td>
-                                <td class="col-diferencia">+4 meses</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="nota nota-verde">
+            <span>📈</span> <strong>Rendimientos de la cuenta:</strong> El condominio genera intereses sobre el saldo promedio de la cuenta bancaria, lo que ayuda a cubrir parte de los gastos operativos o de mantenimiento menor. En 2024 generó <strong>$75,816</strong> y en 2025 <strong>$73,241</strong>, lo que demuestra que los intereses son un ingreso relevante.
+        </div>
 
-                <div style="margin-top:12px; padding:10px 14px; background:#d4e8d4; border-radius:8px; font-size:14px; color:#1a4a1a;">
-                    <strong>Conclusión:</strong> El condominio podría haber tenido un ahorro de <strong>11.6 meses de gastos fijos</strong>, en lugar de los 7.6 meses actuales. La combinación de morosidad y este gasto incorrecto representa una pérdida de <strong>4 meses de operación</strong> del edificio, <strong>sin considerar que los intereses generados en la cuenta hubieran sido mayores</strong>.
-                </div>
-            </div>
+        <!-- ====== LEYENDA ====== -->
+        <div class="leyenda">
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#c84a4a;"></span> Crítico / Urgente</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#d98c2e;"></span> Media-Alta</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#1a6dd4;"></span> Media</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#1d9e5a;"></span> Viable / Realizado</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#7b4cb0;"></span> Programado</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#00a8b5;"></span> Largo Plazo</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#8e9db3;"></span> Otros</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#00897b;"></span> Por definir</div>
+        </div>
 
-            <!-- MENSAJE DE ENSEÑANZA -->
-            <div class="mensaje-ensenanza">
-                <p style="margin-bottom: 6px;">💡 <strong>Lección para el futuro:</strong></p>
-                <p>
-                    Este caso demuestra que <strong>las decisiones sobre gastos mayores deben ser tratadas en Asamblea de Condóminos</strong>, 
-                    donde se revisen y autoricen de manera colegiada. Contratar un seguro, realizar una obra o cualquier gasto 
-                    significativo <strong>debe contar con la aprobación expresa de los propietarios</strong>, 
-                    con la documentación correspondiente y con la certeza de que el pago se realiza a nombre de la persona 
-                    o entidad correcta. Una decisión unilateral puede derivar en una pérdida financiera que impacta a todo el condominio.
-                </p>
-            </div>
+        <!-- ====== FOOTER ====== -->
+        <div class="footer">
+            <button class="btn-pdf" onclick="window.print()">📄 Guardar como PDF</button>
+            <a href="intereses.html" class="btn-intereses">Leer sobre intereses y crecimiento del saldo en la cuenta <span class="flecha">→</span></a>
         </div>
     </div>
 
-    <!-- 9. REFLEXIÓN FINAL -->
-    <div class="seccion">
-        <h2><span class="num">9</span> Reflexión final</h2>
-        <div class="reflexion-final">
-            <div class="texto">
-                <p>
-                    A pesar de las deficiencias identificadas en la gestión financiera —como el pago incorrecto del seguro por <span class="alerta">$222,448.16</span>, la falta de una Asociación Civil (A.C.) para el manejo formal de los fondos, el cumplimiento fiscal, la implementación de un programa interno de protección civil, así como otros malos manejos menores que incluyen un desfalco de <span class="alerta">$28,000</span> por parte del administrador anterior—, el condominio mantiene finanzas sanas con un saldo de <strong>$1,061,097.02</strong> y un superávit mensual de <strong>$15,593.41</strong>.
-                </p>
-                <p style="margin-top: 12px;">
-                    La estructura de ingresos por cuotas ha demostrado ser sólida y suficiente para cubrir los gastos operativos y generar ahorro. Sin embargo, esta salud financiera no debe ser motivo de complacencia. La cartera vencida de <span class="alerta">$328,723.00</span> y los gastos no respaldados representan un lastre que ha impedido alcanzar un escenario mucho más favorable.
-                </p>
-            </div>
-        </div>
-    </div>
+    <!-- ====== SCRIPT PARA GRÁFICA CIRCULAR ====== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('morosidadChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
 
-    <div class="footer-space"></div>
+            // Datos de morosidad
+            const data = [
+                { label: 'Depto 108', value: 135573, color: '#c84a4a' },
+                { label: 'Depto 201', value: 74572, color: '#d98c2e' },
+                { label: 'Depto 101', value: 55659, color: '#7b4cb0' },
+                { label: 'Depto 309', value: 53304, color: '#8e9db3' },
+                { label: 'Otros', value: 9615, color: '#1a6dd4' }
+            ];
 
-</div>
+            const total = data.reduce((sum, d) => sum + d.value, 0);
+            let startAngle = -Math.PI / 2;
+
+            // Tamaño del canvas
+            const size = 280;
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = 110;
+
+            // Limpiar
+            ctx.clearRect(0, 0, size, size);
+
+            // Dibujar cada segmento
+            data.forEach(function(d) {
+                const sliceAngle = (d.value / total) * 2 * Math.PI;
+                const endAngle = startAngle + sliceAngle;
+
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+                ctx.closePath();
+                ctx.fillStyle = d.color;
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Dibujar línea de porcentaje
+                const midAngle = startAngle + sliceAngle / 2;
+                const labelRadius = radius * 0.65;
+                const x = centerX + Math.cos(midAngle) * labelRadius;
+                const y = centerY + Math.sin(midAngle) * labelRadius;
+
+                // Solo mostrar porcentaje si el segmento es mayor a 3%
+                const percentage = (d.value / total * 100);
+                if (percentage > 3) {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 16px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(Math.round(percentage) + '%', x, y);
+                }
+
+                startAngle = endAngle;
+            });
+
+            // Círculo interior para efecto "dona"
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 65, 0, 2 * Math.PI);
+            ctx.fillStyle = '#f9fbfe';
+            ctx.fill();
+            ctx.strokeStyle = '#e9edf4';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Texto central
+            ctx.fillStyle = '#0b1e3a';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Morosidad', centerX, centerY - 10);
+            ctx.fillStyle = '#b33c3c';
+            ctx.font = 'bold 16px Arial';
+            ctx.fillText('$328,723', centerX, centerY + 22);
+        });
+    </script>
 </body>
 </html>
