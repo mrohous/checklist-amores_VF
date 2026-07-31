@@ -323,6 +323,47 @@
             }
         }
 
+        /* Tabla comparativa dentro del escenario perfecto */
+        .tabla-comparativa {
+            margin-top: 16px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #b8d8b8;
+        }
+        .tabla-comparativa table {
+            font-size: 14px;
+            background: #ffffffcc;
+            width: 100%;
+        }
+        .tabla-comparativa th {
+            background: #d4e8d4;
+            color: #1a4a1a;
+            font-weight: 600;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        .tabla-comparativa td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #dce8dc;
+            color: #1f2a44;
+        }
+        .tabla-comparativa .col-real {
+            color: #b13a3a;
+            font-weight: 600;
+        }
+        .tabla-comparativa .col-ideal {
+            color: #0a6b3f;
+            font-weight: 600;
+        }
+        .tabla-comparativa .col-diferencia {
+            color: #0a4a7a;
+            font-weight: 700;
+        }
+        .tabla-comparativa .total-row td {
+            background: #eaf5ea;
+            font-weight: 700;
+        }
+
         .mensaje-ensenanza {
             background: #f0f4fa;
             border-radius: 16px;
@@ -651,30 +692,51 @@
             <div class="escenario-perfecto">
                 <h4>✅ Escenario perfecto: sin morosidad y sin la pérdida del seguro</h4>
                 <p style="color: #2d5a2d; font-size: 14px; margin-bottom: 12px;">
-                    Si no hubiera cartera vencida <strong>y</strong> no se hubiera realizado el pago incorrecto del seguro, 
-                    el condominio estaría en una posición financiera excepcional:
+                    La morosidad y el gasto incorrecto del seguro le han costado al condominio <strong>$551,171.16</strong> que hoy no están en la cuenta.
                 </p>
-                <div class="grid-3">
-                    <div class="item">
-                        <div class="label">Saldo en banco</div>
-                        <div class="value"><strong>$1,612,268.18</strong></div>
-                        <div style="font-size:13px; color:#2d5a2d;">($1,061,097 + $328,723 + $222,448)</div>
-                    </div>
-                    <div class="item">
-                        <div class="label">Meses de gastos fijos cubiertos</div>
-                        <div class="value"><strong>11.6 meses</strong></div>
-                        <div style="font-size:13px; color:#2d5a2d;">(casi un año completo de operación)</div>
-                    </div>
-                    <div class="item">
-                        <div class="label">Superávit mensual estimado</div>
-                        <div class="value"><strong>~$24,000 – $26,000</strong></div>
-                        <div style="font-size:13px; color:#2d5a2d;">(casi el doble del actual)</div>
-                    </div>
+
+                <!-- TABLA COMPARATIVA -->
+                <div class="tabla-comparativa">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Real</th>
+                                <th>Escenario Ideal</th>
+                                <th>Diferencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Superávit total acumulado</strong></td>
+                                <td class="col-real">$434,336.90</td>
+                                <td class="col-ideal">$985,508.06</td>
+                                <td class="col-diferencia">+$551,171.16</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Superávit mensual</strong></td>
+                                <td class="col-real">$14,477.90</td>
+                                <td class="col-ideal">$32,850.27</td>
+                                <td class="col-diferencia">+$18,372.37</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saldo en banco</strong></td>
+                                <td class="col-real">$1,061,097.02</td>
+                                <td class="col-ideal">$1,612,268.18</td>
+                                <td class="col-diferencia">+$551,171.16</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Meses de gastos fijos cubiertos</strong></td>
+                                <td class="col-real">7.6 meses</td>
+                                <td class="col-ideal">11.6 meses</td>
+                                <td class="col-diferencia">+4 meses</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+
                 <div style="margin-top:12px; padding:10px 14px; background:#d4e8d4; border-radius:8px; font-size:14px; color:#1a4a1a;">
-                    <strong>Conclusión:</strong> El condominio podría haber tenido un ahorro de <strong>11.6 meses de gastos fijos</strong>, 
-                    en lugar de los 7.6 meses actuales. La combinación de morosidad y este gasto incorrecto representa una 
-                    pérdida de <strong>4 meses de operación</strong> del edificio.
+                    <strong>Conclusión:</strong> El condominio podría haber tenido un ahorro de <strong>11.6 meses de gastos fijos</strong>, en lugar de los 7.6 meses actuales. La combinación de morosidad y este gasto incorrecto representa una pérdida de <strong>4 meses de operación</strong> del edificio, <strong>sin considerar que los intereses generados en la cuenta hubieran sido mayores</strong>.
                 </div>
             </div>
 
@@ -698,10 +760,10 @@
         <div class="resumen-final">
             <div class="texto">
                 <p>
-                    El condominio cerró el período con un saldo real de <strong>$1,061,097.02</strong>, resultado de un superávit promedio mensual de <strong>$15,593.41</strong> que se origina de tres fuentes: un excedente operativo de <strong>$7,087.00</strong> después de cubrir gastos fijos y variables; intereses bancarios por <strong>$6,006.41</strong> generados por el saldo acumulado; e ingresos por renta de salones y eventos por <strong>$2,500.00</strong>.
+                    En el período analizado, el condominio ha generado un incremento en la cuenta de <strong>$434,336.90</strong>, resultado de un superávit mensual de <strong>$15,593.41</strong> (excedente operativo, intereses bancarios y renta de salones).
                 </p>
                 <p style="margin-top: 12px;">
-                    Sin embargo, este saldo pudo haber sido significativamente mayor. Si no hubiera existido la cartera vencida de <span class="alerta">$328,723.00</span> y no se hubiera realizado el pago incorrecto del seguro por <span class="alerta">$222,448.16</span> (pagado en agosto de 2024 a una persona física sin facultades legales), el condominio habría alcanzado un saldo de <span class="resaltado">$1,612,268.18</span>, equivalente a <span class="resaltado">11.6 meses de gastos fijos cubiertos</span>, en lugar de los 7.6 meses actuales. La combinación de morosidad y una decisión de gasto no respaldada documentalmente representa una pérdida de aproximadamente <strong>4 meses de operación</strong> del edificio.
+                    De no haber sido por la pérdida de <span class="alerta">$222,448.16</span> correspondiente al pago incorrecto del seguro, y de no existir la cartera vencida de <span class="alerta">$328,723.00</span>, el condominio contaría hoy con un saldo de <span class="resaltado">$1,612,268.18</span>, lo que habría representado <span class="resaltado">11.6 meses de gastos fijos cubiertos</span> y un superávit mensual de <span class="resaltado">$32,850.27</span>, equivalente a un total de <span class="resaltado">$985,508.06</span>, sin considerar que los intereses generados en la cuenta hubieran sido mayores.
                 </p>
             </div>
         </div>
