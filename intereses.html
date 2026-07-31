@@ -78,6 +78,37 @@
             margin-top: 4px;
         }
 
+        /* Introducción */
+        .introduccion {
+            background: #f5f8fe;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            border: 2px solid #c8d8e8;
+        }
+        .introduccion h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0b1a33;
+            margin-bottom: 12px;
+        }
+        .introduccion .texto {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1a2a47;
+        }
+        .introduccion .texto strong {
+            color: #0b1a33;
+        }
+        .introduccion .texto .resaltado {
+            color: #0a6b3f;
+            font-weight: 700;
+        }
+        .introduccion .texto .alerta {
+            color: #b13a3a;
+            font-weight: 600;
+        }
+
         .table-wrap {
             overflow-x: auto;
             margin-bottom: 32px;
@@ -378,30 +409,30 @@
             color: #0b1a33;
         }
 
-        /* Estilos para la sección de Resumen y reflexión final */
-        .resumen-final {
+        /* Reflexión final */
+        .reflexion-final {
             background: #f5f8fe;
             border-radius: 16px;
             padding: 24px 28px;
             margin-top: 20px;
             border: 2px solid #c8d8e8;
         }
-        .resumen-final h2 {
+        .reflexion-final h2 {
             margin-top: 0;
         }
-        .resumen-final .texto {
+        .reflexion-final .texto {
             font-size: 16px;
             line-height: 1.7;
             color: #1a2a47;
         }
-        .resumen-final .texto strong {
+        .reflexion-final .texto strong {
             color: #0b1a33;
         }
-        .resumen-final .texto .resaltado {
+        .reflexion-final .texto .resaltado {
             color: #0a6b3f;
             font-weight: 700;
         }
-        .resumen-final .texto .alerta {
+        .reflexion-final .texto .alerta {
             color: #b13a3a;
             font-weight: 600;
         }
@@ -414,6 +445,19 @@
     <h1>Análisis financiero</h1>
     <div class="subhead">
         <span class="badge-periodo">Enero 2024 – Junio 2026 (30 meses)</span>
+    </div>
+
+    <!-- INTRODUCCIÓN -->
+    <div class="introduccion">
+        <h2>Introducción</h2>
+        <div class="texto">
+            <p>
+                El condominio cerró el período con un saldo real de <strong>$1,061,097.02</strong>, resultado de un superávit promedio mensual de <strong>$15,593.41</strong> que se origina de tres fuentes: un excedente operativo de <strong>$7,087.00</strong> después de cubrir gastos fijos y variables; intereses bancarios por <strong>$6,006.41</strong> generados por el saldo acumulado; e ingresos por renta de salones y eventos por <strong>$2,500.00</strong>.
+            </p>
+            <p style="margin-top: 12px;">
+                Sin embargo, este saldo pudo haber sido significativamente mayor. Si no hubiera existido la cartera vencida de <span class="alerta">$328,723.00</span> y no se hubiera realizado el pago incorrecto del seguro por <span class="alerta">$222,448.16</span> (pagado en agosto de 2024 a una persona física sin facultades legales), el condominio habría alcanzado un saldo de <span class="resaltado">$1,612,268.18</span>, equivalente a <span class="resaltado">11.6 meses de gastos fijos cubiertos</span>, en lugar de los 7.6 meses actuales. La combinación de morosidad y una decisión de gasto no respaldada documentalmente representa una pérdida de aproximadamente <strong>4 meses de operación</strong> del edificio.
+            </p>
+        </div>
     </div>
 
     <!-- 1. SALDO -->
@@ -754,16 +798,16 @@
         </div>
     </div>
 
-    <!-- 9. RESUMEN Y REFLEXIÓN FINAL -->
+    <!-- 9. REFLEXIÓN FINAL (NUEVA SECCIÓN) -->
     <div class="seccion">
-        <h2><span class="num">9</span> Resumen y reflexión final</h2>
-        <div class="resumen-final">
+        <h2><span class="num">9</span> Reflexión final</h2>
+        <div class="reflexion-final">
             <div class="texto">
                 <p>
-                    En el período analizado, el condominio ha generado un incremento en la cuenta de <strong>$434,336.90</strong>, resultado de un superávit mensual de <strong>$15,593.41</strong> (excedente operativo, intereses bancarios y renta de salones).
+                    A pesar de las deficiencias identificadas en la gestión financiera —como el pago incorrecto del seguro por <span class="alerta">$222,448.16</span>, la falta de una Asociación Civil (A.C.) para el manejo formal de los fondos, el cumplimiento fiscal y la implementación de un programa interno de protección civil, así como otros malos manejos menores que han generado pérdidas "hormiga"—, el condominio mantiene finanzas sanas con un saldo de <strong>$1,061,097.02</strong> y un superávit mensual de <strong>$15,593.41</strong>. La estructura de ingresos por cuotas ha demostrado ser sólida y suficiente para cubrir los gastos operativos y generar ahorro.
                 </p>
                 <p style="margin-top: 12px;">
-                    De no haber sido por la pérdida de <span class="alerta">$222,448.16</span> correspondiente al pago incorrecto del seguro, y de no existir la cartera vencida de <span class="alerta">$328,723.00</span>, el condominio contaría hoy con un saldo de <span class="resaltado">$1,612,268.18</span>, lo que habría representado <span class="resaltado">11.6 meses de gastos fijos cubiertos</span> y un superávit mensual de <span class="resaltado">$32,850.27</span>, equivalente a un total de <span class="resaltado">$985,508.06</span>, sin considerar que los intereses generados en la cuenta hubieran sido mayores.
+                    Sin embargo, esta salud financiera no debe ser motivo de complacencia. La cartera vencida de <span class="alerta">$328,723.00</span> y los gastos no respaldados representan un lastre que ha impedido alcanzar un escenario mucho más favorable.
                 </p>
             </div>
         </div>
