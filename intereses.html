@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis Financiero - Condominio Amores 219</title>
+    <title>Análisis Financiero</title>
 
     <!-- ====== FAVICONES (carpeta favi3/) ====== -->
     <link rel="apple-touch-icon" sizes="57x57" href="favi3/apple-icon-57x57.png">
@@ -354,17 +354,18 @@
             }
         }
 
-        /* Tabla comparativa dentro del escenario perfecto */
+        /* Tabla comparativa dentro del escenario perfecto - con scroll horizontal en móvil */
         .tabla-comparativa {
             margin-top: 16px;
             border-radius: 10px;
-            overflow: hidden;
+            overflow-x: auto;
             border: 1px solid #b8d8b8;
         }
         .tabla-comparativa table {
             font-size: 14px;
             background: #ffffffcc;
             width: 100%;
+            min-width: 480px;
         }
         .tabla-comparativa th {
             background: #d4e8d4;
@@ -372,11 +373,13 @@
             font-weight: 600;
             padding: 10px 14px;
             text-align: left;
+            white-space: nowrap;
         }
         .tabla-comparativa td {
             padding: 9px 14px;
             border-bottom: 1px solid #dce8dc;
             color: #1f2a44;
+            white-space: nowrap;
         }
         .tabla-comparativa .col-real {
             color: #b13a3a;
@@ -739,7 +742,7 @@
                     La morosidad y el gasto incorrecto del seguro le han costado al condominio <strong>$551,171.16</strong> que hoy no están en la cuenta.
                 </p>
 
-                <!-- TABLA COMPARATIVA -->
+                <!-- TABLA COMPARATIVA CON SCROLL HORIZONTAL -->
                 <div class="tabla-comparativa">
                     <table>
                         <thead>
@@ -798,7 +801,7 @@
         </div>
     </div>
 
-    <!-- 9. REFLEXIÓN FINAL (ACTUALIZADA CON EL DESFALCO) -->
+    <!-- 9. REFLEXIÓN FINAL -->
     <div class="seccion">
         <h2><span class="num">9</span> Reflexión final</h2>
         <div class="reflexion-final">
