@@ -259,6 +259,21 @@
             background: #d32f2f;
             border-color: #d32f2f;
         }
+        /* Rechazado con tache */
+        .checkbox.rechazado {
+            border-color: #d32f2f;
+            background: #ffebee;
+            cursor: default;
+        }
+        .checkbox.rechazado::after {
+            content: "✘";
+            color: #d32f2f;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .checkbox.rechazado:hover {
+            background: #ffebee;
+        }
         .detalle { flex: 1; }
         .titulo {
             font-weight: 600;
@@ -305,6 +320,7 @@
         .badge.residentes { background: #c5cae9; color: #1a237e; }
         .badge.covi { background: #b2dfdb; color: #004d40; }
         .badge.seguridadpc { background: #ffcc80; color: #bf360c; }
+        .badge.rechazado { background: #ffcdd2; color: #b71c1c; text-decoration: line-through; }
         .subtitulo-seccion {
             font-size: 15px;
             font-weight: 400;
@@ -734,6 +750,16 @@
             background: #d32f2f;
             border-color: #d32f2f;
         }
+        .leyenda-cuadro.rechazado {
+            border-color: #d32f2f;
+            background: #ffebee;
+        }
+        .leyenda-cuadro.rechazado::after {
+            content: "✘";
+            color: #d32f2f;
+            font-size: 16px;
+            font-weight: 700;
+        }
         .leyenda .badge {
             font-size: 11px;
             padding: 1px 10px;
@@ -998,11 +1024,12 @@
         </div>
     </div>
 
-    <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+    <!-- Ítem RECHAZADO con tache -->
+    <div class="item">
+        <div class="checkbox rechazado"></div>
         <div class="detalle">
-            <div class="titulo">Cámaras de videovigilancia en elevadores <span class="badge atencion">Pendiente</span> <span class="badge oper">Operativo</span></div>
-            <div class="desc">Pendiente de instalar cámaras de videovigilancia al interior de los elevadores para mejorar la seguridad de los usuarios.</div>
+            <div class="titulo">✘ Cámaras de videovigilancia en elevadores <span class="badge rechazado">Rechazado</span></div>
+            <div class="desc">En Asamblea extraordinaria del 30 de julio 2026 se sometió a votación la propuesta de solicitar cotizaciones para cámaras de videovigilancia en elevadores. La propuesta fue rechazada con 4 votos en contra y 2 a favor, por considerarlo un gasto innecesario.</div>
         </div>
     </div>
 
@@ -1727,6 +1754,10 @@
             <span>Urgente</span>
         </div>
         <div class="leyenda-item">
+            <span class="leyenda-cuadro rechazado"></span>
+            <span>Rechazado</span>
+        </div>
+        <div class="leyenda-item">
             <span class="badge admin">Administración</span>
         </div>
         <div class="leyenda-item">
@@ -1753,6 +1784,9 @@
         <div class="leyenda-item">
             <span class="badge seguridadpc">Comité Seguridad y Protección Civil</span>
         </div>
+        <div class="leyenda-item">
+            <span class="badge rechazado">Rechazado</span>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -1775,7 +1809,11 @@
 
 <script>
     function toggleCheck(item) {
+        // Ignorar clics en elementos rechazados
         const checkbox = item.querySelector('.checkbox');
+        if (checkbox.classList.contains('rechazado')) {
+            return;
+        }
         checkbox.classList.toggle('checked');
         actualizarContadores();
     }
@@ -1785,7 +1823,7 @@
         let completados = 0;
         items.forEach(item => {
             const chk = item.querySelector('.checkbox');
-            if (chk.classList.contains('checked')) {
+            if (chk.classList.contains('checked') && !chk.classList.contains('rechazado')) {
                 completados++;
             }
         });
