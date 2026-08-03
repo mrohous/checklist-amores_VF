@@ -971,11 +971,11 @@
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox urgente"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Reparación mayor de elevadores <span class="badge urgente">Urgente · Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">✅ Reparación mayor de elevadores <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
             <div class="desc">
-                <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. Requiere aprobación en Asamblea de Condóminos.
+                <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. <strong>Aprobado en Asamblea extraordinaria del JUEVES 30 de julio.</strong>
                 <div class="resumen-cotizacion">
                     <table>
                         <tr><th>Elevador</th><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
@@ -1077,17 +1077,15 @@
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Sellado de ventanas y terrazas <span class="badge atencion">Clima dependiente</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">✅ Sellado de ventanas y terrazas <span class="badge hecho">Aprobado en Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
-                <strong>Cotizaciones recibidas:</strong>
+                <strong>Cotización Arq. Manuel Ochoa por $39,900.00</strong> (aprobada en Asamblea extraordinaria del JUEVES 30 de julio): Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²).
                 <div class="resumen-cotizacion">
                     <table>
-                        <tr><th>Proveedor</th><th>Concepto</th><th>Total</th></tr>
-                        <tr><td>Arq. Manuel Ochoa</td><td>Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²)</td><td><strong>$39,900.00</strong></td></tr>
-                        <tr><td>Antonio Guerrero García</td><td>Reparación concreto terrazas (22 pza) + Sellado ventanas (18 pza) + Pintura vinílica (125 m²)</td><td><strong>$44,800.00</strong></td></tr>
-                        <tr><td>José Luis Velázquez</td><td>Arreglo de terrazas (22 pza) + Sellado de ventanas (16 pza) + Pintura de descansos de escaleras (100 m²)</td><td><strong>$41,200.00</strong></td></tr>
+                        <tr><th>Concepto</th><th>Total</th></tr>
+                        <tr><td>Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²)</td><td><strong>$39,900.00</strong></td></tr>
                     </table>
                 </div>
                 <div class="btn-doc-group">
@@ -1106,49 +1104,25 @@
                         </svg>
                     </button>
                 </div>
-                <div class="btn-doc-group">
-                    <button class="btn-ver" onclick="verPDF('Antonio_Guerrero.pdf')">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Ver cotización Antonio Guerrero
-                    </button>
-                    <button class="btn-descarga-icono" onclick="descargarPDF('Antonio_Guerrero.pdf')" title="Descargar">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="btn-doc-group">
-                    <button class="btn-ver" onclick="verPDF('JoseLuis_Velazquez.pdf')">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Ver cotización José Luis Velázquez
-                    </button>
-                    <button class="btn-descarga-icono" onclick="descargarPDF('JoseLuis_Velazquez.pdf')" title="Descargar">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </button>
-                </div>
-                Pendiente de definir fecha con proveedor. Se requieren al menos 2 días consecutivos sin lluvia para la aplicación del sellador.
             </div>
         </div>
     </div>
 
+    <!-- Nuevo ítem: Programación y ejecución sellado -->
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox urgente"></div>
+        <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Filtraciones en muros <span class="badge urgente">Queja activa</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">Programación y Ejecución de Sellado de ventanas y terrazas por parte del Arq Manuel Ochoa <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Programar y coordinar la fecha de ejecución con el Arq. Manuel Ochoa para realizar el sellado de ventanas, reparación de losa en terrazas y pintura vinílica. Se requieren al menos 2 días consecutivos sin lluvia para la aplicación del sellador.</div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Filtraciones en muros <span class="badge hecho">Aprobado en Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span></div>
             <div class="desc">
-                <strong>Cotización AHTRAM por $33,240.00</strong> para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura. Pendiente de aprobación y programación.
+                <strong>Cotización AHTRAM por $33,240.00</strong> (aprobada en Asamblea extraordinaria del JUEVES 30 de julio) para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura.
                 <br><br>
                 <div class="btn-doc-group">
                     <button class="btn-ver" onclick="verPDF('ahtram.pdf')">
@@ -1170,11 +1144,29 @@
         </div>
     </div>
 
+    <!-- Nuevo ítem: Programación y ejecución AHTRAM -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Programación y Ejecución de trabajos de AHTRAM para filtraciones en muros <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Programar y coordinar la fecha de ejecución con AHTRAM para realizar la canalización para drenar agua en muros y uniones en piso.</div>
+        </div>
+    </div>
+
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
             <div class="titulo">Diagnóstico de bomba de achique #2 <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">Revisión programada para verificar funcionamiento y garantizar redundancia del sistema de bombeo.</div>
+        </div>
+    </div>
+
+    <!-- Propuesta de impermeabilización movida de sección 11 -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Propuesta de impermeabilización <span class="badge">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Se identificó desgaste en la impermeabilización de la azotea. Se elaborará una propuesta económica para mantenimiento preventivo/correctivo.</div>
         </div>
     </div>
 
@@ -1499,14 +1491,6 @@
     <div class="categoria" id="sec11">
         <div class="cat-left"><span>11</span> Obras y Mantenimiento Mayor</div>
         <a href="#checklist" class="btn-indice">↑ Índice</a>
-    </div>
-
-    <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
-        <div class="detalle">
-            <div class="titulo">Propuesta de impermeabilización <span class="badge">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
-            <div class="desc">Se identificó desgaste en la impermeabilización de la azotea. Se elaborará una propuesta económica para mantenimiento preventivo/correctivo.</div>
-        </div>
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
