@@ -559,70 +559,70 @@
         .nota-legal .btn-energia-wrapper {
             display: flex;
             justify-content: center;
-            margin-top: 12px;
+            margin-top: 10px;
         }
         .nota-legal .texto-intermedio {
             text-align: center;
             font-weight: bold;
-            margin: 10px 0 6px 0;
-            font-size: 14px;
+            margin: 8px 0 4px 0;
+            font-size: 13px;
         }
         .nota-legal .btn-viabilidad-wrapper {
             display: flex;
             justify-content: center;
-            margin-top: 6px;
+            margin-top: 4px;
         }
-        /* Botón rojo para enlace a energia.html */
+        /* Botón rojo tenue para enlace a energia.html */
         .btn-energia {
             display: inline-block;
-            background: #d32f2f;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 16px;
+            background: #ef9a9a;
+            color: #5a1a1a;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
+            box-shadow: 0 2px 8px rgba(239, 154, 154, 0.3);
             transition: 0.15s;
             text-align: center;
         }
         .btn-energia:hover {
-            background: #b71c1c;
+            background: #e57373;
             transform: scale(0.98);
         }
         .btn-energia .subtexto {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 400;
-            margin-top: 2px;
-            opacity: 0.9;
+            margin-top: 1px;
+            opacity: 0.8;
         }
-        /* Botón de viabilidad financiera */
+        /* Botón de viabilidad financiera - amarillo tenue */
         .btn-viabilidad {
             display: inline-block;
-            background: #f9a825;
-            color: #1a1a1a;
-            padding: 14px 32px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 18px;
+            background: #fff9c4;
+            color: #5a4a1a;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
             text-decoration: none;
-            border: none;
+            border: 1px solid #ffd54f;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(249, 168, 37, 0.4);
+            box-shadow: 0 2px 8px rgba(255, 213, 79, 0.25);
             transition: 0.15s;
             text-align: center;
         }
         .btn-viabilidad:hover {
-            background: #f57f17;
+            background: #ffd54f;
             transform: scale(0.98);
         }
         .btn-viabilidad .icono-mano {
             display: inline-block;
-            font-size: 22px;
-            margin-right: 10px;
+            font-size: 16px;
+            margin-right: 6px;
         }
         .footer {
             margin-top: 30px;
@@ -776,6 +776,38 @@
             padding-top: 20px;
             border-top: 1px solid #e9edf4;
         }
+        .comparativa-tabla {
+            background: #f8faff;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 8px 0 4px 0;
+            border: 1px solid #e9edf4;
+            font-size: 13px;
+        }
+        .comparativa-tabla table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .comparativa-tabla th {
+            background: #eef4fe;
+            text-align: left;
+            padding: 5px 10px;
+            border-bottom: 2px solid #dce4f0;
+        }
+        .comparativa-tabla td {
+            padding: 4px 10px;
+            border-bottom: 1px solid #e9edf4;
+        }
+        .comparativa-tabla .total {
+            font-weight: 700;
+            background: #eef4fe;
+        }
+        .comparativa-tabla .recomendado {
+            background: #e8f5e9;
+            font-weight: 700;
+        }
         @media print {
             body { background: white; padding: 8px; }
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
@@ -801,6 +833,9 @@
             .resumen-cotizacion { padding: 10px; }
             .resumen-cotizacion table { font-size: 12px; }
             .resumen-cotizacion td, .resumen-cotizacion th { padding: 3px 6px; }
+            .comparativa-tabla { padding: 10px; }
+            .comparativa-tabla table { font-size: 12px; }
+            .comparativa-tabla td, .comparativa-tabla th { padding: 3px 6px; }
             .leyenda { gap: 6px 12px; font-size: 12px; }
             .leyenda-item { gap: 4px; }
             .leyenda .badge { font-size: 10px; padding: 1px 8px; }
@@ -808,9 +843,9 @@
             .stats span { font-size: 12px; padding: 3px 10px; }
             .fecha { font-size: 12px; padding: 4px 12px; }
             .btn-pdf { font-size: 13px; padding: 8px 18px; }
-            .btn-energia { font-size: 14px; padding: 10px 20px; }
-            .btn-viabilidad { font-size: 15px; padding: 12px 24px; }
-            .btn-viabilidad .icono-mano { font-size: 18px; }
+            .btn-energia { font-size: 13px; padding: 6px 16px; }
+            .btn-viabilidad { font-size: 12px; padding: 6px 16px; }
+            .btn-viabilidad .icono-mano { font-size: 14px; }
             .btn-ver { font-size: 11px; padding: 4px 12px; }
             .btn-descarga-icono { width: 28px; height: 28px; padding: 4px 6px; }
             .btn-descarga-pdf { font-size: 11px; padding: 4px 12px; }
@@ -837,9 +872,9 @@
             .stats span { font-size: 11px; padding: 2px 8px; }
             .fecha { font-size: 11px; padding: 3px 10px; }
             .btn-pdf { font-size: 12px; padding: 6px 14px; }
-            .btn-energia { font-size: 12px; padding: 8px 16px; }
-            .btn-viabilidad { font-size: 13px; padding: 10px 18px; }
-            .btn-viabilidad .icono-mano { font-size: 16px; }
+            .btn-energia { font-size: 12px; padding: 5px 14px; }
+            .btn-viabilidad { font-size: 11px; padding: 5px 14px; }
+            .btn-viabilidad .icono-mano { font-size: 13px; }
             .btn-ver { font-size: 10px; padding: 3px 10px; }
             .btn-descarga-icono { width: 26px; height: 26px; padding: 3px 5px; }
             .btn-descarga-pdf { font-size: 10px; padding: 3px 10px; }
@@ -849,6 +884,9 @@
             .resumen-cotizacion { padding: 8px; font-size: 12px; }
             .resumen-cotizacion table { font-size: 11px; }
             .resumen-cotizacion th, .resumen-cotizacion td { padding: 2px 4px; }
+            .comparativa-tabla { padding: 8px; font-size: 12px; }
+            .comparativa-tabla table { font-size: 11px; }
+            .comparativa-tabla th, .comparativa-tabla td { padding: 2px 4px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
             .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
         }
@@ -1359,17 +1397,61 @@
             <div class="titulo">Factor de potencia y banco de capacitores <span class="badge ahorro">Ahorro</span> <span class="badge fin">Financiero</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
                 <strong>Problema detectado:</strong> El condominio paga una penalización mensual de <strong>$1,228.57</strong> por bajo factor de potencia (76.54%). La tarifa es GDBT con demanda contratada de 37 kW.
-                <div class="resumen-cotizacion">
+
+                <div class="comparativa-tabla">
+                    <strong>Análisis comparativo de cotizaciones para banco de capacitores de 25-30 kVAR:</strong>
                     <table>
-                        <tr><th>Concepto</th><th>Monto</th></tr>
-                        <tr><td>Cargo actual por bajo factor de potencia</td><td>$1,228.57/mes</td></tr>
-                        <tr><td>Ahorro anual proyectado</td><td><strong>$17,100+</strong></td></tr>
-                        <tr><td>Inversión estimada (banco de capacitores + instalación)</td><td>$23,500 - $35,000</td></tr>
-                        <tr><td>Tiempo de recuperación (ROI)</td><td><strong>≈ 1.4 años</strong></td></tr>
-                        <tr><td>Ahorro acumulado en 5 años</td><td><strong>+$60,000</strong></td></tr>
+                        <tr><th>Concepto</th><th>ELCO (Ing. Coreno)</th><th>GElectrical (Ing. Fonseca)</th></tr>
+                        <tr><td><strong>Capacidad</strong></td><td>25 kVAR</td><td>30 kVAR</td></tr>
+                        <tr><td><strong>Suministro e instalación</strong></td><td>$148,800.00</td><td>$116,000.00</td></tr>
+                        <tr><td><strong>IVA (16%)</strong></td><td>$23,808.00</td><td>$18,560.00</td></tr>
+                        <tr><td><strong>Especificaciones técnicas</strong></td>
+                            <td>Marca AP, modelo Ecovar, 240V</td>
+                            <td>Marca AP, modelo Ecovar, 240V<br>Incluye: Bus R-Line® Rittal 400A, contactores CWMC, celdas capacitivas con resistencias de descarga, rejilla IP45, fusibles NH, portafusibles, regulador Smart III Circutor® con medición de armónicos THDi y THDv, 12 m de cable 1/0 AWG, tubería licuátite 1½"</td></tr>
+                        <tr><td><strong>Condiciones de pago</strong></td><td>80% anticipo, 20% al término</td><td>80% anticipo, 20% contraviso de entrega</td></tr>
+                        <tr><td><strong>Tiempo de entrega</strong></td><td>3-4 semanas</td><td>2-3 semanas</td></tr>
+                        <tr class="total"><td><strong>TOTAL CON IVA</strong></td><td><strong>$172,608.00</strong></td><td><strong>$134,560.00</strong></td></tr>
+                        <tr class="recomendado"><td colspan="3"><strong>✅ RECOMENDACIÓN: GElectrical (Ing. Alan Fonseca)</strong><br>• Menor costo total: $134,560.00 (ahorro de $38,048.00 vs ELCO)<br>• Mayor capacidad (30 kVAR vs 25 kVAR)<br>• Especificaciones técnicas más detalladas y robustas<br>• Tiempo de entrega más corto (2-3 semanas)</td></tr>
                     </table>
+                    <div style="margin-top:8px; font-size:12px; color:#5a6e8a;">
+                        <strong>Ahorro anual proyectado con la instalación:</strong> Eliminación de la penalización actual de $1,228.57/mes = <strong>$14,742.84/año</strong>.<br>
+                        <strong>Recuperación de inversión (ROI):</strong> Con la cotización de GElectrical ($134,560.00), el tiempo de recuperación sería de aproximadamente <strong>9.1 años</strong>.<br>
+                        <em>*Cotizaciones recibidas el 30 de julio 2026. Se recomienda presentar ambas opciones en Asamblea para su aprobación.</em>
+                    </div>
                 </div>
-                <strong>Acción requerida:</strong> Contactar a un ingeniero eléctrico especializado para realizar estudio de medición de potencia reactiva (kVAR), dimensionar y cotizar banco de capacitores automático de 25 kVAR para carga de 37 kW. Presentar propuesta en Asamblea para aprobación de inversión.
+
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('ELCO.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización ELCO
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('ELCO.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('GIelectric.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización GElectrical
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('GIelectric.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
