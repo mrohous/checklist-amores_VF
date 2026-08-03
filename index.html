@@ -808,6 +808,23 @@
             background: #e8f5e9;
             font-weight: 700;
         }
+        .nota-observacion {
+            background: #f3f4f6;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 10px 0 4px 0;
+            border-left: 4px solid #f9a825;
+            font-size: 13px;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+        .nota-observacion strong {
+            color: #1a2b4a;
+        }
+        .nota-observacion .pin {
+            font-size: 16px;
+            margin-right: 6px;
+        }
         @media print {
             body { background: white; padding: 8px; }
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
@@ -836,6 +853,7 @@
             .comparativa-tabla { padding: 10px; }
             .comparativa-tabla table { font-size: 12px; }
             .comparativa-tabla td, .comparativa-tabla th { padding: 3px 6px; }
+            .nota-observacion { font-size: 12px; padding: 10px 14px; }
             .leyenda { gap: 6px 12px; font-size: 12px; }
             .leyenda-item { gap: 4px; }
             .leyenda .badge { font-size: 10px; padding: 1px 8px; }
@@ -887,6 +905,7 @@
             .comparativa-tabla { padding: 8px; font-size: 12px; }
             .comparativa-tabla table { font-size: 11px; }
             .comparativa-tabla th, .comparativa-tabla td { padding: 2px 4px; }
+            .nota-observacion { font-size: 11px; padding: 8px 12px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
             .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
         }
@@ -1451,6 +1470,17 @@
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
                     </button>
+                </div>
+
+                <!-- NOTA DE OBSERVACIÓN -->
+                <div class="nota-observacion">
+                    <span class="pin">📌</span> <strong>Observación:</strong> Al parecer las cotizaciones incluyen componentes de gama industrial que no son necesarios para un condominio residencial. 
+                    <br><br>
+                    <strong>Acción requerida:</strong>
+                    <ul style="padding-left:20px; margin-top:4px; list-style-type:disc;">
+                        <li>Solicitar una cotización que elimine los componentes industriales (bus Rittal, ventilación forzada) y que incluya un controlador de gama media.</li>
+                        <li><strong>Preguntar:</strong> ¿Cuál es la vida útil estimada del equipo que cotizan en condiciones normales de operación (temperatura ambiente 25-35°C, sin armónicos significativos)? ¿Qué factores la reducen (temperatura, humedad, ciclado)? ¿Incluye garantía extendida?</li>
+                    </ul>
                 </div>
             </div>
         </div>
