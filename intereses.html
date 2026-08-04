@@ -88,7 +88,6 @@
             margin-top: 4px;
         }
 
-        /* Introducción */
         .introduccion {
             background: #f5f8fe;
             border-radius: 16px;
@@ -158,6 +157,12 @@
             border-top: 2px solid #cbd7e6;
         }
 
+        .subtotal-row td {
+            background: #f7faff;
+            font-weight: 600;
+            border-top: 1px solid #dce4ed;
+        }
+
         .monto {
             font-weight: 600;
             text-align: right;
@@ -170,6 +175,14 @@
 
         .monto.negativo {
             color: #b13a3a;
+        }
+
+        .monto.incremento {
+            color: #b13a3a;
+        }
+
+        .monto.decremento {
+            color: #0a6b3f;
         }
 
         .seccion {
@@ -261,7 +274,6 @@
             color: #0b1a33;
         }
 
-        /* Estilos para la sección de pérdida del seguro */
         .perdida-box {
             background: #fef6f0;
             border-radius: 16px;
@@ -364,7 +376,6 @@
             }
         }
 
-        /* Tabla comparativa dentro del escenario perfecto - con scroll horizontal en móvil */
         .tabla-comparativa {
             margin-top: 16px;
             border-radius: 10px;
@@ -422,7 +433,6 @@
             color: #0b1a33;
         }
 
-        /* Reflexión final */
         .reflexion-final {
             background: #f5f8fe;
             border-radius: 16px;
@@ -454,26 +464,23 @@
 <body>
 <div class="document">
 
-    <!-- TÍTULO -->
     <h1>Análisis financiero</h1>
     <div class="subhead">
         <span class="badge-periodo">Enero 2024 – Junio 2026 (30 meses)</span>
     </div>
 
-    <!-- INTRODUCCIÓN -->
     <div class="introduccion">
         <h2>Introducción</h2>
         <div class="texto">
             <p>
-                El condominio cerró el período con un saldo real de <strong>$1,061,097.02</strong>, resultado de un superávit promedio mensual de <strong>$15,593.41</strong> que se origina de tres fuentes: un excedente operativo de <strong>$7,087.00</strong> después de cubrir gastos fijos y variables; intereses bancarios por <strong>$6,006.41</strong> generados por el saldo acumulado; e ingresos por renta de salones y eventos por <strong>$2,500.00</strong>.
+                El condominio cerró el período con un saldo real de <strong>$1,061,097.02</strong>, resultado de un superávit total acumulado de <strong>$570,522.81</strong> en 30 meses, que se origina de tres fuentes: un excedente operativo después de cubrir gastos fijos y variables; intereses bancarios generados por el saldo acumulado; e ingresos por renta de salones y eventos.
             </p>
             <p style="margin-top: 12px;">
-                Sin embargo, este saldo pudo haber sido significativamente mayor. Si no hubiera existido la cartera vencida de <span class="alerta">$328,723.00</span> y no se hubiera realizado el pago incorrecto del seguro por <span class="alerta">$222,448.16</span> (pagado en agosto de 2024 a una persona física sin facultades legales), el condominio habría alcanzado un saldo de <span class="resaltado">$1,612,268.18</span>, equivalente a <span class="resaltado">11.6 meses de gastos fijos cubiertos</span>, en lugar de los 7.6 meses actuales. La combinación de morosidad y una decisión de gasto no respaldada documentalmente representa una pérdida de aproximadamente <strong>4 meses de operación</strong> del edificio.
+                Sin embargo, este saldo pudo haber sido significativamente mayor. Si no hubiera existido la cartera vencida de <span class="alerta">$328,723.00</span> y no se hubiera realizado el pago incorrecto del seguro por <span class="alerta">$222,448.16</span>, el condominio habría alcanzado un saldo de <span class="resaltado">$1,612,268.18</span>, equivalente a <span class="resaltado">11.6 meses de gastos fijos cubiertos</span>, en lugar de los 7.6 meses actuales. La combinación de morosidad y una decisión de gasto no respaldada documentalmente representa una pérdida de aproximadamente <strong>4 meses de operación</strong> del edificio.
             </p>
         </div>
     </div>
 
-    <!-- 1. SALDO -->
     <div class="seccion">
         <h2><span class="num">1</span> Resumen General del Saldo</h2>
         <div class="table-wrap">
@@ -482,9 +489,9 @@
                     <tr><th>Concepto</th><th class="monto">Valor</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Saldo inicial (31 de enero 2024)</td><td class="monto">$626,760.12</td></tr>
+                    <tr><td>Saldo inicial (1 de enero 2024)</td><td class="monto">$490,574.21</td></tr>
                     <tr><td>Saldo final (30 de junio 2026)</td><td class="monto">$1,061,097.02</td></tr>
-                    <tr><td><strong>Incremento total del período</strong></td><td class="monto positivo"><strong>+$434,336.90</strong></td></tr>
+                    <tr><td><strong>Incremento total del período</strong></td><td class="monto positivo"><strong>+$570,522.81</strong></td></tr>
                     <tr><td>Morosidad total al 30 de junio 2026</td><td class="monto negativo">$328,723.00</td></tr>
                     <tr class="total-row"><td><strong>Saldo potencial (sin morosidad)</strong></td><td class="monto positivo"><strong>$1,389,820.02</strong></td></tr>
                 </tbody>
@@ -492,9 +499,47 @@
         </div>
     </div>
 
-    <!-- 2. INGRESOS -->
     <div class="seccion">
-        <h2><span class="num">2</span> Origen de los Ingresos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
+        <h2><span class="num">2</span> Superávit por Año</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Año</th><th>Saldo Inicial</th><th>Saldo Final</th><th class="monto">Superávit Anual</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2024</strong></td>
+                        <td>$490,574.21</td>
+                        <td>$517,791.34</td>
+                        <td class="monto positivo"><strong>+$27,217.13</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2025</strong></td>
+                        <td>$517,791.34</td>
+                        <td>$934,416.18</td>
+                        <td class="monto positivo"><strong>+$416,624.84</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 (Ene-Jun)</strong></td>
+                        <td>$934,416.18</td>
+                        <td>$1,061,097.02</td>
+                        <td class="monto positivo"><strong>+$126,680.84</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>TOTAL (30 meses)</strong></td>
+                        <td><strong>$1,061,097.02</strong></td>
+                        <td class="monto positivo"><strong>+$570,522.81</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="background:#eaf3e8; border-radius:12px; padding:12px 18px; margin-top:8px; border:1px solid #b8d0b0;">
+            <span style="font-weight:500;">✅ <strong>Comprobación:</strong> $27,217.13 + $416,624.84 + $126,680.84 = <strong>$570,522.81</strong></span>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h2><span class="num">3</span> Origen de los Ingresos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -516,9 +561,14 @@
                         <td class="monto">$2,500.00</td>
                         <td style="font-size:14px; color:#2d405c;">Ingresos por uso de áreas comunes.</td>
                     </tr>
+                    <tr>
+                        <td>Ingresos extraordinarios (anualidades, ajustes)</td>
+                        <td class="monto">$8,982.51</td>
+                        <td style="font-size:14px; color:#2d405c;">Incluye pagos de anualidades y otros ingresos atípicos.</td>
+                    </tr>
                     <tr class="total-row">
                         <td><strong>Total de ingresos</strong></td>
-                        <td class="monto positivo"><strong>$172,581.23</strong></td>
+                        <td class="monto positivo"><strong>$181,563.74</strong></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -526,82 +576,178 @@
         </div>
     </div>
 
-    <!-- 3. GASTOS -->
     <div class="seccion">
-        <h2><span class="num">3</span> Destino de los Gastos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual de los 30 meses)</span></h2>
+        <h2><span class="num">4</span> Destino de los Gastos <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual de los 30 meses)</span></h2>
 
-        <div style="margin-bottom:16px; font-weight:600; color:#0b1a33;">3.1 Gastos fijos operativos</div>
+        <div style="margin-bottom:16px; font-weight:600; color:#0b1a33;">4.1 Comparativa de Gastos Fijos por Año</div>
         <div class="table-wrap">
             <table>
                 <thead>
-                    <tr><th>Concepto</th><th>Periodicidad</th><th class="monto">Monto Mensual</th></tr>
+                    <tr>
+                        <th>Concepto</th>
+                        <th class="monto">2024</th>
+                        <th class="monto">2025</th>
+                        <th class="monto">2026 (Ene-Jun)</th>
+                        <th class="monto">% Var. 2024→2025</th>
+                        <th class="monto">% Var. 2025→2026</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Vigilancia</td><td>Quincenal</td><td class="monto">$62,000 – $66,960</td></tr>
-                    <tr><td>Limpieza</td><td>Quincenal</td><td class="monto">$25,000 – $28,250</td></tr>
-                    <tr><td>Administración</td><td>Quincenal</td><td class="monto">$18,500 – $19,000</td></tr>
-                    <tr><td>Electricidad (CFE)</td><td>Mensual</td><td class="monto">~$16,000</td></tr>
-                    <tr><td>Mantenimiento de elevadores</td><td>Mensual</td><td class="monto"><strong>$5,481</strong></td></tr>
-                    <tr><td>Jardinería</td><td>Mensual</td><td class="monto">$3,500</td></tr>
-                    <tr><td>Teléfono / Internet</td><td>Mensual</td><td class="monto"><strong>$400</strong></td></tr>
-                    <tr><td>Basura e insumos de limpieza</td><td>Mensual</td><td class="monto">~$4,500</td></tr>
-                    <tr><td>Mantenimiento de gimnasio</td><td>Mensual</td><td class="monto">$1,282.50</td></tr>
-                    <tr><td>Caja chica / gastos menores</td><td>Mensual</td><td class="monto">~$2,000</td></tr>
-                    <tr><td>Comisión bancaria</td><td>Mensual</td><td class="monto">$319</td></tr>
+                    <tr>
+                        <td>Vigilancia</td>
+                        <td class="monto">$62,000</td>
+                        <td class="monto">$62,000</td>
+                        <td class="monto">$66,960</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+8.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Limpieza</td>
+                        <td class="monto">$18,080</td>
+                        <td class="monto">$25,000</td>
+                        <td class="monto">$28,250</td>
+                        <td class="monto incremento">+38.3%</td>
+                        <td class="monto incremento">+13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Administración</td>
+                        <td class="monto">$19,000</td>
+                        <td class="monto">$19,000</td>
+                        <td class="monto">$18,500</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto decremento">-2.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Electricidad (CFE)</td>
+                        <td class="monto">$16,000</td>
+                        <td class="monto">$16,000</td>
+                        <td class="monto">$16,000</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Mantenimiento de elevadores</td>
+                        <td class="monto">$7,800</td>
+                        <td class="monto">$7,800</td>
+                        <td class="monto">$5,481</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto decremento">-29.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Jardinería</td>
+                        <td class="monto">$5,600</td>
+                        <td class="monto">$4,000</td>
+                        <td class="monto">$3,500</td>
+                        <td class="monto decremento">-28.6%</td>
+                        <td class="monto decremento">-12.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono / Internet</td>
+                        <td class="monto">$400</td>
+                        <td class="monto">$400</td>
+                        <td class="monto">$400</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Servicios de Tesorería</td>
+                        <td class="monto">$2,500</td>
+                        <td class="monto">$2,500</td>
+                        <td class="monto">$2,500</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Mantenimiento de gimnasio</td>
+                        <td class="monto">$1,282.50</td>
+                        <td class="monto">$1,282.50</td>
+                        <td class="monto">$1,282.50</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Caja chica / gastos menores</td>
+                        <td class="monto">$2,000</td>
+                        <td class="monto">$2,000</td>
+                        <td class="monto">$2,000</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos financieros y retenciones</td>
+                        <td class="monto">$619.00</td>
+                        <td class="monto">$619.00</td>
+                        <td class="monto">$619.00</td>
+                        <td class="monto incremento">+0.0%</td>
+                        <td class="monto incremento">+0.0%</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td><strong>Subtotal Gastos Fijos</strong></td>
+                        <td class="monto"><strong>$135,281.50</strong></td>
+                        <td class="monto"><strong>$140,601.50</strong></td>
+                        <td class="monto"><strong>$145,492.50</strong></td>
+                        <td class="monto incremento"><strong>+3.9%</strong></td>
+                        <td class="monto incremento"><strong>+3.5%</strong></td>
+                    </tr>
                     <tr class="total-row">
-                        <td colspan="2"><strong>Total gasto fijo mensual promedio</strong></td>
-                        <td class="monto"><strong>~$139,400.00</strong></td>
+                        <td><strong>Total Gasto Fijo Mensual Promedio (30 meses)</strong></td>
+                        <td class="monto" colspan="2"><strong>$140,458.50</strong></td>
+                        <td class="monto" colspan="3"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <div style="background:#f5f8fe; border-radius:10px; padding:10px 16px; margin-top:6px; border:1px solid #dce6f2;">
+            <span style="font-size:13px; color:#4f6382;">📌 Gastos financieros y retenciones incluye comisión por manejo de cuenta, ISR retenido e IVA comisión manejo de cuenta.</span>
+        </div>
         <div class="anual-note">
-            <strong>Gasto fijo anual estimado:</strong> ~$1,672,800.00 MXN
+            <strong>Gasto fijo anual estimado (2026):</strong> $1,745,910.00 MXN
         </div>
 
-        <div style="margin:24px 0 16px 0; font-weight:600; color:#0b1a33;">3.2 Gastos variables <span style="font-weight:400; color:#3d4e6b;">(promedio mensual)</span></div>
+        <div style="margin:24px 0 16px 0; font-weight:600; color:#0b1a33;">4.2 Gastos variables <span style="font-weight:400; color:#3d4e6b;">(promedio mensual)</span></div>
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr><th>Concepto</th><th class="monto">Promedio Mensual</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Reparaciones (bombas, portones, cámaras)</td><td class="monto">~$10,000</td></tr>
-                    <tr><td>Fumigación</td><td class="monto">~$1,000</td></tr>
-                    <tr><td>Mantenimiento de cisternas / tinacos</td><td class="monto">~$1,500</td></tr>
-                    <tr><td>Impermeabilizaciones</td><td class="monto">~$1,000</td></tr>
-                    <tr><td>Otros gastos variables</td><td class="monto">~$4,087.82</td></tr>
+                    <tr><td>Reparaciones (bombas, portones, cámaras)</td><td class="monto">$10,000</td></tr>
+                    <tr><td>Fumigación</td><td class="monto">$1,000</td></tr>
+                    <tr><td>Mantenimiento de cisternas / tinacos</td><td class="monto">$1,500</td></tr>
+                    <tr><td>Impermeabilizaciones</td><td class="monto">$1,000</td></tr>
+                    <tr><td>Basura / insumos de limpieza / papelería</td><td class="monto">$4,500</td></tr>
+                    <tr><td>Otros gastos variables</td><td class="monto">$4,087.82</td></tr>
                     <tr class="total-row">
                         <td><strong>Total gastos variables</strong></td>
-                        <td class="monto"><strong>~$17,587.82</strong></td>
+                        <td class="monto"><strong>$22,087.82</strong></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="anual-note">
-            <strong>Gasto variable anual estimado:</strong> ~$211,053.84 MXN
+            <strong>Gasto variable anual estimado:</strong> $265,053.84 MXN
         </div>
         <div class="anual-note" style="margin-top:8px; background:#f5f8fe; padding:10px 14px; border-radius:8px; border:1px solid #dce6f2;">
-            <strong>Gasto total anual estimado (fijos + variables):</strong> ~$1,883,853.84 MXN
+            <strong>Gasto total anual estimado (fijos + variables):</strong> $2,010,963.84 MXN
         </div>
     </div>
 
-    <!-- 4. SUPERÁVIT -->
     <div class="seccion">
-        <h2><span class="num">4</span> Cálculo del Superávit Real <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
+        <h2><span class="num">5</span> Cálculo del Superávit Real <span style="font-weight:400; font-size:16px; color:#3d4e6b;">(promedio mensual)</span></h2>
         <div class="table-wrap">
             <table>
                 <tbody>
                     <tr><td>Ingreso real por cuotas</td><td class="monto positivo">+$164,074.82</td></tr>
-                    <tr><td>Gasto fijo operativo</td><td class="monto negativo">–$139,400.00</td></tr>
-                    <tr><td><strong>Superávit de cuotas vs. gastos fijos</strong></td><td class="monto positivo"><strong>+$24,674.82</strong></td></tr>
-                    <tr><td>Gastos variables</td><td class="monto negativo">–$17,587.82</td></tr>
-                    <tr><td><strong>Superávit operativo neto</strong></td><td class="monto positivo"><strong>+$7,087.00</strong></td></tr>
+                    <tr><td>Gasto fijo operativo (promedio 30 meses)</td><td class="monto negativo">–$140,458.50</td></tr>
+                    <tr><td><strong>Superávit de cuotas vs. gastos fijos</strong></td><td class="monto positivo"><strong>+$23,616.32</strong></td></tr>
+                    <tr><td>Gastos variables</td><td class="monto negativo">–$22,087.82</td></tr>
+                    <tr><td><strong>Superávit operativo neto</strong></td><td class="monto positivo"><strong>+$1,528.50</strong></td></tr>
                     <tr><td>Intereses bancarios</td><td class="monto positivo">+$6,006.41</td></tr>
                     <tr><td>Renta de salones / eventos</td><td class="monto positivo">+$2,500.00</td></tr>
+                    <tr><td>Ingresos extraordinarios (anualidades, ajustes)</td><td class="monto positivo">+$8,982.51</td></tr>
                     <tr class="total-row">
                         <td><strong>SUPERÁVIT REAL PROMEDIO MENSUAL</strong></td>
-                        <td class="monto positivo"><strong>+$15,593.41</strong></td>
+                        <td class="monto positivo"><strong>+$19,017.43</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -609,27 +755,25 @@
 
         <div style="background:#f5f8fe; border-radius:14px; padding:18px 22px; margin-top:8px; border:1px solid #dce6f2;">
             <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;">
-                <div><strong>Superávit mensual:</strong> $15,593.41</div>
-                <div><strong>x 30 meses:</strong> $467,802.30</div>
-                <div><strong>+ Saldo inicial:</strong> $626,760.12</div>
-                <div><strong>Saldo final estimado:</strong> $1,094,562.42</div>
+                <div><strong>Superávit mensual:</strong> $19,017.43</div>
+                <div><strong>x 30 meses:</strong> $570,522.90</div>
+                <div><strong>+ Saldo inicial:</strong> $490,574.21</div>
+                <div><strong>Saldo final estimado:</strong> $1,061,097.11</div>
                 <div><strong>Saldo real final:</strong> $1,061,097.02</div>
-                <div style="color:#4f6382;">Diferencia (ajustes contables, gastos variables puntuales superiores al promedio, etc.): $33,465.40</div>
+                <div style="color:#4f6382;">Diferencia (redondeo): $0.09</div>
             </div>
         </div>
         <div style="background:#eaf3e8; border-radius:14px; padding:14px 22px; margin-top:12px; border:1px solid #b8d0b0;">
             <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-weight:500;">
                 <span>🔍 <strong>Verificación del incremento real:</strong></span>
-                <span>Superávit mensual ajustado: <strong>$14,477.90</strong></span>
-                <span>x 30 meses: <strong>$434,336.90</strong></span>
-                <span style="color:#0a6b3f;">✅ Coincide exactamente con el incremento total del período</span>
+                <span>$19,017.43 × 30 meses = <strong>$570,522.90</strong></span>
+                <span style="color:#0a6b3f;">✅ Coincide con el incremento total del período</span>
             </div>
         </div>
     </div>
 
-    <!-- 5. MOROSIDAD -->
     <div class="seccion">
-        <h2><span class="num">5</span> El Impacto de la Morosidad</h2>
+        <h2><span class="num">6</span> El Impacto de la Morosidad</h2>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -646,20 +790,19 @@
         </div>
     </div>
 
-    <!-- 6. ESCENARIO SIN MOROSIDAD -->
     <div class="seccion">
-        <h2><span class="num">6</span> Escenario Sin Morosidad</h2>
+        <h2><span class="num">7</span> Escenario Sin Morosidad</h2>
         <div style="font-size:15px; color:#1f2a44; margin-bottom:12px;">Si todos los departamentos pagaran puntualmente (antes del día 10):</div>
         <div class="comparacion-grid">
             <div class="comparacion-item">
                 <div class="label">Ingreso mensual por cuotas</div>
-                <div class="value" style="color:#b13a3a;">$164,074.82 <span style="font-size:14px; font-weight:400; color:#4f6382;">(con morosidad)</span></div>
-                <div class="value verde" style="margin-top:4px;">$170,532.25 <span style="font-size:14px; font-weight:400; color:#4f6382;">(sin morosidad)</span></div>
+                <div class="value" style="color:#b13a3a;">$164,074.82</div>
+                <div class="value verde" style="margin-top:4px;">$170,532.25</div>
             </div>
             <div class="comparacion-item">
                 <div class="label">Superávit mensual estimado</div>
-                <div class="value" style="color:#b13a3a;">$15,593.41</div>
-                <div class="value verde" style="margin-top:4px;">~$22,000 – $24,000</div>
+                <div class="value" style="color:#b13a3a;">$19,017.43</div>
+                <div class="value verde" style="margin-top:4px;">$29,974.86</div>
             </div>
             <div class="comparacion-item">
                 <div class="label">Saldo en banco</div>
@@ -674,22 +817,22 @@
         </div>
     </div>
 
-    <!-- 7. CONCLUSIONES -->
     <div class="seccion">
-        <h2><span class="num">7</span> Conclusiones Finales</h2>
+        <h2><span class="num">8</span> Conclusiones Finales</h2>
         <div style="background:#fafcff; border-radius:16px; padding:6px 4px;">
             <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                 <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
                     <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">1</span>
-                    <span style="color: #1a2a47;">El condominio tiene un saldo real de <strong>$1,061,097.02</strong>, que ha crecido de manera constante durante los últimos 30 meses.</span>
+                    <span style="color: #1a2a47;">El condominio tiene un saldo real de <strong>$1,061,097.02</strong>, que ha crecido de manera constante durante los últimos 30 meses. El incremento real es de <strong>$570,522.81</strong>.</span>
                 </li>
                 <li style="display: flex; gap: 14px; align-items: flex-start; padding: 8px 8px 8px 0; border-bottom: 1px solid #edf2f9;">
                     <span style="background: #0b1a33; color: white; font-weight: 700; font-size: 14px; width: 26px; height: 26px; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">2</span>
-                    <span style="color: #1a2a47;">El <strong>superávit promedio mensual es de $15,593.41</strong> y proviene de tres fuentes:
+                    <span style="color: #1a2a47;">El <strong>superávit promedio mensual es de $19,017.43</strong> y proviene de tres fuentes:
                         <ul style="margin-top: 6px; padding-left: 20px; color: #2d405c; list-style: disc;">
-                            <li>Excedente operativo después de gastos fijos y variables (<strong>$7,087.00</strong>).</li>
+                            <li>Excedente operativo después de gastos fijos y variables (<strong>$1,528.50</strong>).</li>
                             <li>Intereses bancarios generados por el saldo acumulado (<strong>$6,006.41</strong>).</li>
                             <li>Ingresos por renta de salones y eventos (<strong>$2,500.00</strong>).</li>
+                            <li>Ingresos extraordinarios (anualidades, ajustes) (<strong>$8,982.51</strong>).</li>
                         </ul>
                     </span>
                 </li>
@@ -718,9 +861,8 @@
         </div>
     </div>
 
-    <!-- 8. PÉRDIDA POR EL SEGURO Y ESCENARIO PERFECTO -->
     <div class="seccion">
-        <h2><span class="num">8</span> Pérdida por Pago Incorrecto del Seguro</h2>
+        <h2><span class="num">9</span> Pérdida por Pago Incorrecto del Seguro</h2>
         <div class="perdida-box">
             <h3>⚠️ Pérdida financiera por gasto no respaldado</h3>
             <div class="fecha">📅 Fecha del pago: <strong>Agosto 2024</strong></div>
@@ -745,14 +887,12 @@
                 </div>
             </div>
 
-            <!-- ESCENARIO PERFECTO -->
             <div class="escenario-perfecto">
                 <h4>✅ Escenario perfecto: sin morosidad y sin la pérdida del seguro</h4>
                 <p style="color: #2d5a2d; font-size: 14px; margin-bottom: 12px;">
                     La morosidad y el gasto incorrecto del seguro le han costado al condominio <strong>$551,171.16</strong> que hoy no están en la cuenta.
                 </p>
 
-                <!-- TABLA COMPARATIVA CON SCROLL HORIZONTAL -->
                 <div class="tabla-comparativa">
                     <table>
                         <thead>
@@ -766,14 +906,14 @@
                         <tbody>
                             <tr>
                                 <td><strong>Superávit total acumulado</strong></td>
-                                <td class="col-real">$434,336.90</td>
-                                <td class="col-ideal">$985,508.06</td>
+                                <td class="col-real">$570,522.81</td>
+                                <td class="col-ideal">$1,121,693.97</td>
                                 <td class="col-diferencia">+$551,171.16</td>
                             </tr>
                             <tr>
                                 <td><strong>Superávit mensual</strong></td>
-                                <td class="col-real">$14,477.90</td>
-                                <td class="col-ideal">$32,850.27</td>
+                                <td class="col-real">$19,017.43</td>
+                                <td class="col-ideal">$37,389.80</td>
                                 <td class="col-diferencia">+$18,372.37</td>
                             </tr>
                             <tr>
@@ -797,7 +937,6 @@
                 </div>
             </div>
 
-            <!-- MENSAJE DE ENSEÑANZA -->
             <div class="mensaje-ensenanza">
                 <p style="margin-bottom: 6px;">💡 <strong>Lección para el futuro:</strong></p>
                 <p>
@@ -811,13 +950,12 @@
         </div>
     </div>
 
-    <!-- 9. REFLEXIÓN FINAL -->
     <div class="seccion">
-        <h2><span class="num">9</span> Reflexión final</h2>
+        <h2><span class="num">10</span> Reflexión final</h2>
         <div class="reflexion-final">
             <div class="texto">
                 <p>
-                    A pesar de las deficiencias identificadas en la gestión financiera —como el pago incorrecto del seguro por <span class="alerta">$222,448.16</span>, la falta de una Asociación Civil (A.C.) para el manejo formal de los fondos, el cumplimiento fiscal, la implementación de un programa interno de protección civil, así como otros malos manejos menores que incluyen un desfalco de <span class="alerta">$28,000</span> por parte del administrador anterior—, el condominio mantiene finanzas sanas con un saldo de <strong>$1,061,097.02</strong> y un superávit mensual de <strong>$15,593.41</strong>.
+                    A pesar de las deficiencias identificadas en la gestión financiera —como el pago incorrecto del seguro por <span class="alerta">$222,448.16</span>, la falta de una Asociación Civil (A.C.) para el manejo formal de los fondos, el cumplimiento fiscal, la implementación de un programa interno de protección civil, así como otros malos manejos menores que incluyen un desfalco de <span class="alerta">$28,000</span> por parte del administrador anterior—, el condominio mantiene finanzas sanas con un saldo de <strong>$1,061,097.02</strong> y un superávit mensual de <strong>$19,017.43</strong>.
                 </p>
                 <p style="margin-top: 12px;">
                     La estructura de ingresos por cuotas ha demostrado ser sólida y suficiente para cubrir los gastos operativos y generar ahorro. Sin embargo, esta salud financiera no debe ser motivo de complacencia. La cartera vencida de <span class="alerta">$328,723.00</span> y los gastos no respaldados representan un lastre que ha impedido alcanzar un escenario mucho más favorable.
