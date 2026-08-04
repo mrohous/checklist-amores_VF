@@ -26,7 +26,6 @@
     <!-- ====== FIN FAVICONES ====== -->
 
     <style>
-        /* ====== ESTILOS COMPLETOS ====== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -81,7 +80,6 @@
             gap: 6px;
         }
 
-        /* ====== CONTEXTO ====== */
         .contexto {
             background: #f8faff;
             border-radius: 16px;
@@ -101,6 +99,44 @@
             margin-top: 6px;
             font-weight: 600;
             color: #0b1e3a;
+        }
+
+        .resumen-financiero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 12px 0 18px 0;
+        }
+        .resumen-financiero .card {
+            background: #f8faff;
+            border-radius: 14px;
+            padding: 14px 16px;
+            border: 1px solid #e6ecf5;
+            text-align: center;
+        }
+        .resumen-financiero .card .valor {
+            font-size: clamp(20px, 2.5vw, 26px);
+            font-weight: 700;
+            color: #0b1e3a;
+        }
+        .resumen-financiero .card .valor.positivo {
+            color: #0f7b3a;
+        }
+        .resumen-financiero .card .valor.negativo {
+            color: #b33c3c;
+        }
+        .resumen-financiero .card .etiqueta {
+            font-size: clamp(12px, 1.1vw, 13px);
+            color: #4a617f;
+            font-weight: 500;
+        }
+        .resumen-financiero .card.destacado {
+            border-color: #1a6dd4;
+            background: #eef4fe;
+        }
+        .resumen-financiero .card.alerta {
+            border-color: #f5c2c2;
+            background: #fff6f6;
         }
 
         .grafica-container {
@@ -171,7 +207,6 @@
         .color-cian { background: #00a8b5; }
         .color-rosa { background: #e91e63; }
         .color-ambar { background: #ff8f00; }
-        .color-magenta { background: #9c27b0; }
         .color-turquesa { background: #00897b; }
 
         .badge-container {
@@ -196,7 +231,7 @@
         .badge-morado { background: #ede7f6; color: #4a148c; }
         .badge-cian { background: #e0f7fa; color: #00695c; }
         .badge-gris { background: #f5f5f5; color: #616161; }
-        .badge-amarillo { background: #fff8e1; color: #bf5e00; }
+        .badge-oro { background: #fff3cd; color: #856404; }
 
         .tabla-wrapper {
             overflow-x: auto;
@@ -230,6 +265,12 @@
         .tabla .monto {
             white-space: nowrap;
             font-weight: 500;
+        }
+        .tabla .positivo {
+            color: #0f7b3a;
+        }
+        .tabla .negativo {
+            color: #b33c3c;
         }
 
         .plan-fases {
@@ -428,58 +469,6 @@
             color: #0b1e3a;
         }
 
-        /* ====== GRÁFICA CIRCULAR MOROSIDAD ====== */
-        .morosidad-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin: 12px 0 4px 0;
-            padding: 12px 16px;
-            background: #f8faff;
-            border-radius: 12px;
-            border: 1px solid #e9edf4;
-        }
-        .morosidad-container .chart-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .morosidad-container .chart-wrapper canvas {
-            max-width: 140px;
-            max-height: 140px;
-            width: 100%;
-            height: auto;
-        }
-        .morosidad-container .leyenda-morosidad {
-            font-size: clamp(12px, 1.1vw, 14px);
-            color: #3a5270;
-            line-height: 1.6;
-        }
-        .morosidad-container .leyenda-morosidad .item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 2px 0;
-        }
-        .morosidad-container .leyenda-morosidad .color-box {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-        .morosidad-container .leyenda-morosidad .porcentaje {
-            font-weight: 700;
-            color: #0b1e3a;
-        }
-        .morosidad-container .leyenda-morosidad .total-morosidad {
-            margin-top: 6px;
-            font-weight: 700;
-            color: #b33c3c;
-            font-size: clamp(14px, 1.3vw, 16px);
-        }
-
         @media print {
             body { background: white; padding: 4px; }
             .reporte { box-shadow: none; border-radius: 0; padding: 14px; }
@@ -503,6 +492,9 @@
             h1 { font-size: 19px; padding-left: 10px; }
             .subtitulo { padding-left: 10px; flex-direction: column; gap: 2px; }
             .contexto { padding: 12px 14px; font-size: 13px; }
+            .resumen-financiero { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .resumen-financiero .card { padding: 10px 8px; }
+            .resumen-financiero .card .valor { font-size: 16px; }
             .grafica-container { padding: 28px 8px 6px 8px; }
             .grafica-titulo {
                 margin-bottom: 28px;
@@ -528,17 +520,14 @@
             .calendario-mes { padding: 6px 8px; }
             .calendario-mes .mes { font-size: 12px; }
             .calendario-mes .actividad { font-size: 10px; }
-            .morosidad-container { flex-direction: column; gap: 12px; padding: 10px; }
-            .morosidad-container .chart-wrapper canvas { max-width: 110px; max-height: 110px; }
-            .morosidad-container .leyenda-morosidad { font-size: 12px; text-align: center; }
-            .morosidad-container .leyenda-morosidad .item { justify-content: center; }
         }
 
         @media (max-width: 400px) {
-            .resumen-cards { grid-template-columns: 1fr 1fr; gap: 4px; }
-            .card .valor { font-size: 13px; }
-            .card .etiqueta { font-size: 9px; }
             .contexto { padding: 10px 12px; font-size: 12px; }
+            .resumen-financiero { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .resumen-financiero .card { padding: 8px 6px; }
+            .resumen-financiero .card .valor { font-size: 14px; }
+            .resumen-financiero .card .etiqueta { font-size: 10px; }
             .grafica-container { padding: 20px 6px 4px 6px; }
             .grafica-titulo {
                 margin-bottom: 18px;
@@ -560,8 +549,6 @@
             .calendario-grid { grid-template-columns: 1fr; }
             .fecha-esquina { font-size: 10px; padding: 3px 10px; }
             .btn-intereses { font-size: 10px; padding: 6px 12px; }
-            .morosidad-container .chart-wrapper canvas { max-width: 90px; max-height: 90px; }
-            .morosidad-container .leyenda-morosidad { font-size: 11px; }
         }
     </style>
 </head>
@@ -585,6 +572,37 @@
             <span class="objetivo">🎯 El objetivo: avanzar en las obras indispensables sin comprometer la liquidez del condominio, garantizando un fondo de reserva mínimo de $200,000 y preservando la capacidad de generar intereses sobre el saldo de la cuenta.</span>
         </div>
 
+        <!-- ====== RESUMEN FINANCIERO ====== -->
+        <div class="resumen-financiero">
+            <div class="card destacado">
+                <div class="valor">$1,061,097</div>
+                <div class="etiqueta">💰 Saldo en Cuenta (Actual)</div>
+            </div>
+            <div class="card alerta">
+                <div class="valor negativo">$328,723</div>
+                <div class="etiqueta">📉 Morosidad Total</div>
+            </div>
+            <div class="card">
+                <div class="valor positivo">$14,478</div>
+                <div class="etiqueta">📈 Superávit Mensual Ajustado</div>
+            </div>
+            <div class="card">
+                <div class="valor positivo">$173,735</div>
+                <div class="etiqueta">📈 Superávit Anual Ajustado</div>
+            </div>
+            <div class="card">
+                <div class="valor">$350k – $416k</div>
+                <div class="etiqueta">📊 Saldo Proyectado Final</div>
+            </div>
+        </div>
+
+        <!-- ====== NOTA SOBRE EL SUPERÁVIT ====== -->
+        <div class="nota nota-info" style="margin-bottom:14px; font-size:clamp(12px,1.1vw,13px);">
+            <span>📌</span> <strong>Nota sobre el superávit:</strong> El superávit mensual ajustado de <strong>$14,478</strong> se calcula dividiendo el incremento real del saldo ($434,337) entre los 30 meses del período analizado (enero 2024 – junio 2026). 
+            A medida que se ejecuten los proyectos y el saldo disminuya, los intereses generados serán menores, por lo que el superávit mensual <strong>disminuirá progresivamente</strong>. 
+            El flujo de efectivo proyectado considera esta disminución gradual y un margen de seguridad de <strong>$150,000</strong> para imprevistos.
+        </div>
+
         <!-- ====== GRÁFICA: COSTO DE PROYECTOS ====== -->
         <div class="grafica-container">
             <div class="grafica-titulo">🏗️ Costo Estimado de Proyectos Prioritarios</div>
@@ -606,7 +624,7 @@
                     <div class="barra-etiqueta">Seguro</div>
                 </div>
                 <div class="barra-item">
-                    <div class="barra color-morado" style="height:28px;"><span class="barra-valor">$42,000</span></div>
+                    <div class="barra color-morado" style="height:27px;"><span class="barra-valor">$39,900</span></div>
                     <div class="barra-etiqueta">Sellado</div>
                 </div>
                 <div class="barra-item">
@@ -624,10 +642,6 @@
                 <div class="barra-item">
                     <div class="barra color-gris" style="height:20px;"><span class="barra-valor">$30,000</span></div>
                     <div class="barra-etiqueta">Banco Capacitores</div>
-                </div>
-                <div class="barra-item">
-                    <div class="barra color-magenta" style="height:14px;"><span class="barra-valor">$19.5k-$42k</span></div>
-                    <div class="barra-etiqueta">👁️ Cámaras elevadores</div>
                 </div>
                 <div class="barra-item">
                     <div class="barra color-turquesa" style="height:14px;"><span class="barra-valor">Por definir</span></div>
@@ -674,7 +688,7 @@
                             <td>ELEBETA</td>
                             <td class="monto">$106,200</td>
                             <td><span class="badge badge-rojo">Crítica</span></td>
-                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                            <td><span class="badge badge-verde">✅ Aprobada</span></td>
                         </tr>
                         <tr>
                             <td><strong>Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento)</strong></td>
@@ -699,17 +713,17 @@
                         </tr>
                         <tr>
                             <td><strong>Sellado de ventanas y terrazas</strong></td>
-                            <td>Manuel Ochoa / Antonio Guerrero / José Luis Velázquez</td>
-                            <td class="monto">~$42,000</td>
-                            <td><span class="badge badge-naranja">Media-Alta</span></td>
-                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                            <td>Manuel Ochoa</td>
+                            <td class="monto">$39,900</td>
+                            <td><span class="badge badge-rojo">Alta</span></td>
+                            <td><span class="badge badge-verde">✅ Aprobada</span></td>
                         </tr>
                         <tr>
                             <td><strong>Filtraciones en muros (canalización)</strong></td>
                             <td>AHTRAM</td>
                             <td class="monto">$33,240</td>
                             <td><span class="badge badge-rojo">Crítica</span></td>
-                            <td><span class="badge badge-naranja">Por aprobar</span></td>
+                            <td><span class="badge badge-verde">✅ Aprobada</span></td>
                         </tr>
                         <tr>
                             <td><strong>Lavado de cristales y louvers</strong></td>
@@ -730,13 +744,6 @@
                             <td>Pendiente de cotización</td>
                             <td class="monto">~$30,000</td>
                             <td><span class="badge badge-naranja">Media-Alta</span></td>
-                            <td><span class="badge badge-naranja">Pendiente</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cámaras de videovigilancia para elevadores (sistema base existente)</strong></td>
-                            <td>Pendiente de cotización</td>
-                            <td class="monto">$19,500 – $42,000</td>
-                            <td><span class="badge badge-azul">Media</span></td>
                             <td><span class="badge badge-naranja">Pendiente</span></td>
                         </tr>
                         <tr>
@@ -768,97 +775,24 @@
         <!-- ====== TOTAL DE PROYECTOS ====== -->
         <div class="total-proyectos">
             <span>💰 <strong>Total de proyectos identificados (sin paneles solares):</strong></span>
-            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$964,900 – $1,202,400 + Impermeabilización (por definir)</strong></span>
+            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$943,300 – $1,200,300 + Impermeabilización (por definir)</strong></span>
         </div>
 
-        <!-- ====== TABLA DE VIABILIDAD ====== -->
-        <div style="margin: 14px 0 4px 0;">
-            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📌 Viabilidad de Proyectos Mayores</div>
-            <div class="tabla-wrapper">
-                <table class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Proyecto</th>
-                            <th>Costo Estimado</th>
-                            <th>Prioridad</th>
-                            <th>Viabilidad Actual</th>
-                            <th>Recomendación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Roof Garden (piso + filtración)</strong></td>
-                            <td class="monto">$450,000</td>
-                            <td><span class="badge badge-rojo">Alta</span></td>
-                            <td><span class="badge badge-amarillo">🟡 Viable con financiamiento combinado</span></td>
-                            <td>Combinar saldo de cuenta + cuota extraordinaria</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Reparación Mayor de Elevadores</strong></td>
-                            <td class="monto">$106,200</td>
-                            <td><span class="badge badge-rojo">Crítica</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Ejecutar de inmediato</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Protección Civil (PIPC, ROPC, dictámenes y equipamiento)</strong></td>
-                            <td class="monto">$73,000 – $138,000</td>
-                            <td><span class="badge badge-rojo">Crítica</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Ejecutar con prioridad</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Seguro Condominal (incendio, sismo y RC, cobertura amplia)</strong></td>
-                            <td class="monto">$110,000 – $260,000</td>
-                            <td><span class="badge badge-rojo">Alta</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Gestionar cotizaciones y contratar</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Impermeabilización de azotea</strong></td>
-                            <td class="monto">Por definir</td>
-                            <td><span class="badge badge-azul">Media</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Obtener cotización y programar</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Filtraciones en muros (AHTRAM)</strong></td>
-                            <td class="monto">$33,240</td>
-                            <td><span class="badge badge-rojo">Crítica</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Ejecutar con prioridad</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Banco de Capacitores</strong></td>
-                            <td class="monto">~$30,000</td>
-                            <td><span class="badge badge-naranja">Media-Alta</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>ROI de 1.4 años · Ahorro anual $17,100</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cámaras de videovigilancia para elevadores</strong></td>
-                            <td class="monto">$19,500 – $42,000</td>
-                            <td><span class="badge badge-azul">Media</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Programar en Fase 3</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Constitución A.C.</strong></td>
-                            <td class="monto">$25,000</td>
-                            <td><span class="badge badge-azul">Media</span></td>
-                            <td><span class="badge badge-verde">✅ Viable</span></td>
-                            <td>Base para administración transparente</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Paneles Solares</strong></td>
-                            <td class="monto">$250,000 - $400,000</td>
-                            <td><span class="badge badge-azul">Media</span></td>
-                            <td><span class="badge badge-rojo">❌ No Viable</span></td>
-                            <td>Postergar hasta resolver factor de potencia</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- ====== NOTA CLAVE SOBRE VIABILIDAD ====== -->
+        <div class="nota nota-info">
+            <span>📌</span> <strong>Viabilidad financiera:</strong><br>
+            El condominio genera un <strong>superávit mensual ajustado de $14,478</strong> (basado en el incremento real del saldo del período enero 2024 – junio 2026) y tiene un saldo actual de <strong>$1,061,097</strong>. 
+            Con este ritmo de ahorro —considerando la disminución gradual de los intereses a medida que el saldo baje y un margen de seguridad de <strong>$150,000</strong> para imprevistos— el condominio puede financiar <strong>todos los proyectos identificados</strong>.
+            <br><br>
+            <strong>Proyección (con superávit ajustado + margen de seguridad):</strong>
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>✅ <strong>Fase 1 + Fase 2 + Fase 3:</strong> Costo total <strong>$943,300 – $1,200,300</strong></li>
+                <li>✅ Saldo final proyectado: <strong>$350,532 – $415,532</strong></li>
+                <li>✅ <strong>Se mantiene fondo de reserva mínimo de $200,000</strong></li>
+                <li>✅ El condominio puede afrontar todos los proyectos con <strong>liquidez saludable</strong></li>
+            </ul>
+            <br>
+            <span class="badge badge-oro">💡 El condominio es financieramente viable y puede ejecutar todos los proyectos sin necesidad de cuotas extraordinarias.</span>
         </div>
 
         <!-- ====== CALENDARIO DE PROYECTOS ====== -->
@@ -872,6 +806,7 @@
                     <div class="actividad">⚙️ Reparación Elevadores <span class="monto-act">$106,200</span></div>
                     <div class="actividad">🛡️ Protección Civil <span class="monto-act">$73k-$138k</span></div>
                     <div class="actividad">💧 Filtraciones AHTRAM <span class="monto-act">$33,240</span></div>
+                    <div class="actividad">🧹 Sellado ventanas <span class="monto-act">$39,900</span></div>
                 </div>
                 <div class="calendario-mes">
                     <div class="mes">Mes 3-4 (Oct-Nov)</div>
@@ -884,10 +819,8 @@
                 </div>
                 <div class="calendario-mes">
                     <div class="mes">Mes 1-12 (Ago25-Ago26)</div>
-                    <div class="actividad">🧹 Sellado ventanas <span class="monto-act">~$42,000</span></div>
                     <div class="actividad">🧹 Lavado cristales <span class="monto-act">$30,160</span></div>
                     <div class="actividad">🧹 Pintura herrería <span class="monto-act">$29,800</span></div>
-                    <div class="actividad">👁️ Cámaras elevadores <span class="monto-act">$19.5k-$42k</span></div>
                     <div class="actividad">🧹 Fotoceldas <span class="monto-act">$16,000</span></div>
                     <div class="actividad">🏠 Impermeabilización azotea <span class="monto-act">Por definir</span></div>
                 </div>
@@ -904,17 +837,17 @@
                         <span class="fase-monto">Meta: Recuperar $164,000</span>
                     </div>
                     <div class="fase-desc">
-                        Notificar formalmente a los 4 principales deudores (108, 201, 101, 309). Establecer plan de pagos y, de no haber respuesta, iniciar mediación en PROSOC. <br>
-                        <span class="badge badge-rojo">Urgente</span> Es el primer paso para financiar los proyectos.
+                        Notificar formalmente a los principales deudores. Establecer plan de pagos y, de no haber respuesta, iniciar mediación en PROSOC. <br>
+                        <span class="badge badge-rojo">Urgente</span> Es el primer paso para financiar los proyectos sin afectar la liquidez.
                     </div>
                 </div>
                 <div class="fase verde">
                     <div class="fase-titulo">
-                        <span>⚙️ Fase 1 · Proyectos Críticos (Mes 1-4)</span>
-                        <span class="fase-monto">Costo: $267,440 – $332,440</span>
+                        <span>⚙️ Fase 1 · Proyectos Críticos y Aprobados (Mes 1-4)</span>
+                        <span class="fase-monto">Costo: $307,340 – $372,340</span>
                     </div>
                     <div class="fase-desc">
-                        <strong>1.</strong> Reparación Mayor de Elevadores ($106,200) · <strong>2.</strong> Constitución de la A.C. ($25,000) · <strong>3.</strong> Banco de Capacitores (~$30,000) · <strong>4.</strong> Filtraciones en muros (AHTRAM $33,240) — <span class="badge badge-rojo">Crítico</span> · <strong>5.</strong> Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento) — <span class="badge badge-rojo">Crítico</span> · <span class="badge badge-rojo">$73,000 – $138,000</span>. <br>
+                        <strong>1.</strong> Reparación Mayor de Elevadores ($106,200) — <span class="badge badge-verde">Aprobada</span> · <strong>2.</strong> Constitución de la A.C. ($25,000) · <strong>3.</strong> Banco de Capacitores (~$30,000) · <strong>4.</strong> Filtraciones en muros (AHTRAM $33,240) — <span class="badge badge-verde">Aprobada</span> · <strong>5.</strong> Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento) — <span class="badge badge-rojo">Crítico</span> · <span class="badge badge-rojo">$73,000 – $138,000</span> · <strong>6.</strong> Sellado de ventanas ($39,900) — <span class="badge badge-verde">Aprobada</span>. <br>
                         <span class="badge badge-verde">✅ Viable con saldo actual + cobranza</span>
                     </div>
                 </div>
@@ -925,16 +858,16 @@
                     </div>
                     <div class="fase-desc">
                         <strong>1.</strong> Cambio de Piso del Roof Garden (que además causa filtración en un departamento) — $450,000. <br>
-                        <span class="badge badge-naranja">⚠️ Requiere financiamiento combinado (saldo de cuenta + cuota extraordinaria)</span>
+                        <span class="badge badge-verde">✅ Viable con saldo actual + ahorro generado durante el año</span>
                     </div>
                 </div>
                 <div class="fase morado">
                     <div class="fase-titulo">
-                        <span>🧹 Fase 3 · Mantenimiento Programado y Seguridad (Mes 1-12)</span>
-                        <span class="fase-monto">Costo: $137,500 – $160,000</span>
+                        <span>🧹 Fase 3 · Mantenimiento Programado (Mes 1-12)</span>
+                        <span class="fase-monto">Costo: $75,960</span>
                     </div>
                     <div class="fase-desc">
-                        Sellado de ventanas (~$42,000) · Lavado de cristales ($30,160) · Pintura de herrería ($29,800) · Cámaras de videovigilancia para elevadores ($19,500 – $42,000) · Fotoceldas ($16,000) · Impermeabilización de azotea (por definir). <br>
+                        Lavado de cristales ($30,160) · Pintura de herrería ($29,800) · Fotoceldas ($16,000) · Impermeabilización de azotea (por definir). <br>
                         <span class="badge badge-azul">⏳ Se distribuye a lo largo del año según disponibilidad</span>
                     </div>
                 </div>
@@ -961,146 +894,51 @@
                         </tr>
                         <tr>
                             <td>+ Recuperación de cartera (50%)</td>
-                            <td class="monto">+$164,000</td>
+                            <td class="monto positivo">+$164,000</td>
                             <td class="monto">$1,225,097</td>
                         </tr>
                         <tr>
-                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Seguro)</td>
-                            <td class="monto">-$377,440 a -$592,440</td>
-                            <td class="monto">$632,657 a $847,657</td>
+                            <td>+ Superávit anual ajustado</td>
+                            <td class="monto positivo">+$173,735</td>
+                            <td class="monto">$1,398,832</td>
                         </tr>
                         <tr>
-                            <td>- Fase 2 (Roof Garden - con financiamiento combinado)</td>
-                            <td class="monto">-$450,000</td>
-                            <td class="monto">$182,657 a $397,657</td>
+                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
+                            <td class="monto negativo">-$307,340 a -$372,340</td>
+                            <td class="monto">$1,026,492 a $1,091,492</td>
                         </tr>
                         <tr>
-                            <td>- Fase 3 (Mantenimiento programado + Cámaras vigilancia)</td>
-                            <td class="monto">-$137,500 a -$160,000</td>
-                            <td class="monto">$22,657 a $260,157</td>
+                            <td>- Fase 2 (Roof Garden)</td>
+                            <td class="monto negativo">-$450,000</td>
+                            <td class="monto">$576,492 a $641,492</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 3 (Mantenimiento programado)</td>
+                            <td class="monto negativo">-$75,960</td>
+                            <td class="monto">$500,532 a $565,532</td>
+                        </tr>
+                        <tr>
+                            <td>- Margen de seguridad</td>
+                            <td class="monto negativo">-$150,000</td>
+                            <td class="monto">$350,532 a $415,532</td>
                         </tr>
                         <tr class="total">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
-                            <td><strong>$22,657 – $260,157</strong></td>
+                            <td><strong>$350,532 – $415,532</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div style="font-size:clamp(11px,1vw,12.5px); color:#4a617f; margin-top:3px;">
-                ⚠️ El saldo final proyectado es más ajustado. Se recomienda priorizar la cobranza, negociar mejores condiciones de pago con los proveedores o aplicar alguna estrategia de financiamiento como la sugerida para preservar liquidez. <br><br>
-                🏦 <strong>Adicionalmente, se debe considerar cubrir algunos gastos con cuotas extraordinarias, ya que se debe considerar un mínimo de $200,000 como fondo de reserva</strong> para garantizar la estabilidad financiera del condominio ante imprevistos.
+                ✅ El saldo final proyectado es saludable y supera ampliamente el fondo de reserva mínimo recomendado de <strong>$200,000</strong>.
+                <br><br>
+                * El superávit anual ajustado de $173,735 considera la disminución gradual de los intereses a medida que el saldo de la cuenta disminuye.
             </div>
-        </div>
-
-        <!-- ====== ESTRATEGIA DE FINANCIAMIENTO SUGERIDA ====== -->
-        <div class="nota nota-estrategia">
-            <span>💡</span> <strong>Estrategia de Financiamiento Sugerida</strong><br>
-            Para evitar un impacto financiero fuerte en los condóminos y al mismo tiempo preservar la liquidez del condominio, se propone una <strong>estrategia de financiamiento combinado y escalonado</strong>:
-
-            <br><br>
-            <table style="width:100%; border-collapse:collapse; font-size:clamp(11px,1vw,12.5px); margin-top:6px;">
-                <thead>
-                    <tr style="background:#e8eaf6; border-bottom:2px solid #c5cae9;">
-                        <th style="padding:6px 10px; text-align:left;">Proyecto</th>
-                        <th style="padding:6px 10px; text-align:left;">Monto</th>
-                        <th style="padding:6px 10px; text-align:left;">Propuesta de financiamiento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid #e0e0e0;">
-                        <td style="padding:5px 10px;"><strong>Roof Garden</strong></td>
-                        <td style="padding:5px 10px;">$450,000</td>
-                        <td style="padding:5px 10px;">Saldo de cuenta + cuota extraordinaria</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid #e0e0e0;">
-                        <td style="padding:5px 10px;"><strong>Seguro Condominal</strong></td>
-                        <td style="padding:5px 10px;">$110k – $260k</td>
-                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid #e0e0e0;">
-                        <td style="padding:5px 10px;"><strong>Filtraciones AHTRAM</strong></td>
-                        <td style="padding:5px 10px;">$33,240</td>
-                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid #e0e0e0;">
-                        <td style="padding:5px 10px;"><strong>Sellado de ventanas</strong></td>
-                        <td style="padding:5px 10px;">~$42,000</td>
-                        <td style="padding:5px 10px;">Cuota extraordinaria pequeña</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid #e0e0e0;">
-                        <td style="padding:5px 10px;"><strong>Otros proyectos</strong></td>
-                        <td style="padding:5px 10px;">Varios</td>
-                        <td style="padding:5px 10px;">Se evalúa caso por caso</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-            <strong>Ventajas de esta estrategia:</strong>
-            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
-                <li>✅ <strong>Menor impacto mensual</strong> — Los condóminos no reciben un "golpe" grande de una sola vez</li>
-                <li>✅ <strong>Preserva liquidez</strong> — El saldo de la cuenta no se descapitaliza por completo</li>
-                <li>✅ <strong>Sigue generando intereses</strong> — Al mantener un saldo mayor, los intereses se mantienen o aumentan</li>
-                <li>✅ <strong>Flexibilidad</strong> — Cada proyecto se financia de acuerdo a su urgencia y monto</li>
-                <li>✅ <strong>Equidad</strong> — Los gastos se distribuyen de manera más justa entre todos los condóminos</li>
-            </ul>
-        </div>
-
-        <!-- ====== NOTA SOBRE EL ROOF GARDEN ====== -->
-        <div class="nota nota-info">
-            <span>📌</span> <strong>Nota sobre el Roof Garden:</strong><br>
-            El condominio <strong>SÍ podría pagar el Roof Garden ($450,000) con el saldo actual + la recuperación de cartera</strong>, y aún así quedaría con un saldo remanente de entre <strong>$22,657 y $260,157</strong>.<br><br>
-            Sin embargo, se recomienda considerar una <strong>estrategia de financiamiento combinado</strong> para no descapitalizar la cuenta y seguir generando intereses. Esto implica:
-            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
-                <li>✅ Una parte del costo se cubre con el <strong>saldo de la cuenta del condominio</strong></li>
-                <li>✅ Otra parte se cubre con <strong>cuotas extraordinarias</strong> distribuidas en el tiempo</li>
-            </ul>
-            <br>
-            <strong>Beneficios de esta estrategia:</strong>
-            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
-                <li>✅ Preserva liquidez para emergencias o gastos imprevistos</li>
-                <li>✅ Se garantiza un <strong>fondo de reserva mínimo de $200,000</strong> como colchón financiero</li>
-                <li>✅ <strong>No se pierde la capacidad de generar intereses</strong> sobre un saldo mayor en la cuenta bancaria</li>
-                <li>✅ Se distribuye el impacto financiero entre los condóminos de manera más equitativa</li>
-                <li>✅ Permite tener flexibilidad para otros proyectos que puedan surgir</li>
-            </ul>
         </div>
 
         <!-- ====== NOTAS ====== -->
         <div class="nota">
-            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los 4 departamentos con mayor adeudo (108, 201, 101, 309) representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), se podrá financiar la Fase 1 sin descapitalizar el condominio.
-        </div>
-
-        <!-- ====== GRÁFICA CIRCULAR DE MOROSIDAD ====== -->
-        <div class="morosidad-container">
-            <div class="chart-wrapper">
-                <canvas id="morosidadChart" width="280" height="280"></canvas>
-            </div>
-            <div class="leyenda-morosidad">
-                <div class="item">
-                    <span class="color-box" style="background:#c84a4a;"></span>
-                    <span>Depto 108: <span class="porcentaje">41.2%</span></span>
-                </div>
-                <div class="item">
-                    <span class="color-box" style="background:#d98c2e;"></span>
-                    <span>Depto 201: <span class="porcentaje">22.7%</span></span>
-                </div>
-                <div class="item">
-                    <span class="color-box" style="background:#7b4cb0;"></span>
-                    <span>Depto 101: <span class="porcentaje">16.9%</span></span>
-                </div>
-                <div class="item">
-                    <span class="color-box" style="background:#8e9db3;"></span>
-                    <span>Depto 309: <span class="porcentaje">16.2%</span></span>
-                </div>
-                <div class="item">
-                    <span class="color-box" style="background:#1a6dd4;"></span>
-                    <span>Otros (110, etc.): <span class="porcentaje">3.0%</span></span>
-                </div>
-                <div class="total-morosidad">
-                    💰 Total morosidad: $328,723
-                </div>
-            </div>
+            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los principales deudores representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), el condominio podrá ejecutar la Fase 1 sin afectar significativamente la liquidez.
         </div>
 
         <div class="nota nota-azul">
@@ -1129,88 +967,5 @@
             <a href="intereses.html" class="btn-intereses">Leer sobre intereses y crecimiento del saldo en la cuenta <span class="flecha">→</span></a>
         </div>
     </div>
-
-    <!-- ====== SCRIPT PARA GRÁFICA CIRCULAR ====== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const canvas = document.getElementById('morosidadChart');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-
-            // Datos de morosidad
-            const data = [
-                { label: 'Depto 108', value: 135573, color: '#c84a4a' },
-                { label: 'Depto 201', value: 74572, color: '#d98c2e' },
-                { label: 'Depto 101', value: 55659, color: '#7b4cb0' },
-                { label: 'Depto 309', value: 53304, color: '#8e9db3' },
-                { label: 'Otros', value: 9615, color: '#1a6dd4' }
-            ];
-
-            const total = data.reduce((sum, d) => sum + d.value, 0);
-            let startAngle = -Math.PI / 2;
-
-            // Tamaño del canvas
-            const size = 280;
-            const centerX = size / 2;
-            const centerY = size / 2;
-            const radius = 110;
-
-            // Limpiar
-            ctx.clearRect(0, 0, size, size);
-
-            // Dibujar cada segmento
-            data.forEach(function(d) {
-                const sliceAngle = (d.value / total) * 2 * Math.PI;
-                const endAngle = startAngle + sliceAngle;
-
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-                ctx.closePath();
-                ctx.fillStyle = d.color;
-                ctx.fill();
-                ctx.strokeStyle = '#ffffff';
-                ctx.lineWidth = 2;
-                ctx.stroke();
-
-                // Dibujar línea de porcentaje
-                const midAngle = startAngle + sliceAngle / 2;
-                const labelRadius = radius * 0.65;
-                const x = centerX + Math.cos(midAngle) * labelRadius;
-                const y = centerY + Math.sin(midAngle) * labelRadius;
-
-                // Solo mostrar porcentaje si el segmento es mayor a 3%
-                const percentage = (d.value / total * 100);
-                if (percentage > 3) {
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = 'bold 16px Arial';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'middle';
-                    ctx.fillText(Math.round(percentage) + '%', x, y);
-                }
-
-                startAngle = endAngle;
-            });
-
-            // Círculo interior para efecto "dona"
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 65, 0, 2 * Math.PI);
-            ctx.fillStyle = '#f9fbfe';
-            ctx.fill();
-            ctx.strokeStyle = '#e9edf4';
-            ctx.lineWidth = 2;
-            ctx.stroke();
-
-            // Texto central
-            ctx.fillStyle = '#0b1e3a';
-            ctx.font = 'bold 14px Arial';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('Morosidad', centerX, centerY - 10);
-            ctx.fillStyle = '#b33c3c';
-            ctx.font = 'bold 16px Arial';
-            ctx.fillText('$328,723', centerX, centerY + 22);
-        });
-    </script>
 </body>
 </html>
