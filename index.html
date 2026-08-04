@@ -839,6 +839,34 @@
             gap: 6px;
             margin-top: 8px;
         }
+        .datos-tecnicos {
+            background: #eef4fe;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 6px 0 10px 0;
+            font-size: 13px;
+            border: 1px solid #dce4f0;
+        }
+        .datos-tecnicos strong {
+            color: #1a2b4a;
+        }
+        .datos-tecnicos table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+        .datos-tecnicos td {
+            padding: 3px 8px;
+            border-bottom: 1px solid #e9edf4;
+        }
+        .datos-tecnicos td:first-child {
+            font-weight: 600;
+            color: #1a3a7a;
+            width: 45%;
+        }
+        .datos-tecnicos td:last-child {
+            color: #2b4d7a;
+        }
         @media print {
             body { background: white; padding: 8px; }
             .container { box-shadow: none; border-radius: 0; padding: 16px; }
@@ -868,6 +896,8 @@
             .comparativa-tabla { padding: 10px; }
             .comparativa-tabla table { font-size: 12px; }
             .comparativa-tabla td, .comparativa-tabla th { padding: 3px 6px; }
+            .datos-tecnicos { font-size: 12px; padding: 10px 14px; }
+            .datos-tecnicos td { padding: 2px 6px; }
             .nota-observacion { font-size: 12px; padding: 10px 14px; }
             .leyenda { gap: 6px 12px; font-size: 12px; }
             .leyenda-item { gap: 4px; }
@@ -922,6 +952,8 @@
             .comparativa-tabla { padding: 8px; font-size: 12px; }
             .comparativa-tabla table { font-size: 11px; }
             .comparativa-tabla th, .comparativa-tabla td { padding: 2px 4px; }
+            .datos-tecnicos { font-size: 11px; padding: 8px 12px; }
+            .datos-tecnicos td { padding: 2px 4px; }
             .nota-observacion { font-size: 11px; padding: 8px 12px; }
             .nota-legal { font-size: 12px; padding: 10px 12px; }
             .subtitulo-seccion { font-size: 12px; padding-left: 12px; }
@@ -1069,7 +1101,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">✅ Reparación mayor de elevadores <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
+            <div class="titulo">✅ Reparación mayor de elevadores (Fase 1) <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
             <div class="desc">
                 <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. <strong>Aprobado en Asamblea extraordinaria del JUEVES 30 de julio.</strong>
                 <div class="resumen-cotizacion">
@@ -1080,6 +1112,47 @@
                         <tr><td><strong>Elevador 3</strong></td><td>Insertos de cabina (4)<br>Cable avión</td><td>4<br>1</td><td>$7,200.00<br>$1,980.00</td></tr>
                         <tr class="total"><td colspan="3"><strong>GRAN TOTAL</strong></td><td><strong>$106,200.00</strong></td></tr>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuevo ítem: Fase 2 de reparaciones de elevadores -->
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Reparación mayor de elevadores (Fase 2) <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="desc">
+                <strong>Cotización ELEBETA por $59,940.00</strong> para segunda fase de trabajos de mantenimiento correctivo mayor en elevadores. <strong>Presentada en Asamblea extraordinaria del JUEVES 30 de julio, se dejó pendiente para "después".</strong>
+                <div class="resumen-cotizacion">
+                    <table>
+                        <tr><th>Elevador</th><th>Concepto</th><th>Cantidad</th><th>Total</th></tr>
+                        <tr><td><strong>Elevador 1</strong></td><td>Tarjeta SEM 35Q<br>Tarjeta electrónica para botonera de piso<br>Fuente de alimentación<br>Cable limitador de velocidad</td><td>1<br>1<br>1<br>1</td><td>$19,800.00<br>$3,240.00<br>$3,600.00<br>$9,000.00</td></tr>
+                        <tr><td><strong>Elevador 2</strong></td><td>Banda dentada para operador de puertas<br>Cable limitador de velocidad</td><td>1<br>1</td><td>$6,300.00<br>$9,000.00</td></tr>
+                        <tr><td><strong>Elevador 3</strong></td><td>Cable limitador de velocidad</td><td>1</td><td>$9,000.00</td></tr>
+                        <tr class="total"><td colspan="3"><strong>GRAN TOTAL FASE 2</strong></td><td><strong>$59,940.00</strong></td></tr>
+                    </table>
+                </div>
+                <div style="margin-top:6px; font-size:12px; color:#5a6e8a;">
+                    <strong>Condiciones:</strong> 70% anticipo, 30% al término. Tiempo de ejecución: 5 días hábiles para suministro + 1 día por equipo. Vigencia: 15 días naturales.<br>
+                    <strong>Garantía:</strong> 6 meses en mano de obra, 3 meses en componentes electrónicos/eléctricos, 6 meses en componentes mecánicos.<br>
+                    <em>Se requiere aprobación en Asamblea para proceder con esta segunda fase.</em>
+                </div>
+                <div class="btn-doc-group">
+                    <button class="btn-ver" onclick="verPDF('Amores 219 - Julio 2026.pdf')">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Ver cotización Fase 2
+                    </button>
+                    <button class="btn-descarga-icono" onclick="descargarPDF('Amores 219 - Julio 2026.pdf')" title="Descargar">
+                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1426,7 +1499,20 @@
         <div class="detalle">
             <div class="titulo">Factor de potencia y banco de capacitores <span class="badge ahorro">Ahorro</span> <span class="badge fin">Financiero</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
-                <strong>Problema detectado:</strong> El condominio paga una penalización mensual de <strong>$1,228.57</strong> por bajo factor de potencia (76.54%). La tarifa es GDBT con demanda contratada de 37 kW.
+                <strong>Problema detectado:</strong> El condominio paga una penalización mensual de <strong>$1,228.57</strong> por bajo factor de potencia (76.54%).
+
+                <div class="datos-tecnicos">
+                    <strong>Datos del sistema eléctrico:</strong>
+                    <table>
+                        <tr><td>Tarifa CFE</td><td>GDBT (Gran Demanda en Baja Tensión)</td></tr>
+                        <tr><td>Demanda contratada</td><td>37 kW</td></tr>
+                        <tr><td>Factor de potencia actual</td><td>76.54%</td></tr>
+                        <tr><td>Objetivo</td><td>FP ≥ 0.95</td></tr>
+                        <tr><td>Tensión</td><td>240V, trifásico, 3 hilos</td></tr>
+                        <tr><td>Aplicación</td><td>Condominio residencial de 52 departamentos con 3 elevadores y bombas de agua</td></tr>
+                        <tr><td>Capacidad estimada</td><td>20–25 kVAR</td></tr>
+                    </table>
+                </div>
 
                 <div class="comparativa-tabla">
                     <strong>Cotizaciones recibidas para banco de capacitores:</strong>
@@ -1754,7 +1840,6 @@
         </div>
     </div>
 
-    <!-- Ítem RECHAZADO con tache -->
     <div class="item">
         <div class="checkbox rechazado"></div>
         <div class="detalle">
@@ -1763,7 +1848,6 @@
         </div>
     </div>
 
-    <!-- Nuevo ítem: Sacar copias de llaves -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
