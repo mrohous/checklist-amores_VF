@@ -212,6 +212,7 @@
         .color-rosa { background: #e91e63; }
         .color-ambar { background: #ff8f00; }
         .color-turquesa { background: #00897b; }
+        .color-oscuro { background: #4a148c; }
 
         .badge-container {
             font-size: clamp(10px, 0.9vw, 12px);
@@ -298,6 +299,7 @@
         .fase.naranja { border-left-color: #d98c2e; }
         .fase.morado { border-left-color: #7b4cb0; }
         .fase.cian { border-left-color: #00a8b5; }
+        .fase.oscuro { border-left-color: #4a148c; }
         .fase-titulo {
             font-weight: 700;
             font-size: clamp(14px, 1.4vw, 16px);
@@ -604,15 +606,15 @@
                 <div class="etiqueta">📈 Superávit Total (30 meses)</div>
             </div>
             <div class="card aviso">
-                <div class="valor">$159k – $224k</div>
+                <div class="valor">$118k – $184k</div>
                 <div class="etiqueta">⚠️ Peor escenario final</div>
             </div>
             <div class="card">
-                <div class="valor">$375k – $440k</div>
+                <div class="valor">$335k – $400k</div>
                 <div class="etiqueta">📊 Escenario con inflación (4%)</div>
             </div>
             <div class="card">
-                <div class="valor">$405k – $470k</div>
+                <div class="valor">$365k – $430k</div>
                 <div class="etiqueta">📊 Escenario optimista final</div>
             </div>
         </div>
@@ -641,7 +643,11 @@
                 </div>
                 <div class="barra-item">
                     <div class="barra color-naranja" style="height:70px;"><span class="barra-valor">$106,200</span></div>
-                    <div class="barra-etiqueta">Elevadores</div>
+                    <div class="barra-etiqueta">Elevadores Fase 1</div>
+                </div>
+                <div class="barra-item">
+                    <div class="barra color-oscuro" style="height:40px;"><span class="barra-valor">$59,940</span></div>
+                    <div class="barra-etiqueta">Elevadores Fase 2</div>
                 </div>
                 <div class="barra-item">
                     <div class="barra color-rosa" style="height:46px;"><span class="barra-valor">$73k-$138k</span></div>
@@ -712,11 +718,18 @@
                             <td><span class="badge badge-rojo">Pendiente</span></td>
                         </tr>
                         <tr>
-                            <td><strong>Reparación Mayor de Elevadores</strong></td>
+                            <td><strong>Reparación Mayor de Elevadores - Fase 1</strong></td>
                             <td>ELEBETA</td>
                             <td class="monto">$106,200</td>
                             <td><span class="badge badge-rojo">Crítica</span></td>
                             <td><span class="badge badge-verde">✅ Aprobada</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reparación de Elevadores - Fase 2</strong></td>
+                            <td>ELEBETA</td>
+                            <td class="monto">$59,940</td>
+                            <td><span class="badge badge-rojo">Prioritaria</span></td>
+                            <td><span class="badge badge-naranja">Pendiente</span></td>
                         </tr>
                         <tr>
                             <td><strong>Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento)</strong></td>
@@ -803,7 +816,7 @@
         <!-- ====== TOTAL DE PROYECTOS ====== -->
         <div class="total-proyectos">
             <span>💰 <strong>Total de proyectos identificados (sin paneles solares):</strong></span>
-            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$943,300 – $1,200,300 + Impermeabilización (por definir)</strong></span>
+            <span style="color:#b33c3c; font-size:clamp(15px,1.5vw,19px);"><strong>$1,003,240 – $1,260,240 + Impermeabilización (por definir)</strong></span>
         </div>
 
         <!-- ====== NOTA CLAVE SOBRE VIABILIDAD ====== -->
@@ -813,14 +826,27 @@
             <br><br>
             <strong>Proyección (con superávit real + margen de seguridad):</strong>
             <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
-                <li>✅ <strong>Fase 1 + Fase 2 + Fase 3:</strong> Costo total <strong>$943,300 – $1,200,300</strong></li>
-                <li>✅ Saldo final proyectado (optimista): <strong>$405,006 – $470,006</strong></li>
-                <li>✅ Saldo final proyectado (con inflación 4%): <strong>$374,797 – $439,797</strong></li>
+                <li>✅ <strong>Fase 1 + Fase 1.5 + Fase 2 + Fase 3:</strong> Costo total <strong>$1,003,240 – $1,260,240</strong></li>
+                <li>✅ Saldo final proyectado (optimista): <strong>$365,006 – $430,006</strong></li>
+                <li>✅ Saldo final proyectado (con inflación 4%): <strong>$334,797 – $399,797</strong></li>
                 <li>✅ <strong>Se mantiene fondo de reserva mínimo de $200,000</strong></li>
                 <li>✅ El condominio puede afrontar todos los proyectos con <strong>liquidez saludable</strong></li>
             </ul>
             <br>
             <span class="badge badge-oro">💡 El condominio es financieramente viable y puede ejecutar todos los proyectos sin necesidad de cuotas extraordinarias.</span>
+        </div>
+
+        <!-- ====== NOTA SOBRE LA FASE 2 DE ELEVADORES ====== -->
+        <div class="nota nota-estrategia" style="margin-top:8px;">
+            <span>📌</span> <strong>Nota sobre la segunda fase de reparación de elevadores:</strong><br>
+            La cotización de <strong>$59,940</strong> corresponde a una segunda fase de intervención en los elevadores, que incluye componentes adicionales identificados como prioritarios durante la inspección técnica (tarjetas electrónicas, cable limitador de velocidad, banda dentada, entre otros). Este proyecto fue presentado en Asamblea pero se postergó. Se recomienda contemplarlo a mediano plazo para garantizar la seguridad y confiabilidad de los equipos.
+            <br><br>
+            <strong>Detalle de la cotización:</strong>
+            <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                <li>Elevador 1: Tarjeta SEM 35Q, tarjeta botonera, fuente de alimentación, cable limitador de velocidad — <strong>$35,640</strong></li>
+                <li>Elevador 2: Banda dentada, cable limitador de velocidad — <strong>$15,300</strong></li>
+                <li>Elevador 3: Cable limitador de velocidad — <strong>$9,000</strong></li>
+            </ul>
         </div>
 
         <!-- ====== CALENDARIO DE PROYECTOS ====== -->
@@ -831,7 +857,7 @@
                     <div class="mes">Mes 1-2 (Ago-Sep)</div>
                     <div class="actividad">🚨 Cobranza y estabilización</div>
                     <div class="actividad">⚙️ Constitución A.C. <span class="monto-act">$25,000</span></div>
-                    <div class="actividad">⚙️ Reparación Elevadores <span class="monto-act">$106,200</span></div>
+                    <div class="actividad">⚙️ Reparación Elevadores Fase 1 <span class="monto-act">$106,200</span></div>
                     <div class="actividad">🛡️ Protección Civil <span class="monto-act">$73k-$138k</span></div>
                     <div class="actividad">💧 Filtraciones AHTRAM <span class="monto-act">$33,240</span></div>
                     <div class="actividad">🧹 Sellado ventanas <span class="monto-act">$39,900</span></div>
@@ -840,6 +866,7 @@
                     <div class="mes">Mes 3-4 (Oct-Nov)</div>
                     <div class="actividad">⚡ Banco de Capacitores <span class="monto-act">~$30,000</span></div>
                     <div class="actividad">🛡️ Seguro Condominal <span class="monto-act">$110k-$260k</span></div>
+                    <div class="actividad">⚙️ Reparación Elevadores Fase 2 <span class="monto-act">$59,940</span></div>
                 </div>
                 <div class="calendario-mes">
                     <div class="mes">Mes 5-7 (Dic-Feb)</div>
@@ -871,11 +898,21 @@
                 </div>
                 <div class="fase verde">
                     <div class="fase-titulo">
-                        <span>⚙️ Fase 1 · Proyectos Críticos y Aprobados (Mes 1-4)</span>
+                        <span>⚙️ Fase 1 · Proyectos Críticos y Aprobados (Mes 1-2)</span>
                         <span class="fase-monto">Costo: $307,340 – $372,340</span>
                     </div>
                     <div class="fase-desc">
-                        <strong>1.</strong> Reparación Mayor de Elevadores ($106,200) — <span class="badge badge-verde">Aprobada</span> · <strong>2.</strong> Constitución de la A.C. ($25,000) · <strong>3.</strong> Banco de Capacitores (~$30,000) · <strong>4.</strong> Filtraciones en muros (AHTRAM $33,240) — <span class="badge badge-verde">Aprobada</span> · <strong>5.</strong> Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento) — <span class="badge badge-rojo">Crítico</span> · <span class="badge badge-rojo">$73,000 – $138,000</span> · <strong>6.</strong> Sellado de ventanas ($39,900) — <span class="badge badge-verde">Aprobada</span>. <br>
+                        <strong>1.</strong> Reparación Mayor de Elevadores Fase 1 ($106,200) — <span class="badge badge-verde">Aprobada</span> · <strong>2.</strong> Constitución de la A.C. ($25,000) · <strong>3.</strong> Filtraciones en muros (AHTRAM $33,240) — <span class="badge badge-verde">Aprobada</span> · <strong>4.</strong> Protección Civil (PIPC, ROPC, dictamen estructural, otros dictámenes y equipamiento) — <span class="badge badge-rojo">Crítico</span> · <span class="badge badge-rojo">$73,000 – $138,000</span> · <strong>5.</strong> Sellado de ventanas ($39,900) — <span class="badge badge-verde">Aprobada</span>. <br>
+                        <span class="badge badge-verde">✅ Viable con saldo actual + cobranza</span>
+                    </div>
+                </div>
+                <div class="fase oscuro">
+                    <div class="fase-titulo">
+                        <span>⚙️ Fase 1.5 · Proyectos Prioritarios (Mes 3-4)</span>
+                        <span class="fase-monto">Costo: $199,940 – $349,940</span>
+                    </div>
+                    <div class="fase-desc">
+                        <strong>1.</strong> Banco de Capacitores (~$30,000) · <strong>2.</strong> Seguro Condominal ($110,000 – $260,000) — <span class="badge badge-rojo">Alta</span> · <strong>3.</strong> Reparación de Elevadores Fase 2 ($59,940) — <span class="badge badge-rojo">Prioritaria</span>. <br>
                         <span class="badge badge-verde">✅ Viable con saldo actual + cobranza</span>
                     </div>
                 </div>
@@ -934,28 +971,33 @@
                             <td class="monto">$1,453,306</td>
                         </tr>
                         <tr>
-                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
+                            <td>- Fase 1 (Elevadores F1 + A.C. + AHTRAM + Protección Civil + Sellado)</td>
                             <td class="monto negativo">-$307,340 a -$372,340</td>
                             <td class="monto">$1,080,966 a $1,145,966</td>
                         </tr>
                         <tr>
+                            <td>- Fase 1.5 (Banco Capacitores + Seguro + Elevadores F2)</td>
+                            <td class="monto negativo">-$199,940 a -$349,940</td>
+                            <td class="monto">$731,026 a $946,026</td>
+                        </tr>
+                        <tr>
                             <td>- Fase 2 (Roof Garden)</td>
                             <td class="monto negativo">-$450,000</td>
-                            <td class="monto">$630,966 a $695,966</td>
+                            <td class="monto">$281,026 a $496,026</td>
                         </tr>
                         <tr>
                             <td>- Fase 3 (Mantenimiento programado)</td>
                             <td class="monto negativo">-$75,960</td>
-                            <td class="monto">$555,006 a $620,006</td>
+                            <td class="monto">$205,066 a $420,066</td>
                         </tr>
                         <tr>
                             <td>- Margen de seguridad</td>
                             <td class="monto negativo">-$150,000</td>
-                            <td class="monto">$405,006 a $470,006</td>
+                            <td class="monto">$55,066 a $270,066</td>
                         </tr>
                         <tr class="total">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
-                            <td><strong>$405,006 – $470,006</strong></td>
+                            <td><strong>$55,066 – $270,066</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -998,28 +1040,33 @@
                             <td class="monto">$1,423,097</td>
                         </tr>
                         <tr>
-                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
+                            <td>- Fase 1 (Elevadores F1 + A.C. + AHTRAM + Protección Civil + Sellado)</td>
                             <td class="monto negativo">-$307,340 a -$372,340</td>
                             <td class="monto">$1,050,757 a $1,115,757</td>
                         </tr>
                         <tr>
+                            <td>- Fase 1.5 (Banco Capacitores + Seguro + Elevadores F2)</td>
+                            <td class="monto negativo">-$199,940 a -$349,940</td>
+                            <td class="monto">$700,817 a $915,817</td>
+                        </tr>
+                        <tr>
                             <td>- Fase 2 (Roof Garden)</td>
                             <td class="monto negativo">-$450,000</td>
-                            <td class="monto">$600,757 a $665,757</td>
+                            <td class="monto">$250,817 a $465,817</td>
                         </tr>
                         <tr>
                             <td>- Fase 3 (Mantenimiento programado)</td>
                             <td class="monto negativo">-$75,960</td>
-                            <td class="monto">$524,797 a $589,797</td>
+                            <td class="monto">$174,857 a $389,857</td>
                         </tr>
                         <tr>
                             <td>- Margen de seguridad</td>
                             <td class="monto negativo">-$150,000</td>
-                            <td class="monto">$374,797 a $439,797</td>
+                            <td class="monto">$24,857 a $239,857</td>
                         </tr>
                         <tr class="total">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027) - Con inflación</strong></td>
-                            <td><strong>$374,797 – $439,797</strong></td>
+                            <td><strong>$24,857 – $239,857</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1061,52 +1108,57 @@
                             <td class="monto">$1,157,097</td>
                         </tr>
                         <tr>
-                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
+                            <td>- Fase 1 (Elevadores F1 + A.C. + AHTRAM + Protección Civil + Sellado)</td>
                             <td class="monto negativo">-$307,340 a -$372,340</td>
                             <td class="monto">$784,757 a $849,757</td>
                         </tr>
                         <tr>
+                            <td>- Fase 1.5 (Banco Capacitores + Seguro + Elevadores F2)</td>
+                            <td class="monto negativo">-$199,940 a -$349,940</td>
+                            <td class="monto">$434,817 a $649,817</td>
+                        </tr>
+                        <tr>
                             <td>- Fase 2 (Roof Garden)</td>
                             <td class="monto negativo">-$450,000</td>
-                            <td class="monto">$334,757 a $399,757</td>
+                            <td class="monto">-$15,183 a $199,817</td>
                         </tr>
                         <tr>
                             <td>- Fase 3 (Mantenimiento programado)</td>
                             <td class="monto negativo">-$75,960</td>
-                            <td class="monto">$258,797 a $323,797</td>
+                            <td class="monto">-$91,143 a $123,857</td>
                         </tr>
                         <tr>
                             <td>- Margen de seguridad</td>
                             <td class="monto negativo">-$100,000</td>
-                            <td class="monto">$158,797 a $223,797</td>
+                            <td class="monto">-$191,143 a $23,857</td>
                         </tr>
                         <tr class="total aviso">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027) - Peor escenario</strong></td>
-                            <td><strong>$158,797 – $223,797</strong></td>
+                            <td><strong>-$191,143 – $23,857</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div style="font-size:clamp(11px,1vw,12.5px); color:#4a617f; margin-top:6px;">
-                ✅ Incluso en el <strong>peor escenario</strong>, el condominio mantiene un saldo cercano al fondo de reserva mínimo recomendado de <strong>$200,000</strong>. 
-                Sin embargo, se recomienda enfocar esfuerzos en la <strong>cobranza</strong> para acercarse al escenario optimista y garantizar la liquidez a largo plazo.
+                ⚠️ En el <strong>peor escenario</strong>, el condominio podría quedar en números negativos si no se recupera cartera y el superávit se reduce drásticamente. 
+                Esto refuerza la <strong>necesidad de enfocar esfuerzos en la cobranza</strong> y, en caso necesario, considerar <strong>cuotas extraordinarias</strong> para garantizar la viabilidad de todos los proyectos.
             </div>
         </div>
 
         <!-- ====== NOTA SOBRE INFLACIÓN ====== -->
         <div class="nota nota-azul" style="margin-top:12px;">
-            <span>📌</span> <strong>Nota sobre inflación:</strong> Los montos proyectados en este análisis se basan en cotizaciones y costos actuales (a junio 2026) y no incluyen ajustes por inflación. De acuerdo con las proyecciones del Banco de México, se estima una inflación anual de entre <strong>3.5% y 4.0%</strong> para 2026. Este factor podría impactar tanto los gastos operativos (vigilancia, limpieza, administración, etc.) como el costo de los materiales y servicios para los proyectos. Se recomienda considerar un factor de incremento anual del <strong>4%</strong> al presupuestar los gastos para el periodo 2026-2027, así como revisar periódicamente las cuotas de mantenimiento para mantener el poder adquisitivo del fondo de reserva del condominio. Para fines de este análisis, se ha incorporado un <strong>escenario con inflación del 4%</strong> en la sección de flujo de efectivo proyectado, que muestra un saldo final de <strong>$374,797 – $439,797</strong>, manteniéndose aún por encima del fondo de reserva mínimo recomendado de $200,000.
+            <span>📌</span> <strong>Nota sobre inflación:</strong> Los montos proyectados en este análisis se basan en cotizaciones y costos actuales (a junio 2026) y no incluyen ajustes por inflación. De acuerdo con las proyecciones del Banco de México, se estima una inflación anual de entre <strong>3.5% y 4.0%</strong> para 2026. Este factor podría impactar tanto los gastos operativos (vigilancia, limpieza, administración, etc.) como el costo de los materiales y servicios para los proyectos. Se recomienda considerar un factor de incremento anual del <strong>4%</strong> al presupuestar los gastos para el periodo 2026-2027, así como revisar periódicamente las cuotas de mantenimiento para mantener el poder adquisitivo del fondo de reserva del condominio.
         </div>
 
         <!-- ====== NOTA SOBRE INTERESES FUTUROS ====== -->
         <div class="nota nota-info" style="margin-top:8px;">
-            <span>📌</span> <strong>Nota sobre intereses futuros:</strong> Después de ejecutar los proyectos, el saldo de la cuenta disminuirá, lo que reducirá los intereses generados. Para mantener un ingreso mensual por intereses de al menos <strong>$5,000</strong>, se requeriría un saldo de <strong>$750,000</strong> (considerando una tasa anual del 8%). Con los saldos proyectados (<strong>$374,797 – $470,006</strong>), los intereses mensuales estimados serían de <strong>$2,500 – $3,133</strong>, lo cual es un monto razonable para cubrir gastos menores de mantenimiento.
+            <span>📌</span> <strong>Nota sobre intereses futuros:</strong> Después de ejecutar los proyectos, el saldo de la cuenta disminuirá, lo que reducirá los intereses generados. Para mantener un ingreso mensual por intereses de al menos <strong>$5,000</strong>, se requeriría un saldo de <strong>$750,000</strong> (considerando una tasa anual del 8%). Con los saldos proyectados (<strong>$55,066 – $270,066</strong> en el escenario optimista), los intereses mensuales estimados serían de <strong>$367 – $1,800</strong>, lo cual es significativamente menor. Esto refuerza la recomendación de recuperar la cartera vencida y considerar cuotas extraordinarias para preservar un saldo saludable.
         </div>
 
         <!-- ====== NOTAS ====== -->
         <div class="nota">
-            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los principales deudores representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), el condominio podrá ejecutar la Fase 1 sin afectar significativamente la liquidez.
+            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los principales deudores representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), el condominio podrá ejecutar las Fases 1 y 1.5 sin afectar significativamente la liquidez.
         </div>
 
         <div class="nota nota-verde">
@@ -1120,6 +1172,7 @@
             <div class="leyenda-item"><span class="leyenda-color" style="background:#1a6dd4;"></span> Media</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#1d9e5a;"></span> Viable / Realizado</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#7b4cb0;"></span> Programado</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#4a148c;"></span> Prioritaria</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#00a8b5;"></span> Largo Plazo</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#8e9db3;"></span> Otros</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#00897b;"></span> Por definir</div>
