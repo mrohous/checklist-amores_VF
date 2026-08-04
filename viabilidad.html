@@ -138,6 +138,10 @@
             border-color: #f5c2c2;
             background: #fff6f6;
         }
+        .resumen-financiero .card.aviso {
+            border-color: #ffcc02;
+            background: #fff8e1;
+        }
 
         .grafica-container {
             background: #f9fbfe;
@@ -232,6 +236,7 @@
         .badge-cian { background: #e0f7fa; color: #00695c; }
         .badge-gris { background: #f5f5f5; color: #616161; }
         .badge-oro { background: #fff3cd; color: #856404; }
+        .badge-amarillo { background: #fff8e1; color: #bf5e00; }
 
         .tabla-wrapper {
             overflow-x: auto;
@@ -271,6 +276,9 @@
         }
         .tabla .negativo {
             color: #b33c3c;
+        }
+        .tabla .aviso {
+            background: #fff8e1;
         }
 
         .plan-fases {
@@ -354,6 +362,11 @@
             background: #f3e5f5;
             border-color: #ce93d8;
             color: #4a148c;
+        }
+        .nota-advertencia {
+            background: #fff3e0;
+            border-color: #ffb74d;
+            color: #bf5e00;
         }
 
         .leyenda {
@@ -583,22 +596,28 @@
                 <div class="etiqueta">📉 Morosidad Total</div>
             </div>
             <div class="card">
-                <div class="valor positivo">$14,478</div>
-                <div class="etiqueta">📈 Superávit Mensual Ajustado</div>
+                <div class="valor positivo">$19,017</div>
+                <div class="etiqueta">📈 Superávit Mensual Real</div>
             </div>
             <div class="card">
-                <div class="valor positivo">$173,735</div>
-                <div class="etiqueta">📈 Superávit Anual Ajustado</div>
+                <div class="valor positivo">$570,523</div>
+                <div class="etiqueta">📈 Superávit Total (30 meses)</div>
+            </div>
+            <div class="card aviso">
+                <div class="valor">$159k – $224k</div>
+                <div class="etiqueta">⚠️ Peor escenario final</div>
             </div>
             <div class="card">
-                <div class="valor">$350k – $416k</div>
-                <div class="etiqueta">📊 Saldo Proyectado Final</div>
+                <div class="valor">$405k – $470k</div>
+                <div class="etiqueta">📊 Escenario optimista final</div>
             </div>
         </div>
 
         <!-- ====== NOTA SOBRE EL SUPERÁVIT ====== -->
         <div class="nota nota-info" style="margin-bottom:14px; font-size:clamp(12px,1.1vw,13px);">
-            <span>📌</span> <strong>Nota sobre el superávit:</strong> El superávit mensual ajustado de <strong>$14,478</strong> se calcula dividiendo el incremento real del saldo ($434,337) entre los 30 meses del período analizado (enero 2024 – junio 2026). 
+            <span>📌</span> <strong>Nota sobre el superávit:</strong> El superávit total del período (enero 2024 – junio 2026) fue de <strong>$570,522.81</strong>, lo que equivale a un <strong>superávit mensual real de $19,017.43</strong>. 
+            Este superávit se origina de cuatro fuentes: excedente operativo después de gastos fijos y variables (<strong>$1,528.50</strong>), intereses bancarios generados por el saldo acumulado (<strong>$6,006.41</strong>), renta de salones y eventos (<strong>$2,500.00</strong>), e ingresos extraordinarios por anualidades y ajustes (<strong>$8,982.51</strong>).
+            <br><br>
             A medida que se ejecuten los proyectos y el saldo disminuya, los intereses generados serán menores, por lo que el superávit mensual <strong>disminuirá progresivamente</strong>. 
             El flujo de efectivo proyectado considera esta disminución gradual y un margen de seguridad de <strong>$150,000</strong> para imprevistos.
         </div>
@@ -781,13 +800,13 @@
         <!-- ====== NOTA CLAVE SOBRE VIABILIDAD ====== -->
         <div class="nota nota-info">
             <span>📌</span> <strong>Viabilidad financiera:</strong><br>
-            El condominio genera un <strong>superávit mensual ajustado de $14,478</strong> (basado en el incremento real del saldo del período enero 2024 – junio 2026) y tiene un saldo actual de <strong>$1,061,097</strong>. 
+            El condominio genera un <strong>superávit mensual real de $19,017.43</strong> (basado en el análisis de los 30 meses de enero 2024 – junio 2026) y tiene un saldo actual de <strong>$1,061,097</strong>. 
             Con este ritmo de ahorro —considerando la disminución gradual de los intereses a medida que el saldo baje y un margen de seguridad de <strong>$150,000</strong> para imprevistos— el condominio puede financiar <strong>todos los proyectos identificados</strong>.
             <br><br>
-            <strong>Proyección (con superávit ajustado + margen de seguridad):</strong>
+            <strong>Proyección (con superávit real + margen de seguridad):</strong>
             <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
                 <li>✅ <strong>Fase 1 + Fase 2 + Fase 3:</strong> Costo total <strong>$943,300 – $1,200,300</strong></li>
-                <li>✅ Saldo final proyectado: <strong>$350,532 – $415,532</strong></li>
+                <li>✅ Saldo final proyectado: <strong>$405,006 – $470,006</strong></li>
                 <li>✅ <strong>Se mantiene fondo de reserva mínimo de $200,000</strong></li>
                 <li>✅ El condominio puede afrontar todos los proyectos con <strong>liquidez saludable</strong></li>
             </ul>
@@ -876,7 +895,10 @@
 
         <!-- ====== FLUJO DE EFECTIVO PROYECTADO ====== -->
         <div style="margin: 12px 0 4px 0;">
-            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📈 Flujo de Efectivo Proyectado (12 meses, con cobranza exitosa)</div>
+            <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📈 Flujo de Efectivo Proyectado (12 meses)</div>
+
+            <!-- ESCENARIO OPTIMISTA -->
+            <div style="font-weight:600; color:#0b1e3a; margin:12px 0 6px 0; font-size:clamp(14px,1.3vw,16px);">✅ Escenario optimista (con cobranza exitosa)</div>
             <div class="tabla-wrapper">
                 <table class="tabla">
                     <thead>
@@ -898,41 +920,104 @@
                             <td class="monto">$1,225,097</td>
                         </tr>
                         <tr>
-                            <td>+ Superávit anual ajustado</td>
-                            <td class="monto positivo">+$173,735</td>
-                            <td class="monto">$1,398,832</td>
+                            <td>+ Superávit anual estimado (basado en $19,017/mes)</td>
+                            <td class="monto positivo">+$228,209</td>
+                            <td class="monto">$1,453,306</td>
                         </tr>
                         <tr>
                             <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
                             <td class="monto negativo">-$307,340 a -$372,340</td>
-                            <td class="monto">$1,026,492 a $1,091,492</td>
+                            <td class="monto">$1,080,966 a $1,145,966</td>
                         </tr>
                         <tr>
                             <td>- Fase 2 (Roof Garden)</td>
                             <td class="monto negativo">-$450,000</td>
-                            <td class="monto">$576,492 a $641,492</td>
+                            <td class="monto">$630,966 a $695,966</td>
                         </tr>
                         <tr>
                             <td>- Fase 3 (Mantenimiento programado)</td>
                             <td class="monto negativo">-$75,960</td>
-                            <td class="monto">$500,532 a $565,532</td>
+                            <td class="monto">$555,006 a $620,006</td>
                         </tr>
                         <tr>
                             <td>- Margen de seguridad</td>
                             <td class="monto negativo">-$150,000</td>
-                            <td class="monto">$350,532 a $415,532</td>
+                            <td class="monto">$405,006 a $470,006</td>
                         </tr>
                         <tr class="total">
                             <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
-                            <td><strong>$350,532 – $415,532</strong></td>
+                            <td><strong>$405,006 – $470,006</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div style="font-size:clamp(11px,1vw,12.5px); color:#4a617f; margin-top:3px;">
-                ✅ El saldo final proyectado es saludable y supera ampliamente el fondo de reserva mínimo recomendado de <strong>$200,000</strong>.
-                <br><br>
-                * El superávit anual ajustado de $173,735 considera la disminución gradual de los intereses a medida que el saldo de la cuenta disminuye.
+
+            <!-- PEOR ESCENARIO -->
+            <div style="font-weight:600; color:#b33c3c; margin:16px 0 6px 0; font-size:clamp(14px,1.3vw,16px);">⚠️ Peor escenario (sin recuperación de cartera + superávit reducido)</div>
+            <div class="nota nota-advertencia" style="margin-bottom:8px; font-size:clamp(11px,1vw,12.5px);">
+                <span>📌</span> <strong>Supuestos del peor escenario:</strong> 
+                <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                    <li>❌ <strong>Recuperación de cartera:</strong> 0% (no se recupera nada de los $328,723 de morosidad)</li>
+                    <li>📉 <strong>Superávit mensual:</strong> $8,000 (considerando que los intereses bancarios bajan a medida que el saldo disminuye, y pueden surgir gastos imprevistos)</li>
+                    <li>⚠️ <strong>Margen de seguridad:</strong> $100,000 (reducido ante un escenario adverso)</li>
+                </ul>
+            </div>
+            <div class="tabla-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Saldo Acumulado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Saldo Inicial (Julio 2026)</strong></td>
+                            <td></td>
+                            <td><strong>$1,061,097</strong></td>
+                        </tr>
+                        <tr>
+                            <td>+ Recuperación de cartera (0%)</td>
+                            <td class="monto">+$0</td>
+                            <td class="monto">$1,061,097</td>
+                        </tr>
+                        <tr>
+                            <td>+ Superávit anual estimado (12 × $8,000)</td>
+                            <td class="monto positivo">+$96,000</td>
+                            <td class="monto">$1,157,097</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 1 (Elevadores + A.C. + Banco Capacitores + AHTRAM + Protección Civil + Sellado)</td>
+                            <td class="monto negativo">-$307,340 a -$372,340</td>
+                            <td class="monto">$784,757 a $849,757</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 2 (Roof Garden)</td>
+                            <td class="monto negativo">-$450,000</td>
+                            <td class="monto">$334,757 a $399,757</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 3 (Mantenimiento programado)</td>
+                            <td class="monto negativo">-$75,960</td>
+                            <td class="monto">$258,797 a $323,797</td>
+                        </tr>
+                        <tr>
+                            <td>- Margen de seguridad</td>
+                            <td class="monto negativo">-$100,000</td>
+                            <td class="monto">$158,797 a $223,797</td>
+                        </tr>
+                        <tr class="total aviso">
+                            <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027) - Peor escenario</strong></td>
+                            <td><strong>$158,797 – $223,797</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="font-size:clamp(11px,1vw,12.5px); color:#4a617f; margin-top:6px;">
+                ✅ Incluso en el <strong>peor escenario</strong>, el condominio mantiene un saldo cercano al fondo de reserva mínimo recomendado de <strong>$200,000</strong>. 
+                Sin embargo, se recomienda enfocar esfuerzos en la <strong>cobranza</strong> para acercarse al escenario optimista y garantizar la liquidez a largo plazo.
             </div>
         </div>
 
@@ -959,6 +1044,7 @@
             <div class="leyenda-item"><span class="leyenda-color" style="background:#00a8b5;"></span> Largo Plazo</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#8e9db3;"></span> Otros</div>
             <div class="leyenda-item"><span class="leyenda-color" style="background:#00897b;"></span> Por definir</div>
+            <div class="leyenda-item"><span class="leyenda-color" style="background:#ff8f00;"></span> Advertencia / Peor escenario</div>
         </div>
 
         <!-- ====== FOOTER ====== -->
