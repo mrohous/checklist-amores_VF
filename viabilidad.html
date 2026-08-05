@@ -229,6 +229,22 @@
             font-weight: 600;
             white-space: nowrap;
         }
+        /* ====== CORRECCIÓN PARA MÓVIL: Badge con wrap ====== */
+        .badge-oro {
+            background: #fff3cd;
+            color: #856404;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: clamp(10px, 0.9vw, 12px);
+            font-weight: 600;
+            white-space: normal;
+            word-break: break-word;
+            max-width: 100%;
+            line-height: 1.4;
+            text-align: center;
+        }
+        /* ====== FIN CORRECCIÓN ====== */
         .badge-rojo { background: #ffebee; color: #b71c1c; }
         .badge-verde { background: #e8f5e9; color: #1b5e20; }
         .badge-naranja { background: #fff3e0; color: #bf5e00; }
@@ -236,7 +252,6 @@
         .badge-morado { background: #ede7f6; color: #4a148c; }
         .badge-cian { background: #e0f7fa; color: #00695c; }
         .badge-gris { background: #f5f5f5; color: #616161; }
-        .badge-oro { background: #fff3cd; color: #856404; }
         .badge-amarillo { background: #fff8e1; color: #bf5e00; }
 
         .tabla-wrapper {
@@ -525,7 +540,7 @@
             .fase-titulo { font-size: 13px; }
             .fase-desc { font-size: 11px; }
             .total-proyectos { font-size: 12px; padding: 8px 10px; flex-direction: column; align-items: center; }
-            .badge { font-size: 8px; padding: 1px 6px; }
+            .badge { font-size: 8px; padding: 1px 6px; white-space: normal; word-break: break-word; }
             .nota { font-size: 11px; padding: 8px 10px; }
             .leyenda { font-size: 10px; gap: 4px 10px; }
             .footer { font-size: 10px; flex-direction: column; align-items: center; }
@@ -535,6 +550,15 @@
             .calendario-mes { padding: 6px 8px; }
             .calendario-mes .mes { font-size: 12px; }
             .calendario-mes .actividad { font-size: 10px; }
+            /* ====== CORRECCIÓN: Badge-oro en móvil ====== */
+            .badge-oro {
+                white-space: normal;
+                word-break: break-word;
+                font-size: 11px;
+                padding: 4px 10px;
+                display: inline-block;
+                max-width: 100%;
+            }
         }
 
         @media (max-width: 400px) {
@@ -558,12 +582,20 @@
             .fase-titulo { font-size: 11px; }
             .fase-desc { font-size: 10px; }
             .total-proyectos { font-size: 11px; padding: 6px 8px; }
-            .badge { font-size: 7px; padding: 1px 5px; }
+            .badge { font-size: 7px; padding: 1px 5px; white-space: normal; word-break: break-word; }
             .nota { font-size: 10px; padding: 6px 8px; }
             .leyenda { font-size: 9px; gap: 3px 8px; }
             .calendario-grid { grid-template-columns: 1fr; }
             .fecha-esquina { font-size: 10px; padding: 3px 10px; }
             .btn-intereses { font-size: 10px; padding: 6px 12px; }
+            .badge-oro {
+                white-space: normal;
+                word-break: break-word;
+                font-size: 10px;
+                padding: 3px 8px;
+                display: inline-block;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -851,7 +883,7 @@
             <br>
             El escenario optimista permite mantener un saldo positivo, aunque por debajo del fondo de reserva mínimo recomendado de <strong>$200,000</strong> en el rango bajo. Por esta razón, <strong>se recomienda enfocar esfuerzos en la cobranza</strong> y, en caso necesario, considerar <strong>cuotas extraordinarias</strong> para garantizar la viabilidad de todos los proyectos y preservar la liquidez del condominio.
             <br><br>
-            <span class="badge badge-oro">💡 La viabilidad financiera del condominio depende en gran medida de la recuperación de la cartera vencida.</span>
+            <span class="badge-oro">💡 La viabilidad financiera del condominio depende en gran medida de la recuperación de la cartera vencida.</span>
         </div>
 
         <!-- ====== NOTA SOBRE LA FASE 2 DE ELEVADORES ====== -->
