@@ -1117,7 +1117,6 @@
         </div>
     </div>
 
-    <!-- Nuevo ítem: Fase 2 de reparaciones de elevadores -->
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
@@ -1137,22 +1136,6 @@
                     <strong>Condiciones:</strong> 70% anticipo, 30% al término. Tiempo de ejecución: 5 días hábiles para suministro + 1 día por equipo. Vigencia: 15 días naturales.<br>
                     <strong>Garantía:</strong> 6 meses en mano de obra, 3 meses en componentes electrónicos/eléctricos, 6 meses en componentes mecánicos.<br>
                     <em>Se requiere aprobación en Asamblea para proceder con esta segunda fase.</em>
-                </div>
-                <div class="btn-doc-group">
-                    <button class="btn-ver" onclick="verPDF('Amores 219 - Julio 2026.pdf')">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Ver cotización Fase 2
-                    </button>
-                    <button class="btn-descarga-icono" onclick="descargarPDF('Amores 219 - Julio 2026.pdf')" title="Descargar">
-                        <svg class="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a3a7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1450,6 +1433,14 @@
         </div>
     </div>
 
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Cambio de bombas para agua <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Reportadas como en muy mal estado por presidente de Covi Francisco Cruz e Ing. Fernando (Se mencionó de forma interna en Asamblea del 30 de junio 2026).</div>
+        </div>
+    </div>
+
     <!-- ========== 6. FINANZAS Y ADMINISTRACIÓN ========== -->
     <div class="categoria" id="sec6">
         <div class="cat-left"><span>6</span> Finanzas y Administración</div>
@@ -1734,28 +1725,24 @@
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
-        <div class="checkbox"></div>
+        <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">Corrección de señalización y colores en cuarto de basura <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="titulo">✅ Corrección de señalización en cuarto de basura <span class="badge hecho">Completado</span> <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
-                <strong>Problema detectado:</strong> Los colores de las paredes no coinciden con la normativa de separación de residuos (<strong>NADF-024-AMBT-2013</strong>).
+                <strong>Problema detectado:</strong> Los colores de las paredes no coincidían con la normativa de separación de residuos (<strong>NADF-024-AMBT-2013</strong>).
                 <ul style="padding-left:18px; list-style-type:disc; margin-top:6px;">
-                    <li>🔴 Pared <strong>anaranjada</strong> dice "RECICLABLES" pero debería ser <strong>NO RECICLABLES</strong> (residuos sanitarios).</li>
-                    <li>⬜ Pared <strong>gris</strong> dice "INORGÁNICOS" pero debería ser <strong>RECICLABLES</strong>.</li>
+                    <li>🔴 Pared <strong>anaranjada</strong> decía "RECICLABLES" pero debería ser <strong>NO RECICLABLES</strong> (residuos sanitarios).</li>
+                    <li>⬜ Pared <strong>gris</strong> decía "INORGÁNICOS" pero debería ser <strong>RECICLABLES</strong>.</li>
                 </ul>
                 <div style="margin-top:8px;">
-                    <strong>SOLUCIÓN PROPUESTA:</strong>
+                    <strong>SOLUCIÓN APLICADA:</strong>
                     <ul style="padding-left:18px; list-style-type:disc;">
-                        <li>✅ <strong>Sobre los botes existentes, forrar con vinil del color respectivo (anaranjado, gris y verde).</strong></li>
-                        <li>✅ <strong>Corregir la señalética:</strong> en la pared gris poner "INORGÁNICO RECICLABLE" y en la pared anaranjada poner "NO RECICLABLES".</li>
+                        <li>✅ <strong>Se corrigió la señalética:</strong> en la pared gris se colocó "INORGÁNICO RECICLABLE" y en la pared anaranjada "NO RECICLABLES".</li>
                     </ul>
                 </div>
                 <div style="margin-top:10px; background:#f8faff; padding:12px; border-radius:8px; border:1px solid #e9edf4;">
                     <img src="img/cuarto_basura.jpg" alt="Señalización correcta para separación de residuos" style="max-width:100%; border-radius:6px; display:block;">
                     <p style="font-size:12px; color:#5a6e8a; margin-top:4px;">Ejemplo de señalética correcta según NADF-024-AMBT-2013</p>
-                </div>
-                <div style="margin-top:6px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
-                    📌 <strong>Enlace de referencia para compra:</strong> <a href="https://articulo.mercadolibre.com.mx/MLM-3235507624?attributes=COLOR_SECONDARY_COLOR:TmFyYW5qYQ==&matt_tool=17030900&ua=qvdL-M-LHa_Vvio2CvLOr40B-k6STZ8AigBNKTuqs_P4XVw#origin=share&sid=share&action=copy" target="_blank" style="color:#2a7de1;">Viniles para forrar botes</a>
                 </div>
             </div>
         </div>
@@ -1764,7 +1751,23 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Agregar cartel sobre separación de residuos <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="titulo">Corrección de botes en cuarto de basura <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">
+                <strong>SOLUCIÓN PROPUESTA:</strong>
+                <ul style="padding-left:18px; list-style-type:disc; margin-top:6px;">
+                    <li>✅ Sobre los botes existentes, forrar con vinil del color respectivo (anaranjado, gris y verde).</li>
+                </ul>
+                <div style="margin-top:6px; background:#f0f4fa; padding:8px 12px; border-radius:8px; font-size:13px;">
+                    📌 <strong>Enlace de referencia para compra:</strong> <a href="https://articulo.mercadolibre.com.mx/MLM-3235507624?attributes=COLOR_SECONDARY_COLOR:TmFyYW5qYQ==&matt_tool=17030900&ua=qvdL-M-LHa_Vvio2CvLOr40B-k6STZ8AigBNKTuqs_P4XVw#origin=share&sid=share&action=copy" target="_blank" style="color:#2a7de1;">Viniles para forrar botes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox completado checked"></div>
+        <div class="detalle">
+            <div class="titulo">✅ Agregar cartel sobre separación de residuos <span class="badge hecho">Completado</span> <span class="badge oper">Operativo</span> <span class="badge mant">Mantenimiento</span></div>
             <div class="desc">
                 Agregar cartel sobre la correcta forma de la separación de residuos en la pared blanca del espacio y compartir la información para dar a conocer y reiterar a los residentes.
                 <br><br>
