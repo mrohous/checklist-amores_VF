@@ -316,6 +316,7 @@
         .badge.covi { background: #b2dfdb; color: #004d40; }
         .badge.seguridadpc { background: #ffcc80; color: #bf360c; }
         .badge.rechazado { background: #ffcdd2; color: #b71c1c; text-decoration: line-through; }
+        .badge.aprobado { background: #c8e6c9; color: #1b5e20; font-weight: 700; }
         .subtitulo-seccion {
             font-size: 15px;
             font-weight: 400;
@@ -1017,14 +1018,14 @@
         <div class="checkbox completado checked"></div>
         <div class="detalle">
             <div class="titulo">✅ Firmas de contratos <span class="badge hecho">Completado</span></div>
-            <div class="desc">Contratos de Prestación de Servicios y de Prenda firmados por los miembros del Comité (solicitar copia digital).</div>
+            <div class="desc">Contratos de Prestación de Servicios y de Prenda firmados por los miembros del Comité (copia digital entregada). Verificar que el original se encuentre en oficina de administración.</div>
         </div>
     </div>
 
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox urgente"></div>
         <div class="detalle">
-            <div class="titulo">Constitución de la Asociación Civil (A.C.) <span class="badge admin">Administración</span> <span class="badge fin">Financiero</span> <span class="badge comun">Comité de Vigilancia</span></div>
+            <div class="titulo">Constitución de la Asociación Civil (A.C.) SIN FINES DE LUCRO <span class="badge admin">Administración</span> <span class="badge fin">Financiero</span> <span class="badge comun">Comité de Vigilancia</span></div>
             <div class="desc">
                 <strong>Objetivo:</strong> Garantizar una administración profesional y transparente mediante la constitución legal de la A.C.
                 <div class="resumen-cotizacion">
@@ -1101,7 +1102,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">✅ Reparación mayor de elevadores (Fase 1) <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
+            <div class="titulo">✅ Aprobación de Reparación mayor de elevadores (Fase 1) en Asamblea <span class="badge aprobado">APROBADO</span> <span class="badge urgente">Urgente</span> <span class="badge mant">Mantenimiento</span> <span class="badge fin">Financiero</span></div>
             <div class="desc">
                 <strong>Cotización ELEBETA por $106,200.00</strong> para el cambio de insertos, baterías, fuente de alimentación, tarjeta SEM 35Q y sistema de frenado en los tres elevadores. <strong>Aprobado en Asamblea extraordinaria del JUEVES 30 de julio.</strong>
                 <div class="resumen-cotizacion">
@@ -1114,6 +1115,14 @@
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="item" onclick="toggleCheck(this)">
+        <div class="checkbox"></div>
+        <div class="detalle">
+            <div class="titulo">Ejecución de reparación mayor de elevadores (Fase 1) <span class="badge atencion">Pendiente</span> <span class="badge mant">Mantenimiento</span></div>
+            <div class="desc">Coordinar y ejecutar los trabajos de reparación mayor de elevadores (Fase 1) con el proveedor ELEBETA, una vez aprobada la cotización en Asamblea.</div>
         </div>
     </div>
 
@@ -1144,8 +1153,8 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox"></div>
         <div class="detalle">
-            <div class="titulo">Curso para el buen manejo y seguridad en elevadores <span class="badge residentes">residentes</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge admin">Administración</span> <span class="badge seguridadpc">Comité Seguridad y Protección Civil</span></div>
-            <div class="desc">Curso para el buen manejo y seguridad en elevadores impartido por Ing. Benjamín de ELEBETA para condóminos en general y comités del condominio.</div>
+            <div class="titulo">Taller para el buen manejo y seguridad en elevadores <span class="badge residentes">residentes</span> <span class="badge comun">Comité de Vigilancia</span> <span class="badge admin">Administración</span> <span class="badge seguridadpc">Comité Seguridad y Protección Civil</span></div>
+            <div class="desc">Taller para el buen manejo y seguridad en elevadores impartido por Ing. Benjamín de ELEBETA para condóminos en general y comités del condominio.</div>
         </div>
     </div>
 
@@ -1229,7 +1238,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">✅ Sellado de ventanas y terrazas <span class="badge hecho">Aprobado en Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
+            <div class="titulo">✅ Sellado de ventanas y terrazas <span class="badge aprobado">APROBADO</span> <span class="badge mant">Mantenimiento</span> <span class="badge asamblea">Asamblea</span></div>
             <div class="desc">
                 <strong>Cotización Arq. Manuel Ochoa por $39,900.00</strong> (aprobada en Asamblea extraordinaria del JUEVES 30 de julio): Sellado de ventanas (18 pza) + Reparación losa terrazas (24 pza) + Pintura vinílica (120 m²).
                 <div class="resumen-cotizacion">
@@ -1269,7 +1278,7 @@
     <div class="item" onclick="toggleCheck(this)">
         <div class="checkbox completado checked"></div>
         <div class="detalle">
-            <div class="titulo">✅ Filtraciones en muros <span class="badge hecho">Aprobado en Asamblea</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span></div>
+            <div class="titulo">✅ Filtraciones en muros <span class="badge aprobado">APROBADO</span> <span class="badge mant">Mantenimiento</span> <span class="badge comun">Comité de Vigilancia</span></div>
             <div class="desc">
                 <strong>Cotización AHTRAM por $33,240.00</strong> (aprobada en Asamblea extraordinaria del JUEVES 30 de julio) para canalización para drenar agua en muros y uniones en piso. Incluye perforaciones, sellador de alta presión, tubo perforado de 2", chaflán de 25 ml y pintura.
                 <br><br>
@@ -1979,6 +1988,9 @@
         </div>
         <div class="leyenda-item">
             <span class="badge asamblea">Asamblea</span>
+        </div>
+        <div class="leyenda-item">
+            <span class="badge aprobado">APROBADO</span>
         </div>
         <div class="leyenda-item">
             <span class="badge residentes">residentes</span>
