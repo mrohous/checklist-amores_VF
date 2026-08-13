@@ -229,7 +229,6 @@
             font-weight: 600;
             white-space: nowrap;
         }
-        /* ====== CORRECCIÓN PARA MÓVIL: Badge con wrap ====== */
         .badge-oro {
             background: #fff3cd;
             color: #856404;
@@ -244,7 +243,6 @@
             line-height: 1.4;
             text-align: center;
         }
-        /* ====== FIN CORRECCIÓN ====== */
         .badge-rojo { background: #ffebee; color: #b71c1c; }
         .badge-verde { background: #e8f5e9; color: #1b5e20; }
         .badge-naranja { background: #fff3e0; color: #bf5e00; }
@@ -550,7 +548,6 @@
             .calendario-mes { padding: 6px 8px; }
             .calendario-mes .mes { font-size: 12px; }
             .calendario-mes .actividad { font-size: 10px; }
-            /* ====== CORRECCIÓN: Badge-oro en móvil ====== */
             .badge-oro {
                 white-space: normal;
                 word-break: break-word;
@@ -637,9 +634,13 @@
                 <div class="valor positivo">$570,523</div>
                 <div class="etiqueta">📈 Superávit Total (30 meses)</div>
             </div>
+            <div class="card">
+                <div class="valor">$264k – $379k</div>
+                <div class="etiqueta">📊 Escenario optimista final</div>
+            </div>
             <div class="card aviso">
                 <div class="valor">$105k – $320k</div>
-                <div class="etiqueta">📊 Escenario optimista final</div>
+                <div class="etiqueta">📊 Escenario base final</div>
             </div>
             <div class="card">
                 <div class="valor">$75k – $290k</div>
@@ -867,7 +868,11 @@
                 </thead>
                 <tbody>
                     <tr style="border-bottom:1px solid #e9edf4;">
-                        <td style="padding:4px 12px;">✅ Optimista (con cobranza exitosa)</td>
+                        <td style="padding:4px 12px;">🌟 Optimista (cobranza 100%)</td>
+                        <td style="padding:4px 12px; color:#0f7b3a; font-weight:700;">$264,066 – $379,066</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e9edf4;">
+                        <td style="padding:4px 12px;">✅ Base (cobranza 50%)</td>
                         <td style="padding:4px 12px;"><strong>$105,066 – $320,066</strong></td>
                     </tr>
                     <tr style="border-bottom:1px solid #e9edf4;">
@@ -881,7 +886,7 @@
                 </tbody>
             </table>
             <br>
-            El escenario optimista permite mantener un saldo positivo, aunque por debajo del fondo de reserva mínimo recomendado de <strong>$200,000</strong> en el rango bajo. Por esta razón, <strong>se recomienda enfocar esfuerzos en la cobranza</strong> y, en caso necesario, considerar <strong>cuotas extraordinarias</strong> para garantizar la viabilidad de todos los proyectos y preservar la liquidez del condominio.
+            El escenario optimista (cobranza al 100%) permite mantener un saldo saludable por encima del fondo de reserva mínimo recomendado de <strong>$200,000</strong>. Esto demuestra que la <strong>recuperación total de la cartera vencida</strong> es la clave para garantizar la viabilidad financiera del condominio y preservar su liquidez.
             <br><br>
             <span class="badge-oro">💡 La viabilidad financiera del condominio depende en gran medida de la recuperación de la cartera vencida.</span>
         </div>
@@ -939,11 +944,11 @@
                 <div class="fase rojo">
                     <div class="fase-titulo">
                         <span>🚨 Fase 0 · Cobranza y Estabilización</span>
-                        <span class="fase-monto">Meta: Recuperar $164,000</span>
+                        <span class="fase-monto">Meta: Recuperar $328,723</span>
                     </div>
                     <div class="fase-desc">
-                        Notificar formalmente a los principales deudores. Establecer plan de pagos y, de no haber respuesta, iniciar mediación en PROSOC. <br>
-                        <span class="badge badge-rojo">Urgente</span> Es el primer paso para financiar los proyectos sin afectar la liquidez.
+                        Notificar formalmente a todos los deudores. Establecer planes de pago y, de no haber respuesta, iniciar mediación en PROSOC. <br>
+                        <span class="badge badge-rojo">Urgente</span> Es el primer paso para financiar los proyectos sin afectar la liquidez y alcanzar el escenario optimista.
                     </div>
                 </div>
                 <div class="fase verde">
@@ -993,8 +998,77 @@
         <div style="margin: 12px 0 4px 0;">
             <div style="font-weight:700; font-size:clamp(15px,1.5vw,17px); color:#0b1e3a; margin-bottom:4px;">📈 Flujo de Efectivo Proyectado (12 meses)</div>
 
-            <!-- ESCENARIO OPTIMISTA -->
-            <div style="font-weight:600; color:#0b1e3a; margin:12px 0 6px 0; font-size:clamp(14px,1.3vw,16px);">✅ Escenario optimista (con cobranza exitosa)</div>
+            <!-- ESCENARIO OPTIMISTA (COBRANZA 100%) -->
+            <div style="font-weight:600; color:#0f7b3a; margin:12px 0 6px 0; font-size:clamp(14px,1.3vw,16px);">🌟 Escenario optimista (cobranza al 100%)</div>
+            <div class="nota nota-verde" style="margin-bottom:8px; font-size:clamp(11px,1vw,12.5px);">
+                <span>📌</span> <strong>Supuestos del escenario optimista:</strong> 
+                <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
+                    <li>✅ <strong>Recuperación de cartera:</strong> 100% (se cobra la totalidad de los $328,723 de morosidad)</li>
+                    <li>📈 <strong>Superávit mensual:</strong> $19,017 (basado en el promedio histórico)</li>
+                    <li>✅ <strong>Todos los condóminos pagan puntualmente</strong> durante el período</li>
+                    <li>⚠️ <strong>Margen de seguridad:</strong> $100,000</li>
+                </ul>
+            </div>
+            <div class="tabla-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Saldo Acumulado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Saldo Inicial (Julio 2026)</strong></td>
+                            <td></td>
+                            <td><strong>$1,061,097</strong></td>
+                        </tr>
+                        <tr>
+                            <td>+ Recuperación de cartera (100%)</td>
+                            <td class="monto positivo">+$328,723</td>
+                            <td class="monto">$1,389,820</td>
+                        </tr>
+                        <tr>
+                            <td>+ Superávit anual estimado (basado en $19,017/mes)</td>
+                            <td class="monto positivo">+$228,209</td>
+                            <td class="monto">$1,618,029</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 1 (Elevadores F1 + A.C. + AHTRAM + Protección Civil + Sellado)</td>
+                            <td class="monto negativo">-$307,340 a -$372,340</td>
+                            <td class="monto">$1,245,689 a $1,310,689</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 1.5 (Banco Capacitores + Seguro + Elevadores F2)</td>
+                            <td class="monto negativo">-$199,940 a -$349,940</td>
+                            <td class="monto">$895,749 a $1,110,749</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 2 (Roof Garden)</td>
+                            <td class="monto negativo">-$450,000</td>
+                            <td class="monto">$445,749 a $660,749</td>
+                        </tr>
+                        <tr>
+                            <td>- Fase 3 (Mantenimiento programado)</td>
+                            <td class="monto negativo">-$75,960</td>
+                            <td class="monto">$369,789 a $584,789</td>
+                        </tr>
+                        <tr>
+                            <td>- Margen de seguridad</td>
+                            <td class="monto negativo">-$100,000</td>
+                            <td class="monto">$269,789 a $484,789</td>
+                        </tr>
+                        <tr class="total">
+                            <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027) - Optimista</strong></td>
+                            <td><strong>$264,066 – $379,066</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ESCENARIO BASE (COBRANZA 50%) -->
+            <div style="font-weight:600; color:#0b1e3a; margin:16px 0 6px 0; font-size:clamp(14px,1.3vw,16px);">✅ Escenario base (cobranza 50%)</div>
             <div class="tabla-wrapper">
                 <table class="tabla">
                     <thead>
@@ -1046,7 +1120,7 @@
                             <td class="monto">$105,066 a $320,066</td>
                         </tr>
                         <tr class="total">
-                            <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027)</strong></td>
+                            <td colspan="2"><strong>Saldo Proyectado Final (Julio 2027) - Base</strong></td>
                             <td><strong>$105,066 – $320,066</strong></td>
                         </tr>
                     </tbody>
@@ -1059,7 +1133,7 @@
                 <span>📌</span> <strong>Supuestos del escenario con inflación:</strong> 
                 <ul style="padding-left:18px; margin-top:4px; list-style-type:disc;">
                     <li>📈 <strong>Inflación anual:</strong> 4% (proyección Banxico 2026)</li>
-                    <li>💰 <strong>Recuperación de cartera:</strong> 50% (igual que el escenario optimista)</li>
+                    <li>💰 <strong>Recuperación de cartera:</strong> 50% (igual que el escenario base)</li>
                     <li>📉 <strong>Superávit mensual:</strong> Disminuye progresivamente por el aumento de gastos fijos (vigilancia, limpieza, administración, etc.)</li>
                     <li>⚠️ <strong>Margen de seguridad:</strong> $100,000</li>
                 </ul>
@@ -1203,12 +1277,12 @@
 
         <!-- ====== NOTA SOBRE INTERESES FUTUROS ====== -->
         <div class="nota nota-info" style="margin-top:8px;">
-            <span>📌</span> <strong>Nota sobre intereses futuros:</strong> Después de ejecutar los proyectos, el saldo de la cuenta disminuirá, lo que reducirá los intereses generados. Para mantener un ingreso mensual por intereses de al menos <strong>$5,000</strong>, se requeriría un saldo de <strong>$750,000</strong> (considerando una tasa anual del 8%). Con los saldos proyectados en el escenario optimista (<strong>$105,066 – $320,066</strong>), los intereses mensuales estimados serían de <strong>$700 – $2,133</strong>, lo cual es significativamente menor. Esto refuerza la recomendación de recuperar la cartera vencida y considerar cuotas extraordinarias para preservar un saldo saludable.
+            <span>📌</span> <strong>Nota sobre intereses futuros:</strong> Después de ejecutar los proyectos, el saldo de la cuenta disminuirá, lo que reducirá los intereses generados. Para mantener un ingreso mensual por intereses de al menos <strong>$5,000</strong>, se requeriría un saldo de <strong>$750,000</strong> (considerando una tasa anual del 8%). Con los saldos proyectados en el escenario optimista (<strong>$264,066 – $379,066</strong>), los intereses mensuales estimados serían de <strong>$1,760 – $2,527</strong>, lo cual es significativamente menor. Esto refuerza la recomendación de recuperar la cartera vencida y considerar cuotas extraordinarias para preservar un saldo saludable.
         </div>
 
         <!-- ====== NOTAS ====== -->
         <div class="nota">
-            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los principales deudores representan el <strong>97% de la deuda total</strong>. Si se logra recuperar al menos el 50% de esta cartera ($164,000), el condominio podrá ejecutar las Fases 1 y 1.5 sin afectar significativamente la liquidez.
+            <span>📌</span> <strong>Nota clave:</strong> La morosidad es el principal obstáculo. Los principales deudores representan el <strong>97% de la deuda total</strong>. Si se logra recuperar la totalidad de esta cartera ($328,723), el condominio alcanzará un saldo final de <strong>$264,066 – $379,066</strong>, muy por encima del fondo de reserva mínimo recomendado de $200,000.
         </div>
 
         <div class="nota nota-verde">
