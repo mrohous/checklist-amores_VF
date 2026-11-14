@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Votación Interactiva - Asamblea</title>
     <style>
-        /* Reducimos márgenes de página al mínimo */
+        /* Configuración para impresión */
         @page { size: letter; margin: 0.4cm 0.6cm; } 
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; line-height: 1.1; margin: 0; padding: 0; font-size: 9px; position: relative; } 
         
+        /* Configuración para pantalla (Web) */
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            color: #333; 
+            line-height: 1.1; 
+            margin: 0; 
+            padding: 0; 
+            font-size: 9px; 
+            background-color: #e2e8f0; /* Fondo gris para resaltar la "hoja" */
+        } 
+
+        /* Contenedor que simula la hoja en la web */
+        .contenedor-principal {
+            max-width: 900px;
+            margin: 20px auto; /* Márgenes laterales en web */
+            background-color: white;
+            padding: 20px; /* Relleno interno en web */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra para efecto de hoja */
+        }
+
         .btn-container { display: flex; gap: 10px; margin-bottom: 10px; }
 
         .btn-accion {
@@ -93,191 +112,206 @@
 
         tr { page-break-inside: avoid; }
         
-        @media print { .btn-container { display: none !important; } }
+        /* Reglas específicas para cuando se manda a imprimir */
+        @media print { 
+            body { background-color: white; }
+            .contenedor-principal { 
+                max-width: 100%; 
+                margin: 0; 
+                padding: 0; 
+                box-shadow: none; 
+            }
+            .btn-container { display: none !important; } 
+        }
     </style>
 </head>
 <body>
 
-    <div class="btn-container" id="action-buttons">
-        <button class="btn-accion btn-imprimir" onclick="window.print()">🖨️ Imprimir o Guardar PDF</button>
-        <button class="btn-accion btn-pdf" id="btnPreparar" onclick="prepararPDF()">⚙️ Preparar Notas Acrobat</button>
-    </div>
+    <!-- CONTENEDOR QUE DA MÁRGENES EN LA WEB -->
+    <div class="contenedor-principal">
 
-    <div class="header">
-        <h1>Guía de Votación - Asamblea General</h1>
-        <p>Fecha: ____ / ____ / 2026</p>
-    </div>
-
-    <div class="instructions">
-        <strong>Instrucciones:</strong> Haga clic en las casillas para votar (Verde = A Favor, Rojo = No apruebo). En los puntos con múltiples opciones, puede votar por varias "A Favor", pero si marca "No apruebo" se desmarcarán las demás.
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 38%;">Punto del Orden del Día</th>
-                <th style="width: 62%;">Opciones de Votación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">2. Creación de Comités Vecinales</span>
-                    <span class="topic-desc">Aprobación de la creación de los comités de Ecología, Estética y Festividades, y Mediación. La participación es abierta a cualquier condómino o residente (poseedor) que tenga la voluntad de pertenecer (Art. 82 LPC-CDMX).</span>
-                    <span class="topic-cost">Costo: $0 (Sin impacto financiero)</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Ecología.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Estética y Festividades.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Mediación.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No crear ninguno de los comités.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">3. Mantenimiento de fachada</span>
-                    <span class="topic-desc">Autorización para solicitar al menos 3 cotizaciones para el mantenimiento integral de la fachada (pintura de muros, herrería y resane), estableciendo un techo presupuestal para su ejecución directa.</span>
-                    <span class="topic-cost">Costo: A cotizar (sujeto a techo presupuestal)</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar solicitud de cotizaciones y ejecución con techo máximo de $<input type="text" placeholder="Monto"> MXN.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar la solicitud ni ejecución.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">4. Sensores de seguridad para portones</span>
-                    <span class="topic-desc">Aprobación de la cotización de Grossmann para la instalación de sensores de seguridad (fotoceldas) en los portones automáticos.</span>
-                    <span class="topic-cost">Costo cotizado: $16,000.00 MXN (IVA incl.)</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar la cotización de Grossmann.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">5. Proyecto de Eficiencia Energética</span>
-                    <span class="topic-desc">Aprobación de la Fase 1 (Banco de Capacitores) y autorización para el análisis y ejecución futura de la Fase 2 (Paneles Solares), conforme al flujo de capital.</span>
-                    <span class="topic-cost">Costo est. F1: ~$30k | F2: $393,700 MXN</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Fase 1):</strong> Aprobar análisis costo-beneficio y ejecución del Banco de Capacitores, con techo máximo de $<input type="text" placeholder="Monto"> MXN.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Fase 2):</strong> Autorizar análisis y ejecución futura de Paneles Solares.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el proyecto.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">6. Impermeabilización de azotea</span>
-                    <span class="topic-desc">Aprobación del alcance técnico y autorización para contratar la impermeabilización, previa verificación de la superficie real con los proveedores cotizados.</span>
-                    <span class="topic-cost">Costo estimado: $140,000 MXN (Aprox.)</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar ejecución con techo máximo de $<input type="text" placeholder="Monto"> MXN (previa verificación).</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar la contratación.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">7. Manejo de fondos y Personalidad Jurídica</span>
-                    <span class="topic-desc">Análisis y votación para la constitución de la Asociación Civil (A.C.) sin fines de lucro o, en su defecto, la apertura de cuenta mancomunada para la administración de los recursos del condominio.</span>
-                    <span class="topic-cost">Costo estimado A.C.: ~$25,000 MXN</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción A):</strong> Abrir nueva cuenta a nombre de un condómino.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción B):</strong> Constituir Asociación Civil sin fines de lucro <strong>(A.C.)</strong>, considerar mancomunidad de firmas digitales.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción C):</strong> Cuenta de gastos a nombre del Administrador o un condómino + Cuenta de reserva (Mancomunada Digital con firmas digitales).</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>Opción D (No apruebo A, B ni C):</strong> Mantener estructura actual (Cuenta indistinta + pago de <strong>$2,500/mes</strong> por manejo de cuenta).</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">8. Proyecto Integral de Protección Civil y Dictámenes Técnicos (PIPC)</span>
-                    <span class="topic-desc">Contratación de consultoría para elaboración, registro y seguimiento del PIPC, así como la gestión de los dictámenes obligatorios (estructural, eléctrico y de gas), Visto Bueno y capacitación.</span>
-                    <span class="topic-cost">Costo estimado: ~$100,000 MXN</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar la contratación del PIPC y dictámenes (solicitando 3 cotizaciones).</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">9. Atención a humedades en bodegas del Sótano 2</span>
-                    <span class="topic-desc">Instrucción para que el Dictamen Estructural (contratado en el Punto 8) incluya la revisión del Sótano 2, determine el origen del daño y defina la responsabilidad de la reparación. <em>(Si el Punto 8 se rechaza, la instrucción al DRO queda sin efecto).</em></span>
-                    <span class="topic-cost">Costo extra: $0 (Incluido en PIPC)</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Contención):</strong> Aprobar la solución de contención para 6 bodegas por un costo de <strong>$61,120.86 MXN</strong> (IVA incl.).</div></div>
-                    <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> El gasto de $61,120.86 para 6 bodegas.</div></div>
-                    <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Evaluar):</strong> Instruir al DRO a evaluar las bodegas del Sótano 2 dentro del dictamen estructural del PIPC.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No incluir la revisión dentro del dictamen.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">10. Aprobación de Intereses Moratorios y Pena Convencional</span>
-                    <span class="topic-desc">Aprobación de lineamientos para el cobro de adeudos (Art. 33, fracc. V y 59 LPC-CDMX; Art. 24 del Reglamento Interno).</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar interés moratorio del <input type="text" placeholder="%"> % anual (9% tope máximo legal) y <input type="text" placeholder="%"> % de pena convencional.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar los lineamientos de cobro.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">11. Mantenimiento mayor de elevadores (Fase 2)</span>
-                    <span class="topic-desc">Aprobación de la cotización presentada por ELEBETA para el mantenimiento correctivo mayor.</span>
-                    <span class="topic-cost">Costo cotizado: $59,940.00 MXN</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar la cotización de ELEBETA.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="topic-col">
-                    <span class="topic-title">12. Obra mayor: Cambio de piso en Roof Garden</span>
-                    <span class="topic-desc">Formalización del proyecto aprobado (Piso Interceramic Roverello Café), actualización de costos y aprobación de las bases del concurso para la selección del contratista, exigiendo supervisión técnica (DRO) y transparencia en el proceso.</span>
-                    <span class="topic-cost">Costo base (Dic 2025): $484,280.42 MXN</span>
-                </td>
-                <td>
-                    <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Formalizar proyecto, actualizar costos y aprobar bases del concurso.</div></div>
-                    <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> Detener el proyecto.</div></div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="signature-area">
-        <div class="signature-box">
-            <input type="text" class="signature-input" placeholder=" ">
-            <span class="signature-label">Nombre y Firma del Condómino</span>
+        <div class="btn-container" id="action-buttons">
+            <button class="btn-accion btn-imprimir" onclick="window.print()">🖨️ Imprimir o Guardar PDF</button>
+            <button class="btn-accion btn-pdf" id="btnPreparar" onclick="prepararPDF()">⚙️ Preparar Notas Acrobat</button>
         </div>
-        <div class="signature-box">
-            <input type="text" class="signature-input" placeholder=" ">
-            <span class="signature-label">Departamento / Porcentaje de indiviso</span>
+
+        <div class="header">
+            <h1>Guía de Votación - Asamblea General</h1>
+            <p>Fecha: ____ / ____ / 2026</p>
         </div>
-    </div>
 
-    <div class="nota-importante">
-        Recuerde que este documento es una guía y no sustituye la votación exclusiva para condóminos no morosos, representantes legales o representantes con carta poder simple que acrediten la propiedad el día de la Asamblea General.
-    </div>
+        <div class="instructions">
+            <strong>Instrucciones:</strong> Haga clic en las casillas para votar (Verde = A Favor, Rojo = No apruebo). En los puntos con múltiples opciones, puede votar por varias "A Favor", pero si marca "No apruebo" se desmarcarán las demás.
+        </div>
 
-    <div class="legal-footer">
-        <strong>Nota legal complementaria:</strong> Conforme a la Ley de Propiedad en Condominio de la CDMX, el derecho a voto es exclusivo para los condóminos que se encuentren al corriente en sus cuotas. Los condóminos morosos conservan su derecho a voz, pero no a voto (Art. 34 y 42, LPC-CDMX).
-    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 38%;">Punto del Orden del Día</th>
+                    <th style="width: 62%;">Opciones de Votación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">2. Creación de Comités Vecinales</span>
+                        <span class="topic-desc">Aprobación de la creación de los comités de Ecología, Estética y Festividades, y Mediación. La participación es abierta a cualquier condómino o residente (poseedor) que tenga la voluntad de pertenecer (Art. 82 LPC-CDMX).</span>
+                        <span class="topic-cost">Costo: $0 (Sin impacto financiero)</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Ecología.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Estética y Festividades.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Mediación.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No crear ninguno de los comités.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">3. Mantenimiento de fachada</span>
+                        <span class="topic-desc">Autorización para solicitar al menos 3 cotizaciones para el mantenimiento integral de la fachada (pintura de muros, herrería y resane), estableciendo un techo presupuestal para su ejecución directa.</span>
+                        <span class="topic-cost">Costo: A cotizar (sujeto a techo presupuestal)</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar solicitud de cotizaciones y ejecución con techo máximo de $<input type="text" placeholder="Monto"> MXN.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar la solicitud ni ejecución.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">4. Sensores de seguridad para portones</span>
+                        <span class="topic-desc">Aprobación de la cotización de Grossmann para la instalación de sensores de seguridad (fotoceldas) en los portones automáticos.</span>
+                        <span class="topic-cost">Costo cotizado: $16,000.00 MXN (IVA incl.)</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar la cotización de Grossmann.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">5. Proyecto de Eficiencia Energética</span>
+                        <span class="topic-desc">Aprobación de la Fase 1 (Banco de Capacitores) y autorización para el análisis y ejecución futura de la Fase 2 (Paneles Solares), conforme al flujo de capital.</span>
+                        <span class="topic-cost">Costo est. F1: ~$30k | F2: $393,700 MXN</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Fase 1):</strong> Aprobar análisis costo-beneficio y ejecución del Banco de Capacitores, con techo máximo de $<input type="text" placeholder="Monto"> MXN.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Fase 2):</strong> Autorizar análisis y ejecución futura de Paneles Solares.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el proyecto.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">6. Impermeabilización de azotea</span>
+                        <span class="topic-desc">Aprobación del alcance técnico y autorización para contratar la impermeabilización, previa verificación de la superficie real con los proveedores cotizados.</span>
+                        <span class="topic-cost">Costo estimado: $140,000 MXN (Aprox.)</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar ejecución con techo máximo de $<input type="text" placeholder="Monto"> MXN (previa verificación).</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar la contratación.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">7. Manejo de fondos y Personalidad Jurídica</span>
+                        <span class="topic-desc">Análisis y votación para la constitución de la Asociación Civil (A.C.) sin fines de lucro o, en su defecto, la apertura de cuenta mancomunada para la administración de los recursos del condominio.</span>
+                        <span class="topic-cost">Costo estimado A.C.: ~$25,000 MXN</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción A):</strong> Abrir nueva cuenta a nombre de un condómino.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción B):</strong> Constituir Asociación Civil sin fines de lucro <strong>(A.C.)</strong>, considerar mancomunidad de firmas digitales.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Opción C):</strong> Cuenta de gastos a nombre del Administrador o un condómino + Cuenta de reserva (Mancomunada Digital con firmas digitales).</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>Opción D (No apruebo A, B ni C):</strong> Mantener estructura actual (Cuenta indistinta + pago de <strong>$2,500/mes</strong> por manejo de cuenta).</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">8. Proyecto Integral de Protección Civil y Dictámenes Técnicos (PIPC)</span>
+                        <span class="topic-desc">Contratación de consultoría para elaboración, registro y seguimiento del PIPC, así como la gestión de los dictámenes obligatorios (estructural, eléctrico y de gas), Visto Bueno y capacitación.</span>
+                        <span class="topic-cost">Costo estimado: ~$100,000 MXN</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Autorizar la contratación del PIPC y dictámenes (solicitando 3 cotizaciones).</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">9. Atención a humedades en bodegas del Sótano 2</span>
+                        <span class="topic-desc">Instrucción para que el Dictamen Estructural (contratado en el Punto 8) incluya la revisión del Sótano 2, determine el origen del daño y defina la responsabilidad de la reparación. <em>(Si el Punto 8 se rechaza, la instrucción al DRO queda sin efecto).</em></span>
+                        <span class="topic-cost">Costo extra: $0 (Incluido en PIPC)</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Contención):</strong> Aprobar la solución de contención para 6 bodegas por un costo de <strong>$61,120.86 MXN</strong> (IVA incl.).</div></div>
+                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> El gasto de $61,120.86 para 6 bodegas.</div></div>
+                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Evaluar):</strong> Instruir al DRO a evaluar las bodegas del Sótano 2 dentro del dictamen estructural del PIPC.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No incluir la revisión dentro del dictamen.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">10. Aprobación de Intereses Moratorios y Pena Convencional</span>
+                        <span class="topic-desc">Aprobación de lineamientos para el cobro de adeudos (Art. 33, fracc. V y 59 LPC-CDMX; Art. 24 del Reglamento Interno).</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar interés moratorio del <input type="text" placeholder="%"> % anual (9% tope máximo legal) y <input type="text" placeholder="%"> % de pena convencional.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar los lineamientos de cobro.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">11. Mantenimiento mayor de elevadores (Fase 2)</span>
+                        <span class="topic-desc">Aprobación de la cotización presentada por ELEBETA para el mantenimiento correctivo mayor.</span>
+                        <span class="topic-cost">Costo cotizado: $59,940.00 MXN</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Aprobar la cotización de ELEBETA.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No autorizar el gasto.</div></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="topic-col">
+                        <span class="topic-title">12. Obra mayor: Cambio de piso en Roof Garden</span>
+                        <span class="topic-desc">Formalización del proyecto aprobado (Piso Interceramic Roverello Café), actualización de costos y aprobación de las bases del concurso para la selección del contratista, exigiendo supervisión técnica (DRO) y transparencia en el proceso.</span>
+                        <span class="topic-cost">Costo base (Dic 2025): $484,280.42 MXN</span>
+                    </td>
+                    <td>
+                        <div class="vote-option a-favor" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Formalizar proyecto, actualizar costos y aprobar bases del concurso.</div></div>
+                        <div class="vote-option en-contra" onclick="toggleSingleVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> Detener el proyecto.</div></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="signature-area">
+            <div class="signature-box">
+                <input type="text" class="signature-input" placeholder=" ">
+                <span class="signature-label">Nombre y Firma del Condómino</span>
+            </div>
+            <div class="signature-box">
+                <input type="text" class="signature-input" placeholder=" ">
+                <span class="signature-label">Departamento / Porcentaje de indiviso</span>
+            </div>
+        </div>
+
+        <div class="nota-importante">
+            Recuerde que este documento es una guía y no sustituye la votación exclusiva para condóminos no morosos, representantes legales o representantes con carta poder simple que acrediten la propiedad el día de la Asamblea General.
+        </div>
+
+        <div class="legal-footer">
+            <strong>Nota legal complementaria:</strong> Conforme a la Ley de Propiedad en Condominio de la CDMX, el derecho a voto es exclusivo para los condóminos que se encuentren al corriente en sus cuotas. Los condóminos morosos conservan su derecho a voz, pero no a voto (Art. 34 y 42, LPC-CDMX).
+        </div>
+
+    </div> <!-- FIN DEL CONTENEDOR PRINCIPAL -->
 
     <script>
         function toggleSingleVote(element) {
