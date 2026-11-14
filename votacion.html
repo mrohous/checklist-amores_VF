@@ -15,6 +15,8 @@
             padding: 0; 
             font-size: 9px; 
             background-color: #e2e8f0; 
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important; 
         } 
 
         .contenedor-principal {
@@ -63,21 +65,24 @@
         .vote-option.seleccionado .option-text { font-size: 10px; font-weight: bold; color: #000; }
         
         .checkbox-btn {
-            width: 14px; height: 14px; border: 1.5px solid #4a5568; border-radius: 3px;
+            width: 15px; height: 15px; border: 1.5px solid #4a5568; border-radius: 3px;
             margin-right: 5px; flex-shrink: 0; display: inline-flex; align-items: center;
-            justify-content: center; font-weight: bold; font-size: 11px; color: transparent;
+            justify-content: center; color: transparent;
             transition: all 0.2s; user-select: none; background-color: white;
         }
         
-        .vote-option.a-favor .checkbox-btn.selected { background-color: #38a169; border-color: #38a169; color: white; }
-        .vote-option.a-favor .checkbox-btn.selected::after { content: "✓"; }
+        .checkbox-btn.selected.a-favor { background-color: #38a169; border-color: #38a169; color: white; }
+        .checkbox-btn.selected.a-favor::after { content: "✓"; font-size: 14px; font-weight: 900; line-height: 1; }
         
-        .vote-option.en-contra .checkbox-btn.selected { background-color: #e53e3e; border-color: #e53e3e; color: white; }
-        .vote-option.en-contra .checkbox-btn.selected::after { content: "✗"; }
+        .checkbox-btn.selected.en-contra { background-color: #e53e3e; border-color: #e53e3e; color: white; }
+        .checkbox-btn.selected.en-contra::after { content: "✗"; font-size: 14px; font-weight: 900; line-height: 1; }
 
         .option-text { flex-grow: 1; font-size: 9px; line-height: 1.15; transition: font-size 0.2s; }
         .option-text strong { color: #1a365d; }
         .option-against .option-text { color: #9b2c2c; }
+
+        .texto-en-contra { color: #9b2c2c; font-weight: bold; }
+        .texto-a-favor { color: #1a365d; font-weight: bold; }
         
         input[type="text"] {
             border: none; border-bottom: 1px dashed #999; background: transparent;
@@ -85,20 +90,58 @@
             text-align: center; margin: 0 1px;
         }
         input[type="text"]:focus { outline: none; border-bottom: 1px solid #2b6cb0; }
-        
+
+        /* --- ÁREA DE FIRMAS CON CONTENTEDITABLE --- */
         .signature-area { 
-            display: flex; justify-content: space-around; margin-top: 15px; padding-top: 10px; border-top: 1px solid #cbd5e0; 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 30px; 
+            padding-top: 15px; 
         }
         
-        .signature-box { width: 40%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .signature-box { 
+            width: 46%; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
         
         .signature-input {
-            width: 90%; border: none; border-bottom: 1px solid #333; background: transparent;
-            font-family: inherit; font-size: 12px; color: #333; text-align: center; margin-bottom: 4px; padding: 3px 0;
+            width: 100%;
+            min-height: 25px; 
+            border: none;
+            border-bottom: 2px solid #333;
+            background: transparent;
+            font-family: inherit;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 8px;
+            padding: 5px;
+            white-space: nowrap; 
+            overflow: visible;
+            outline: none;
+            box-sizing: border-box; 
         }
-        .signature-input:focus { outline: none; border-bottom: 2px solid #2b6cb0; }
 
-        .signature-label { font-size: 9px; color: #555; font-weight: bold; }
+        .signature-input:focus {
+            border-bottom: 2px solid #2b6cb0;
+            background-color: #f7fafc;
+        }
+
+        .signature-input:empty::before {
+            content: attr(data-placeholder);
+            color: #a0aec0;
+            pointer-events: none;
+            display: block; 
+        }
+
+        .signature-label { 
+            font-size: 11px; 
+            color: #555; 
+            font-weight: bold; 
+            text-align: center;
+        }
 
         .legal-footer { margin-top: 8px; padding-top: 5px; border-top: 1px dashed #cbd5e0; font-size: 7px; color: #555; text-align: justify; line-height: 1.2; }
         
@@ -131,7 +174,7 @@
         </div>
 
         <div class="instructions">
-            <strong>Instrucciones:</strong> Haga clic en las casillas para votar (Verde = A Favor, Rojo = No apruebo). En los puntos con múltiples opciones, puede votar por varias "A Favor", pero si marca "No apruebo" se desmarcarán las demás.
+            <strong>Instrucciones:</strong> Haga clic en las casillas para votar (Verde = A Favor, Rojo = No apruebo). En el Punto 2, al seleccionar un comité, los demás se tachan automáticamente; si quita todas las palomitas, se marcará la opción global de "No crear ninguno".
         </div>
 
         <table>
@@ -148,11 +191,31 @@
                         <span class="topic-desc">Aprobación de la creación de los comités de Ecología, Estética y Festividades, y Mediación. La participación es abierta a cualquier condómino o residente (poseedor) que tenga la voluntad de pertenecer (Art. 82 LPC-CDMX).</span>
                         <span class="topic-cost">Costo: $0 (Sin impacto financiero)</span>
                     </td>
-                    <td>
-                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Ecología.</div></div>
-                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Estética y Festividades.</div></div>
-                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor:</strong> Apruebo crear el Comité de Mediación.</div></div>
-                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No crear ninguno de los comités.</div></div>
+                    <td id="celda-comites">
+                        <div class="vote-option a-favor" onclick="toggleComiteVote(this, 0)">
+                            <div class="checkbox-btn"></div>
+                            <div class="option-text">
+                                <span class="texto-a-favor" id="prefijo-0">A Favor:</span> <span id="texto-0">Apruebo crear el Comité de Ecología.</span>
+                            </div>
+                        </div>
+                        <div class="vote-option a-favor" onclick="toggleComiteVote(this, 1)">
+                            <div class="checkbox-btn"></div>
+                            <div class="option-text">
+                                <span class="texto-a-favor" id="prefijo-1">A Favor:</span> <span id="texto-1">Apruebo crear el Comité de Estética y Festividades.</span>
+                            </div>
+                        </div>
+                        <div class="vote-option a-favor" onclick="toggleComiteVote(this, 2)">
+                            <div class="checkbox-btn"></div>
+                            <div class="option-text">
+                                <span class="texto-a-favor" id="prefijo-2">A Favor:</span> <span id="texto-2">Apruebo crear el Comité de Mediación.</span>
+                            </div>
+                        </div>
+                        <div class="vote-option en-contra" onclick="toggleComiteVote(this, 3)">
+                            <div class="checkbox-btn"></div>
+                            <div class="option-text">
+                                <strong>No apruebo:</strong> No crear ninguno de los comités.
+                            </div>
+                        </div>
                     </td>
                 </tr>
 
@@ -205,7 +268,6 @@
                     </td>
                 </tr>
 
-                <!-- PUNTO 7 CON TÍTULO ACTUALIZADO -->
                 <tr>
                     <td class="topic-col">
                         <span class="topic-title">7. Manejo de fondos: Protección del patrimonio y la cuenta bancaria</span>
@@ -239,10 +301,15 @@
                         <span class="topic-cost">Costo extra: $0 (Incluido en PIPC)</span>
                     </td>
                     <td>
-                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Contención):</strong> Aprobar la solución de contención para 6 bodegas por un costo de <strong>$61,120.86 MXN</strong> (IVA incl.).</div></div>
-                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> El gasto de $61,120.86 para 6 bodegas.</div></div>
-                        <div class="vote-option a-favor" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Evaluar):</strong> Instruir al DRO a evaluar las bodegas del Sótano 2 dentro del dictamen estructural del PIPC.</div></div>
-                        <div class="vote-option en-contra" onclick="toggleMultiVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No incluir la revisión dentro del dictamen.</div></div>
+                        <div class="vote-group" style="margin-bottom: 8px;">
+                            <div class="vote-option a-favor" onclick="toggleIndependentVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Contención):</strong> Aprobar la solución de contención para 6 bodegas por un costo de <strong>$61,120.86 MXN</strong> (IVA incl.).</div></div>
+                            <div class="vote-option en-contra" onclick="toggleIndependentVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> El gasto de $61,120.86 para 6 bodegas.</div></div>
+                        </div>
+                        
+                        <div class="vote-group">
+                            <div class="vote-option a-favor" onclick="toggleIndependentVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>A Favor (Evaluar):</strong> Instruir al DRO a evaluar las bodegas del Sótano 2 dentro del dictamen estructural del PIPC.</div></div>
+                            <div class="vote-option en-contra" onclick="toggleIndependentVote(this)"><div class="checkbox-btn"></div><div class="option-text"><strong>No apruebo:</strong> No incluir la revisión dentro del dictamen.</div></div>
+                        </div>
                     </td>
                 </tr>
 
@@ -283,13 +350,14 @@
             </tbody>
         </table>
 
+        <!-- ÁREA DE FIRMAS CON PLACEHOLDER "Nombre" -->
         <div class="signature-area">
             <div class="signature-box">
-                <input type="text" class="signature-input" placeholder=" ">
+                <div class="signature-input" contenteditable="true" data-placeholder="Nombre"></div>
                 <span class="signature-label">Nombre y Firma del Condómino</span>
             </div>
             <div class="signature-box">
-                <input type="text" class="signature-input" placeholder=" ">
+                <div class="signature-input" contenteditable="true" data-placeholder="Ej. Depto 101 / 2.5%"></div>
                 <span class="signature-label">Departamento / Porcentaje de indiviso</span>
             </div>
         </div>
@@ -305,19 +373,102 @@
     </div> 
 
     <script>
+        function toggleComiteVote(element, index) {
+            if (event.target.tagName.toLowerCase() === 'input') return;
+
+            const parentCell = document.getElementById('celda-comites');
+            const allOptions = parentCell.querySelectorAll('.vote-option');
+            const checkboxes = parentCell.querySelectorAll('.checkbox-btn');
+            const clickedCheckbox = element.querySelector('.checkbox-btn');
+
+            if (index === 3) {
+                if (clickedCheckbox.classList.contains('en-contra')) {
+                    checkboxes.forEach(cb => cb.classList.remove('selected', 'a-favor', 'en-contra'));
+                    allOptions.forEach(opt => opt.classList.remove('seleccionado'));
+                } else {
+                    checkboxes.forEach(cb => cb.classList.remove('selected', 'a-favor', 'en-contra'));
+                    allOptions.forEach(opt => opt.classList.remove('seleccionado'));
+                    clickedCheckbox.classList.add('selected', 'en-contra');
+                    element.classList.add('seleccionado');
+                }
+                actualizarTextos();
+                return;
+            }
+
+            if (clickedCheckbox.classList.contains('a-favor')) {
+                clickedCheckbox.classList.remove('selected', 'a-favor');
+                element.classList.remove('seleccionado');
+            } else {
+                clickedCheckbox.classList.remove('en-contra');
+                clickedCheckbox.classList.add('selected', 'a-favor');
+                element.classList.add('seleccionado');
+            }
+
+            const comiteCheckboxes = Array.from(checkboxes).slice(0, 3);
+            const hasAnyAprobado = comiteCheckboxes.some(cb => cb.classList.contains('a-favor'));
+
+            if (hasAnyAprobado) {
+                comiteCheckboxes.forEach((cb) => {
+                    if (!cb.classList.contains('a-favor')) {
+                        cb.classList.add('selected', 'en-contra');
+                        cb.closest('.vote-option').classList.add('seleccionado');
+                    } else {
+                        cb.classList.remove('en-contra');
+                    }
+                });
+                checkboxes[3].classList.remove('selected', 'en-contra');
+                allOptions[3].classList.remove('seleccionado');
+            } else {
+                comiteCheckboxes.forEach(cb => {
+                    cb.classList.remove('selected', 'en-contra');
+                    cb.closest('.vote-option').classList.remove('seleccionado');
+                });
+                checkboxes[3].classList.add('selected', 'en-contra');
+                allOptions[3].classList.add('seleccionado');
+            }
+
+            actualizarTextos();
+        }
+
+        function actualizarTextos() {
+            for (let i = 0; i < 3; i++) {
+                const checkbox = document.querySelectorAll('#celda-comites .checkbox-btn')[i];
+                const prefijo = document.getElementById(`prefijo-${i}`);
+                const texto = document.getElementById(`texto-${i}`);
+
+                if (checkbox.classList.contains('a-favor')) {
+                    prefijo.textContent = "A Favor:";
+                    prefijo.className = "texto-a-favor";
+                    texto.textContent = texto.textContent.replace("No apruebo crear", "Apruebo crear");
+                } else if (checkbox.classList.contains('en-contra')) {
+                    prefijo.textContent = "En contra:";
+                    prefijo.className = "texto-en-contra";
+                    texto.textContent = texto.textContent.replace("Apruebo crear", "No apruebo crear");
+                } else {
+                    prefijo.textContent = "A Favor:";
+                    prefijo.className = "texto-a-favor";
+                    texto.textContent = texto.textContent.replace("No apruebo crear", "Apruebo crear");
+                }
+            }
+        }
+
         function toggleSingleVote(element) {
             if (event.target.tagName.toLowerCase() === 'input') return;
             const checkbox = element.querySelector('.checkbox-btn');
             if (checkbox.classList.contains('selected')) {
-                checkbox.classList.remove('selected');
+                checkbox.classList.remove('selected', 'a-favor', 'en-contra');
                 element.classList.remove('seleccionado');
             } else {
                 const parentCell = element.closest('td');
                 parentCell.querySelectorAll('.checkbox-btn').forEach(cb => {
-                    cb.classList.remove('selected');
+                    cb.classList.remove('selected', 'a-favor', 'en-contra');
                     cb.closest('.vote-option').classList.remove('seleccionado');
                 });
-                checkbox.classList.add('selected');
+                if (element.classList.contains('a-favor')) {
+                    checkbox.classList.add('selected', 'a-favor');
+                } else {
+                    checkbox.classList.add('selected', 'en-contra');
+                }
                 element.classList.add('seleccionado');
             }
         }
@@ -329,24 +480,45 @@
             const isEnContra = element.classList.contains('en-contra');
 
             if (checkbox.classList.contains('selected')) {
-                checkbox.classList.remove('selected');
+                checkbox.classList.remove('selected', 'a-favor', 'en-contra');
                 element.classList.remove('seleccionado');
                 return;
             }
 
             if (isEnContra) {
                 parentCell.querySelectorAll('.checkbox-btn').forEach(cb => {
-                    cb.classList.remove('selected');
+                    cb.classList.remove('selected', 'a-favor', 'en-contra');
                     cb.closest('.vote-option').classList.remove('seleccionado');
                 });
-                checkbox.classList.add('selected');
+                checkbox.classList.add('selected', 'en-contra');
                 element.classList.add('seleccionado');
             } else {
                 parentCell.querySelectorAll('.vote-option.en-contra').forEach(enContra => {
-                    enContra.querySelector('.checkbox-btn').classList.remove('selected');
+                    enContra.querySelector('.checkbox-btn').classList.remove('selected', 'a-favor', 'en-contra');
                     enContra.classList.remove('seleccionado');
                 });
-                checkbox.classList.add('selected');
+                checkbox.classList.add('selected', 'a-favor');
+                element.classList.add('seleccionado');
+            }
+        }
+
+        function toggleIndependentVote(element) {
+            if (event.target.tagName.toLowerCase() === 'input') return;
+            const checkbox = element.querySelector('.checkbox-btn');
+            if (checkbox.classList.contains('selected')) {
+                checkbox.classList.remove('selected', 'a-favor', 'en-contra');
+                element.classList.remove('seleccionado');
+            } else {
+                const group = element.closest('.vote-group');
+                group.querySelectorAll('.checkbox-btn').forEach(cb => {
+                    cb.classList.remove('selected', 'a-favor', 'en-contra');
+                    cb.closest('.vote-option').classList.remove('seleccionado');
+                });
+                if (element.classList.contains('a-favor')) {
+                    checkbox.classList.add('selected', 'a-favor');
+                } else {
+                    checkbox.classList.add('selected', 'en-contra');
+                }
                 element.classList.add('seleccionado');
             }
         }
