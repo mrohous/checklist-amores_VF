@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Votación Interactiva - Asamblea</title>
     <style>
-        /* Configuración para impresión */
         @page { size: letter; margin: 0.4cm 0.6cm; } 
         
-        /* Configuración para pantalla (Web) */
         body { 
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
             color: #333; 
@@ -16,16 +14,15 @@
             margin: 0; 
             padding: 0; 
             font-size: 9px; 
-            background-color: #e2e8f0; /* Fondo gris para resaltar la "hoja" */
+            background-color: #e2e8f0; 
         } 
 
-        /* Contenedor que simula la hoja en la web */
         .contenedor-principal {
             max-width: 900px;
-            margin: 20px auto; /* Márgenes laterales en web */
+            margin: 20px auto; 
             background-color: white;
-            padding: 20px; /* Relleno interno en web */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra para efecto de hoja */
+            padding: 20px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
         }
 
         .btn-container { display: flex; gap: 10px; margin-bottom: 10px; }
@@ -112,22 +109,15 @@
 
         tr { page-break-inside: avoid; }
         
-        /* Reglas específicas para cuando se manda a imprimir */
         @media print { 
             body { background-color: white; }
-            .contenedor-principal { 
-                max-width: 100%; 
-                margin: 0; 
-                padding: 0; 
-                box-shadow: none; 
-            }
+            .contenedor-principal { max-width: 100%; margin: 0; padding: 0; box-shadow: none; }
             .btn-container { display: none !important; } 
         }
     </style>
 </head>
 <body>
 
-    <!-- CONTENEDOR QUE DA MÁRGENES EN LA WEB -->
     <div class="contenedor-principal">
 
         <div class="btn-container" id="action-buttons">
@@ -215,9 +205,10 @@
                     </td>
                 </tr>
 
+                <!-- PUNTO 7 CON TÍTULO ACTUALIZADO -->
                 <tr>
                     <td class="topic-col">
-                        <span class="topic-title">7. Manejo de fondos y Personalidad Jurídica</span>
+                        <span class="topic-title">7. Manejo de fondos: Protección del patrimonio y la cuenta bancaria</span>
                         <span class="topic-desc">Análisis y votación para la constitución de la Asociación Civil (A.C.) sin fines de lucro o, en su defecto, la apertura de cuenta mancomunada para la administración de los recursos del condominio.</span>
                         <span class="topic-cost">Costo estimado A.C.: ~$25,000 MXN</span>
                     </td>
@@ -311,7 +302,7 @@
             <strong>Nota legal complementaria:</strong> Conforme a la Ley de Propiedad en Condominio de la CDMX, el derecho a voto es exclusivo para los condóminos que se encuentren al corriente en sus cuotas. Los condóminos morosos conservan su derecho a voz, pero no a voto (Art. 34 y 42, LPC-CDMX).
         </div>
 
-    </div> <!-- FIN DEL CONTENEDOR PRINCIPAL -->
+    </div> 
 
     <script>
         function toggleSingleVote(element) {
